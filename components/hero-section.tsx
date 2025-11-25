@@ -1,17 +1,151 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Search, Play, ArrowRight } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 
 export function HeroSection() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const resizeCanvas = () => {
+      const container = canvas.parentElement;
+      if (container) {
+        canvas.width = container.offsetWidth;
+        canvas.height = container.offsetHeight;
+      }
+    };
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Particle {
+      x: number;
+      y: number;
+      targetX: number;
+      targetY: number;
+      vx: number;
+      vy: number;
+      size: number;
+
+      constructor(x: number, y: number, targetX: number, targetY: number) {
+        this.x = x + (Math.random() - 0.5) * 200;
+        this.y = y + (Math.random() - 0.5) * 200;
+        this.targetX = targetX;
+        this.targetY = targetY;
+        this.vx = 0;
+        this.vy = 0;
+        this.size = Math.random() * 2 + 1;
+      }
+
+      update() {
+        const dx = this.targetX - this.x;
+        const dy = this.targetY - this.y;
+        this.vx += dx * 0.01;
+        this.vy += dy * 0.01;
+        this.vx *= 0.85;
+        this.vy *= 0.85;
+        this.x += this.vx;
+        this.y += this.vy;
+      }
+
+      draw(ctx: CanvasRenderingContext2D) {
+        ctx.fillStyle = '#ef4444';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    const particles: Particle[] = [];
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    const zSize = Math.min(canvas.width, canvas.height) * 0.4;
+
+    const createZShape = () => {
+      const points: [number, number][] = [];
+      const thickness = zSize * 0.15;
+
+      for (let i = 0; i <= 100; i++) {
+        const t = i / 100;
+        points.push([centerX - zSize / 2 + t * zSize, centerY - zSize / 2]);
+        points.push([centerX - zSize / 2 + t * zSize, centerY - zSize / 2 + thickness]);
+      }
+
+      for (let i = 0; i <= 100; i++) {
+        const t = i / 100;
+        const x = centerX + zSize / 2 - t * zSize;
+        const y = centerY - zSize / 2 + t * zSize;
+        points.push([x, y]);
+        points.push([x - thickness * 0.7, y + thickness * 0.7]);
+      }
+
+      for (let i = 0; i <= 100; i++) {
+        const t = i / 100;
+        points.push([centerX - zSize / 2 + t * zSize, centerY + zSize / 2]);
+        points.push([centerX - zSize / 2 + t * zSize, centerY + zSize / 2 - thickness]);
+      }
+
+      return points;
+    };
+
+    const zPoints = createZShape();
+    zPoints.forEach(([x, y]) => {
+      particles.push(new Particle(centerX, centerY, x, y));
+    });
+
+    let mouseX = centerX;
+    let mouseY = centerY;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    };
+
+    canvas.addEventListener('mousemove', handleMouseMove);
+
+    const animate = () => {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach((particle) => {
+        const dx = mouseX - particle.x;
+        const dy = mouseY - particle.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < 100) {
+          const force = (100 - distance) / 100;
+          particle.x -= (dx / distance) * force * 5;
+          particle.y -= (dy / distance) * force * 5;
+        }
+
+        particle.update();
+        particle.draw(ctx);
+      });
+
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      canvas.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
     <section className="relative overflow-hidden py-20 sm:py-28 lg:py-36">
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/5 via-transparent to-primary/5" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
+          <div className="space-y-8 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-sm font-medium text-primary border border-primary/20">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
@@ -25,70 +159,17 @@ export function HeroSection() {
               <span className="block text-primary mt-2">Anytime, Anywhere</span>
             </h1>
 
-            <p className="text-lg text-muted-foreground max-w-xl">
+            <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0">
               Join thousands of students learning from industry experts. Master in-demand skills and advance your career with our comprehensive courses.
             </p>
-
-            <div className="flex items-center gap-8 pt-4">
-              <div>
-                <div className="text-3xl font-bold">10K+</div>
-                <div className="text-sm text-muted-foreground">Active Courses</div>
-              </div>
-              <div className="h-12 w-px bg-border" />
-              <div>
-                <div className="text-3xl font-bold">500+</div>
-                <div className="text-sm text-muted-foreground">Expert Instructors</div>
-              </div>
-              <div className="h-12 w-px bg-border" />
-              <div>
-                <div className="text-3xl font-bold">4.8★</div>
-                <div className="text-sm text-muted-foreground">Average Rating</div>
-              </div>
-            </div>
           </div>
 
-          <div className="relative">
-            <div className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-primary/5 border shadow-2xl">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/60 rounded-full blur-3xl opacity-50" />
-                  <Button
-                    size="lg"
-                    className="relative h-20 w-20 rounded-full shadow-2xl hover:scale-110 transition-transform"
-                  >
-                    <Play className="h-8 w-8 fill-current" />
-                  </Button>
-                </div>
-              </div>
-
-              <div className="absolute top-8 left-8 p-4 bg-background/80 backdrop-blur-sm rounded-lg shadow-lg border animate-in fade-in slide-in-from-top-4 duration-700">
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Play className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold">1,200+ Video Lessons</div>
-                    <div className="text-xs text-muted-foreground">Learn at your pace</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute bottom-8 right-8 p-4 bg-background/80 backdrop-blur-sm rounded-lg shadow-lg border animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-lg">🎓</span>
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold">Certificate Ready</div>
-                    <div className="text-xs text-muted-foreground">Boost your career</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full">
-              <div className="absolute top-0 right-0 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+          <div className="relative flex items-center justify-center">
+            <div className="relative w-full aspect-square max-w-lg">
+              <canvas
+                ref={canvasRef}
+                className="w-full h-full bg-black rounded-2xl shadow-2xl"
+              />
             </div>
           </div>
         </div>
