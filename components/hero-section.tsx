@@ -13,12 +13,17 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-black">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-900 via-black to-black" />
-      
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-bl from-purple-500/10 via-transparent to-transparent rounded-full blur-3xl" />
-        <div className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-tr from-blue-500/10 via-transparent to-transparent rounded-full blur-3xl" />
-      </div>
+      <div className="absolute inset-0">
+  {/* Dark golden → sky blue vertical cinematic gradient */}
+  <div className="absolute inset-0 bg-gradient-to-b from-[#0e1114] via-[#2f3c49] to-[#a78866]" />
+
+  {/* Large soft golden cloud */}
+  <div className="absolute -top-1/3 right-0 w-[90%] h-[90%] rounded-full bg-[#d8b28a]/30 blur-3xl" />
+
+  {/* Soft white sunlight layer */}
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.35),transparent_70%)]" />
+</div>
+
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -30,10 +35,10 @@ export function HeroSection() {
           </div>
 
           <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className="text-white">Learn from the</span>
+            <span className="text-white">India's next gen</span>
             <br />
             <span className="bg-gradient-to-r from-white via-white to-white/50 bg-clip-text text-transparent">
-              best in the industry
+              Virtual Creative Lab
             </span>
           </h1>
 

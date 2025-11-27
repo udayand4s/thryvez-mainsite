@@ -1,5 +1,6 @@
 'use client';
 
+import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
@@ -34,80 +35,233 @@ export function ModernLearner() {
   }, []);
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-black">
+    <section className="py-12 sm:py-16 lg:py-20 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={section1Ref} className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-24 lg:mb-32">
-          <div className={`space-y-6 transition-all duration-700 ${isVisible1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+        <div ref={section1Ref} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className={`space-y-4 sm:space-y-6 text-center lg:text-left transition-all duration-700 ${isVisible1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
               Made for the
-              <span className="block text-white/60">modern learner</span>
+              <span className="block">modern learner</span>
             </h2>
             
-            <p className="text-lg text-white/60 max-w-lg">
-              You're serious about growth. We're serious about giving you the tools, frameworks, and network to accelerate your career.
+            <p className="text-base sm:text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0">
+              You're serious about education. We're serious about engaging your students and turning them into loyal customers.
             </p>
 
-            <div className="space-y-4 pt-4">
-              {['Live sessions with industry experts', 'Peer-to-peer learning community', 'Real-world case studies & projects'].map((item, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-white/80">{item}</span>
-                </div>
-              ))}
+            <div className="space-y-2 sm:space-y-3 inline-block text-left">
+              <div className="flex items-start gap-2 sm:gap-3">
+                <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
+                <span className="text-sm sm:text-base">Innovative student dashboard</span>
+              </div>
+              <div className="flex items-start gap-2 sm:gap-3">
+                <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
+                <span className="text-sm sm:text-base">Highly-rated mobile app</span>
+              </div>
+              <div className="flex items-start gap-2 sm:gap-3">
+                <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
+                <span className="text-sm sm:text-base">Drip content</span>
+              </div>
             </div>
           </div>
 
-          <div className={`relative transition-all duration-700 delay-200 ${isVisible1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="aspect-square relative rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-900 to-black border border-white/10">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
-                    <span className="text-4xl">🎯</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Interactive Learning</h3>
-                  <p className="text-white/50 text-sm">Engage with live cohorts and get hands-on experience</p>
-                </div>
+          <div className={`relative flex items-center justify-center transition-all duration-700 delay-200 ${isVisible1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full">
+              <div className="relative z-10 transform sm:-rotate-6 w-full max-w-[240px] sm:max-w-[256px]">
+                <Card className="shadow-2xl border-4 sm:border-8 border-background">
+                  <CardContent className="p-0">
+                    <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-t-lg px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-center gap-2">
+                      <div className="w-12 sm:w-16 h-3 sm:h-4 bg-slate-950 rounded-full"></div>
+                    </div>
+                    <div className="p-4 sm:p-6 bg-white space-y-3 sm:space-y-4">
+                      <div className="text-center">
+                        <h3 className="font-semibold text-slate-900 text-sm sm:text-base mb-1 sm:mb-2">Test your knowledge</h3>
+                        <p className="text-xs text-slate-600">Question 9/16</p>
+                      </div>
+                      
+                      <div className="w-full h-1.5 sm:h-2 bg-slate-200 rounded-full overflow-hidden">
+                        <div className="w-3/4 h-full bg-primary"></div>
+                      </div>
+
+                      <div className="aspect-video bg-gradient-to-br from-emerald-800 to-emerald-900 rounded-lg flex items-center justify-center relative">
+                        <div className="text-4xl sm:text-6xl">🧠</div>
+                        <div className="absolute bottom-1 sm:bottom-2 right-1 sm:right-2 bg-white px-2 sm:px-3 py-0.5 sm:py-1 rounded-md">
+                          <span className="text-xs sm:text-sm font-bold text-slate-900">83%</span>
+                        </div>
+                      </div>
+
+                      <div className="space-y-1.5 sm:space-y-2">
+                        <p className="text-xs text-slate-600 hidden sm:block">You need to analyze feedback. Which AI tool category would be most suitable?</p>
+                        <div className="space-y-1 sm:space-y-1.5">
+                          <div className="bg-slate-100 text-slate-700 text-xs py-1.5 sm:py-2 px-2 sm:px-3 rounded">Predictive Analytics</div>
+                          <div className="bg-slate-100 text-slate-700 text-xs py-1.5 sm:py-2 px-2 sm:px-3 rounded">Business Intelligence</div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl" />
-              <div className="absolute -top-4 -left-4 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl" />
+
+              <div className="relative z-20 sm:transform sm:translate-y-8 w-full max-w-[280px] sm:max-w-[320px] hidden md:block">
+                <Card className="shadow-2xl">
+                  <CardContent className="p-4 sm:p-6 bg-white space-y-3 sm:space-y-4">
+                    <h3 className="font-semibold text-slate-900 text-sm sm:text-base">Quiz scores</h3>
+                    
+                    <div className="space-y-2 sm:space-y-3">
+                      <div className="flex items-center justify-between text-xs sm:text-sm">
+                        <div className="flex items-center gap-2 sm:gap-4">
+                          <span className="text-slate-600 w-20 sm:w-32">LESSON NAME</span>
+                          <span className="text-slate-600 w-10 sm:w-16">AVG</span>
+                        </div>
+                        <span className="text-slate-600 w-12 sm:w-20">DONE</span>
+                      </div>
+                      
+                      <div className="flex items-center justify-between py-1.5 sm:py-2 border-b">
+                        <div className="flex items-center gap-2 sm:gap-4">
+                          <span className="text-slate-900 w-20 sm:w-32 text-xs sm:text-sm">Tool Categories</span>
+                          <span className="text-slate-900 w-10 sm:w-16 text-xs sm:text-sm">72%</span>
+                        </div>
+                        <span className="text-slate-900 w-12 sm:w-20 text-xs sm:text-sm">42</span>
+                      </div>
+
+                      <div className="flex items-center justify-between py-1.5 sm:py-2 border-b">
+                        <div className="flex items-center gap-2 sm:gap-4">
+                          <span className="text-slate-900 w-20 sm:w-32 text-xs sm:text-sm">Text Analysis</span>
+                          <span className="text-slate-900 w-10 sm:w-16 text-xs sm:text-sm">53%</span>
+                        </div>
+                        <span className="text-slate-900 w-12 sm:w-20 text-xs sm:text-sm">36</span>
+                      </div>
+
+                      <div className="flex items-center justify-between py-1.5 sm:py-2">
+                        <div className="flex items-center gap-2 sm:gap-4">
+                          <span className="text-slate-900 w-20 sm:w-32 text-xs sm:text-sm">Review Systems</span>
+                          <span className="text-slate-900 w-10 sm:w-16 text-xs sm:text-sm">83%</span>
+                        </div>
+                        <span className="text-slate-900 w-12 sm:w-20 text-xs sm:text-sm">27</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </div>
 
-        <div ref={section2Ref} className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className={`order-2 lg:order-1 relative transition-all duration-700 delay-200 ${isVisible2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="aspect-square relative rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-900 to-black border border-white/10">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
-                    <span className="text-4xl">🚀</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Career Growth</h3>
-                  <p className="text-white/50 text-sm">Get mentorship and unlock new opportunities</p>
-                </div>
+        <div ref={section2Ref} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mt-16 sm:mt-20 lg:mt-24">
+          <div className={`order-2 lg:order-1 relative flex items-center justify-center transition-all duration-700 delay-200 ${isVisible2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full">
+              <div className="relative z-10 w-full max-w-[280px] sm:max-w-[320px]">
+                <Card className="shadow-2xl overflow-hidden">
+                  <CardContent className="p-0">
+                    <div className="bg-gradient-to-br from-blue-900 to-blue-800 p-4 sm:p-6 space-y-3 sm:space-y-4">
+                      <div className="flex items-center justify-between">
+                        <div className="space-y-1">
+                          <div className="w-20 sm:w-24 h-2 sm:h-3 bg-white/90 rounded"></div>
+                          <div className="w-14 sm:w-16 h-1.5 sm:h-2 bg-white/70 rounded"></div>
+                        </div>
+                        <div className="flex gap-1.5 sm:gap-2">
+                          <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white/20 rounded"></div>
+                          <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white/20 rounded"></div>
+                        </div>
+                      </div>
+
+                      <div className="bg-white rounded-lg p-1">
+                        <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
+                          <div className="w-5 h-5 sm:w-6 sm:h-6 bg-slate-200 rounded"></div>
+                          <div className="flex-1 h-2 sm:h-3 bg-slate-200 rounded"></div>
+                        </div>
+                        <div className="aspect-video bg-gradient-to-br from-rose-500 to-orange-500 rounded relative overflow-hidden">
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="text-white text-3xl sm:text-4xl">💪</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="space-y-1.5 sm:space-y-2">
+                        <div className="bg-white/20 rounded-lg p-2 sm:p-3">
+                          <div className="w-24 sm:w-32 h-2 sm:h-3 bg-white/90 rounded mb-0.5 sm:mb-1"></div>
+                          <div className="w-20 sm:w-24 h-1.5 sm:h-2 bg-white/70 rounded"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-emerald-500/20 rounded-full blur-3xl" />
-              <div className="absolute -top-4 -right-4 w-32 h-32 bg-orange-500/20 rounded-full blur-3xl" />
+
+              <div className="relative z-20 sm:transform sm:-translate-y-8 w-full max-w-[260px] sm:max-w-[288px] hidden md:block">
+                <Card className="shadow-2xl">
+                  <CardContent className="p-4 sm:p-6 bg-white space-y-3 sm:space-y-4">
+                    <div className="border-b pb-3 sm:pb-4">
+                      <h3 className="font-semibold text-slate-900 text-sm sm:text-base mb-0.5 sm:mb-1">Add content</h3>
+                    </div>
+                    
+                    <div>
+                      <p className="text-xs text-slate-600 mb-2 sm:mb-3 uppercase tracking-wide">CONTENT</p>
+                      <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
+                        <div className="aspect-square bg-slate-100 rounded flex items-center justify-center">
+                          <div className="text-lg sm:text-2xl">📝</div>
+                        </div>
+                        <div className="aspect-square bg-slate-100 rounded flex items-center justify-center">
+                          <div className="text-lg sm:text-2xl">🎥</div>
+                        </div>
+                        <div className="aspect-square bg-slate-100 rounded flex items-center justify-center">
+                          <div className="text-lg sm:text-2xl">📄</div>
+                        </div>
+                        <div className="aspect-square bg-slate-100 rounded flex items-center justify-center">
+                          <div className="text-lg sm:text-2xl">🔊</div>
+                        </div>
+                        <div className="aspect-square bg-slate-100 rounded flex items-center justify-center">
+                          <div className="text-lg sm:text-2xl">🖼️</div>
+                        </div>
+                        <div className="aspect-square bg-slate-100 rounded flex items-center justify-center">
+                          <div className="text-lg sm:text-2xl">📎</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="text-xs text-slate-600 mb-2 sm:mb-3 uppercase tracking-wide">TOOLS</p>
+                      <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
+                        <div className="aspect-video bg-slate-100 rounded"></div>
+                        <div className="aspect-video bg-slate-100 rounded"></div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
 
-          <div className={`order-1 lg:order-2 space-y-6 transition-all duration-700 ${isVisible2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-              More than just
-              <span className="block text-white/60">online courses</span>
+          <div className={`order-1 lg:order-2 space-y-4 sm:space-y-6 text-center lg:text-left transition-all duration-700 ${isVisible2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+              More time for
+              <span className="block">what matters</span>
             </h2>
             
-            <p className="text-lg text-white/60 max-w-lg">
-              We're building a community of ambitious professionals who learn together, grow together, and help each other succeed.
+            <p className="text-base sm:text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0">
+              We automate the operational headaches so you can keep growing your business without adding busywork.
             </p>
 
-            <div className="space-y-4 pt-4">
-              {['Exclusive networking events', 'Job & opportunity board', '1:1 mentorship matching'].map((item, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-white/80">{item}</span>
-                </div>
-              ))}
+            <div className="space-y-2 sm:space-y-3 inline-block text-left">
+              <div className="flex items-start gap-2 sm:gap-3">
+                <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
+                <span className="text-sm sm:text-base">Drag-and-drop course builders</span>
+              </div>
+              <div className="flex items-start gap-2 sm:gap-3">
+                <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
+                <span className="text-sm sm:text-base">Built-in AI creation and translation tools</span>
+              </div>
+              <div className="flex items-start gap-2 sm:gap-3">
+                <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
+                <span className="text-sm sm:text-base">Sales and VAT tax handling</span>
+              </div>
+              <div className="flex items-start gap-2 sm:gap-3">
+                <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
+                <span className="text-sm sm:text-base">Tax filing and affiliate payouts</span>
+              </div>
+              <div className="flex items-start gap-2 sm:gap-3">
+                <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
+                <span className="text-sm sm:text-base">Assisted migration and custom support</span>
+              </div>
             </div>
           </div>
         </div>

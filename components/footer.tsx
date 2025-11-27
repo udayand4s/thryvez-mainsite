@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <span className="text-xl font-bold text-white">Thryvez<span className="text-white/60">X</span></span>
+              <span className="text-xl font-bold text-white">Thryvez<span className="text-white/60"></span></span>
             </Link>
             <p className="text-sm text-white/50 mb-6 max-w-sm">
               Accelerate your career with expert-led courses and an exclusive community of growth leaders.
@@ -54,7 +54,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-white/40">
-          <p>&copy; {new Date().getFullYear()} ThryvezX. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Thryvez. All rights reserved.</p>
         </div>
       </div>
     </footer>

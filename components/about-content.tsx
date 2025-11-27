@@ -50,7 +50,7 @@ export function AboutContent() {
               <span className="block text-white/60">professional learning</span>
             </h1>
             <p className="text-xl text-white/60 max-w-2xl mx-auto">
-              ThryvezX was founded with a simple mission: make world-class education accessible to ambitious professionals everywhere.
+              Thryvez was founded with a simple mission: to empower young people to build bold skills, original thinking, and a creative identity through hands-on, real-world learning.
             </p>
           </div>
         </div>
@@ -76,7 +76,7 @@ export function AboutContent() {
               <h2 className="text-3xl sm:text-4xl font-bold text-white">Our Story</h2>
               <div className="space-y-4 text-white/60">
                 <p>
-                  We started ThryvezX because we saw a gap in professional education. Traditional courses were outdated, communities were fragmented, and practical knowledge was locked behind expensive conferences.
+                  We started Thryvez because we saw a gap in professional education. Traditional courses were outdated, communities were fragmented, and practical knowledge was locked behind expensive conferences.
                 </p>
                 <p>
                   We believed there had to be a better way. A platform where ambitious professionals could learn from practitioners, not just theorists. Where they could build real connections, not just collect certificates.

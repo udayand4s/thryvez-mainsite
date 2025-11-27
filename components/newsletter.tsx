@@ -29,9 +29,6 @@ export function Newsletter() {
             </Button>
           </form>
 
-          <p className="text-sm text-white/40">
-            No spam, unsubscribe anytime. Join 10,000+ subscribers.
-          </p>
         </div>
       </div>
     </section>

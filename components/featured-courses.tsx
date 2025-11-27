@@ -1,116 +1,152 @@
-'use client';
-
+import React from 'react';
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+import { Star, Clock, Users, TrendingUp } from 'lucide-react';
 
 const courses = [
   {
     id: 1,
-    title: 'Advanced Growth Strategy',
-    description: 'Master the A-Z of growth with frameworks used at top startups',
+    title: 'Complete Web Development Bootcamp',
     instructor: 'Sarah Johnson',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face',
-    companies: ['CRED', 'Swiggy', 'Canva'],
+    rating: 4.9,
+    students: 12453,
+    price: 89.99,
+    duration: '42 hours',
+    level: 'Beginner',
+    category: 'Development',
+    trending: true,
   },
   {
     id: 2,
-    title: 'Product Management Masterclass',
-    description: 'Build products users love with proven PM methodologies',
+    title: 'Advanced UI/UX Design Masterclass',
     instructor: 'Michael Chen',
-    image: 'https://images.unsplash.com/photo-1556157382-97eded2f9b72?w=400&h=400&fit=crop&crop=face',
-    companies: ['Google', 'Meta', 'Stripe'],
+    rating: 4.8,
+    students: 8921,
+    price: 79.99,
+    duration: '28 hours',
+    level: 'Intermediate',
+    category: 'Design',
+    trending: true,
   },
   {
     id: 3,
-    title: 'Data-Driven Marketing',
-    description: 'Scale your marketing with data and experimentation',
-    instructor: 'Emily Rodriguez',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face',
-    companies: ['Netflix', 'Spotify', 'Airbnb'],
+    title: 'Python for Data Science & Machine Learning',
+    instructor: 'Dr. Emily Rodriguez',
+    rating: 4.9,
+    students: 15678,
+    price: 99.99,
+    duration: '56 hours',
+    level: 'Advanced',
+    category: 'Data Science',
+    trending: false,
+  },
+  {
+    id: 4,
+    title: 'Digital Marketing Strategy 2024',
+    instructor: 'James Wilson',
+    rating: 4.7,
+    students: 6543,
+    price: 69.99,
+    duration: '18 hours',
+    level: 'Beginner',
+    category: 'Marketing',
+    trending: false,
+  },
+  {
+    id: 5,
+    title: 'iOS App Development with Swift',
+    instructor: 'Lisa Anderson',
+    rating: 4.8,
+    students: 5432,
+    price: 94.99,
+    duration: '38 hours',
+    level: 'Intermediate',
+    category: 'Mobile Dev',
+    trending: true,
+  },
+  {
+    id: 6,
+    title: 'Financial Analysis & Investment',
+    instructor: 'Robert Martinez',
+    rating: 4.6,
+    students: 4321,
+    price: 84.99,
+    duration: '24 hours',
+    level: 'Intermediate',
+    category: 'Finance',
+    trending: false,
   },
 ];
 
 export function FeaturedCourses() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section ref={sectionRef} className="py-16 sm:py-20 lg:py-24 bg-zinc-950">
+    <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-4">
-              <span className="text-xs text-white/60 uppercase tracking-wider">Featured Courses</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-              Brand focused courses
-            </h2>
-            <p className="text-white/60 mt-3 max-w-xl">
-              Great brands aren't built on clicks. They're built on trust. Craft narratives that resonate, campaigns that stand out.
-            </p>
-          </div>
-          <Link href="/courses">
-            <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 group">
-              View All Courses
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </Link>
+        <div className="text-center mb-12">
+          <Badge variant="outline" className="mb-4">Featured Courses</Badge>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            Most Popular Courses
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Explore our top-rated courses chosen by thousands of students worldwide
+          </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {courses.map((course, index) => (
-            <div
-              key={course.id}
-              className={`group relative rounded-2xl overflow-hidden bg-zinc-900 border border-white/10 hover:border-white/20 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              style={{ transitionDelay: `${200 + index * 100}ms` }}
-            >
-              <div className="aspect-[4/3] relative overflow-hidden">
-                <img
-                  src={course.image}
-                  alt={course.instructor}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/50 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <span className="text-xs text-white/60 uppercase tracking-wider">Course</span>
+          {courses.map((course) => (
+            <Card key={course.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <CardHeader className="space-y-0 pb-4">
+                <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg mb-4 relative overflow-hidden">
+                  {course.trending && (
+                    <div className="absolute top-3 left-3 flex items-center gap-1 px-2 py-1 rounded-full bg-background/90 backdrop-blur-sm text-xs font-medium">
+                      <TrendingUp className="h-3 w-3 text-primary" />
+                      <span>Trending</span>
+                    </div>
+                  )}
+                  <Badge className="absolute top-3 right-3">{course.category}</Badge>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
+                    <Button size="lg" className="rounded-full">
+                      View Course
+                    </Button>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="p-6 space-y-4">
-                <h3 className="font-semibold text-lg text-white group-hover:text-white/90 transition-colors">
+                <div className="flex items-center justify-between mb-2">
+                  <Badge variant="secondary">{course.level}</Badge>
+                  <div className="flex items-center gap-1 text-sm">
+                    <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    <span className="font-semibold">{course.rating}</span>
+                  </div>
+                </div>
+                <h3 className="font-semibold text-lg leading-tight group-hover:text-primary transition-colors">
                   {course.title}
                 </h3>
-                <p className="text-sm text-white/60 line-clamp-2">
-                  {course.description}
-                </p>
-                <div className="flex items-center gap-2 text-xs text-white/40">
-                  <span>Case studies from:</span>
-                  {course.companies.map((company, i) => (
-                    <span key={i} className="text-white/60">{company}{i < course.companies.length - 1 ? ',' : ''}</span>
-                  ))}
+                <p className="text-sm text-muted-foreground">by {course.instructor}</p>
+              </CardHeader>
+              <CardContent className="pb-4">
+                <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-1">
+                    <Clock className="h-4 w-4" />
+                    <span>{course.duration}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Users className="h-4 w-4" />
+                    <span>{course.students.toLocaleString()}</span>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+              <CardFooter className="flex items-center justify-between pt-4 border-t">
+                <div className="text-2xl font-bold">${course.price}</div>
+                <Button>Enroll Now</Button>
+              </CardFooter>
+            </Card>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Button variant="outline" size="lg" className="gap-2">
+            View All Courses
+          </Button>
         </div>
       </div>
     </section>

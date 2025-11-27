@@ -15,7 +15,7 @@ export function Header() {
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2">
               <div className="text-2xl font-bold text-white tracking-tight">
-                Thryvez<span className="text-primary">X</span>
+                Thryvez<span className="text-primary"></span>
               </div>
             </Link>
 
