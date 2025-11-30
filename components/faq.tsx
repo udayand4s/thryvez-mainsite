@@ -6,7 +6,7 @@ import { ChevronDown } from 'lucide-react';
 const faqs = [
   {
     question: 'What makes Thryvez different from other learning platforms?',
-    answer: 'ThryvezX combines expert-led courses with an exclusive community of growth leaders. Unlike traditional platforms, you get direct access to practitioners who have scaled products at top companies, plus a peer network that accelerates your learning.',
+    answer: 'Thryvez combines expert-led courses with an exclusive community of growth leaders. Unlike traditional platforms, you get direct access to practitioners who have scaled products at top companies, plus a peer network that accelerates your learning.',
   },
   {
     question: 'Who are the courses designed for?',
@@ -61,7 +61,7 @@ export function FAQ() {
               Frequently Asked Questions
             </h2>
             <p className="text-white/60 text-lg">
-              Everything you need to know about ThryvezX
+              Everything you need to know about Thryvez
             </p>
           </div>
 

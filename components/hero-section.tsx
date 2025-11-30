@@ -35,7 +35,7 @@ export function HeroSection() {
           </div>
 
           <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className="text-white">India's next gen</span>
+            <span className="text-white \">India's next gen</span>
             <br />
             <span className="bg-gradient-to-r from-white via-white to-white/50 bg-clip-text text-transparent">
               Virtual Creative Lab

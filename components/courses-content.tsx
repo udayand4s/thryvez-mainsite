@@ -4,19 +4,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, Users, Clock } from "lucide-react";
 import { useEffect, useState } from "react";
 
-/**
- * NOTE:
- * - This is a drop-in replacement for your previous CoursesContent component.
- * - It re-uses your courseCategories and featuredCourse data shape. I've added
- *   a couple optional UI fields (price, rating, students, hours) with safe defaults,
- *   so it looks polished without needing new backend data.
- */
-
-/* ---------- Data (kept same structure, small UI fields added) ---------- */
 const featuredCourse = {
-  title: "Advanced Growth Strategy",
+  title: "Advanced Bootcamp Strategy",
   description:
-    "Thryvez's flagship 4-week growth strategy designed to teach you the A - Z of Growth",
+    "Join the fastest way forward — because the future won’t wait.",
   companies: ["CRED", "Swiggy", "Canva", "Zerodha", "Google", "Paytm", "Flipkart"],
   price: "$299",
   duration: "4 weeks",
@@ -282,17 +273,9 @@ export function CoursesContent() {
   return (
     <div className="w-full">
       {/* HERO (full-bleed) */}
-<section className="relative w-full overflow-hidden pt-16 pb-24">
-  {/* Full gradient background (clean, premium, no harsh colors) */}
-  <div className="absolute inset-0 -z-10">
-    <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b12] via-[#141421] to-[#0b0b14]" />
-
-    {/* soft glow left */}
-    <div className="absolute -left-32 top-1/3 w-[520px] h-[520px] rounded-full blur-[140px] bg-purple-600/20" />
-
-    {/* soft glow right */}
-    <div className="absolute -right-32 top-1/4 w-[520px] h-[520px] rounded-full blur-[140px] bg-blue-500/20" />
-  </div>
+      <section className="relative w-full overflow-hidden pt-16 pb-24">
+        {/* Full gradient background (clean, premium, no harsh colors) */}
+        
 
   <div className="max-w-7xl mx-auto px-6">
     <div
@@ -301,6 +284,15 @@ export function CoursesContent() {
       }`}
     >
       <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="absolute inset-0 -z-10">
+          <div className=" inset-0 bg-gradient-to-b from-[#eb0808] via-[#141421] to-[#0b0b14]" />
+
+          {/* soft glow left */}
+          <div className="absolute -left-32 top-1/3 w-[520px] h-[520px] rounded-full blur-[140px] bg-red-600/20" />
+
+          {/* soft glow right */}
+          <div className="absolute -right-32 top-1/4 w-[520px] h-[520px] rounded-full blur-[140px] bg-red-500/20" />
+        </div>
         {/* LEFT */}
         <div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight">
@@ -335,7 +327,7 @@ export function CoursesContent() {
 
 
       {/* CATEGORIES + COURSES */}
-      <section className="max-w-7xl mx-auto px-6 pb-24">
+      <section className="max-w-7xl mx-auto px-6 pb-24 py-9">
         {courseCategories.map((category, categoryIndex) => (
           <div key={category.tag} className="mb-20">
             <div
