@@ -6,17 +6,17 @@ import { useEffect, useRef, useState } from 'react';
 const stats = [
   {
     icon: Users,
-    value: '50K+',
+    value: '1000+',
     label: 'Active Students',
   },
   {
     icon: BookOpen,
-    value: '200+',
+    value: '6+',
     label: 'Expert Courses',
   },
   {
     icon: GraduationCap,
-    value: '100+',
+    value: '10+',
     label: 'Industry Mentors',
   },
   {
@@ -57,7 +57,7 @@ export function Statistics() {
               className={`text-center transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-red-800 mb-2">
+              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#dbf732] mb-2">
                 {stat.value}
               </div>
               <div className="text-white/60 text-sm sm:text-base">{stat.label}</div>
