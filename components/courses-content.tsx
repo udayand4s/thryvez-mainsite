@@ -6,8 +6,7 @@ import { useEffect, useState } from "react";
 
 const featuredCourse = {
   title: "Advanced Bootcamp Strategy",
-  description:
-    "Join the fastest way forward — because the future won’t wait.",
+  description: "Join the fastest way forward — because the future won’t wait.",
   companies: ["CRED", "Swiggy", "Canva", "Zerodha", "Google", "Paytm", "Flipkart"],
   price: "$299",
   duration: "4 weeks",
@@ -169,10 +168,9 @@ const courseCategories = [
 
 export function CoursesContent() {
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => setIsVisible(true), []);
 
-  /* Helper: create avatar gradient based on name initials */
+  /* Avatar Component */
   const Avatar = ({ name }: { name: string }) => {
     const initials = name
       .split(" ")
@@ -180,7 +178,6 @@ export function CoursesContent() {
       .slice(0, 2)
       .join("")
       .toUpperCase();
-    // deterministic color choice
     const colors = [
       "from-rose-500 to-yellow-400",
       "from-indigo-500 to-purple-600",
@@ -189,6 +186,7 @@ export function CoursesContent() {
       "from-sky-500 to-indigo-500",
     ];
     const idx = name.charCodeAt(0) % colors.length;
+
     return (
       <div
         className={`w-12 h-12 rounded-full bg-gradient-to-br ${colors[idx]} flex items-center justify-center text-white font-semibold`}
@@ -198,33 +196,26 @@ export function CoursesContent() {
     );
   };
 
-  /* Card component (keeps consistent styling) */
+  /* Course Card */
   const CourseCard = ({ course, delay }: { course: any; delay?: number }) => {
     return (
       <article
-        className={`bg-gradient-to-tr from-black/40 to-white/2 border border-white/5 rounded-2xl overflow-hidden transition transform hover:-translate-y-1`}
-        style={{
-          transitionDelay: `${delay ?? 0}ms`,
-        }}
+        className="bg-gradient-to-tr from-black/40 to-white/5 border border-white/5 rounded-2xl overflow-hidden transition transform hover:-translate-y-1"
+        style={{ transitionDelay: `${delay ?? 0}ms` }}
       >
-        {/* visual / thumbnail strip */}
         <div className="relative h-40 sm:h-44 lg:h-36">
-          {/* softened image with overlay */}
           <img
             src={course.image}
             alt={course.subtitle}
-            className="w-full h-full object-cover brightness-[0.55] contrast-[0.9] SATURATE-90"
-            style={{ objectPosition: "center" }}
+            className="w-full h-full object-cover brightness-[0.55] contrast-[0.9]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-          {/* top-left small badge */}
           <div className="absolute top-3 left-3 inline-flex items-center gap-2 bg-black/40 px-3 py-1 rounded-full border border-white/10 text-xs text-white/70">
             <Star className="w-4 h-4 text-yellow-400" />
-            <span className="font-medium">{course.rating ?? "4.8"}</span>
+            <span className="font-medium">{course.rating}</span>
           </div>
         </div>
 
-        {/* content */}
         <div className="p-4 sm:p-5">
           <div className="flex items-start justify-between gap-4">
             <div className="flex items-start gap-3">
@@ -237,27 +228,26 @@ export function CoursesContent() {
                   {course.subtitle}
                 </h3>
                 <div className="text-xs text-white/50 mt-1">
-                  {course.instructor} • {course.role} <span className="mx-2">•</span>{" "}
-                  {course.company}
+                  {course.instructor} • {course.role} • {course.company}
                 </div>
               </div>
             </div>
 
             <div className="text-right">
-              <div className="text-sm text-white/50">{course.hours ?? "—"}</div>
-              <div className="text-xl font-bold text-white mt-2">{course.price ?? "-"}</div>
+              <div className="text-sm text-white/50">{course.hours}</div>
+              <div className="text-xl font-bold text-white mt-2">{course.price}</div>
             </div>
           </div>
 
-          <div className="mt-4 flex items-center justify-between gap-3">
+          <div className="mt-4 flex items-center justify-between">
             <div className="flex items-center gap-3 text-xs text-white/50">
               <div className="inline-flex items-center gap-1">
                 <Clock className="w-4 h-4" />
-                <span>{course.hours ?? "—"}</span>
+                <span>{course.hours}</span>
               </div>
               <div className="inline-flex items-center gap-1">
                 <Users className="w-4 h-4" />
-                <span>{course.students?.toLocaleString?.() ?? "—"}</span>
+                <span>{course.students.toLocaleString()}</span>
               </div>
             </div>
 
@@ -272,78 +262,77 @@ export function CoursesContent() {
 
   return (
     <div className="w-full">
-      {/* HERO (full-bleed) */}
+
+      {/* FIXED HERO — WITH SUBTLE RED GLOW */}
       <section className="relative w-full overflow-hidden pt-16 pb-24">
-        {/* Full gradient background (clean, premium, no harsh colors) */}
         
-
-  <div className="max-w-7xl mx-auto px-6">
-    <div
-      className={`relative p-0 transition-all duration-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-      }`}
-    >
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
-        <div className="absolute inset-0 -z-10">
-          <div className=" inset-0 bg-gradient-to-b from-[#eb0808] via-[#141421] to-[#0b0b14]" />
-
-          {/* soft glow left */}
-          <div className="absolute -left-32 top-1/3 w-[520px] h-[520px] rounded-full blur-[140px] bg-red-600/20" />
-
-          {/* soft glow right */}
-          <div className="absolute -right-32 top-1/4 w-[520px] h-[520px] rounded-full blur-[140px] bg-red-500/20" />
+        {/*  SUBTLE RED GLOW (blur + low opacity) */}
+        <div className="absolute inset-0">
+          <div className="absolute left-1/2 -translate-x-1/2 top-20 w-[600px] h-[600px] rounded-full bg-red-700/20 blur-[140px]" />
         </div>
-        {/* LEFT */}
-        <div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight">
-            {featuredCourse.title}
-          </h1>
 
-          <p className="mt-4 text-white/70 max-w-xl">
-            {featuredCourse.description}
-          </p>
+        <div className="max-w-7xl mx-auto px-6">
+          <div
+            className={`relative p-0 transition-all duration-700 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
+          >
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-          <div className="mt-6 flex flex-wrap items-center gap-4">
-            <Button className="bg-white text-black hover:bg-white/90 font-semibold px-5 py-3">
-              Explore Program <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+              {/* LEFT SIDE */}
+              <div>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight">
+                  {featuredCourse.title}
+                </h1>
 
-            <div className="text-sm text-white/50 ml-2">
-              <div>50+ case studies covered</div>
-              <div className="mt-2 flex flex-wrap gap-3 text-xs text-white/40">
-                {featuredCourse.companies.map((c) => (
-                  <span key={c}>{c}</span>
-                ))}
+                <p className="mt-4 text-white/70 max-w-xl">
+                  {featuredCourse.description}
+                </p>
+
+                <div className="mt-6 flex flex-wrap items-center gap-4">
+                  <Button className="bg-white text-black hover:bg-white/90 font-semibold px-5 py-3">
+                    Explore Program <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+
+                  <div className="text-sm text-white/50 ml-2">
+                    <div>50+ case studies covered</div>
+                    <div className="mt-2 flex flex-wrap gap-3 text-xs text-white/40">
+                      {featuredCourse.companies.map((c) => (
+                        <span key={c}>{c}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
+
+              {/* RIGHT COLUMN EMPTY FOR NOW */}
+
             </div>
           </div>
         </div>
+      </section>
 
-        
-      </div>
-    </div>
-  </div>
-</section>
-
-
-      {/* CATEGORIES + COURSES */}
+      {/* CATEGORIES SECTION */}
       <section className="max-w-7xl mx-auto px-6 pb-24 py-9">
         {courseCategories.map((category, categoryIndex) => (
           <div key={category.tag} className="mb-20">
             <div
-              className={`inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/30 border border-white/5 mb-4`}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/30 border border-white/5 mb-4"
               style={{ backdropFilter: "blur(6px)" }}
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              <span className="text-xs text-white/60 uppercase tracking-wide">{category.tag}</span>
+              <span className="w-2 h-2 rounded-full bg-lime-400" />
+              <span className="text-xs text-lime-400 uppercase tracking-wide">
+                {category.tag}
+              </span>
             </div>
 
             <div className="mb-6">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white">{category.title}</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-red-800">
+                {category.title}
+              </h2>
               <p className="mt-2 text-white/60 max-w-2xl">{category.description}</p>
             </div>
 
-            {/* grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {category.courses.map((course, idx) => (
                 <div
@@ -351,7 +340,9 @@ export function CoursesContent() {
                   className={`transition-all duration-700 ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                   }`}
-                  style={{ transitionDelay: `${200 + categoryIndex * 80 + idx * 60}ms` }}
+                  style={{
+                    transitionDelay: `${200 + categoryIndex * 80 + idx * 60}ms`,
+                  }}
                 >
                   <CourseCard course={course} delay={100 + idx * 40} />
                 </div>

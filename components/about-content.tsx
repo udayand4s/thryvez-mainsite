@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { Input } from '@/components/ui/input';
 
 const team = [
   {
@@ -43,6 +44,9 @@ export function AboutContent() {
   return (
     <div>
       <section className="py-20 lg:py-32">
+        <div className="absolute inset-0">
+          <div className="absolute left-1/2 -translate-x-1/2 top-20 w-[600px] h-[600px] rounded-full bg-red-700/20 blur-[140px]" />
+        </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`max-w-4xl mx-auto text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -133,17 +137,23 @@ export function AboutContent() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`max-w-3xl mx-auto text-center transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-              Ready to join us?
+               Want to join us?
             </h2>
             <p className="text-white/60 text-lg mb-8">
-              Start your learning journey today and join thousands of professionals accelerating their careers.
+              Start your journey as a mentor with Thryvez today and be part of a community that’s shaping the future of professional learning.
             </p>
-            <Link href="/courses">
-              <Button size="lg" className="bg-white text-black hover:bg-white/90 font-semibold group">
-                Explore Courses
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </Link>
+            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-8">
+            <Input
+              type="email"
+              placeholder="Enter your email"
+              className="h-14 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-white/30"
+              required
+            />
+            <Button size="lg" className="h-14 px-8 bg-white text-black hover:bg-white/90 font-semibold whitespace-nowrap group">
+              Join now
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </form>
           </div>
         </div>
       </section>

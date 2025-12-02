@@ -9,7 +9,7 @@ export function Newsletter() {
     <section className="py-16 sm:py-20 lg:py-24 bg-black border-t border-white/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-red-800 mb-6">
             Ready to accelerate your growth?
           </h2>
           <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">

@@ -37,17 +37,12 @@ export function Testimonials() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (entry.isIntersecting) setIsVisible(true);
       },
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
@@ -61,10 +56,37 @@ export function Testimonials() {
   const activeTestimonial = testimonials[activeIndex];
 
   return (
-    <section ref={sectionRef} className="py-16 sm:py-20 lg:py-24 bg-black">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="space-y-6 sm:space-y-8">
+    <section
+      ref={sectionRef}
+      className="
+        relative py-16 sm:py-20 lg:py-24 
+      "
+    >
+      {/* 🔴 Stronger red glow */}
+      <div className="
+        pointer-events-none
+        absolute inset-0 
+        bg-[radial-gradient(circle_at_center,rgba(255,40,40,0.13),rgba(0,0,0,0)_45%)]
+      " />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div
+          className={`
+            grid lg:grid-cols-2 gap-8 lg:gap-12 items-center 
+            transition-all duration-700
+            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+          `}
+        >
+          <div className="space-y-6 sm:space-y-8 relative">
+
+            {/* 🔴 Text column glow */}
+          <div className="
+            absolute -left-20 top-0 bottom-0 w-72 
+            bg-gradient-to-r from-[rgba(255,40,40,0.12)] to-transparent 
+            blur-3xl 
+            pointer-events-none
+          " />
+
             <div className="text-4xl sm:text-5xl text-white/20 font-serif">"</div>
             
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
@@ -72,12 +94,18 @@ export function Testimonials() {
             </h2>
 
             <div className="space-y-1">
-              <p className="text-white/60 text-lg italic">{activeTestimonial.name}, {activeTestimonial.role}</p>
-              <p className="text-white/40 text-sm">Member since {activeTestimonial.memberSince}</p>
+              <p className="text-white/60 text-lg italic">
+                {activeTestimonial.name}, {activeTestimonial.role}
+              </p>
+              <p className="text-white/40 text-sm">
+                Member since {activeTestimonial.memberSince}
+              </p>
             </div>
 
             <div className="pt-4">
-              <p className="text-white font-semibold text-xl">{activeTestimonial.company}</p>
+              <p className="text-white font-semibold text-xl">
+                {activeTestimonial.company}
+              </p>
             </div>
 
             <div className="flex gap-2 pt-4">
@@ -85,22 +113,36 @@ export function Testimonials() {
                 <button
                   key={index}
                   onClick={() => setActiveIndex(index)}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    index === activeIndex ? 'w-8 bg-white' : 'w-4 bg-white/20 hover:bg-white/40'
-                  }`}
+                  className={`
+                    h-1.5 rounded-full transition-all duration-300
+                    ${
+                      index === activeIndex
+                        ? 'w-8 bg-lime-400/90'
+                        : 'w-4 bg-lime-400/20 hover:bg-lime-400/40'
+                    }
+                  `}
                 />
               ))}
             </div>
           </div>
 
           <div className="relative">
+
+            {/* 🔴 Glow around image */}
+            <div className="
+              absolute inset-0 
+              bg-[radial-gradient(circle_at_center,rgba(255,40,40,0.15),transparent_70%)]
+              blur-2xl rounded-2xl
+            " />
+
             <div className="aspect-[4/5] relative rounded-2xl overflow-hidden">
               <img
                 src={activeTestimonial.image}
                 alt={activeTestimonial.name}
                 className="w-full h-full object-cover transition-all duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
             </div>
           </div>
         </div>
