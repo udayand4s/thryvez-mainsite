@@ -35,7 +35,7 @@ export function ModernLearner() {
   }, []);
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-muted/30">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={section1Ref} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className={`space-y-4 sm:space-y-6 text-center lg:text-left transition-all duration-700 ${isVisible1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -44,7 +44,7 @@ export function ModernLearner() {
               <span className="block">modern learner</span>
             </h2>
             
-            <p className="text-base sm:text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0">
+            <p className=" sm:text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0 text-black">
               You're serious about education. We're serious about engaging your students and turning them into loyal customers.
             </p>
 
