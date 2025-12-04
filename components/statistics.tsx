@@ -57,7 +57,7 @@ export function Statistics() {
               className={`text-center transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#E2F310] mb-2">
+              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#E2F310]/90 mb-2">
                 {stat.value}
               </div>
               <div className="text-white/60 text-sm sm:text-base">{stat.label}</div>

@@ -261,96 +261,182 @@ export function CoursesContent() {
   };
 
   return (
-    <div className="w-full">
+  <div className="w-full">
 
-      {/* FIXED HERO — WITH SUBTLE RED GLOW */}
-      <section className="relative w-full overflow-hidden pt-16 pb-24">
-        
-        {/*  SUBTLE RED GLOW (blur + low opacity) */}
-        <div className="absolute inset-0">
-          <div className="absolute left-1/2 -translate-x-1/2 top-20 w-[600px] h-[600px] rounded-full bg-red-700/20 blur-[140px]" />
-        </div>
+    {/* HERO SECTION — NEON #E2F310 GLOW RIGHT SIDE */}
+    <section className="relative w-full overflow-hidden pt-16 pb-24">
 
-        <div className="max-w-7xl mx-auto px-6">
-          <div
-            className={`relative p-0 transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
-          >
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Aesthetic nebula (green-yellow glow) */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[700px] h-[700px]">
+        <div className="
+          absolute inset-0 
+          bg-[#E2F310]/10 
+          blur-[160px] 
+          rounded-full 
+          animate-pulse-slow
+        " />
+        <div className="
+          absolute inset-0 
+          bg-[#E2F310]/20 
+          blur-[200px] 
+          rounded-full 
+          opacity-40 
+          animate-float
+        " />
+      </div>
 
-              {/* LEFT SIDE */}
-              <div>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight">
-                  {featuredCourse.title}
-                </h1>
+      <div className="max-w-7xl mx-auto px-6">
+        <div className={`relative transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+        }`}>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-                <p className="mt-4 text-white/70 max-w-xl">
-                  {featuredCourse.description}
-                </p>
+            {/* LEFT TEXT */}
+            <div>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-white via-white to-white/50 bg-clip-text text-transparent leading-tight ">
+                Explore Our Top-Rated Courses
+              </h1>
 
-                <div className="mt-6 flex flex-wrap items-center gap-4">
-                  <Button className="bg-white text-black hover:bg-white/90 font-semibold px-5 py-3">
-                    Explore Program <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
+              <p className="mt-4 text-white/70 max-w-xl">
+                Handpicked by thousands of learners worldwide — now more visual, 
+                more immersive, and taught by domain experts.
+              </p>
 
-                  <div className="text-sm text-white/50 ml-2">
-                    <div>50+ case studies covered</div>
-                    <div className="mt-2 flex flex-wrap gap-3 text-xs text-white/40">
-                      {featuredCourse.companies.map((c) => (
-                        <span key={c}>{c}</span>
-                      ))}
-                    </div>
+              <div className="mt-6 flex flex-wrap items-center gap-4">
+                <Button className="bg-white text-black hover:bg-white/90 font-semibold px-5 py-3">
+                  View All Courses <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+
+                <div className="text-sm text-white/50 ml-2">
+                  <div>Trusted by 10,000+ learners</div>
+                  <div className="mt-2 flex flex-wrap gap-3 text-xs text-white/40">
+                    CRED • Google • Zerodha • Swiggy • Meta
                   </div>
                 </div>
               </div>
-
-              {/* RIGHT COLUMN EMPTY FOR NOW */}
-
             </div>
+
+            {/* RIGHT SIDE EMPTY (keeps layout aligned) */}
+            <div />
+
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      {/* CATEGORIES SECTION */}
-      <section className="max-w-7xl mx-auto px-6 pb-24 py-9">
-        {courseCategories.map((category, categoryIndex) => (
-          <div key={category.tag} className="mb-20">
-            <div
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/30 border border-white/5 mb-4"
-              style={{ backdropFilter: "blur(6px)" }}
-            >
-              <span className="w-2 h-2 rounded-full bg-lime-400" />
-              <span className="text-xs text-lime-400 uppercase tracking-wide">
-                {category.tag}
-              </span>
-            </div>
+    {/* COURSES SECTION */}
+    <section className="max-w-7xl mx-auto px-6 pb-24">
 
-            <div className="mb-6">
-              <h2 className="text-3xl sm:text-4xl font-bold text-red-800">
-                {category.title}
-              </h2>
-              <p className="mt-2 text-white/60 max-w-2xl">{category.description}</p>
-            </div>
+      <h2 className="text-3xl sm:text-4xl font-bold text-[#E2F310]/90 mb-8">
+        Courses
+      </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {category.courses.map((course, idx) => (
-                <div
-                  key={course.id}
-                  className={`transition-all duration-700 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-                  }`}
-                  style={{
-                    transitionDelay: `${200 + categoryIndex * 80 + idx * 60}ms`,
-                  }}
-                >
-                  <CourseCard course={course} delay={100 + idx * 40} />
-                </div>
-              ))}
-            </div>
+      {/* 3 courses only — updated from screenshot */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        {/* Psychology 360 */}
+        <CourseCard
+          course={{
+            title: "Psychology 360",
+            subtitle: "Beginner to Advanced",
+            instructor: "Jivisha Dangi",
+            role: "Senior Psychologist",
+            company: "Psych Insights",
+            image:
+              "psychology.webp",
+            price: "₹5,999",
+            rating: 4.9,
+            students: 153,
+            hours: "16 hours"
+          }}
+        />
+
+        {/* Psychology 360 Self-Paced */}
+        <CourseCard
+          course={{
+            title: "Psychology 360 (Self Paced)",
+            subtitle: "Learn at Your Own Speed",
+            instructor: "Jivisha Dangi",
+            role: "Senior Psychologist",
+            company: "Psych Insights",
+            image:
+              "psychology.webp",
+            price: "₹4,499",
+            rating: 4.6,
+            students: 64,
+            hours: "16 hours"
+          }}
+        />
+
+        {/* Data Science with AI */}
+        <CourseCard
+          course={{
+            title: "Data Science with AI",
+            subtitle: "Hands-On Bootcamp",
+            instructor: "Deepak Kumar",
+            role: "Data Scientist",
+            company: "AI Labs",
+            image:
+              "ds.webp",
+            price: "₹4,499",
+            rating: 4.6,
+            students: 57,
+            hours: "14 hours"
+          }}
+        />
+
+      </div>
+    </section>
+
+    {/* MEET OUR MENTORS SECTION */}
+    <section className="max-w-7xl mx-auto px-6 pb-32">
+      <h2 className="text-3xl sm:text-4xl font-bold text-[#E2F310]/90 mb-8">
+        Meet Our Mentors
+      </h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        {[
+          {
+            name: "Jivisha Dangi",
+            role: "Senior Psychologist",
+            company: "Psych Insights",
+            image:
+              "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=800&q=60",
+          },
+          {
+            name: "Deepak Kumar",
+            role: "Data Scientist",
+            company: "AI Labs",
+            image:
+              "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=60",
+          },
+          {
+            name: "Aarav Malhotra",
+            role: "Behavioral Coach",
+            company: "MindWorks",
+            image:
+              "https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=800&q=60",
+          },
+        ].map((m) => (
+          <div
+            key={m.name}
+            className="rounded-2xl p-6 bg-white/5 backdrop-blur-lg border border-white/10 hover:bg-white/10 transition"
+          >
+            <img
+              src={m.image}
+              alt={m.name}
+              className="w-full h-56 object-cover rounded-xl mb-4"
+            />
+            <h3 className="text-xl font-semibold text-white">{m.name}</h3>
+            <p className="text-white/60 mt-1">{m.role}</p>
+            <p className="text-white/40 text-sm">{m.company}</p>
           </div>
         ))}
-      </section>
-    </div>
+
+      </div>
+    </section>
+
+  </div>
   );
 }

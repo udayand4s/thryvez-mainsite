@@ -53,7 +53,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-white/40">
+        <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-[#E2F310]/90">
           <p>&copy; {new Date().getFullYear()} Thryvez. All rights reserved.</p>
         </div>
       </div>

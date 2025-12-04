@@ -10,7 +10,7 @@ export default function CoursesPage() {
       <main className="flex-1">
         
         <CoursesContent />
-        <Testimonials/>
+        
       </main>
       <Footer />
     </div>

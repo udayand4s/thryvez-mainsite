@@ -8,7 +8,7 @@ const testimonials = [
     role: 'GTM & Strategy',
     company: 'sarvam.ai',
     memberSince: '2024',
-    content: 'The real value of ThryvezX is the community. Every conversation sharpens my thinking. It\'s like having 100+ leaders on speed dial.',
+    content: "The real value of ThryvezX is the community. Every conversation sharpens my thinking. It's like having 100+ leaders on speed dial.",
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
   },
   {
@@ -35,21 +35,19 @@ export function Testimonials() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true);
-      },
-      { threshold: 0.1 }
-    );
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) setIsVisible(true);
+    }, { threshold: 0.1 });
 
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+    const interval = setInterval(
+      () => setActiveIndex(prev => (prev + 1) % testimonials.length),
+      5000
+    );
     return () => clearInterval(interval);
   }, []);
 
@@ -58,37 +56,59 @@ export function Testimonials() {
   return (
     <section
       ref={sectionRef}
-      className="
-        relative py-16 sm:py-20 lg:py-24 
-      "
+      className="relative py-20 sm:py-24 overflow-hidden"
     >
-      {/* 🔴 Stronger red glow */}
-      <div className="
-        pointer-events-none
-        absolute inset-0 
-        bg-[radial-gradient(circle_at_center,rgba(255,40,40,0.13),rgba(0,0,0,0)_45%)]
-      " />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+      {/* 🌌 Animated nebula glow (green + teal) */}
+<div className="absolute inset-0 pointer-events-none">
+  
+  {/* Deep cosmic base */}
+  <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,20,40,0.5)] via-black to-[rgba(10,20,40,0.5)]" />
+
+  {/* Nebula blob 1 — neon green */}
+  <div className="absolute -top-40 -left-20 w-[600px] h-[600px] bg-[#E2F310]/30 blur-[140px] rounded-full animate-pulse-slow" />
+
+  {/* Nebula blob 2 — teal (instead of blue) */}
+  <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-[rgba(0,255,200,0.30)] blur-[160px] rounded-full animate-pulse-slow-delayed" />
+
+  {/* Nebula filament sweep */}
+  <div className="absolute bottom-0 left-1/3 w-[700px] h-[300px] bg-[#E2F310]/15 blur-[120px] rotate-12 animate-nebula-flow" />
+</div>
+
+<style jsx>{`
+  .animate-pulse-slow {
+    animation: pulseSlow 6s ease-in-out infinite;
+  }
+  .animate-pulse-slow-delayed {
+    animation: pulseSlow 7s ease-in-out infinite 1.5s;
+  }
+  .animate-nebula-flow {
+    animation: nebulaFlow 12s ease-in-out infinite;
+  }
+
+  @keyframes pulseSlow {
+    0%, 100% { opacity: 0.22; transform: scale(1); }
+    50% { opacity: 0.32; transform: scale(1.08); }
+  }
+
+  @keyframes nebulaFlow {
+    0%, 100% { opacity: 0.08; transform: translateX(0) scale(1); }
+    50% { opacity: 0.18; transform: translateX(40px) scale(1.06); }
+  }
+`}</style>
+
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div
           className={`
-            grid lg:grid-cols-2 gap-8 lg:gap-12 items-center 
-            transition-all duration-700
+            grid lg:grid-cols-2 gap-12 items-center transition-all duration-700
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
           `}
         >
+          {/* LEFT — Text */}
           <div className="space-y-6 sm:space-y-8 relative">
-
-            {/* 🔴 Text column glow */}
-          <div className="
-            absolute -left-20 top-0 bottom-0 w-72 
-            bg-gradient-to-r from-[rgba(255,40,40,0.12)] to-transparent 
-            blur-3xl 
-            pointer-events-none
-          " />
-
             <div className="text-4xl sm:text-5xl text-white/20 font-serif">"</div>
-            
+
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
               {activeTestimonial.content}
             </h2>
@@ -115,36 +135,27 @@ export function Testimonials() {
                   onClick={() => setActiveIndex(index)}
                   className={`
                     h-1.5 rounded-full transition-all duration-300
-                    ${
-                      index === activeIndex
-                        ? 'w-8 bg-lime-400/90'
-                        : 'w-4 bg-lime-400/20 hover:bg-lime-400/40'
-                    }
+                    ${index === activeIndex
+                      ? 'w-8 bg-[#E2F310]'
+                      : 'w-4 bg-[#E2F310]/30 hover:bg-[#E2F310]/50'}
                   `}
                 />
               ))}
             </div>
           </div>
 
+          {/* RIGHT — Smaller Image */}
           <div className="relative">
-
-            {/* 🔴 Glow around image */}
-            <div className="
-              absolute inset-0 
-              bg-[radial-gradient(circle_at_center,rgba(255,40,40,0.15),transparent_70%)]
-              blur-2xl rounded-2xl
-            " />
-
-            <div className="aspect-[4/5] relative rounded-2xl overflow-hidden">
+            <div className="aspect-[4/5] relative rounded-2xl overflow-hidden w-[74%] mx-auto">
               <img
                 src={activeTestimonial.image}
                 alt={activeTestimonial.name}
                 className="w-full h-full object-cover transition-all duration-500"
               />
-
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
             </div>
           </div>
+
         </div>
       </div>
     </section>

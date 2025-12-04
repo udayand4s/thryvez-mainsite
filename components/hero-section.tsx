@@ -18,7 +18,7 @@ export function HeroSection() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
             <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span className="text-sm text-white/70">
-              Over 50,000+ Students Learning
+              Over 1,000+ Students Learning
             </span>
           </div>
 

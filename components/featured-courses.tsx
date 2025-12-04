@@ -3,80 +3,52 @@ import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Star, Clock, Users, TrendingUp } from 'lucide-react';
+import Image from 'next/image';
+
 
 const courses = [
   {
     id: 1,
-    title: 'Complete Web Development Bootcamp',
-    instructor: 'Sarah Johnson',
+    title: 'Psychology 360',
+    instructor: 'Jivisha Dangi',
     rating: 4.9,
-    students: 12453,
-    price: 89.99,
-    duration: '42 hours',
-    level: 'Beginner',
-    category: 'Development',
+    students: 153,
+    oldprice: 10999,
+    price: 5999,
+    duration: '16 hours',
+    level: 'Intermediate',
+    category: 'Psychology',
     trending: true,
+    image: 'psychology.webp',
   },
   {
     id: 2,
-    title: 'Advanced UI/UX Design Masterclass',
-    instructor: 'Michael Chen',
-    rating: 4.8,
-    students: 8921,
-    price: 79.99,
-    duration: '28 hours',
+    title: 'Psychology 360 (Self Paced)',
+    instructor: 'Jivisha Dangi',
+    rating: 4.6,
+    students: 64,
+    oldprice: 9999,
+    price: 4499,
+    duration: '16 hours',
     level: 'Intermediate',
-    category: 'Design',
-    trending: true,
+    category: 'Psychology',
+    trending: false,
+    image: 'psychology.webp',
   },
   {
     id: 3,
-    title: 'Python for Data Science & Machine Learning',
-    instructor: 'Dr. Emily Rodriguez',
-    rating: 4.9,
-    students: 15678,
-    price: 99.99,
-    duration: '56 hours',
+    title: 'Data Science with AI',
+    instructor: 'Deepak Kumar',
+    rating: 4.6,
+    students: 57,
+    oldprice: 9999,
+    price: 4499,
+    duration: '14 hours',
     level: 'Advanced',
     category: 'Data Science',
-    trending: false,
-  },
-  {
-    id: 4,
-    title: 'Digital Marketing Strategy 2024',
-    instructor: 'James Wilson',
-    rating: 4.7,
-    students: 6543,
-    price: 69.99,
-    duration: '18 hours',
-    level: 'Beginner',
-    category: 'Marketing',
-    trending: false,
-  },
-  {
-    id: 5,
-    title: 'iOS App Development with Swift',
-    instructor: 'Lisa Anderson',
-    rating: 4.8,
-    students: 5432,
-    price: 94.99,
-    duration: '38 hours',
-    level: 'Intermediate',
-    category: 'Mobile Dev',
     trending: true,
-  },
-  {
-    id: 6,
-    title: 'Financial Analysis & Investment',
-    instructor: 'Robert Martinez',
-    rating: 4.6,
-    students: 4321,
-    price: 84.99,
-    duration: '24 hours',
-    level: 'Intermediate',
-    category: 'Finance',
-    trending: false,
-  },
+    image: 'ds.webp',
+  }
 ];
 
 export function FeaturedCourses() {
@@ -85,7 +57,7 @@ export function FeaturedCourses() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Badge variant="outline" className="mb-4">Featured Courses</Badge>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-red-800">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#E2F310]/90">
             Most Popular Courses
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -98,6 +70,12 @@ export function FeaturedCourses() {
             <Card key={course.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <CardHeader className="space-y-0 pb-4">
                 <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg mb-4 relative overflow-hidden">
+                    <Image
+                      src={course.image}
+                      alt={course.title}
+                      fill
+                      className="object-cover"
+                    />
                   {course.trending && (
                     <div className="absolute top-3 left-3 flex items-center gap-1 px-2 py-1 rounded-full bg-background/90 backdrop-blur-sm text-xs font-medium">
                       <TrendingUp className="h-3 w-3 text-primary" />
@@ -136,7 +114,20 @@ export function FeaturedCourses() {
                 </div>
               </CardContent>
               <CardFooter className="flex items-center justify-between pt-4 border-t">
-                <div className="text-2xl font-bold">${course.price}</div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-muted-foreground line-through text-sm">
+                    ₹{course.oldprice.toLocaleString()}
+                  </span>
+
+                  <span className="text-2xl font-bold text-white">
+                    ₹{course.price.toLocaleString()}
+                  </span>
+
+                  {/* <span className="ml-1 px-2 py-0.5 rounded-full bg-[#E2F310]/20 text-[#E2F310]/90 text-xs">
+                    Save {Math.round(((course.oldprice - course.price) / course.oldprice) * 100)}%
+                  </span> */}
+                </div>
+
                 <Button>Enroll Now</Button>
               </CardFooter>
             </Card>
