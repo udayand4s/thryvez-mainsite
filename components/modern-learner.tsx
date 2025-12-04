@@ -39,7 +39,7 @@ export function ModernLearner() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={section1Ref} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className={`space-y-4 sm:space-y-6 text-center lg:text-left transition-all duration-700 ${isVisible1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#dbf732]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#E2F310]">
               Made for the
               <span className="block">modern learner</span>
             </h2>
@@ -232,7 +232,7 @@ export function ModernLearner() {
           </div>
 
           <div className={`order-1 lg:order-2 space-y-4 sm:space-y-6 text-center lg:text-left transition-all duration-700 ${isVisible2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-lime-400">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#E2F310]">
               More time for
               <span className="block">what matters</span>
             </h2>
