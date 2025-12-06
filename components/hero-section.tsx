@@ -7,8 +7,8 @@ export function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-black">
       {/* === NEON BLOBS === */}
-      <div className="absolute top-0 left-0 w-[450px] h-[450px] bg-[#E2F310] opacity-40 blur-[180px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-[-150px] right-[-100px] w-[550px] h-[550px] bg-[#E2F310] opacity-40 blur-[220px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-0 w-[450px] h-[450px] bg-[#E2F310] opacity-90 blur-[180px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-[-150px] right-[-100px] w-[550px] h-[550px] bg-[#E2F310] opacity-90 blur-[220px] rounded-full pointer-events-none" />
 
       {/* === MAIN GRID (TEXT LEFT + PHONE RIGHT) === */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 items-center">

@@ -3,8 +3,42 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { ThreeDMarquee } from "@/components/ui/3d-marquee";
 
 export function ModernLearner() {
+   const images = [
+    "https://assets.aceternity.com/cloudinary_bkp/3d-card.png",
+    "https://assets.aceternity.com/animated-modal.png",
+    "https://assets.aceternity.com/animated-testimonials.webp",
+    "https://assets.aceternity.com/cloudinary_bkp/Tooltip_luwy44.png",
+    "https://assets.aceternity.com/github-globe.png",
+    "https://assets.aceternity.com/glare-card.png",
+    "https://assets.aceternity.com/layout-grid.png",
+    "https://assets.aceternity.com/flip-text.png",
+    "https://assets.aceternity.com/hero-highlight.png",
+    "https://assets.aceternity.com/carousel.webp",
+    "https://assets.aceternity.com/placeholders-and-vanish-input.png",
+    "https://assets.aceternity.com/shooting-stars-and-stars-background.png",
+    "https://assets.aceternity.com/signup-form.png",
+    "https://assets.aceternity.com/cloudinary_bkp/stars_sxle3d.png",
+    "https://assets.aceternity.com/spotlight-new.webp",
+    "https://assets.aceternity.com/cloudinary_bkp/Spotlight_ar5jpr.png",
+    "https://assets.aceternity.com/cloudinary_bkp/Parallax_Scroll_pzlatw_anfkh7.png",
+    "https://assets.aceternity.com/tabs.png",
+    "https://assets.aceternity.com/cloudinary_bkp/Tracing_Beam_npujte.png",
+    "https://assets.aceternity.com/cloudinary_bkp/typewriter-effect.png",
+    "https://assets.aceternity.com/glowing-effect.webp",
+    "https://assets.aceternity.com/hover-border-gradient.png",
+    "https://assets.aceternity.com/cloudinary_bkp/Infinite_Moving_Cards_evhzur.png",
+    "https://assets.aceternity.com/cloudinary_bkp/Lamp_hlq3ln.png",
+    "https://assets.aceternity.com/macbook-scroll.png",
+    "https://assets.aceternity.com/cloudinary_bkp/Meteors_fye3ys.png",
+    "https://assets.aceternity.com/cloudinary_bkp/Moving_Border_yn78lv.png",
+    "https://assets.aceternity.com/multi-step-loader.png",
+    "https://assets.aceternity.com/vortex.png",
+    "https://assets.aceternity.com/wobble-card.png",
+    "https://assets.aceternity.com/world-map.webp",
+  ];
   const [isVisible1, setIsVisible1] = useState(false);
   const [isVisible2, setIsVisible2] = useState(false);
   const section1Ref = useRef<HTMLDivElement>(null);
@@ -45,26 +79,33 @@ export function ModernLearner() {
             </h2>
             
             <p className=" sm:text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0 text-black">
-              You're serious about education. We're serious about engaging your students and turning them into loyal customers.
+              We don’t believe India has a talent problem. What we have is a bridge problem-the gap between ambition and opportunity. For every student who’s tired of outdated syllabuses. For every professional who feels stuck. For every dreamer who wants to do more than survive the competition
             </p>
 
             <div className="space-y-2 sm:space-y-3 inline-block text-left">
               <div className="flex items-start gap-2 sm:gap-3">
                 <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm sm:text-base">Innovative student dashboard</span>
+                <span className="text-sm sm:text-base">Constant, ongoing support and Guidance
+</span>
               </div>
               <div className="flex items-start gap-2 sm:gap-3">
                 <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm sm:text-base">Highly-rated mobile app</span>
+                <span className="text-sm sm:text-base">Learn directly from experienced professionals</span>
               </div>
               <div className="flex items-start gap-2 sm:gap-3">
                 <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm sm:text-base">Drip content</span>
+                <span className="text-sm sm:text-base">Network, collaborate, and grow with peers</span>
               </div>
             </div>
           </div>
 
-          <div className={`relative flex items-center justify-center transition-all duration-700 delay-200 ${isVisible1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className={`transition-all duration-700 delay-200 ${isVisible1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="mx-auto my-10 max-w-7xl rounded-2xl bg-gray-950/5 ring-1 ring-neutral-700/10 dark:bg-neutral-800">
+              <ThreeDMarquee images={images} />
+            </div>
+          </div>
+
+          {/* <div className={`relative flex items-center justify-center transition-all duration-700 delay-200 ${isVisible1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full">
               <div className="relative z-10 transform sm:-rotate-6 w-full max-w-[240px] sm:max-w-[256px]">
                 <Card className="shadow-2xl border-4 sm:border-8 border-background">
@@ -143,7 +184,7 @@ export function ModernLearner() {
                 </Card>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div ref={section2Ref} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mt-16 sm:mt-20 lg:mt-24">
@@ -238,29 +279,29 @@ export function ModernLearner() {
             </h2>
             
             <p className="text-base sm:text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0">
-              We automate the operational headaches so you can keep growing your business without adding busywork.
+              This is our way of rewriting the script. Not just for us, but for an entire generation that refuses to settle. Welcome to Thryve Z. Where we don’t just prepare you for the future— we help you create it.
             </p>
 
             <div className="space-y-2 sm:space-y-3 inline-block text-left">
               <div className="flex items-start gap-2 sm:gap-3">
                 <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm sm:text-base">Drag-and-drop course builders</span>
+                <span className="text-sm sm:text-base">Time to stop surviving and start thriving</span>
               </div>
               <div className="flex items-start gap-2 sm:gap-3">
                 <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm sm:text-base">Built-in AI creation and translation tools</span>
+                <span className="text-sm sm:text-base">Time to choose passion over pressure</span>
               </div>
               <div className="flex items-start gap-2 sm:gap-3">
                 <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm sm:text-base">Sales and VAT tax handling</span>
+                <span className="text-sm sm:text-base">Time to bet on yourself, not the algorithm</span>
               </div>
               <div className="flex items-start gap-2 sm:gap-3">
                 <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm sm:text-base">Tax filing and affiliate payouts</span>
+                <span className="text-sm sm:text-base">Time to create opportunities instead of waiting for them</span>
               </div>
               <div className="flex items-start gap-2 sm:gap-3">
                 <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm sm:text-base">Assisted migration and custom support</span>
+                <span className="text-sm sm:text-base">Time to learn from mentors who’ve already cracked the code</span>
               </div>
             </div>
           </div>
