@@ -23,13 +23,14 @@ export const ThreeDMarquee = ({
       )}
     >
       <div className="flex size-full items-center justify-center">
-        <div className="size-[1720px] shrink-0 scale-50 sm:scale-75 lg:scale-100">
+        <div className="w-[900px] h-[900px] sm:w-[1400px] sm:h-[1400px] lg:w-[1720px] lg:h-[1720px] shrink-0 scale-50 sm:scale-75 lg:scale-100">
           <div
             style={{
               transform: "rotateX(55deg) rotateY(0deg) rotateZ(-45deg)",
             }}
-            className="relative top-96 right-[50%] grid size-full origin-top-left grid-cols-4 gap-8 transform-3d"
+            className="relative top-40 sm:top-60 lg:top-96 right-1/2 grid size-full origin-top-left grid-cols-4 gap-8 transform-3d"
           >
+
             {chunks.map((subarray, colIndex) => (
               <motion.div
                 animate={{ y: colIndex % 2 === 0 ? 100 : -100 }}

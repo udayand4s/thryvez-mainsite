@@ -15,15 +15,14 @@ export function HeroSection() {
 
         {/* === TEXT CONTENT === */}
         <div className="max-w-4xl py-20 lg:py-32">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
-            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-sm text-white/70">
-              Over 1,000+ Students Learning
+          <div className="inline-flex items-center gap-2 mb-8">
+            <span className="text-3xl text-white font-bold tracking-tight">
+              Thryve<span className="text-[#E2F310]"> Z</span>
             </span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
-            <span className="text-white">India's next gen</span>
+            <span className="text-[#e2f310]">India's next gen</span>
             <br />
             <span className="bg-gradient-to-r from-white via-white to-white/50 bg-clip-text text-transparent">
               Virtual Creative Lab
@@ -31,8 +30,8 @@ export function HeroSection() {
           </h1>
 
           <p className="text-lg sm:text-xl text-white/60 max-w-2xl mb-10">
-            Join thousands of professionals mastering in-demand skills. Learn
-            from industry experts and accelerate your career growth.
+            A digital space where young creatives build bold skills, think originally, 
+            and craft their own identitynot by memorising, but by doing.
           </p>
 
           {/* --- BUTTONS FIXED SPACING --- */}
@@ -62,7 +61,7 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-wrap items-center gap-x-10 gap-y-4">
-              {['Google', 'Meta', 'Amazon', 'Microsoft', 'Netflix'].map(
+              {['Zepto', 'Blinkit', 'Fortis', 'Apollo', 'Samsung'].map(
                 (company) => (
                   <span
                     key={company}
@@ -79,9 +78,9 @@ export function HeroSection() {
         {/* === PHONE MOCKUP (RESPONSIVE) === */}
         <div className="flex justify-center lg:justify-end lg:pr-10 mt-10 mb-10 lg:-mt-20">
           <img
-            src="/mockup.png"
+            src="/mockup.webp"
             alt="App preview"
-            className="w-[220px] sm:w-[260px] lg:w-[280px] drop-shadow-[0_25px_45px_rgba(0,0,0,0.8)]"
+            className="w-[420px] sm:w-[260px] lg:w-[280px] drop-shadow-[0_25px_45px_rgba(0,0,0,0.8)]"
           />
         </div>
 
