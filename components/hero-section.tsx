@@ -44,14 +44,7 @@ export function HeroSection() {
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
 
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-base"
-            >
-              <Play className="mr-2 h-4 w-4" />
-              Watch Demo
-            </Button>
+            
           </div>
 
           {/* --- TRUSTED BY SECTION FIXED --- */}
@@ -80,7 +73,7 @@ export function HeroSection() {
           <img
             src="/mockup.webp"
             alt="App preview"
-            className="w-[420px] sm:w-[260px] lg:w-[280px] drop-shadow-[0_25px_45px_rgba(0,0,0,0.8)]"
+            className="w-[420px] sm:w-[260px] lg:w-[420px] drop-shadow-[0_25px_45px_rgba(0,0,0,0.8)]"
           />
         </div>
 

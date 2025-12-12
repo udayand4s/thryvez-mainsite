@@ -99,13 +99,13 @@ export function ModernLearner() {
             </div>
           </div>
 
-          <div className={`transition-all duration-700 delay-200 ${isVisible1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          {/* <div className={`transition-all duration-700 delay-200 ${isVisible1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="mx-auto my-10 max-w-7xl rounded-2xl bg-gray-950/5 ring-1 ring-neutral-700/10 dark:bg-neutral-800">
               <ThreeDMarquee images={images} />
             </div>
-          </div>
+          </div> */}
 
-          {/* <div className={`relative flex items-center justify-center transition-all duration-700 delay-200 ${isVisible1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className={`relative flex items-center justify-center transition-all duration-700 delay-200 ${isVisible1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full">
               <div className="relative z-10 transform sm:-rotate-6 w-full max-w-[240px] sm:max-w-[256px]">
                 <Card className="shadow-2xl border-4 sm:border-8 border-background">
@@ -184,7 +184,7 @@ export function ModernLearner() {
                 </Card>
               </div>
             </div>
-          </div> */}
+          </div> 
         </div>
 
         <div ref={section2Ref} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mt-16 sm:mt-20 lg:mt-24">
