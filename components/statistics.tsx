@@ -5,18 +5,18 @@ import { useEffect, useRef, useState } from 'react';
 const stats = [
   {
     value: '1000+',
-    label: 'by Teachable and Hotmart creators',
-    prefix: 'earned',
-  },
-  {
-    value: '100M+',
-    label: 'served on Teachable',
+    label: 'Active learners',
     prefix: 'students',
   },
   {
-    value: '180',
-    label: 'using Teachable',
-    prefix: 'countries',
+    value: '10+',
+    label: 'on Thryve Z',
+    prefix: 'courses',
+  },
+  {
+    value: '98%',
+    label: 'using our platforms',
+    prefix: 'rating',
   },
 ];
 
@@ -42,7 +42,7 @@ export function Statistics() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+    <section ref={sectionRef} className="py-16 sm:py-20 lg:py-24 bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 max-w-6xl mx-auto">
           {stats.map((stat, index) => (
@@ -56,10 +56,10 @@ export function Statistics() {
               {/* Value and Prefix */}
               <div className="mb-4">
                 <div className="flex items-baseline justify-center gap-2 mb-1">
-                  <span className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight">
+                  <span className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight">
                     {stat.value}
                   </span>
-                  <span className="text-xl sm:text-2xl lg:text-3xl font-medium text-gray-900">
+                  <span className="text-xl sm:text-2xl lg:text-3xl font-medium text-white/80">
                     {stat.prefix}
                   </span>
                 </div>
@@ -69,7 +69,7 @@ export function Statistics() {
               </div>
 
               {/* Label */}
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed px-2">
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed px-2">
                 {stat.label}
               </p>
             </div>
