@@ -1,14 +1,16 @@
+'use client'
 import React from 'react';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Star, Clock, Users, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 
 const courses = [
   {
-    id: 1,
+    id: 'psychology360',
     title: 'Psychology 360',
     instructor: 'Jivisha Dangi',
     rating: 4.9,
@@ -22,7 +24,7 @@ const courses = [
     image: 'psychology.webp',
   },
   {
-    id: 2,
+    id: 'psychology360',
     title: 'Psychology 360 (Self Paced)',
     instructor: 'Jivisha Dangi',
     rating: 4.6,
@@ -67,7 +69,7 @@ export function FeaturedCourses() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {courses.map((course) => (
-            <Card key={course.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <Card key={course.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-xl">
               <CardHeader className="space-y-0 pb-4">
                 <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg mb-4 relative overflow-hidden">
                     <Image
@@ -84,9 +86,11 @@ export function FeaturedCourses() {
                   )}
                   <Badge className="absolute top-3 right-3">{course.category}</Badge>
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
-                    <Button size="lg" className="rounded-full">
-                      View Course
-                    </Button>
+                    <Link href={`/courses/${course.id}`}>
+                      <Button size="lg" className="rounded-full">
+                        View Course
+                      </Button>
+                    </Link>
                   </div>
                 </div>
                 <div className="flex items-center justify-between mb-2">
@@ -113,7 +117,7 @@ export function FeaturedCourses() {
                   </div>
                 </div>
               </CardContent>
-              <CardFooter className="flex items-center justify-between pt-4 border-t">
+              {/* <CardFooter className="flex items-center justify-between pt-4 border-t">
                 <div className="flex items-baseline gap-2">
                   <span className="text-muted-foreground line-through text-sm">
                     ₹{course.oldprice.toLocaleString()}
@@ -123,21 +127,25 @@ export function FeaturedCourses() {
                     ₹{course.price.toLocaleString()}
                   </span>
 
-                  {/* <span className="ml-1 px-2 py-0.5 rounded-full bg-[#E2F310]/20 text-[#E2F310]/90 text-xs">
+                   <span className="ml-1 px-2 py-0.5 rounded-full bg-[#E2F310]/20 text-[#E2F310]/90 text-xs">
                     Save {Math.round(((course.oldprice - course.price) / course.oldprice) * 100)}%
-                  </span> */}
+                  </span> 
                 </div>
 
                 <Button>Enroll Now</Button>
-              </CardFooter>
+              </CardFooter> */}
             </Card>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="gap-2">
-            View All Courses
-          </Button>
+          
+          <Link href="/courses">
+            <Button variant="outline" size="lg" className="gap-2">
+              View All Courses
+            </Button>
+          </Link>
+          
         </div>
       </div>
     </section>

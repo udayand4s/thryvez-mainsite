@@ -32,7 +32,7 @@ export default function Psychology360Page() {
     {q:"How is certification awarded?",a:"Complete lessons, assignments and a capstone project. A verified certificate is issued on passing evaluation."}
   ];
 
-  const [openC, setOpenC] = useState<number|null>(null);
+  const [openC, setOpenC] = useState<number>(0);
   const [openF, setOpenF] = useState<number|null>(null);
 
   return (
@@ -52,9 +52,7 @@ export default function Psychology360Page() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-24 w-full">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.8}}>
-              <motion.span className="inline-block px-5 py-2 rounded-full text-sm bg-[#e2f310]/20 text-[#e2f310] font-medium border border-[#e2f310]/30 backdrop-blur-sm" initial={{scale:0.9}} animate={{scale:1}} transition={{delay:0.2}}>
-                ✨ Applied Psychology Program
-              </motion.span>
+              
               <h1 className="mt-8 text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tight">
                 Psychology 360<br/>
                 <span className="text-[#e2f310]">Understand people.</span><br/>
@@ -128,17 +126,39 @@ export default function Psychology360Page() {
 
           <div className="grid md:grid-cols-[240px_1fr] gap-8">
             {/* Phase Sidebar */}
-            <div className="space-y-2">
-              {curriculum.map((c,idx)=>(
-                <button
-                  key={c.phase}
-                  onClick={()=>setOpenC(idx)}
-                  className={`w-full text-left px-4 py-3 rounded-lg transition-all ${openC===idx?'bg-white/10 text-white':'text-white/50 hover:text-white/80 hover:bg-white/5'}`}
-                >
-                  <div className="text-xs text-white/60 mb-1">{c.phase}</div>
-                  <div className="text-sm font-medium">{c.title}</div>
-                </button>
-              ))}
+            <div className="relative pl-6">
+              {/* The Background Track */}
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-white/10 rounded-full" />
+
+              {/* The Animated Progress Fill */}
+              <motion.div 
+                className="absolute left-0 top-0 w-1 bg-[#e2f310] rounded-full shadow-[0_0_15px_rgba(226,243,16,0.5)]"
+                initial={false}
+                animate={{ 
+                  height: `${((openC + 1) / curriculum.length) * 100}%` 
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              />
+
+              <div className="space-y-2">
+                {curriculum.map((c, idx) => (
+                  <button
+                    key={c.phase}
+                    onClick={() => setOpenC(idx)}
+                    className={`w-full text-left px-4 py-3 rounded-lg transition-all relative group ${
+                      openC === idx ? 'bg-white/10 text-white' : 'text-white/50 hover:text-white/80 hover:bg-white/5'
+                    }`}
+                  >
+                    {/* Optional: Indicator Dot per Phase */}
+                    <div className={`absolute -left-[27px] top-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full border-2 border-black transition-colors duration-300 ${
+                      openC >= idx ? 'bg-[#e2f310]' : 'bg-neutral-800'
+                    }`} />
+                    
+                    <div className="text-xs text-white/60 mb-1">{c.phase}</div>
+                    <div className="text-sm font-medium">{c.title}</div>
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Content Panel */}
@@ -210,7 +230,7 @@ export default function Psychology360Page() {
         <div className="absolute top-1/2 left-0 h-[500px] w-[500px] rounded-full bg-purple-500/5 blur-[120px]"/>
         <div className="max-w-7xl mx-auto px-6 relative">
           <div className="mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Meet Your <span className="bg-gradient-to-r from-[#e2f310] to-orange-400 bg-clip-text text-transparent">Mentors</span></h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Meet Your <span className=" text-[#e2f310] bg-clip-text">Mentors</span></h2>
             <p className="text-white/70 text-lg">Expert practitioners who bring real-world psychology to life</p>
           </div>
           <div className="grid sm:grid-cols-3 gap-6">
@@ -245,7 +265,7 @@ export default function Psychology360Page() {
         <div className="absolute top-0 right-1/4 h-[400px] w-[400px] rounded-full bg-[#e2f310]/5 blur-[100px]"/>
         <div className="max-w-5xl mx-auto px-6 text-center relative">
           <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Earn Your <span className="bg-gradient-to-r from-[#e2f310] to-orange-400 bg-clip-text text-transparent">Certification</span></h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Earn Your <span className="text-[#e2f310]">Certification</span></h2>
             <p className="mt-4 text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">Complete all lessons, assignments, and submit a capstone. Upon evaluation you receive a verified Psychology 360 certificate — ideal for portfolios, LinkedIn and resumes.</p>
             <div className="mt-12 inline-flex items-center gap-8 bg-gradient-to-br from-white/10 to-white/5 p-8 rounded-3xl border border-white/20 backdrop-blur-xl shadow-2xl">
               <div className="relative">
@@ -270,7 +290,7 @@ export default function Psychology360Page() {
         <div className="max-w-6xl mx-auto px-6 relative">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div initial={{opacity:0,x:-20}} whileInView={{opacity:1,x:0}} viewport={{once:true}}>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to join <span className="bg-gradient-to-r from-[#e2f310] to-orange-400 bg-clip-text text-transparent">Psychology 360?</span></h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to join <span className="text-[#e2f310]">Psychology 360?</span></h2>
               <p className="text-white/70 text-lg max-w-lg leading-relaxed">Live weekly learning, exclusive community perks and project-based evaluations. Start building applied psychology skills today.</p>
             </motion.div>
             <motion.div initial={{opacity:0,x:20}} whileInView={{opacity:1,x:0}} viewport={{once:true}}>
@@ -284,8 +304,8 @@ export default function Psychology360Page() {
                 <div className="border-t border-white/10 pt-6">
                   <div className="flex items-end justify-between mb-6">
                     <div>
-                      <div className="text-sm text-white/60 line-through">₹24,999</div>
-                      <div className="text-5xl font-bold"><span className="bg-gradient-to-r from-[#e2f310] to-orange-400 bg-clip-text text-transparent">₹19,999</span><span className="text-base text-white/70 font-normal">/year</span></div>
+                      <div className="text-sm text-white/60 line-through">₹8,999</div>
+                      <div className="text-5xl font-bold"><span className=" text-[#e2f310]">₹5,999</span><span className="text-base text-white/70 font-normal"></span></div>
                     </div>
                     <div className="px-4 py-2 rounded-xl bg-[#e2f310]/20 text-[#e2f310] text-sm font-semibold">Save 20%</div>
                   </div>

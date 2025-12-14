@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
+import Link from 'next/link';
 
 export function HeroSection() {
   return (
@@ -36,6 +37,7 @@ export function HeroSection() {
 
           {/* --- BUTTONS FIXED SPACING --- */}
           <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-16">
+            <Link href="/courses">
             <Button
               size="lg"
               className="bg-white text-black hover:bg-white/90 font-semibold px-6 py-6 text-base group"
@@ -43,6 +45,7 @@ export function HeroSection() {
               Explore Courses
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
+            </Link>
 
             
           </div>
