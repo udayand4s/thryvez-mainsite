@@ -3,7 +3,7 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
-import { ThreeDMarquee } from "@/components/ui/3d-marquee";
+
 
 export function ModernLearner() {
    const images = [
