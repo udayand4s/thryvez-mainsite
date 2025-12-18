@@ -81,6 +81,8 @@ export function HeroSection() {
         </div>
 
       </div>
+      <div className="pointer-events-none absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-black" />
+
     </section>
   );
 }

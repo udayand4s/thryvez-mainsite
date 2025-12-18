@@ -45,6 +45,8 @@ export function Statistics() {
 
   return (
     <section ref={sectionRef} className="py-16 sm:py-20 lg:py-24 bg-black">
+      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-[#e2f310]/10 blur-[120px]" />
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 max-w-6xl mx-auto">
         {stats.map((stat, index) => (
@@ -69,7 +71,7 @@ export function Statistics() {
                 via-[#e2f310] 
                 to-[#434804]
               "
-              animate={false}
+              animate={true}
             >
               {/* Value + Prefix */}
               <div className="mb-4">
@@ -97,5 +99,6 @@ export function Statistics() {
         </div>
       </div>
     </section>
+    
   );
 }
