@@ -197,3 +197,4 @@ export function FeaturedCourses() {
     </section>
   );
 }
+ 
