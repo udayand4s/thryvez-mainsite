@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { CheckCircle, ArrowRight, Star, Sparkles } from "lucide-react";
+import { CheckCircle, ArrowRight, Star, Sparkles, ClipboardCheck } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -182,14 +182,28 @@ export default function Psychology360Page() {
 
                   <div className="mb-6">
                     <h3 className="text-sm font-semibold text-white/60 mb-4 uppercase tracking-wider">What will you learn?</h3>
-                    <ul className="space-y-3">
-                      {curriculum[openC].bullets.map((b,i)=>(
-                        <li key={i} className="flex items-start gap-3 text-white/80">
-                          <CheckCircle className="h-5 w-5 text-[#e2f310] mt-0.5 flex-shrink-0"/>
-                          <span>{b}</span>
+                    <ul className="space-y-6">
+                      {curriculum[openC].bullets.map((b, i) => (
+                        <li key={i} className="space-y-2">
+
+                          {/* MAIN LESSON */}
+                          <div className="flex items-start gap-3 text-white/90">
+                            <CheckCircle className="h-5 w-5 text-[#e2f310] mt-0.5 flex-shrink-0" />
+                            <span className="leading-relaxed">{b}</span>
+                          </div>
+
+                          {/* SUB ITEM / NOTES / ASSIGNMENT */}
+                          <div className="flex items-start gap-3 pl-8 text-white/60">
+                            <ClipboardCheck className="h-4 w-4 text-[#e2f310]/80 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm leading-relaxed">
+                              {b}
+                            </span>
+                          </div>
+
                         </li>
                       ))}
                     </ul>
+
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-4 pt-6 border-t border-white/10">
