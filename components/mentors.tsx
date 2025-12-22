@@ -72,7 +72,7 @@ export function Testimonials() {
       ref={sectionRef}
       className="relative py-20 sm:py-24 overflow-hidden"
     >
-      {/* 🌌 Animated nebula glow */}
+      {/* Animated nebula glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,20,40,0.5)] via-black to-[rgba(10,20,40,0.5)]" />
         <div className="absolute -top-40 -left-20 w-[600px] h-[600px] bg-[#E2F310]/30 blur-[140px] rounded-full animate-pulse-slow" />

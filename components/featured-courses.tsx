@@ -185,7 +185,7 @@ export function FeaturedCourses() {
           ))}
         </div>
 
-        {/* Footer CTA */}
+        {/* Footer C T A */}
         <div className="text-center mt-14">
           <Link href="/courses">
             <Button variant="outline" size="lg">
@@ -197,4 +197,4 @@ export function FeaturedCourses() {
     </section>
   );
 }
- 
+  

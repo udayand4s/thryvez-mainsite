@@ -43,7 +43,7 @@ export function AboutContent() {
 
   return (
     <div className="relative overflow-hidden">
-      {/* === HERO === */}
+      {/* == HERO == */}
       <section className="relative py-28 lg:py-36">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute left-1/2 top-24 -translate-x-1/2 w-[700px] h-[700px] bg-[#E2F310]/20 blur-[160px] rounded-full" />
