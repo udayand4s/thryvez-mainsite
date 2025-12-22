@@ -43,7 +43,7 @@ export function HeroSection() {
               <span className="text-white">Thryve&nbsp;</span>
 
               <span
-                className="font-vi bg-[linear-gradient(#9fdc3a,#e2f310)]
+                className="font-futura bg-[linear-gradient(#9fdc3a,#e2f310)]
                 bg-clip-text text-transparent"
               >
                 Z

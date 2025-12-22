@@ -115,7 +115,7 @@ export function Footer() {
 
         <span
           className="
-            font-vi
+            font-futura
             text-transparent
             bg-[linear-gradient(#9fdc3a,#e2f310)]
             bg-clip-text

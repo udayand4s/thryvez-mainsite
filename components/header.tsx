@@ -17,7 +17,7 @@ export function Header() {
             <div className="text-2xl tracking-tight font-acherus font-bold">
               <span className="text-white">Thryve </span>
               <span
-                className="font-vi text-white
+                className="font-futura text-white
                 bg-clip-text text-transparent"
               >
                 Z

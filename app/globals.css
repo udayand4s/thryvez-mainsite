@@ -73,11 +73,11 @@
   font-display: swap;
 }
 
-/* ================= VI Bang Lang ================= */
+/* ================= Futura Black ================= */
 @font-face {
-  font-family: 'VI Bang Lang';
-  src: url('/font/vi-bang-lang/VI-BangLang.woff2') format('woff2'),
-       url('/font/vi-bang-lang/VI-BangLang.woff') format('woff');
+  font-family: 'Futura Black';
+  src: url('/font/futura-black/FuturaBlackBT-Regular.woff') format('woff2'),
+       url('/font/futura-black/FuturaBlackBT-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -87,6 +87,6 @@
   font-family: 'Acherus Militant 1', sans-serif;
 }
 
-.font-vi {
-  font-family: 'VI Bang Lang', sans-serif;
+.font-futura {
+  font-family: 'Futura Black', sans-serif;
 }
