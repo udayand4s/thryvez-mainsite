@@ -36,14 +36,21 @@ export function HeroSection() {
             {/* Line 2 — BRAND */}
             <h1
               className={`w-full text-center text-[18vw] sm:text-[16vw] lg:text-[14vw]
-              font-extrabold tracking-tight leading-[1.05] mb-8
+              font-acherus font-extrabold tracking-tight leading-[1.05] mb-8
               transition-all duration-1000 ease-out
-              ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
-              bg-[linear-gradient(90deg,#f6ff9a,#e2f310,#c7e800,#9fdc3a,#e2f310,#f6ff9a)]
-              bg-clip-text text-transparent`}
+              ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
             >
-              Thryve&nbsp;Z
+              <span className="text-white">Thryve&nbsp;</span>
+
+              <span
+                className="font-vi bg-[linear-gradient(#9fdc3a,#e2f310)]
+                bg-clip-text text-transparent"
+              >
+                Z
+              </span>
             </h1>
+
+
 
             {/* Line 3 — Description */}
             <p
@@ -55,21 +62,7 @@ export function HeroSection() {
               and craft their own identity — not by memorising, but by doing.
             </p>
 
-            {/* CTA */}
-            <div
-              className={`transition-all duration-700 delay-300 ease-out
-              ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-            >
-              <Link href="/courses">
-                <Button
-                  size="lg"
-                  className="bg-white text-black hover:bg-white/90 font-semibold px-8 py-6 text-base group"
-                >
-                  Explore Courses
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </Link>
-            </div>
+            
           </div>
 
           {/* === TRUSTED BY (LEFT ALIGNED) === */}

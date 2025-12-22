@@ -3,6 +3,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import { CheckCircle, ArrowRight, Star, Sparkles, ClipboardCheck } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
 
 /* ---------------- CONFIG ---------------- */
 const ACCENT_COLOR = "#D4AC0D";
@@ -112,6 +116,8 @@ const testimonials = [
 export function Testimonials() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const keywords = ["Cognitive Biases","Behavioral Psychology","Emotional Intelligence","Social Influence","Decision Making","Mental Models","Motivation","Therapeutic Techniques","Group Dynamics","Research Methods"];
+
 
   useEffect(() => {
     const video = videoRef.current;
@@ -136,8 +142,8 @@ export function Testimonials() {
   const { quote, name, college, year } = testimonials[activeIndex];
 
   return (
-    <div className="relative min-h-[70vh] w-full flex items-center justify-center p-6 md:p-12 bg-muted/30 text-white overflow-hidden">
-      <div className="z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div className="relative min-h-[70vh] w-full p-6 md:p-12 bg-muted/30 text-white overflow-hidden">
+      <div className="z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
 
         {/* LEFT: TEXT */}
         <motion.div
@@ -183,7 +189,45 @@ export function Testimonials() {
             controls
           />
         </div>
+        
       </div>
+      <span>
+        
+      </span>
+      {/* KEYWORDS */}
+      <section className="py-4 border-y border-white/10 bg-gradient-to-r from-transparent via-white/5 to-transparent">
+        <div className="overflow-hidden relative">
+          <motion.div
+            className="flex gap-4 w-max items-center"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              repeat: Infinity,
+              duration: 26,
+              ease: "linear",
+            }}
+          >
+            {[...keywords, ...keywords].map((k, i) => (
+              <div
+                key={i}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full
+                text-xs font-medium border border-white/10
+                bg-gradient-to-br from-white/10 to-white/5
+                backdrop-blur-sm whitespace-nowrap
+                hover:border-[#e2f310]/50 hover:bg-white/15
+                transition-all group min-w-[150px]"
+              >
+                <div className="h-1.5 w-1.5 rounded-full bg-[#e2f310]
+                group-hover:scale-150 transition-transform" />
+                {k}
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+    
+
     </div>
+    
   );
 }

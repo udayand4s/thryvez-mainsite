@@ -209,7 +209,7 @@ export default function Psychology360Page() {
                   <div className="grid sm:grid-cols-2 gap-4 pt-6 border-t border-white/10">
                     <div className="flex items-center gap-3">
                       <div className="h-10 w-10 rounded-lg bg-[#e2f310]/20 flex items-center justify-center">
-                        <CheckCircle className="h-5 w-5 text-[#e2f310]"/>
+                        <ClipboardCheck className="h-5 w-5 text-[#e2f310]"/>
                       </div>
                       <div>
                         <div className="text-sm text-white/60">Assignments</div>

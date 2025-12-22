@@ -14,9 +14,16 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2">
-              <div className="text-2xl font-bold text-white tracking-tight">
-                Thryvez<span className="text-primary"></span>
-              </div>
+            <div className="text-2xl tracking-tight font-acherus font-bold">
+              <span className="text-white">Thryve </span>
+              <span
+                className="font-vi text-white
+                bg-clip-text text-transparent"
+              >
+                Z
+              </span>
+            </div>
+
             </Link>
 
             <nav className="hidden md:flex items-center gap-8">

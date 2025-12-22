@@ -7,6 +7,8 @@ import { Testimonials } from '@/components/testimonials';
 import { Newsletter } from '@/components/newsletter';
 import { ModernLearner } from '@/components/modern-learner';
 import { FAQ } from '@/components/faq';
+import { LearningProblems } from "@/components/LearningProblems";
+
 
 export default function Home() {
   return (
@@ -14,8 +16,8 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
+        <LearningProblems />
         <Statistics />
-        <ModernLearner />
         <FeaturedCourses />
         <Testimonials />
         <FAQ />
