@@ -15,10 +15,10 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-black">
-      {/* === NEON BLOBS === */}
+      {/* === NEON BLOBS === 
       <div className="absolute top-0 left-0 w-[450px] h-[450px] bg-[#e2f310] opacity-90 blur-[180px] rounded-full pointer-events-none" />
       <div className="absolute bottom-[-150px] right-[-100px] w-[550px] h-[550px] bg-[#e2f310] opacity-90 blur-[220px] rounded-full pointer-events-none" />
-
+      */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-5xl mx-auto py-24 lg:py-32">
 
