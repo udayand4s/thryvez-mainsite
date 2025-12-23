@@ -36,6 +36,12 @@ export function Header() {
               <Link href="/about" className="text-sm font-medium text-white/80 hover:text-white transition-colors">
                 About
               </Link>
+              <Link
+                  href="/simulation"
+                  className="text-sm font-medium text-white/80 hover:text-white transition"
+                >
+                  Simulation
+                </Link>
             </nav>
           </div>
 
@@ -89,6 +95,12 @@ export function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   About
+                </Link>
+                <Link
+                  href="/simulation"
+                  className="text-sm font-medium text-white/80 hover:text-white transition"
+                >
+                  Simulation
                 </Link>
               </nav>
               <div className="flex flex-col gap-2 pt-2 border-t border-white/10">
