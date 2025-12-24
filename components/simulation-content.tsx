@@ -10,7 +10,12 @@ import Link from 'next/link';
 const questions = [
   {
     question: 'Which cognitive bias causes people to overvalue their first impression?',
-    options: ['Confirmation Bias', 'Anchoring Bias', 'Halo Effect', 'Survivorship Bias'],
+    options: [
+      'Confirmation Bias',
+      'Anchoring Bias',
+      'Halo Effect',
+      'Survivorship Bias',
+    ],
     correct: 2,
   },
   {
@@ -25,7 +30,12 @@ const questions = [
   },
   {
     question: 'Which part of the brain is most associated with decision making?',
-    options: ['Amygdala', 'Cerebellum', 'Prefrontal Cortex', 'Hippocampus'],
+    options: [
+      'Amygdala',
+      'Cerebellum',
+      'Prefrontal Cortex',
+      'Hippocampus',
+    ],
     correct: 2,
   },
 ];
@@ -38,26 +48,29 @@ export function SimulationContent() {
   const progress = ((current + 1) / questions.length) * 100;
 
   const handleAnswer = (index: number) => {
-    const updated = [...answers];
-    updated[current] = index;
-    setAnswers(updated);
+    const updatedAnswers = [...answers];
+    updatedAnswers[current] = index;
+    setAnswers(updatedAnswers);
 
     if (current < questions.length - 1) {
-      setTimeout(() => setCurrent(current + 1), 400);
+      setTimeout(() => {
+        setCurrent((prev) => prev + 1);
+      }, 400);
     } else {
-      setTimeout(() => setShowResult(true), 600);
+      setTimeout(() => {
+        setShowResult(true);
+      }, 600);
     }
   };
 
   const score = answers.filter(
-    (a, i) => a === questions[i].correct
+    (answer, index) => answer === questions[index].correct
   ).length;
 
   return (
     <section className="container mx-auto px-6 py-24 max-w-3xl">
       {!showResult ? (
         <>
-          {/* HEADER */}
           <div className="mb-10 text-center">
             <h1 className="text-4xl font-bold text-white mb-2">
               Try a Real Assignment
@@ -67,7 +80,6 @@ export function SimulationContent() {
             </p>
           </div>
 
-          {/* PROGRESS */}
           <div className="mb-8">
             <Progress value={progress} />
             <p className="text-xs text-white/50 mt-2 text-right">
@@ -75,29 +87,28 @@ export function SimulationContent() {
             </p>
           </div>
 
-          {/* QUESTION CARD */}
           <Card className="glass border-white/10">
             <CardHeader>
               <h2 className="text-xl text-white font-semibold">
                 {questions[current].question}
               </h2>
             </CardHeader>
+
             <CardContent className="space-y-4">
-              {questions[current].options.map((opt, idx) => (
+              {questions[current].options.map((option, index) => (
                 <Button
-                  key={idx}
+                  key={index}
                   variant="outline"
                   className="w-full justify-start text-left hover:border-[#E2F310]"
-                  onClick={() => handleAnswer(idx)}
+                  onClick={() => handleAnswer(index)}
                 >
-                  {opt}
+                  {option}
                 </Button>
               ))}
             </CardContent>
           </Card>
         </>
       ) : (
-        /* RESULT */
         <Card className="glass border-white/10 text-center">
           <CardContent className="py-16 space-y-6">
             {score >= 2 ? (
@@ -116,16 +127,18 @@ export function SimulationContent() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button asChild size="lg">
-                <Link href="/courses">
-                  Unlock Full Access
-                </Link>
+                <Link href="/courses">Unlock Full Access</Link>
               </Button>
 
-              <Button variant="outline" size="lg" onClick={() => {
-                setCurrent(0);
-                setAnswers([]);
-                setShowResult(false);
-              }}>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => {
+                  setCurrent(0);
+                  setAnswers([]);
+                  setShowResult(false);
+                }}
+              >
                 Try Again
               </Button>
             </div>
