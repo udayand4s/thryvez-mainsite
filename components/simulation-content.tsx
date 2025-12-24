@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
 import { CheckCircle, XCircle } from 'lucide-react';
 import Link from 'next/link';
 
@@ -80,12 +79,13 @@ export function SimulationContent() {
             </p>
           </div>
 
-          <div className="mb-8">
-            <Progress value={progress} />
-            <p className="text-xs text-white/50 mt-2 text-right">
-              Question {current + 1} of {questions.length}
-            </p>
-          </div>
+            <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                <div
+                    className="h-full bg-[#E2F310] transition-all duration-500"
+                    style={{ width: `${progress}%` }}
+                />
+            </div>
+
 
           <Card className="glass border-white/10">
             <CardHeader>
