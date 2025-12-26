@@ -4,7 +4,11 @@ import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import AppLoader from '@/components/app-loader';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
   title: 'Thryvez - Join the Fastest Way Forward',
@@ -26,7 +30,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <AppLoader>{children}</AppLoader>
+          {children}
         </ThemeProvider>
       </body>
     </html>

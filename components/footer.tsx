@@ -113,17 +113,45 @@ export function Footer() {
       >
         <span>Thryve&nbsp;</span>
 
-        <span
-          className="
-            font-futura
-            text-transparent
-            bg-[linear-gradient(#9fdc3a,#e2f310)]
-            bg-clip-text
-            [-webkit-text-stroke:1.2px_rgba(226,243,16,0.85)]
-          "
-        >
-          Z
+        <span className="inline-block align-baseline">
+          <span className="inline-flex items-baseline">
+            <svg
+              viewBox="0 0 200 240"
+              className="
+                h-[1.15em]
+                w-auto
+                overflow-visible
+                translate-y-[0.12em]
+              "
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient id="zGradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#9fdc3a" />
+                  <stop offset="50%" stopColor="#e2f310" />
+                  <stop offset="100%" stopColor="#9fdc3a" />
+                </linearGradient>
+              </defs>
+
+              <text
+                x="50%"
+                y="1em"
+                textAnchor="middle"
+                dominantBaseline="alphabetic"
+                fontFamily="Futura Black, sans-serif"
+                fontSize="220"
+                fill="url(#zGradient)"
+                stroke="rgba(226,243,16,0.85)"
+                strokeWidth="6"
+                paintOrder="stroke fill"
+              >
+                Z
+              </text>
+            </svg>
+          </span>
+
         </span>
+
       </h1>
 
       </div>

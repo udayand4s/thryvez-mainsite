@@ -90,3 +90,28 @@
 .font-futura {
   font-family: 'Futura Black', sans-serif;
 }
+
+@keyframes trusted-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-trusted-scroll {
+  display: flex;
+  width: max-content;
+  animation: trusted-scroll 35s linear infinite;
+}
+
+.animate-trusted-scroll:hover {
+  animation-play-state: paused;
+}
+
+@media (max-width: 640px) {
+  .animate-trusted-scroll {
+    animation-duration: 55s;
+  }
+}
