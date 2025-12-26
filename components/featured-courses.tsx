@@ -11,44 +11,44 @@ import { BackgroundGradient } from '@/components/ui/background-gradient';
 
 const courses = [
   {
-    id: 'psychology360-live',
+    id: 'psychology360',
     title: 'Psychology 360',
     instructor: 'Jivisha Dangi',
+    qual: 'Counsellinhg Psychologist',
     rating: 4.9,
     students: 153,
     oldprice: 10999,
     price: 5999,
-    duration: '16 hours',
-    level: 'Intermediate',
+    duration: '4 Weeks',
     category: 'Psychology',
     trending: true,
     image: '/psychology.webp',
   },
   {
-    id: 'psychology360-self',
-    title: 'Psychology 360 (Self Paced)',
-    instructor: 'Jivisha Dangi',
+    id: 'clinical-psy',
+    title: 'Clinical Psycology',
+    instructor: 'Sanjivani',
+    qual:'MA Clinical Psychology',
     rating: 4.6,
     students: 64,
     oldprice: 9999,
     price: 4499,
-    duration: '16 hours',
-    level: 'Intermediate',
+    duration: '4 weeks',
     category: 'Psychology',
     trending: false,
     image: '/psychology.webp',
   },
   {
-    id: 'data-science-ai',
-    title: 'Data Science with AI',
-    instructor: 'Deepak Kumar',
+    id: 'ai-mark',
+    title: 'AI Marketing',
+    instructor: 'Mirra Lakshmanan',
+    qual:'IIM Nagpur | AI Brand Strategist',
     rating: 4.6,
     students: 57,
     oldprice: 9999,
     price: 4499,
-    duration: '14 hours',
-    level: 'Advanced',
-    category: 'Data Science',
+    duration: '4 Weeks',
+    category: 'AI',
     trending: true,
     image: '/ds.webp',
   },
@@ -153,7 +153,6 @@ export function FeaturedCourses() {
 
                   {/* Meta */}
                   <div className="flex items-center justify-between mb-2">
-                    <Badge variant="secondary">{course.level}</Badge>
                     <div className="flex items-center gap-1 text-sm">
                       <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                       <span className="font-semibold">{course.rating}</span>
@@ -165,6 +164,9 @@ export function FeaturedCourses() {
                   </h3>
                   <p className="text-sm text-muted-foreground">
                     by {course.instructor}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                      {course.qual}
                   </p>
                 </CardHeader>
 

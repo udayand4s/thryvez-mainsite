@@ -18,9 +18,9 @@ export function Footer() {
             </h3>
             <ul className="space-y-3 text-sm text-gray-400">
               <li><Link href="/courses" className="hover:text-white transition-colors">All Courses</Link></li>
-              <li><Link href="/courses/psychology" className="hover:text-white transition-colors">Psychology 360</Link></li>
-              <li><Link href="/courses/emotional-intelligence" className="hover:text-white transition-colors">Data Science with AI</Link></li>
-              <li><Link href="/courses/self-growth" className="hover:text-white transition-colors">Self Growth Programs</Link></li>
+              <li><Link href="/courses/psychology360" className="hover:text-white transition-colors">Psychology 360</Link></li>
+              <li><Link href="/courses/clinical-psy" className="hover:text-white transition-colors">Clinical Psychology</Link></li>
+              <li><Link href="/courses/ai-mark" className="hover:text-white transition-colors">AI Marketing</Link></li>
             </ul>
           </div>
 
@@ -33,7 +33,7 @@ export function Footer() {
               <li><Link href="/about" className="hover:text-white transition-colors">About ThryveZ</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
               <li><Link href="/apply" className="hover:text-white transition-colors">Careers</Link></li>
-              <li><Link href="/mentors" className="hover:text-white transition-colors">Mentors</Link></li>
+              <li><Link href="/courses" className="hover:text-white transition-colors">Mentors</Link></li>
             </ul>
           </div>
 
@@ -43,7 +43,7 @@ export function Footer() {
               Resources
             </h3>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li><Link href="/faq" className="hover:text-white transition-colors">FAQs</Link></li>
+              <li><Link href="/#faq" className="hover:text-white transition-colors">FAQs</Link></li>
               <li><Link href="/testimonials" className="hover:text-white transition-colors">Student Stories</Link></li>
               <li><Link href="/community" className="hover:text-white transition-colors">Community</Link></li>
               <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>

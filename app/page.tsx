@@ -36,8 +36,8 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
-        <LearningProblems />
         <Statistics />
+        <LearningProblems />
         <FeaturedCourses />
         <Testimonials />
         <FAQ />

@@ -9,48 +9,105 @@ import { BackgroundGradient } from "@/components/ui/background-gradient";
 
 const courses = [
   {
-    id: "psychology360",
-    title: "Psychology 360",
-    instructor: "Jivisha Dangi",
+    id: 'psychology360',
+    title: 'Psychology 360',
+    instructor: 'Jivisha Dangi',
+    qual: 'Counsellinhg Psychologist',
     rating: 4.9,
     students: 153,
     oldprice: 10999,
     price: 5999,
-    duration: "16 hours",
-    level: "Intermediate",
-    category: "Psychology",
+    duration: '4 Weeks',
+    category: 'Psychology',
     trending: true,
-    image: "/psychology.webp",
+    image: '/psychology.webp',
+    comingSoon: false,
+
   },
   {
-    id: "psychology360-self",
-    title: "Psychology 360 (Self Paced)",
-    instructor: "Jivisha Dangi",
+    id: 'clinical-psy',
+    title: 'Clinical Psycology',
+    instructor: 'Sanjivani',
+    qual:'MA Clinical Psychology',
     rating: 4.6,
     students: 64,
     oldprice: 9999,
     price: 4499,
-    duration: "16 hours",
-    level: "Intermediate",
-    category: "Psychology",
+    duration: '4 weeks',
+    category: 'Psychology',
     trending: false,
-    image: "/psychology.webp",
+    image: '/psychology.webp',
+    comingSoon: false,
+
   },
   {
-    id: "data-science-ai",
-    title: "Data Science with AI",
-    instructor: "Deepak Kumar",
+    id: 'ai-mark',
+    title: 'AI Marketing',
+    instructor: 'Mirra Lakshmanan',
+    qual:'IIM Nagpur | AI Brand Strategist',
     rating: 4.6,
     students: 57,
     oldprice: 9999,
     price: 4499,
-    duration: "14 hours",
-    level: "Advanced",
-    category: "Data Science",
+    duration: '4 Weeks',
+    category: 'AI',
     trending: true,
-    image: "/ds.webp",
+    image: '/ds.webp',
+    comingSoon: false,
+
   },
+  {
+    id: 'video-editing',
+    title: 'Video Editing',
+    instructor: 'Lorem Ipsum',
+    qual: 'Professional Video Editor',
+    rating: 4.7,
+    students: 112,
+    oldprice: 8999,
+    price: 3999,
+    duration: '4 Weeks',
+    category: 'Creative',
+    trending: true,
+    image: '/ds.webp',
+    comingSoon: true,
+
+  },
+  {
+    id: 'makeup-beauty',
+    title: 'Makeup/Beauty',
+    instructor: 'Lorem Ipsum',
+    qual: 'Certified Makeup Artist',
+    rating: 4.8,
+    students: 96,
+    oldprice: 7999,
+    price: 3499,
+    duration: '3 Weeks',
+    category: 'Beauty',
+    trending: true,
+    image: '/ds.webp',
+    comingSoon: true,
+
+  },
+  {
+    id: 'freelancing',
+    title: 'Freelancing',
+    instructor: 'Lorem Ipsum',
+    qual: 'Top-rated Freelancer & Consultant',
+    rating: 4.6,
+    students: 140,
+    oldprice: 6999,
+    price: 2999,
+    duration: '4 Weeks',
+    category: 'Career',
+    trending: false,
+    image: '/ds.webp',
+    comingSoon: true,
+
+  },
+  
 ];
+const liveCourses = courses.filter(c => !c.comingSoon);
+const comingSoonCourses = courses.filter(c => c.comingSoon);
 
 export function CoursesContent() {
   const [isVisible, setIsVisible] = useState(false);
@@ -100,7 +157,7 @@ export function CoursesContent() {
         </h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courses.map((course, index) => (
+          {liveCourses.map((course, index) => (
             <div
               key={course.id}
               style={{ transitionDelay: `${index * 120}ms` }}
@@ -146,9 +203,7 @@ export function CoursesContent() {
 
                 <div className="p-5">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs px-2 py-1 rounded-full bg-white/10">
-                      {course.level}
-                    </span>
+
 
                     <div className="flex items-center gap-1 text-sm">
                       <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
@@ -161,7 +216,7 @@ export function CoursesContent() {
                   </h3>
 
                   <p className="text-sm text-white/60 mb-4">
-                    by {course.instructor}
+                    by {course.instructor}, {course.qual}
                   </p>
 
                   <div className="flex items-center gap-5 text-xs text-white/50">
@@ -179,6 +234,83 @@ export function CoursesContent() {
             </div>
           ))}
         </div>
+        {/* COMING SOON */}
+        <section className="mt-20">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white/90 mb-8">
+            Coming <span className="text-[#E2F310]">Soon</span>
+          </h2>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {comingSoonCourses.map((course) => (
+              <div
+                key={course.id}
+                className="relative rounded-2xl overflow-hidden border border-white/10
+                          bg-white/5 backdrop-blur-xl
+                          transition-all duration-500
+                          hover:border-[#E2F310]/40"
+              >
+                {/* Image */}
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    className="w-full h-full object-cover grayscale
+                              opacity-80 scale-105"
+                  />
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="mb-2 text-sm tracking-widest uppercase text-[#E2F310]">
+                        Coming Soon
+                      </div>
+                      <div className="text-white/70 text-xs">
+                        Launching shortly
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Category */}
+                  <span className="absolute top-3 right-3 px-2 py-1 rounded-full bg-black/70 text-xs">
+                    {course.category}
+                  </span>
+                </div>
+
+                {/* Content */}
+                <div className="p-5">
+                  <h3 className="text-lg font-semibold text-white">
+                    {course.title}
+                  </h3>
+
+                  <p className="text-sm text-white/60 mt-1">
+                    {course.qual}
+                  </p>
+
+                  <div className="flex items-center gap-4 text-xs text-white/50 mt-4">
+                    <div className="flex items-center gap-1">
+                      <Clock className="h-4 w-4" />
+                      {course.duration}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Users className="h-4 w-4" />
+                      {course.students}+
+                    </div>
+                  </div>
+
+                  {/* CTA */}
+                  <Button
+                    disabled
+                    variant="outline"
+                    className="w-full mt-5 border-white/20 text-white/40 cursor-not-allowed"
+                  >
+                    Notify Me
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
       </section>
 
       {/* MENTORS */}
@@ -193,25 +325,25 @@ export function CoursesContent() {
               name: "Jivisha Dangi",
               slug: "jivisha-dangi",
               role: "Senior Psychologist",
-              company: "Psych Insights",
+              qual: "Counselling Psychologist",
               image:
-                "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=800&q=60",
+                "/jivisha-dangi.webp",
             },
             {
-              name: "Deepak Kumar",
-              slug: "deepak-kumar",
-              role: "Data Scientist",
-              company: "AI Labs",
+              name: "Sanjivani",
+              slug: "sanjivani",
+              role: "Clinical Psychologist",
+              qual:"MA Clinical Psychology",
               image:
-                "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=60",
+                "/sanjivani.png",
             },
             {
-              name: "Aarav Malhotra",
-              slug: "aarav-malhotra",
-              role: "Behavioral Coach",
-              company: "MindWorks",
+              name: "Mirra Lakshmanan",
+              slug: "mirra",
+              role: "AI Marketing",
+              qual:"IIM Nagpur | AI Brand Strategist",
               image:
-                "https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=800&q=60",
+                "mirra.jpeg",
             },
           ].map((m) => (
             <div
@@ -232,8 +364,7 @@ export function CoursesContent() {
                 />
               </h3>
 
-              <p className="text-white/60 mt-1">{m.role}</p>
-              <p className="text-white/40 text-sm">{m.company}</p>
+              <p className="text-white/60 mt-1">{m.qual}</p>
             </div>
           ))}
         </div>

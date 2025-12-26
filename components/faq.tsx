@@ -53,7 +53,7 @@ export function FAQ() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 sm:py-20 lg:py-24 bg-black">
+    <section id="faq" ref={sectionRef} className="py-16 sm:py-20 lg:py-24 bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`max-w-3xl mx-auto transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="text-center mb-12">
