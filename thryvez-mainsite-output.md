@@ -3,8 +3,8 @@
 ## 📊 Project Information
 
 - **Project Name**: `thryvez-mainsite`
-- **Generated On**: 2025-12-27 12:16:47 (Asia/Calcutta / GMT+06:30)
-- **Total Files Processed**: 114
+- **Generated On**: 2025-12-27 12:39:57 (Asia/Calcutta / GMT+06:30)
+- **Total Files Processed**: 116
 - **Export Tool**: Easy Whole Project to Single Text File for LLMs v1.1.0
 - **Tool Author**: Jota / José Guilherme Pandolfi
 
@@ -102,7 +102,7 @@
 │   ├── 📄 faq.tsx (4.55 KB)
 │   ├── 📄 featured-courses.tsx (6.82 KB)
 │   ├── 📄 footer.tsx (6.99 KB)
-│   ├── 📄 get-started-modal.tsx (3.54 KB)
+│   ├── 📄 get-started-modal.tsx (2.71 KB)
 │   ├── 📄 header.tsx (4.59 KB)
 │   ├── 📄 hero-section.tsx (4.44 KB)
 │   ├── 📄 instructors.tsx (3.79 KB)
@@ -135,6 +135,8 @@
 │   ├── 📄 ds.webp (154.51 KB)
 │   ├── 📄 hero-bg.png (3.12 MB)
 │   ├── 📄 jivisha-dangi.png (1.26 MB)
+│   ├── 📄 Jivisha-Psychology-2.png (490.35 KB)
+│   ├── 📄 Jivisha-Psychology.png (437.46 KB)
 │   ├── 📄 Jivisha-Psychology.webp (37.59 KB)
 │   ├── 📄 logo1.png (95.09 KB)
 │   ├── 📄 mirra.jpeg (144.59 KB)
@@ -262,19 +264,19 @@
 
 | Metric | Count |
 |--------|-------|
-| Total Files | 114 |
+| Total Files | 116 |
 | Total Directories | 17 |
 | Text Files | 98 |
-| Binary Files | 16 |
-| Total Size | 8.2 MB |
+| Binary Files | 18 |
+| Total Size | 9.11 MB |
 
 ### 📄 File Types Distribution
 
 | Extension | Count |
 |-----------|-------|
 | `.tsx` | 85 |
+| `.png` | 7 |
 | `.ts` | 5 |
-| `.png` | 5 |
 | `.webp` | 4 |
 | `.json` | 4 |
 | `.woff` | 3 |
@@ -8770,15 +8772,15 @@ export function Footer() {
 ### <a id="📄-components-get-started-modal-tsx"></a>📄 `components/get-started-modal.tsx`
 
 **File Info:**
-- **Size**: 3.54 KB
+- **Size**: 2.71 KB
 - **Extension**: `.tsx`
 - **Language**: `typescript`
 - **Location**: `components/get-started-modal.tsx`
 - **Relative Path**: `components`
 - **Created**: 2025-12-27 09:46:10 (Asia/Calcutta / GMT+06:30)
-- **Modified**: 2025-12-27 10:18:59 (Asia/Calcutta / GMT+06:30)
-- **MD5**: `873835013c3654cb0fe7288632e68c0e`
-- **SHA256**: `57762513d49df3eeefeb53ee3dcda50eabdf80613804f7fc6f3a3f1c5bb5125b`
+- **Modified**: 2025-12-27 12:34:15 (Asia/Calcutta / GMT+06:30)
+- **MD5**: `c6e6ec8ffe4d1026af33fe73c5c5dede`
+- **SHA256**: `91a5be8caaba7ec99193484e54a3f320f66ce36e0a485e1e155f4ee7b75233f9`
 - **Encoding**: UTF-8
 
 **File code content:**
@@ -8839,7 +8841,7 @@ export function GetStartedModal({
         "
       >
         <DialogHeader>
-          <DialogTitle className="text-2xl font-acherus">
+          <DialogTitle className="text-2xl">
             Get Started
           </DialogTitle>
           <p className="text-white/70 text-sm mt-1">
@@ -8851,14 +8853,6 @@ export function GetStartedModal({
           <Input
             name="name"
             placeholder="Full Name"
-            onChange={handleChange}
-            className="bg-white/5 border-white/10"
-          />
-
-          <Input
-            name="email"
-            placeholder="Email Address"
-            type="email"
             onChange={handleChange}
             className="bg-white/5 border-white/10"
           />
@@ -8879,32 +8873,12 @@ export function GetStartedModal({
 
           <Input
             name="study"
-            placeholder="Currently Studying (if any)"
+            placeholder="School/College Name"
             onChange={handleChange}
             className="bg-white/5 border-white/10"
           />
 
-          <Input
-            name="qualification"
-            placeholder="Highest Qualification"
-            onChange={handleChange}
-            className="bg-white/5 border-white/10"
-          />
 
-          <Input
-            name="experience"
-            placeholder="Work Experience (e.g. 0–1 yrs)"
-            onChange={handleChange}
-            className="bg-white/5 border-white/10"
-          />
-
-          <Textarea
-            name="address"
-            placeholder="Address"
-            rows={3}
-            onChange={handleChange}
-            className="bg-white/5 border-white/10 md:col-span-2"
-          />
         </div>
 
         <div className="flex justify-end gap-3 mt-8">
@@ -10236,9 +10210,9 @@ export function Newsletter() {
 - **Location**: `components/psycontent.tsx`
 - **Relative Path**: `components`
 - **Created**: 2025-12-18 08:55:19 (Asia/Calcutta / GMT+06:30)
-- **Modified**: 2025-12-27 12:15:50 (Asia/Calcutta / GMT+06:30)
-- **MD5**: `92ec6f4a45ab5c6456d4aad5c13fb903`
-- **SHA256**: `467a0ef241e37aab7a24f2a3ec6977dc15f99670cb3507cc85daff50dbf1350a`
+- **Modified**: 2025-12-27 12:39:56 (Asia/Calcutta / GMT+06:30)
+- **MD5**: `69c4b6a437908611ffc477797ec06f61`
+- **SHA256**: `2c09bc86e48983c0cb2e49ee505974c2ee46e3e6734c615b36ec8deff111a7cb`
 - **Encoding**: ASCII
 
 **File code content:**
@@ -10504,12 +10478,12 @@ export default function Psychology360Page() {
               </h2>
             </div>
 
-            <Card className="bg-white/5 border border-white/10 backdrop-blur-xl">
-              <CardContent className="p-8 grid md:grid-cols-[180px_1fr] gap-8 items-start">
+            <Card className="bg-black border border-white/10 backdrop-blur-xl">
+            <CardContent className="p-8 grid md:grid-cols-[500px_1fr] gap-20 items-start">
                 {/* Avatar */}
                 <img
-                  src='/jivisha-dangi.png'
-                  className="w-full h-56 object-cover rounded-xl mb-4"
+                  src='/Jivisha-Psychology.webp'
+                  className="w-full h-300 object-cover rounded-2xl mb-4"
                 />
 
                 {/* Bio */}
@@ -10518,19 +10492,8 @@ export default function Psychology360Page() {
                   <p className="text-white/60 mb-4">Clinical Psychologist</p>
 
                   <p className="text-white/80 leading-relaxed whitespace-pre-line">
-                    {`Jivisha is a Counselling Psychologist and Psychotherapist with almost two years of experience. 
-  She holds a Master’s in Psychology (Psychosocial Clinical Studies) from Ambedkar University, Delhi, 
-  and a Postgraduate Diploma in Guidance and Counselling from Jamia Millia Islamia.
-
-  She is also an Adult Fellow at the Washington Baltimore Center for Psychoanalysis, where she is 
-  deepening her engagement with psychoanalytic thought and practice.
-
-  As a therapist and mentor, Jivisha believes in combining academic rigor with a reflective, 
-  human-centered approach to understanding the mind. Her work emphasizes curiosity, dialogue, 
-  and critical thinking, encouraging learners to not just acquire knowledge but to engage with it meaningfully.
-
-  She brings her experience of working with diverse individuals and her grounding in psychoanalytic 
-  perspectives into her teaching, making complex ideas accessible, relatable, and thought-provoking.`}
+                    {`Jivisha is a Counselling Psychologist and Psychotherapist with almost two years of experience. She holds a Master’s in Psychology (Psychosocial Clinical Studies) from Ambedkar University, Delhi, and a Postgraduate Diploma in Guidance and Counselling from Jamia Millia Islamia. She is also an Adult Fellow at the Washington Baltimore Center for Psychoanalysis, where she is deepening her engagement with psychoanalytic thought and practice.
+                    As a therapist and mentor, Jivisha believes in combining academic rigor with a reflective, human-centered approach to understanding the mind. Her work emphasizes curiosity, dialogue, and critical thinking, encouraging learners to not just acquire knowledge but to engage with it meaningfully. She brings her experience of working with diverse individuals and her grounding in psychoanalytic perspectives into her teaching, making complex ideas accessible relatable, and thought-provoking.`}
                   </p>
 
                   <div className="mt-6 flex flex-wrap gap-2">
@@ -11722,6 +11685,8 @@ The following files were not included in the text content:
 - `public/ds.webp`
 - `public/hero-bg.png`
 - `public/jivisha-dangi.png`
+- `public/Jivisha-Psychology-2.png`
+- `public/Jivisha-Psychology.png`
 - `public/Jivisha-Psychology.webp`
 - `public/logo1.png`
 - `public/mirra.jpeg`

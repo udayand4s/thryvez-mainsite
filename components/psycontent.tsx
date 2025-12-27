@@ -258,11 +258,11 @@ export default function Psychology360Page() {
               </h2>
             </div>
 
-            <Card className="bg-white/5 border border-white/10 backdrop-blur-xl">
+            <Card className="bg-black border border-white/10 backdrop-blur-xl">
             <CardContent className="p-8 grid md:grid-cols-[500px_1fr] gap-20 items-start">
                 {/* Avatar */}
                 <img
-                  src='/Jivisha-Psychology-2.png'
+                  src='/Jivisha-Psychology.webp'
                   className="w-full h-300 object-cover rounded-2xl mb-4"
                 />
 
@@ -272,19 +272,8 @@ export default function Psychology360Page() {
                   <p className="text-white/60 mb-4">Clinical Psychologist</p>
 
                   <p className="text-white/80 leading-relaxed whitespace-pre-line">
-                    {`Jivisha is a Counselling Psychologist and Psychotherapist with almost two years of experience. 
-  She holds a Master’s in Psychology (Psychosocial Clinical Studies) from Ambedkar University, Delhi, 
-  and a Postgraduate Diploma in Guidance and Counselling from Jamia Millia Islamia.
-
-  She is also an Adult Fellow at the Washington Baltimore Center for Psychoanalysis, where she is 
-  deepening her engagement with psychoanalytic thought and practice.
-
-  As a therapist and mentor, Jivisha believes in combining academic rigor with a reflective, 
-  human-centered approach to understanding the mind. Her work emphasizes curiosity, dialogue, 
-  and critical thinking, encouraging learners to not just acquire knowledge but to engage with it meaningfully.
-
-  She brings her experience of working with diverse individuals and her grounding in psychoanalytic 
-  perspectives into her teaching, making complex ideas accessible, relatable, and thought-provoking.`}
+                    {`Jivisha is a Counselling Psychologist and Psychotherapist with almost two years of experience. She holds a Master’s in Psychology (Psychosocial Clinical Studies) from Ambedkar University, Delhi, and a Postgraduate Diploma in Guidance and Counselling from Jamia Millia Islamia. She is also an Adult Fellow at the Washington Baltimore Center for Psychoanalysis, where she is deepening her engagement with psychoanalytic thought and practice.
+                    As a therapist and mentor, Jivisha believes in combining academic rigor with a reflective, human-centered approach to understanding the mind. Her work emphasizes curiosity, dialogue, and critical thinking, encouraging learners to not just acquire knowledge but to engage with it meaningfully. She brings her experience of working with diverse individuals and her grounding in psychoanalytic perspectives into her teaching, making complex ideas accessible relatable, and thought-provoking.`}
                   </p>
 
                   <div className="mt-6 flex flex-wrap gap-2">

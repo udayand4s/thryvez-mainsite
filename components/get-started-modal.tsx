@@ -53,7 +53,7 @@ export function GetStartedModal({
         "
       >
         <DialogHeader>
-          <DialogTitle className="text-2xl font-acherus">
+          <DialogTitle className="text-2xl">
             Get Started
           </DialogTitle>
           <p className="text-white/70 text-sm mt-1">
@@ -65,14 +65,6 @@ export function GetStartedModal({
           <Input
             name="name"
             placeholder="Full Name"
-            onChange={handleChange}
-            className="bg-white/5 border-white/10"
-          />
-
-          <Input
-            name="email"
-            placeholder="Email Address"
-            type="email"
             onChange={handleChange}
             className="bg-white/5 border-white/10"
           />
@@ -93,32 +85,12 @@ export function GetStartedModal({
 
           <Input
             name="study"
-            placeholder="Currently Studying (if any)"
+            placeholder="School/College Name"
             onChange={handleChange}
             className="bg-white/5 border-white/10"
           />
 
-          <Input
-            name="qualification"
-            placeholder="Highest Qualification"
-            onChange={handleChange}
-            className="bg-white/5 border-white/10"
-          />
 
-          <Input
-            name="experience"
-            placeholder="Work Experience (e.g. 0–1 yrs)"
-            onChange={handleChange}
-            className="bg-white/5 border-white/10"
-          />
-
-          <Textarea
-            name="address"
-            placeholder="Address"
-            rows={3}
-            onChange={handleChange}
-            className="bg-white/5 border-white/10 md:col-span-2"
-          />
         </div>
 
         <div className="flex justify-end gap-3 mt-8">
