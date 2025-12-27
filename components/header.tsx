@@ -58,7 +58,7 @@ export function Header() {
                 className="bg-[#FFFFFF] text-black hover:bg-[#cddc39]"
                 onClick={() => setOpen(true)}
               >
-                Get Started
+                Register
               </Button>
             </div>
 
@@ -112,7 +112,7 @@ export function Header() {
                     setOpen(true);
                   }}
                 >
-                  Get Started
+                  Register
                 </Button>
               </div>
             </div>
