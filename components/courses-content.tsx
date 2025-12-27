@@ -327,7 +327,7 @@ export function CoursesContent() {
               role: "Senior Psychologist",
               qual: "Counselling Psychologist",
               image:
-                "/jivisha-dangi.webp",
+                "/jivisha-dangi.png",
             },
             {
               name: "Sanjivani",

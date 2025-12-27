@@ -256,7 +256,7 @@ export default function Psychology360Page() {
             <CardContent className="p-8 grid md:grid-cols-[180px_1fr] gap-8 items-start">
               {/* Avatar */}
               <img
-                src='\jivisha-dangi.webp'
+                src='\jivisha-dangi.png'
                 className="w-full h-56 object-cover rounded-xl mb-4"
               />
 
