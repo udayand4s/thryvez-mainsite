@@ -134,13 +134,12 @@ export function CoursesContent() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
-                  <span className="text-[#E2F310]">Explore Our Top-</span>
+                  <span className="text-[#E2F310]">Explore Our Top</span>
                   <span className="block text-white">Rated Courses</span>
                 </h1>
 
                 <p className="mt-4 text-white/70 max-w-xl">
-                  Handpicked by thousands of learners worldwide — now more
-                  visual, more immersive, and taught by domain experts.
+                  Handpicked by thousands of learners worldwide — now more visual, more immersive, and taught by domain experts.
                 </p>
               </div>
 
@@ -216,7 +215,7 @@ export function CoursesContent() {
                   </h3>
 
                   <p className="text-sm text-white/60 mb-4">
-                    by {course.instructor}, {course.qual}
+                    By {course.instructor}, {course.qual}
                   </p>
 
                   <div className="flex items-center gap-5 text-xs text-white/50">

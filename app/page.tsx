@@ -31,7 +31,8 @@ export default function Home() {
   if (loading) return <VerticalLoader />;
 
   return (
-    <div className="min-h-screen flex flex-col bg-black">
+    <div className="relative w-full max-w-full overflow-x-hidden bg-black">
+
 
       <main className="flex-1">
         <HeroSection />

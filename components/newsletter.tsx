@@ -13,13 +13,13 @@ export function Newsletter() {
             Ready to accelerate your growth?
           </h2>
           <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
-            Join our newsletter for exclusive insights, early access to courses, and community updates.
+            Explore your curiosity for exclusive insights, early access to courses, and community updates.
           </p>
 
           <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-8">
             <Input
-              type="email"
-              placeholder="Enter your email"
+              type="number"
+              placeholder="Enter your Whatsapp Number"
               className="h-14 bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-white/30"
               required
             />

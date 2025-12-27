@@ -1,9 +1,17 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { Playfair_Display } from 'next/font/google'; 
 import { ThemeProvider } from '@/components/theme-provider';
 import AppLoader from '@/components/app-loader';
 import { Sidebar } from '@/components/sidebar'; 
+
+// Configure Playfair Display
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-playfair',
+});
 
 const inter = Inter({
   subsets: ['latin'],
@@ -24,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-black min-h-screen`}>
+      <body className={`${playfair.variable} font-sans bg-black min-h-screen`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -36,7 +44,8 @@ export default function RootLayout({
             <Sidebar />
             
             {/* Main Content Area */}
-            <div className="flex-1 lg:pl-64 w-full"> 
+            <div className="flex-1 min-w-0 overflow-x-hidden">
+
               {children}
             </div>
           </div>

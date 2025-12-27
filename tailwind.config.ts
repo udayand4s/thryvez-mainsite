@@ -9,7 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        // Sets Glacial Indifference as the default sans font
+        sans: ["Glacial Indifference", "sans-serif"],
+        // Adds a utility class 'font-heading' for Playfair
+        heading: ["var(--font-playfair)", "serif"],
+        
+        // Existing fonts kept for compatibility
+        acherus: ["Acherus Militant 1", "sans-serif"],
+        futura: ["Futura Black", "sans-serif"],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -80,11 +87,18 @@ const config: Config = {
             height: '0',
           },
         },
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'infinite-scroll': 'infinite-scroll 40s linear infinite',
       },
+
+      
     },
   },
   plugins: [require('tailwindcss-animate')],

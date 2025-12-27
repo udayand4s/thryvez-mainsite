@@ -20,6 +20,28 @@ export function HeroSection() {
     return () => clearTimeout(t);
   }, []);
 
+  function CompanyPill({ company }: { company: string }) {
+    return (
+      <div
+        className="
+          inline-flex items-center gap-2
+          px-4 py-2
+          rounded-xl
+          border border-white/10
+          bg-white/[0.04]
+          backdrop-blur-sm
+          text-white/60 font-medium text-sm
+          whitespace-nowrap
+          hover:text-white hover:border-[#e2f310]/50
+          transition-all
+        "
+      >
+        <span className="h-1 w-1 rounded-full bg-[#e2f310]" />
+        {company}
+      </div>
+    );
+  }
+
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-black">
       {/* === NEON BLOBS === 
@@ -36,7 +58,7 @@ export function HeroSection() {
             {/* Line 1 */}
             <h1
               className={`
-                font-sans font-bold
+                --font-playfair font-bold 
                 text-white
                 text-[7vw] sm:text-[5vw] lg:text-[4vw]
                 leading-[1.04]
@@ -53,7 +75,7 @@ export function HeroSection() {
 
             <h2
               className={`
-                font-sans font-bold
+                --font-playfair font-bold
                 text-[#c7f000]
                 text-[12vw] sm:text-[8vw] lg:text-[6vw]
                 leading-[1]
@@ -83,48 +105,55 @@ export function HeroSection() {
             >
 
               A digital space where young creatives build bold skills, think originally,
-              and craft their own identity — not by memorising, but by doing.
+              and craft their own identity, not by memorising, but by doing.
             </p>
 
             
           </div>
           
 
-          {/* === TRUSTED BY (FULL-WIDTH, COMPACT) === */}
+          {/* === TRUSTED BY (INFINITE LOOP) === */}
           <div
             className={`mt-20 transition-all duration-700 delay-500 ease-out
             ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
-            <p className="text-[15px] text-white/40 uppercase tracking-[0.3em] mb-4 text-center">
+            <p className="text-[15px] text-white/40 uppercase tracking-[0.3em] mb-8 text-center">
               Trusted by teams at
             </p>
 
-            {/* FULL WIDTH STRIP */}
-            <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden">
-              <div className="flex gap-4 animate-trusted-scroll px-6">
-                {[...companies, ...companies, ...companies].map((company, i) => (
-                  <div
-                    key={i}
-                    className="
-                      inline-flex items-center gap-2
-                      px-4 py-2
-                      rounded-xl
-                      border border-white/10
-                      bg-white/[0.04]
-                      backdrop-blur-sm
-                      text-white/60 font-medium text-sm
-                      whitespace-nowrap
-                      hover:text-white hover:border-[#e2f310]/50
-                      transition-all
-                    "
-                  >
-                    <span className="h-1 w-1 rounded-full bg-[#e2f310]" />
-                    {company}
-                  </div>
-                ))}
+            {/* MARQUEE WRAPPER */}
+            <div className="relative w-full overflow-hidden">
+              
+              {/* Gradient Masks to fade edges */}
+              <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10" />
+              <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10" />
+
+              {/* SCROLLING TRACK */}
+              {/* We remove w-screen adjustments to keep it simple and robust */}
+              <div className="flex w-full">
+                
+                {/* LIST 1 */}
+                {/* Changed: Removed min-w-full, added pr-4 to create gap between lists */}
+                <div className="flex shrink-0 animate-infinite-scroll items-center gap-4 pr-4">
+                  {[...companies, ...companies, ...companies, ...companies].map((company, i) => (
+                    <CompanyPill key={`list1-${i}`} company={company} />
+                  ))}
+                </div>
+
+                {/* LIST 2 (Identical Duplicate) */}
+                <div className="flex shrink-0 animate-infinite-scroll items-center gap-4 pr-4">
+                  {[...companies, ...companies, ...companies, ...companies].map((company, i) => (
+                    <CompanyPill key={`list2-${i}`} company={company} />
+                  ))}
+                </div>
+
               </div>
             </div>
           </div>
+
+
+
+          
 
 
         </div>

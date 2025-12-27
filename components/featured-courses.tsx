@@ -163,7 +163,7 @@ export function FeaturedCourses() {
                     {course.title}
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    by {course.instructor}
+                    By {course.instructor}
                   </p>
                   <p className="text-sm text-muted-foreground">
                       {course.qual}
