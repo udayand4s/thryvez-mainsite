@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { CheckCircle, ArrowRight, Star, Sparkles, ClipboardCheck } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { CourseWhySection } from '@/components/course-why-section';
+
 
 
 export default function Psychology360Page() {
@@ -299,6 +301,9 @@ perspectives into her teaching, making complex ideas accessible, relatable, and 
           </Card>
         </div>
       </section>
+
+      <CourseWhySection />
+
 
       {/* CERTIFICATION */}
       <section className="py-20 relative">
