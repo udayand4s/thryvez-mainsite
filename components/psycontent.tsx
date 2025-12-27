@@ -259,11 +259,11 @@ export default function Psychology360Page() {
             </div>
 
             <Card className="bg-white/5 border border-white/10 backdrop-blur-xl">
-              <CardContent className="p-8 grid md:grid-cols-[180px_1fr] gap-8 items-start">
+            <CardContent className="p-8 grid md:grid-cols-[500px_1fr] gap-20 items-start">
                 {/* Avatar */}
                 <img
-                  src='/jivisha-dangi.png'
-                  className="w-full h-56 object-cover rounded-xl mb-4"
+                  src='/Jivisha-Psychology-2.png'
+                  className="w-full h-300 object-cover rounded-2xl mb-4"
                 />
 
                 {/* Bio */}
