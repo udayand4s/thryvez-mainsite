@@ -38,7 +38,7 @@ const features = [
   },
   {
     icon: Target,
-    title: 'Active INternship Driven Network',
+    title: 'Active Internship Driven Network',
     desc: 'Connect with mentors and internship opportunities that help you move from learning to real-world experience.',
   },
 ];

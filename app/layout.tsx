@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import AppLoader from '@/components/app-loader';
+import { Sidebar } from '@/components/sidebar'; 
 
 const inter = Inter({
   subsets: ['latin'],
@@ -23,14 +24,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-black min-h-screen`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="flex min-h-screen">
+            {/* Sidebar Component */}
+            <Sidebar />
+            
+            {/* Main Content Area */}
+            <div className="flex-1 lg:pl-64 w-full"> 
+              {children}
+            </div>
+          </div>
         </ThemeProvider>
       </body>
     </html>

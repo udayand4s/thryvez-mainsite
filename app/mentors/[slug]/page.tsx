@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { mentors } from "@/lib/mentors";
-import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Badge } from "@/components/ui/badge";
 
@@ -19,7 +18,6 @@ export default function MentorPage({
 
   return (
     <div className="min-h-screen bg-black flex flex-col">
-      <Header />
 
       <main className="flex-1 container mx-auto px-6 py-20 max-w-5xl">
         <div className="grid md:grid-cols-3 gap-12">

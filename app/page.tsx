@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import VerticalLoader from '@/components/vertical-loader';
 
-import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { HeroSection } from '@/components/hero-section';
 import { FeaturedCourses } from '@/components/featured-courses';
@@ -33,7 +32,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-black">
-      <Header />
+
       <main className="flex-1">
         <HeroSection />
         <Statistics />
