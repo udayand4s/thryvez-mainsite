@@ -130,7 +130,7 @@ export function Testimonials() {
               "
             </div>
 
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl  text-white leading-tight">
               {activeTestimonial.content}
             </h2>
 
@@ -143,7 +143,7 @@ export function Testimonials() {
               </p>
             </div>
 
-            <p className="text-white font-semibold text-xl">
+            <p className="text-white  text-xl">
               {activeTestimonial.company}
             </p>
 

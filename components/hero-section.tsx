@@ -133,7 +133,7 @@ export function HeroSection() {
               <Link href="/courses">
                 <Button
                   size="lg"
-                  className="bg-white text-black hover:bg-white/90 font-semibold px-8 py-6 text-base group"
+                  className="bg-white text-black hover:bg-white/90  px-8 py-6 text-base group"
                 >
                   Explore the Lab
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

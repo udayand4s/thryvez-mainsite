@@ -73,7 +73,7 @@ export function ModernLearner() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={section1Ref} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className={`space-y-4 sm:space-y-6 text-center lg:text-left transition-all duration-700 ${isVisible1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#E2F310]/90">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl  tracking-tight text-[#E2F310]/90">
               Made for the
               <span className="block">modern learner</span>
             </h2>
@@ -115,7 +115,7 @@ export function ModernLearner() {
                     </div>
                     <div className="p-4 sm:p-6 bg-white space-y-3 sm:space-y-4">
                       <div className="text-center">
-                        <h3 className="font-semibold text-slate-900 text-sm sm:text-base mb-1 sm:mb-2">Test your knowledge</h3>
+                        <h3 className=" text-slate-900 text-sm sm:text-base mb-1 sm:mb-2">Test your knowledge</h3>
                         <p className="text-xs text-slate-600">Question 9/16</p>
                       </div>
                       
@@ -126,7 +126,7 @@ export function ModernLearner() {
                       <div className="aspect-video bg-gradient-to-br from-emerald-800 to-emerald-900 rounded-lg flex items-center justify-center relative">
                         <div className="text-4xl sm:text-6xl">🧠</div>
                         <div className="absolute bottom-1 sm:bottom-2 right-1 sm:right-2 bg-white px-2 sm:px-3 py-0.5 sm:py-1 rounded-md">
-                          <span className="text-xs sm:text-sm font-bold text-slate-900">83%</span>
+                          <span className="text-xs sm:text-sm  text-slate-900">83%</span>
                         </div>
                       </div>
 
@@ -145,7 +145,7 @@ export function ModernLearner() {
               <div className="relative z-20 sm:transform sm:translate-y-8 w-full max-w-[280px] sm:max-w-[320px] hidden md:block">
                 <Card className="shadow-2xl">
                   <CardContent className="p-4 sm:p-6 bg-white space-y-3 sm:space-y-4">
-                    <h3 className="font-semibold text-slate-900 text-sm sm:text-base">Quiz scores</h3>
+                    <h3 className=" text-slate-900 text-sm sm:text-base">Quiz scores</h3>
                     
                     <div className="space-y-2 sm:space-y-3">
                       <div className="flex items-center justify-between text-xs sm:text-sm">
@@ -232,7 +232,7 @@ export function ModernLearner() {
                 <Card className="shadow-2xl">
                   <CardContent className="p-4 sm:p-6 bg-white space-y-3 sm:space-y-4">
                     <div className="border-b pb-3 sm:pb-4">
-                      <h3 className="font-semibold text-slate-900 text-sm sm:text-base mb-0.5 sm:mb-1">Add content</h3>
+                      <h3 className=" text-slate-900 text-sm sm:text-base mb-0.5 sm:mb-1">Add content</h3>
                     </div>
                     
                     <div>
@@ -273,7 +273,7 @@ export function ModernLearner() {
           </div>
 
           <div className={`order-1 lg:order-2 space-y-4 sm:space-y-6 text-center lg:text-left transition-all duration-700 ${isVisible2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#E2F310]/90">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl  tracking-tight text-[#E2F310]/90">
               More time for
               <span className="block">what matters</span>
             </h2>

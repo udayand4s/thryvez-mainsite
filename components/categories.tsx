@@ -65,7 +65,7 @@ export function Categories() {
     <section className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl  mb-4">
             Explore Top Categories
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -83,7 +83,7 @@ export function Categories() {
                 <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl ${category.bgColor} flex items-center justify-center group-hover:scale-110 transition-transform`}>
                   <category.icon className={`h-8 w-8 ${category.color}`} />
                 </div>
-                <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">
+                <h3 className=" mb-2 group-hover:text-primary transition-colors">
                   {category.name}
                 </h3>
                 <p className="text-sm text-muted-foreground">

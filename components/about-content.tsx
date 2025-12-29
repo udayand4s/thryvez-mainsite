@@ -51,7 +51,7 @@ export function AboutContent() {
 
         <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
           <h1
-            className={`text-[2.8rem] sm:text-[3.5rem] lg:text-[4rem] font-bold text-white mb-6 transition-all duration-700 ${
+            className={`text-[2.8rem] sm:text-[3.5rem] lg:text-[4rem]  text-white mb-6 transition-all duration-700 ${
               visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
           >
@@ -77,7 +77,7 @@ export function AboutContent() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((s) => (
               <div key={s.label} className="text-center">
-                <div className="text-4xl font-bold text-white mb-2">
+                <div className="text-4xl  text-white mb-2">
                   {s.value}
                 </div>
                 <div className="text-white/60">{s.label}</div>
@@ -91,7 +91,7 @@ export function AboutContent() {
       <section className="py-24">
         <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
+            <h2 className="text-3xl sm:text-4xl  text-white">
               Our Story
             </h2>
             <p className="text-white/70">
@@ -113,7 +113,7 @@ export function AboutContent() {
 
           <BackgroundGradient className="rounded-3xl">
             <div className="aspect-square rounded-3xl bg-black/70 border border-white/10 flex items-center justify-center">
-              <span className="text-[160px] font-bold text-white/5 select-none">
+              <span className="text-[160px]  text-white/5 select-none">
                 Z
               </span>
             </div>
@@ -125,7 +125,7 @@ export function AboutContent() {
       <section className="bg-zinc-950 py-24">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl  text-white mb-4">
               Meet the Team
             </h2>
             <p className="text-white/60">
@@ -144,7 +144,7 @@ export function AboutContent() {
                   alt={m.name}
                   className="w-32 h-32 mx-auto rounded-full object-cover mb-6"
                 />
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-xl  text-white">
                   {m.name}
                 </h3>
                 <p className="text-[#E2F310] text-sm mb-2">{m.role}</p>
@@ -158,7 +158,7 @@ export function AboutContent() {
       {/* === CTA === */}
       <section className="py-24">
         <div className="container mx-auto px-6 max-w-3xl text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl  text-white mb-6">
             Want to join us?
           </h2>
           <p className="text-white/60 text-lg mb-8">
@@ -174,7 +174,7 @@ export function AboutContent() {
             />
             <Button
               size="lg"
-              className="h-14 px-8 bg-white text-black font-semibold group"
+              className="h-14 px-8 bg-white text-black  group"
             >
               Join now
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition" />

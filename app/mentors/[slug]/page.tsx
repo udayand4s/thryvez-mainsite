@@ -36,7 +36,7 @@ export default function MentorPage({
           {/* RIGHT */}
           <div className="md:col-span-2 space-y-6">
             <div>
-              <h1 className="text-4xl font-bold text-white">
+              <h1 className="text-4xl  text-white">
                 {mentor.name}
               </h1>
               <p className="text-[#E2F310] mt-2">
@@ -50,7 +50,7 @@ export default function MentorPage({
 
             {/* Expertise */}
             <div>
-              <h3 className="text-white font-semibold mb-2">Expertise</h3>
+              <h3 className="text-white  mb-2">Expertise</h3>
               <div className="flex flex-wrap gap-2">
                 {mentor.expertise.map((skill) => (
                   <Badge key={skill} variant="secondary">
@@ -62,7 +62,7 @@ export default function MentorPage({
 
             {/* Courses */}
             <div>
-              <h3 className="text-white font-semibold mb-2">
+              <h3 className="text-white  mb-2">
                 Courses by {mentor.name}
               </h3>
               <ul className="space-y-2">

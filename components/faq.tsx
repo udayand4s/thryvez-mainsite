@@ -57,7 +57,7 @@ export function FAQ() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`max-w-3xl mx-auto transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#E2F310]/90 mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl  text-[#E2F310]/90 mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-white/60 text-lg">
@@ -76,7 +76,7 @@ export function FAQ() {
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   className="w-full flex items-center justify-between p-5 sm:p-6 text-left hover:bg-white/5 transition-colors"
                 >
-                  <span className="font-semibold text-white text-base sm:text-lg pr-4">
+                  <span className=" text-white text-base sm:text-lg pr-4">
                     {faq.question}
                   </span>
                   <ChevronDown 

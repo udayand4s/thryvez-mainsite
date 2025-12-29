@@ -161,7 +161,7 @@ export function Testimonials() {
 
           <div className="pt-6 border-t border-white/30 flex items-center gap-4">
             <div
-              className={`h-14 w-14 rounded-full border-2 border-[${ACCENT_COLOR}]  flex items-center justify-center font-semibold`}
+              className={`h-14 w-14 rounded-full border-2 border-[${ACCENT_COLOR}]  flex items-center justify-center `}
             >
               {name
                 .split(" ")
@@ -170,7 +170,7 @@ export function Testimonials() {
             </div>
 
             <div>
-              <p className="text-xl font-bold text-[#E2F310]/90">{name}</p>
+              <p className="text-xl  text-[#E2F310]/90">{name}</p>
               <p className="text-sm text-gray-400">
                 {college}, {year}
               </p>

@@ -64,7 +64,7 @@ export function FeaturedCourses() {
           <Badge variant="outline" className="mb-4">
             Featured Courses
           </Badge>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#E2F310]/90">
+          <h2 className="text-3xl sm:text-4xl  mb-4 text-[#E2F310]/90">
             Most Popular Courses
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -155,11 +155,11 @@ export function FeaturedCourses() {
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-1 text-sm">
                       <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                      <span className="font-semibold">{course.rating}</span>
+                      <span className="">{course.rating}</span>
                     </div>
                   </div>
 
-                  <h3 className="font-semibold text-lg leading-tight transition-colors group-hover:text-primary">
+                  <h3 className=" text-lg leading-tight transition-colors group-hover:text-primary">
                     {course.title}
                   </h3>
                   <p className="text-sm text-muted-foreground">

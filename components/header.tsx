@@ -18,7 +18,7 @@ export function Header() {
           {/* LEFT */}
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2">
-              <div className="text-2xl tracking-tight font-acherus font-bold">
+              <div className="text-2xl tracking-tight font-acherus ">
                 <span className="text-white">Thryve </span>
                 <span className="font-futura bg-clip-text text-transparent text-white">
                   Z

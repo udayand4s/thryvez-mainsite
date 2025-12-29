@@ -80,7 +80,7 @@ export function Statistics() {
                 {/* Value + Prefix */}
                 <div className="mb-4">
                   <div className="flex items-baseline justify-center gap-2 mb-2">
-                    <span className="text-1xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
+                    <span className="text-1xl sm:text-3xl lg:text-4xl  text-white tracking-tight">
                       {stat.value}
                     </span>
                     <span className="text-xl sm:text-2xl lg:text-3xl font-medium text-white/80">

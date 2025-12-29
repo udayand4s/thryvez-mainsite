@@ -71,7 +71,7 @@ export function SimulationContent() {
       {!showResult ? (
         <>
           <div className="mb-10 text-center">
-            <h1 className="text-4xl font-bold text-white mb-2">
+            <h1 className="text-4xl  text-white mb-2">
               Try a Real Assignment
             </h1>
             <p className="text-white/70">
@@ -89,7 +89,7 @@ export function SimulationContent() {
 
           <Card className="glass border-white/10">
             <CardHeader>
-              <h2 className="text-xl text-white font-semibold">
+              <h2 className="text-xl text-white ">
                 {questions[current].question}
               </h2>
             </CardHeader>
@@ -117,7 +117,7 @@ export function SimulationContent() {
               <XCircle className="mx-auto h-16 w-16 text-red-500" />
             )}
 
-            <h2 className="text-3xl font-bold text-white">
+            <h2 className="text-3xl  text-white">
               You scored {score}/{questions.length}
             </h2>
 

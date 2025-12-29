@@ -133,7 +133,7 @@ export function CoursesContent() {
           >
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl  leading-tight">
                   <span className="text-[#E2F310]">Explore Our Top</span>
                   <span className="block text-white">Rated Courses</span>
                 </h1>
@@ -151,7 +151,7 @@ export function CoursesContent() {
 
       {/* COURSES */}
       <section className="max-w-7xl mx-auto px-6 pb-24">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#E2F310]/90 mb-8">
+        <h2 className="text-3xl sm:text-4xl  text-[#E2F310]/90 mb-8">
           Courses
         </h2>
 
@@ -206,11 +206,11 @@ export function CoursesContent() {
 
                     <div className="flex items-center gap-1 text-sm">
                       <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                      <span className="font-semibold">{course.rating}</span>
+                      <span className="">{course.rating}</span>
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-semibold text-white">
+                  <h3 className="text-lg  text-white">
                     {course.title}
                   </h3>
 
@@ -235,7 +235,7 @@ export function CoursesContent() {
         </div>
         {/* COMING SOON */}
         <section className="mt-20">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white/90 mb-8">
+          <h2 className="text-3xl sm:text-4xl  text-white/90 mb-8">
             Coming <span className="text-[#E2F310]">Soon</span>
           </h2>
 
@@ -277,7 +277,7 @@ export function CoursesContent() {
 
                 {/* Content */}
                 <div className="p-5">
-                  <h3 className="text-lg font-semibold text-white">
+                  <h3 className="text-lg  text-white">
                     {course.title}
                   </h3>
 
@@ -314,7 +314,7 @@ export function CoursesContent() {
 
       {/* MENTORS */}
       <section className="max-w-7xl mx-auto px-6 pb-32">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#E2F310]/90 mb-8">
+        <h2 className="text-3xl sm:text-4xl  text-[#E2F310]/90 mb-8">
           Meet Our Mentors
         </h2>
 
@@ -355,7 +355,7 @@ export function CoursesContent() {
                 className="w-full h-56 object-cover rounded-xl mb-4"
               />
 
-              <h3 className="text-xl font-semibold">
+              <h3 className="text-xl ">
                 <MentorLink
                   name={m.name}
                   slug={m.slug}

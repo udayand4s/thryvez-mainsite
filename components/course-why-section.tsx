@@ -82,7 +82,7 @@ export function CourseWhySection() {
                 <item.icon className="w-5 h-5" />
               </div>
 
-              <h4 className="text-white font-semibold mb-2">
+              <h4 className="text-white  mb-2">
                 {item.title}
               </h4>
 

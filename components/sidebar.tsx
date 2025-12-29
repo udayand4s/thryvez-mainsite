@@ -49,7 +49,7 @@ export function Sidebar() {
         {/* 1. LOGO SECTION */}
         <div className={cn("h-20 flex items-center border-b border-[#1F1F1F]/50 transition-all duration-300", isCollapsed ? "justify-center px-0" : "px-6")}>
           <Link href="/" className="flex items-center gap-2 group overflow-hidden">
-            <div className="text-2xl tracking-tight font-acherus font-bold transition-opacity group-hover:opacity-90 whitespace-nowrap">
+            <div className="text-2xl tracking-tight font-acherus  transition-opacity group-hover:opacity-90 whitespace-nowrap">
               {isCollapsed ? (
                 <span className="font-futura bg-clip-text text-transparent text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
                   Z
@@ -69,7 +69,7 @@ export function Sidebar() {
         {/* 2. NAVIGATION LINKS */}
         <div className="flex-1 py-8 px-3 overflow-y-auto overflow-x-hidden">
           {!isCollapsed && (
-            <div className="mb-4 px-2 text-[11px] font-bold uppercase tracking-widest text-[#555] font-sans animate-in fade-in duration-300">
+            <div className="mb-4 px-2 text-[11px]  uppercase tracking-widest text-[#555] font-sans animate-in fade-in duration-300">
               Menu
             </div>
           )}
@@ -129,13 +129,13 @@ export function Sidebar() {
                   <div className="p-1.5 rounded-md bg-white/10 border border-white/20">
                     <Sparkles className="h-3 w-3 text-white" />
                   </div>
-                  <span className="text-xs font-semibold text-white tracking-wide drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">JOIN US</span>
+                  <span className="text-xs  text-white tracking-wide drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">JOIN US</span>
                 </div>
 
                 <Button
                   size="sm"
                   onClick={() => setOpenModal(true)}
-                  className="w-full h-9 bg-transparent hover:bg-transparent text-white font-semibold text-xs border border-[#333] hover:border-white/50 shadow-[0_0_10px_rgba(255,255,255,0.2)] hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all"
+                  className="w-full h-9 bg-transparent hover:bg-transparent text-white  text-xs border border-[#333] hover:border-white/50 shadow-[0_0_10px_rgba(255,255,255,0.2)] hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all"
                 >
                   Register Now
                 </Button>
@@ -160,7 +160,7 @@ export function Sidebar() {
               className="w-full flex items-center justify-center gap-2 bg-transparent hover:bg-transparent text-white border border-[#333] hover:border-white/50 shadow-sm hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-200 h-10 mt-1"
             >
               <LogIn className="h-4 w-4 text-white" />
-              <span className="text-xs font-semibold tracking-wide drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">Sign In</span>
+              <span className="text-xs  tracking-wide drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">Sign In</span>
             </Button>
           ) : (
             <div className="flex justify-center">

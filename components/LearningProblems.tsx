@@ -66,7 +66,7 @@ export function LearningProblems() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold mb-10"
+          className="text-3xl md:text-4xl  mb-10"
         >
           Learning problems <span className="text-[#e2f310]">we all face</span>
         </motion.h2>
@@ -115,7 +115,7 @@ export function LearningProblems() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-2xl md:text-3xl font-semibold mb-12"
+          className="text-2xl md:text-3xl  mb-12"
         >
           The <span className="text-[#e2f310]">Thryve Z</span> way
         </motion.h3>
@@ -143,7 +143,7 @@ export function LearningProblems() {
                   </div>
                 </div>
 
-                <h4 className="font-semibold mb-2">{s.title}</h4>
+                <h4 className=" mb-2">{s.title}</h4>
                 <p className="text-sm text-white/70 leading-relaxed">
                   {s.desc}
                 </p>
@@ -180,7 +180,7 @@ export function LearningProblems() {
           <Link href="/courses">
             <Button
               size="lg"
-              className="bg-white text-black hover:bg-white/90 font-semibold px-8 py-6 text-base group"
+              className="bg-white text-black hover:bg-white/90  px-8 py-6 text-base group"
             >
               Explore Courses
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

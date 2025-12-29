@@ -14,7 +14,7 @@ export function Footer() {
 
           {/* Courses */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-white">
+            <h3 className="text-xs  uppercase tracking-widest text-white">
               Courses
             </h3>
             <ul className="space-y-3 text-sm text-gray-400">
@@ -27,7 +27,7 @@ export function Footer() {
 
           {/* Company */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-white">
+            <h3 className="text-xs  uppercase tracking-widest text-white">
               Company
             </h3>
             <ul className="space-y-3 text-sm text-gray-400">
@@ -40,7 +40,7 @@ export function Footer() {
 
           {/* Legal */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-white">
+            <h3 className="text-xs  uppercase tracking-widest text-white">
               Legal
             </h3>
             <ul className="space-y-3 text-sm text-gray-400">
@@ -52,7 +52,7 @@ export function Footer() {
 
           {/* Socials */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-white">
+            <h3 className="text-xs  uppercase tracking-widest text-white">
               Socials
             </h3>
             <ul className="space-y-3 text-sm text-gray-400">
@@ -96,7 +96,7 @@ export function Footer() {
             className="
               w-full text-center
               text-[18vw] sm:text-[16vw] lg:text-[14vw]
-              font-acherus font-extrabold tracking-tight leading-[1.05]
+              font-acherus  tracking-tight leading-[1.05]
               text-transparent
               [-webkit-text-stroke:1.2px_rgba(255,255,255,0.55)]
               [mask-image:linear-gradient(to_bottom,black_0%,black_45%,transparent_100%)]
