@@ -6,6 +6,10 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { MentorLink } from "@/components/mentor-link";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
+import { Boxes } from '@/components/ui/background-boxes';
+
+
+
 
 const courses = [
   {
@@ -110,43 +114,99 @@ const liveCourses = courses.filter(c => !c.comingSoon);
 const comingSoonCourses = courses.filter(c => c.comingSoon);
 
 export function CoursesContent() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
+    setVisible(true);
   }, []);
 
   return (
     <div className="w-full">
       {/* HERO SECTION */}
-      <section className="relative w-full overflow-hidden pt-16 pb-24">
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[700px] h-[700px]">
-          <div className="absolute inset-0 bg-[#E2F310]/10 blur-[160px] rounded-full animate-pulse-slow" />
-          <div className="absolute inset-0 bg-[#E2F310]/20 blur-[200px] rounded-full opacity-40 animate-float" />
-        </div>
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-black">
+        {/* === BACKGROUND BOXES === */}
+        <div className="absolute inset-0 w-full h-full bg-black z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+        <Boxes />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-5xl mx-auto py-24 lg:py-32">
+  
+            {/* === MAIN CONTENT (CENTERED) === */}
+            <div className="text-center flex flex-col items-center">
+  
+              {/* EYEBROW LINE */}
+              <span
+                className={`
+                  font-sans
+                  text-white/40
+                  text-xs
+                  uppercase
+                  tracking-[0.35em]
+                  mb-4
+                  transition-all duration-700 ease-out
+                  ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}
+                `}
+              >
+                Learning by Building
+              </span>
+  
+              {/* Line 1 */}
+              <h1
+                className={`
+                  --font-playfair
+                  text-white
+                  text-[7vw] sm:text-[5vw] lg:text-[4vw]
+                  leading-[1.04]
+                  tracking-[-0.02em]
+                  mb-4
+                  transition-all duration-700 ease-out
+                  ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
+                `}
+              >
+                Explore Our Top
+              </h1>
+  
+  
+  
+              <h2
+                className={`
+                  --font-playfair
+                  text-[#c7f000]
+                  text-[7vw] sm:text-[5vw] lg:text-[4vw]
+                  leading-[1]
+                  tracking-[-0.01em]
+                  mb-6
+                  transition-all duration-700 delay-100 ease-out
+                  ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
+                `}
+              >
+                Rated Courses
+              </h2>
+  
+  
+              {/* DESCRIPTION */}
+              <p
+                className={`
+                  max-w-3xl mx-auto
+                  font-sans font-normal
+                  text-white/60
+                  text-base sm:text-lg
+                  leading-relaxed
+                  tracking-normal
+                  mb-10
+                  transition-all duration-700 delay-200 ease-out
+                  ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
+                `}
+              >
+                Handpicked by thousands of learners worldwide — now more visual, more immersive, and taught by domain experts.
+              </p>
 
-        <div className="max-w-7xl mx-auto px-6">
-          <div
-            className={`relative transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
-          >
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl  leading-tight">
-                  <span className="text-[#E2F310]">Explore Our Top</span>
-                  <span className="block text-white">Rated Courses</span>
-                </h1>
-
-                <p className="mt-4 text-white/70 max-w-xl">
-                  Handpicked by thousands of learners worldwide — now more visual, more immersive, and taught by domain experts.
-                </p>
-              </div>
-
-              <div />
             </div>
+  
           </div>
         </div>
+  
+        {/* Bottom fade */}
+        <div className="pointer-events-none absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-black" />
       </section>
 
       {/* COURSES */}

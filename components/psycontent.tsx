@@ -5,6 +5,8 @@ import { CheckCircle, ArrowRight, Star, Sparkles, ClipboardCheck } from "lucide-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CourseWhySection } from '@/components/course-why-section';
+import { Boxes } from '@/components/ui/background-boxes';
+import Link from 'next/link';
 import { ApplyCourseModal } from '@/components/apply-course-modal';
 
 
@@ -45,82 +47,114 @@ export default function Psychology360Page() {
     
       <div className="bg-black text-white antialiased">
         {/* HERO */}
-        <header className="relative overflow-hidden min-h-[95vh] flex items-center">
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute -top-60 -left-60 h-[800px] w-[800px] rounded-full bg-[#e2f310]/40 blur-[160px] animate-pulse-slow"/>
-            <div className="absolute top-0 right-[-300px] h-[900px] w-[900px] rounded-full bg-[#e2f310]/30 blur-[200px]"/>
-            <div className="absolute bottom-[-300px] left-1/4 h-[800px] w-[800px] rounded-full bg-[#e2f310]/25 blur-[180px]"/>
-            <div className="absolute top-1/2 right-1/4 h-[600px] w-[600px] rounded-full bg-[#e2f310]/20 blur-[220px]"/>
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black"/>
-            <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage:'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',backgroundSize:'50px 50px'}}/>
-          </div>
+        <section className="relative min-h-[95vh] flex items-center overflow-hidden bg-black">
+          {/* BACKGROUND */}
+          <div className="absolute inset-0 w-full h-full bg-black z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+          <Boxes />
 
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 py-24 w-full">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.8}}>
-                
-                <h1 className="mt-8 text-5xl md:text-7xl  leading-[1.1] tracking-tight">
-                  Psychology 360<br/>
-                  <span className="text-[#e2f310]">Understand people.</span><br/>
-                  <span className="text-white/90">Deeply.</span>
+          <div className="container mx-auto px-6 lg:px-10 relative z-10">
+            <div className="max-w-6xl mx-auto py-24 lg:py-32">
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-center flex flex-col items-center"
+              >
+                {/* EYEBROW */}
+                <span className="text-white/40 text-xs uppercase tracking-[0.35em] mb-4">
+                  Cohort-based Applied Program
+                </span>
+
+                {/* HEADLINE */}
+                <h1 className="text-white text-[7vw] sm:text-[5vw] lg:text-[4vw] leading-[1.05] tracking-tight mb-2">
+                  Psychology 360
                 </h1>
-                <p className="mt-8 text-xl text-white/80 max-w-xl leading-relaxed">Learn why people think, feel and act the way they do. A cohort-based, applied psychology program built with real-world cases, assignments and expert mentorship.</p>
-                
-                <div className="mt-8 flex gap-8">
-                  <div><div className="text-3xl  text-[#e2f310]">8</div><div className="text-sm text-white/60">Phases</div></div>
-                  <div><div className="text-3xl  text-[#e2f310]">12</div><div className="text-sm text-white/60">Weeks</div></div>
-                  <div><div className="text-3xl  text-[#e2f310]">100+</div><div className="text-sm text-white/60">Students</div></div>
-                </div>
 
-                <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                  <Button className="bg-gradient-to-r from-[#e2f310] to-[#d4e20f] hover:from-[#d4e20f] hover:to-[#e2f310] text-black px-8 py-6 text-base  shadow-lg shadow-[#e2f310]/20 transition-all hover:shadow-xl hover:shadow-[#e2f310]/30 hover:scale-105"
-                  onClick={() => setOpen(true)}>
-                    Apply now <ArrowRight className="ml-2 h-5 w-5"/>
-                  </Button>
+                <h2 className="text-[#e2f310] text-[7vw] sm:text-[5vw] lg:text-[4vw] leading-[1] tracking-tight mb-6">
+                  Understand people. <span className="text-white/90">Deeply.</span>
+                </h2>
 
-                  <Button variant="outline" className="border-white/30 hover:bg-white/10 px-8 py-6 backdrop-blur-sm">Talk to an expert</Button>
-                </div>
-              </motion.div>
+                {/* DESCRIPTION */}
+                <p className="max-w-3xl mx-auto text-white/60 text-base sm:text-lg leading-relaxed mb-10">
+                  Learn why people think, feel and act the way they do. A cohort-based,
+                  applied psychology program built with real-world cases, assignments and
+                  expert mentorship.
+                </p>
 
-              <motion.div className="hidden md:block" initial={{opacity:0,x:20}} animate={{opacity:1,x:0}} transition={{duration:0.8,delay:0.3}}>
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#e2f310]/30 to-orange-400/30 blur-3xl"/>
-                  <div className="relative rounded-3xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 p-8 backdrop-blur-2xl shadow-2xl">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-[#e2f310] to-orange-400 flex items-center justify-center"><Star className="h-5 w-5 text-black"/></div>
-                      <div><div className="text-xs text-white/60 uppercase tracking-wider">Inside the program</div><div className="text-lg ">Real-life psychology cases</div></div>
-                    </div>
-                    <div className="space-y-4">
-                      {[{c:'#e2f310',w:'w-full'},{c:'orange-400',w:'w-5/6'},{c:'purple-400',w:'w-4/6'}].map((d,i)=>(
-                        <div key={i} className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group">
-                          <div className={`h-2 w-2 rounded-full bg-${d.c} group-hover:scale-125 transition-transform`}/>
-                          <div className={`h-3 ${d.w} rounded-full bg-gradient-to-r from-white/20 to-transparent`}/>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="mt-6 pt-6 border-t border-white/10 flex items-center justify-between">
-                      <div className="flex -space-x-3">{[1,2,3,4].map(i=><div key={i} className="h-8 w-8 rounded-full bg-gradient-to-br from-[#e2f310] to-orange-400 border-2 border-black"/>)}</div>
-                      <div className="text-sm text-white/70">+200 students enrolled</div>
-                    </div>
+                {/* STATS */}
+                <div className="flex gap-10 mb-12">
+                  <div>
+                    <div className="text-3xl text-[#e2f310]">8</div>
+                    <div className="text-sm text-white/50">Phases</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl text-[#e2f310]">12</div>
+                    <div className="text-sm text-white/50">Weeks</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl text-[#e2f310]">100+</div>
+                    <div className="text-sm text-white/50">Students</div>
                   </div>
                 </div>
-              </motion.div>
-            </div>
-          </div>
-        </header>
 
-        {/* KEYWORDS */}
-        <section className="py-8 border-y border-white/10 bg-gradient-to-r from-transparent via-white/5 to-transparent">
-          <div className="overflow-hidden">
-            <div className="flex gap-6 animate-key-scroll">
-              {[...keywords,...keywords,...keywords].map((k,i)=>(
-                <div key={i} className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-medium border border-white/10 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm whitespace-nowrap hover:border-[#e2f310]/50 hover:bg-white/15 transition-all group" style={{minWidth:180}}>
-                  <div className="h-1.5 w-1.5 rounded-full bg-[#e2f310] group-hover:scale-150 transition-transform"/>{k}
+                {/* CTA */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button
+                    className="bg-white text-black hover:bg-white/90 px-8 py-6 text-base group"
+                    onClick={() => setOpen(true)}
+                  >
+                    Apply now
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+
+                  <Button
+                    variant="outline"
+                    className="border-white/20 text-white hover:bg-white/10 px-8 py-6"
+                  >
+                    Talk to an expert
+                  </Button>
                 </div>
-              ))}
+              </motion.div>
+
+              {/* KEYWORDS / MARQUEE */}
+              <div className="mt-20">
+                <div className="relative overflow-hidden">
+                  <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10" />
+                  <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10" />
+
+                  <div className="flex animate-key-scroll gap-4">
+                    {[...keywords, ...keywords, ...keywords].map((k, i) => (
+                      <div
+                        key={i}
+                        className="
+                          inline-flex items-center gap-2
+                          px-5 py-3
+                          rounded-xl
+                          border border-white/10
+                          bg-white/[0.04]
+                          backdrop-blur-sm
+                          text-white/70 text-sm
+                          whitespace-nowrap
+                          hover:border-[#e2f310]/50
+                          transition-all
+                        "
+                      >
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#e2f310]" />
+                        {k}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
+
+          {/* Bottom fade */}
+          <div className="pointer-events-none absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-black" />
         </section>
+
 
         {/* CURRICULUM */}
         <section className="py-20 relative">

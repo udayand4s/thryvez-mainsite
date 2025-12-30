@@ -5,6 +5,9 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
+import { Boxes } from '@/components/ui/background-boxes';
+import Link from 'next/link';
+
 
 const team = [
   {
@@ -39,37 +42,102 @@ const stats = [
 
 export function AboutContent() {
   const [visible, setVisible] = useState(false);
-  useEffect(() => setVisible(true), []);
 
+  useEffect(() => {
+    setVisible(true);
+  }, []);
   return (
     <div className="relative overflow-hidden">
       {/* == HERO == */}
-      <section className="relative py-28 lg:py-36">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute left-1/2 top-24 -translate-x-1/2 w-[700px] h-[700px] bg-[#E2F310]/20 blur-[160px] rounded-full" />
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
-          <h1
-            className={`text-[2.8rem] sm:text-[3.5rem] lg:text-[4rem]  text-white mb-6 transition-all duration-700 ${
-              visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-            }`}
-          >
-            We're building the future
-            <span className="block text-white/60">
-              of professional learning
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-black">
+      {/* === BACKGROUND BOXES === */}
+      <div className="absolute inset-0 w-full h-full bg-black z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+      <Boxes />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-5xl mx-auto py-24 lg:py-32">
+          {/* === MAIN CONTENT (CENTERED) === */}
+          <div className="text-center flex flex-col items-center">
+            {/* EYEBROW LINE */}
+            <span
+              className={`
+                font-sans
+                text-white/40
+                text-xs
+                uppercase
+                tracking-[0.35em]
+                mb-4
+                transition-all duration-700 ease-out
+                ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}
+              `}
+            >
+              Learning by Building
             </span>
-          </h1>
-
-          <p className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto">
-          Thryvez was founded with a simple mission: to empower young people
-          to build bold skills, original thinking, and a creative identity through
-          hands-on, real-world learning.
-
-
-          </p>
+            {/* Line 1 */}
+            <h1
+              className={`
+                --font-playfair
+                text-white
+                text-[7vw] sm:text-[5vw] lg:text-[4vw]
+                leading-[1.04]
+                tracking-[-0.02em]
+                mb-4
+                transition-all duration-700 ease-out
+                ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
+              `}
+            >
+              We&apos;re building the future
+            </h1>
+            <h2
+              className={`
+                --font-playfair
+                text-[#c7f000]
+                text-[7vw] sm:text-[5vw] lg:text-[4vw]
+                leading-[1]
+                tracking-[-0.01em]
+                mb-6
+                transition-all duration-700 delay-100 ease-out
+                ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
+              `}
+            >
+              of professional learning
+            </h2>
+            {/* DESCRIPTION */}
+            <p
+              className={`
+                max-w-3xl mx-auto
+                font-sans font-normal
+                text-white/60
+                text-base sm:text-lg
+                leading-relaxed
+                tracking-normal
+                mb-10
+                transition-all duration-700 delay-200 ease-out
+                ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
+              `}
+            >
+              Thryvez was founded with a simple mission: to empower young people to build bold skills, original thinking, and a creative identity through hands-on, real-world learning.
+            </p>
+            {/* CTA */}
+            <div
+              className={`transition-all duration-700 delay-300 ease-out
+                ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            >
+              <Link href="/courses">
+                <Button
+                  size="lg"
+                  className="bg-white text-black hover:bg-white/90  px-8 py-6 text-base group"
+                >
+                  Explore the Lab
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+      {/* Bottom fade */}
+      <div className="pointer-events-none absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-black" />
+    </section>
 
       {/* === STATS === */}
       <section className="border-y border-white/10 py-16">
@@ -185,3 +253,8 @@ export function AboutContent() {
     </div>
   );
 }
+
+
+
+
+
