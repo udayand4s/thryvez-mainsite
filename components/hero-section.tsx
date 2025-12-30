@@ -62,7 +62,7 @@ export function HeroSection() {
             <span
               className={`
                 font-sans
-                text-white/40
+                text-white/90
                 text-xs
                 uppercase
                 tracking-[0.35em]
@@ -150,7 +150,7 @@ export function HeroSection() {
             className={`mt-20 transition-all duration-700 delay-500 ease-out
             ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
-            <p className="text-[15px] text-white/40 uppercase tracking-[0.3em] mb-8 text-center">
+            <p className="text-[15px] text-white/90 uppercase tracking-[0.3em] mb-8 text-center">
               Trusted by people building real companies
             </p>
 
