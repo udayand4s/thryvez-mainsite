@@ -30,7 +30,7 @@ const courses = [
   },
   {
     id: 'clinical-psy',
-    title: 'Clinical Psycology',
+    title: 'Clinical Psychology',
     instructor: 'Sanjivani',
     qual:'MA Clinical Psychology',
     rating: 4.6,

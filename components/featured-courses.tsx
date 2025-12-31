@@ -14,7 +14,7 @@ const courses = [
     id: 'psychology360',
     title: 'Psychology 360',
     instructor: 'Jivisha Dangi',
-    qual: 'Counsellinhg Psychologist',
+    qual: 'Counselling Psychologist',
     rating: 4.9,
     students: 153,
     oldprice: 10999,
