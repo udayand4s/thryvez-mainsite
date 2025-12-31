@@ -1,9 +1,17 @@
 'use client';
 
+import { useState } from "react";
 import Link from "next/link";
-import { Twitter, Linkedin, Mail, Phone, Clock } from "lucide-react";
+import { Linkedin, Mail, Phone, Clock } from "lucide-react";
+import { ContactUsModal } from "@/components/contact-us-modal";
+
+
 
 export function Footer() {
+
+
+  const [contactOpen, setContactOpen] = useState(false);
+
   return (
     <footer className="bg-black text-white border-t border-white/10 font-sans">
       <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8 py-12">
@@ -32,7 +40,12 @@ export function Footer() {
             </h3>
             <ul className="space-y-3 text-sm text-gray-400">
               <li><Link href="/about" className="hover:text-white transition-colors">About ThryveZ</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
+              <button
+                onClick={() => setContactOpen(true)}
+                className="text-white/70 hover:text-white transition"
+              >
+                Contact Us
+              </button>
               <li><Link href="/apply" className="hover:text-white transition-colors">Careers</Link></li>
               <li><Link href="/courses" className="hover:text-white transition-colors">Mentors</Link></li>
             </ul>
@@ -56,11 +69,6 @@ export function Footer() {
               Socials
             </h3>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li>
-                <Link href="#" className="flex items-center gap-2 hover:text-white transition-colors">
-                  <Twitter className="h-4 w-4" /> Twitter
-                </Link>
-              </li>
               <li>
                 <Link href="#" className="flex items-center gap-2 hover:text-white transition-colors">
                   <Linkedin className="h-4 w-4" /> LinkedIn
@@ -157,7 +165,12 @@ export function Footer() {
         </div>
 
       </div>
+      <ContactUsModal
+        open={contactOpen}
+        onOpenChange={setContactOpen}
+      />
       
     </footer>
+    
   );
 }
