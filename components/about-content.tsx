@@ -115,7 +115,7 @@ export function AboutContent() {
                 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
               `}
             >
-              Thryvez was founded with a simple mission: to empower young people to build bold skills, original thinking, and a creative identity through hands-on, real-world learning.
+              ThryveZ was founded with a simple mission: to empower young people to build bold skills, original thinking, and a creative identity through hands-on, real-world learning.
             </p>
             {/* CTA */}
             <div
@@ -163,7 +163,7 @@ export function AboutContent() {
               Our Story
             </h2>
             <p className="text-white/90">
-              We started Thryvez because we saw a gap in professional education.
+              We started ThryveZ because we saw a gap in professional education.
               Traditional courses were outdated, communities were fragmented, and
               practical knowledge was locked behind expensive conferences.
             </p>

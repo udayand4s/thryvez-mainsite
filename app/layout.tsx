@@ -20,7 +20,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Thryvez - Join the Fastest Way Forward',
+  title: 'ThryveZ - Join the Fastest Way Forward',
   description: 'Join thousands of students learning from industry experts. Master in-demand skills and advance your career with our comprehensive courses.',
   keywords: 'online learning, courses, education, skills, professional development',
 };

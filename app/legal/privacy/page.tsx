@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
           {/* Intro */}
           <section className="space-y-4">
             <p className="text-white/80 leading-relaxed">
-              At Thryve Z (accessible from https://thryvez.in/),
+              At Thryve Z (accessible from https://ThryveZ.in/),
               protecting the privacy of our learners and community members is a
               top priority. This Privacy Policy explains what data we collect,
               how we use it, and the choices you have.

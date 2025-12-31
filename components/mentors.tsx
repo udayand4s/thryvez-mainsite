@@ -9,7 +9,7 @@ const testimonials = [
     company: 'sarvam.ai',
     memberSince: '2024',
     content:
-      "The real value of ThryvezX is the community. Every conversation sharpens my thinking. It's like having 100+ leaders on speed dial.",
+      "The real value of ThryveZ is the community. Every conversation sharpens my thinking. It's like having 100+ leaders on speed dial.",
     image:
       'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
   },
