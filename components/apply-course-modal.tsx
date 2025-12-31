@@ -57,7 +57,7 @@ export function ApplyCourseModal({
           <DialogTitle className="text-2xl ">
             Apply for {courseName ?? 'this course'}
           </DialogTitle>
-          <p className="text-white/70 text-sm mt-1">
+          <p className="text-white/90 text-sm mt-1">
             Fill in your details and our team will reach out shortly.
           </p>
         </DialogHeader>

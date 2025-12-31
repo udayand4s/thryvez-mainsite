@@ -160,7 +160,7 @@ export function SimulationContent() {
                 You scored {score}/{questions.length}
               </h2>
 
-              <p className="text-white/70 max-w-md mx-auto">
+              <p className="text-white/90 max-w-md mx-auto">
                 This is exactly how assignments and evaluations feel inside a full course.
               </p>
 

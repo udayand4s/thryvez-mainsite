@@ -3,14 +3,15 @@
 import { useState, useEffect, useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
 
+
 const faqs = [
   {
     question: 'What makes Thryvez different from other learning platforms?',
-    answer: 'Thryvez combines expert-led courses with an exclusive community of growth leaders. Unlike traditional platforms, you get direct access to practitioners who have scaled products at top companies, plus a peer network that accelerates your learning.',
+    answer: 'Thryvez combines expert-led courses with an exclusive community of growth leaders. Unlike traditional platforms, you get direct access to practitioners who have scaled products at top companies, plus a peer network that accelerates your learning and a lifetime access to the courses you choose.',
   },
   {
     question: 'Who are the courses designed for?',
-    answer: 'Our courses are designed for ambitious professionals - product managers, marketers, founders, and growth leaders who want to level up their skills. Whether you\'re early in your career or a seasoned executive, our content is crafted to deliver actionable insights.',
+    answer: 'Our courses are designed for ambitious professionals - product managers, marketers, founders, and growth leaders who want to level up their skills as well as students, both Under Graduates and school students. Whether you\'re early in your career or a seasoned executive, our content is crafted to deliver actionable insights.',
   },
   {
     question: 'How long do I have access to the courses?',
@@ -18,11 +19,7 @@ const faqs = [
   },
   {
     question: 'Is there a community or networking component?',
-    answer: 'Absolutely. Community is at the core of ThryvezX. You get access to exclusive Slack channels, monthly AMAs with industry leaders, and networking events. Many of our members have found co-founders, mentors, and career opportunities through the community.',
-  },
-  {
-    question: 'What if the course isn\'t right for me?',
-    answer: 'We offer a 14-day money-back guarantee. If you\'re not satisfied with the course content or it doesn\'t meet your expectations, simply reach out and we\'ll process a full refund, no questions asked.',
+    answer: 'Absolutely. Community is at the core of ThryveZ. You get access to exclusive Slack channels, monthly AMAs with industry leaders, and networking events. Many of our members have found co-founders, mentors, and career opportunities through the community.',
   },
   {
     question: 'Do you offer team or enterprise plans?',
@@ -60,7 +57,7 @@ export function FAQ() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl  text-[#E2F310]/90 mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-white/60 text-lg">
+            <p className="text-white/90 text-lg">
               Everything you need to know about Thryvez
             </p>
           </div>
@@ -80,7 +77,7 @@ export function FAQ() {
                     {faq.question}
                   </span>
                   <ChevronDown 
-                    className={`h-5 w-5 text-white/60 flex-shrink-0 transition-transform duration-300 ${
+                    className={`h-5 w-5 text-white/90 flex-shrink-0 transition-transform duration-300 ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                   />
@@ -90,7 +87,7 @@ export function FAQ() {
                     openIndex === index ? 'max-h-96' : 'max-h-0'
                   }`}
                 >
-                  <p className="px-5 sm:px-6 pb-5 sm:pb-6 text-white/60 leading-relaxed">
+                  <p className="px-5 sm:px-6 pb-5 sm:pb-6 text-white/90 leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>

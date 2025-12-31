@@ -162,17 +162,17 @@ export function AboutContent() {
             <h2 className="text-3xl sm:text-4xl  text-white">
               Our Story
             </h2>
-            <p className="text-white/70">
+            <p className="text-white/90">
               We started Thryvez because we saw a gap in professional education.
               Traditional courses were outdated, communities were fragmented, and
               practical knowledge was locked behind expensive conferences.
             </p>
-            <p className="text-white/70">
+            <p className="text-white/90">
               We believed there had to be a better way. A platform where ambitious
               professionals could learn from practitioners, not just theorists. Where they
               could build real connections, not just collect certificates.
             </p>
-            <p className="text-white/70">
+            <p className="text-white/90">
               Today, we're proud to serve over 50,000 members across 50+ countries,
               with courses taught by leaders from companies like Google, Meta, Stripe,
               and many more.

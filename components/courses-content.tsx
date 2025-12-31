@@ -323,7 +323,7 @@ export function CoursesContent() {
                       <div className="mb-2 text-sm tracking-widest uppercase text-[#E2F310]">
                         Coming Soon
                       </div>
-                      <div className="text-white/70 text-xs">
+                      <div className="text-white/90 text-xs">
                         Launching shortly
                       </div>
                     </div>

@@ -20,15 +20,6 @@ const testimonials = [
     college: "Goswami Ganesh Dutta Sanatan Dharma College",
     year: "2027",
   },
-
-  {
-    quote:
-      "All the sessions were really great and I learned so many things. Thank you 💕",
-    name: "Shailja",
-    college: "Government Doon Medical College",
-    year: "2030",
-  },
-
   {
     quote:
       "The curriculum was structured in a simple and practical way, with each topic explained clearly and supported by examples that made it easy to connect theories to real-life situations. The assignments were very helpful and strengthened my understanding. I felt supported and engaged throughout the course. The sessions were interesting, friendly, and genuinely valuable for anyone interested in psychology.",
@@ -36,7 +27,6 @@ const testimonials = [
     college: "Nagindas Khandwala College (Malad West)",
     year: "2028",
   },
-
   {
     quote:
       "It’s easy to follow even for those with zero prior knowledge. The assignments felt like weekly check-ins on our own feelings and helped apply learning in real life. Both the facilitator and mentor were very approachable. I was initially skeptical about an online course, but I’m glad I was proven wrong.",
@@ -44,7 +34,6 @@ const testimonials = [
     college: "Gandhi Medical College, Hyderabad",
     year: "2030",
   },
-
   {
     quote:
       "Before attending these classes, I didn’t know there was so much behind our feelings. The course taught me the importance of psychology in life and how to manage emotions. The class atmosphere was very welcoming, and I felt truly connected to the brand and the team.",
@@ -52,14 +41,36 @@ const testimonials = [
     college: "Dayananda Sagar Medical College",
     year: "2030",
   },
+  {
+    quote:
+      "This was my first extracurricular class, and it changed my perspective on psychology. The sessions on emotional life were especially helpful. The mentor’s warm teaching style made learning easy and enjoyable.",
+    name: "Rishi TM",
+    college: "Dayananda Sagar Medical College",
+    year: "2030",
+  },
 
   {
     quote:
-      "I loved the sessions, they were so knowledge-filled, optimistic, and meaningful!",
-    name: "Manogya Vasudev",
-    college: "Siddaganga Medical College and Research Institute",
+      "The sessions were very useful and engaging. Topics like emotions, personality disorders, and attachment styles made me curious to learn more. The teaching style was highly student-centered and effective.",
+    name: "A Mithinkumar",
+    college: "Madurai Medical College",
     year: "2030",
   },
+  {
+    quote:
+      "It was a very happy, interactive experience. I learned a lot about psychology and human behaviour, which inspired me to study psychology further. Learning with ma’am was a great experience due to her excellent and engaging teaching style.",
+    name: "Aryan Mann",
+    college: "Sukriti World",
+    year: "2025",
+  },
+  {
+    quote:
+      "It was a very happy, interactive experience. I learned a lot about psychology and human behaviour, which inspired me to study psychology further. Learning with ma’am was a great experience due to her excellent and engaging teaching style.",
+    name: "Aryan Mann",
+    college: "Sukriti World",
+    year: "2025",
+  },
+  
 
   {
     quote:
@@ -109,27 +120,27 @@ const testimonials = [
     year: "2027",
   },
 
-  {
-    quote:
-      "This was my first extracurricular class, and it changed my perspective on psychology. The sessions on emotional life were especially helpful. The mentor’s warm teaching style made learning easy and enjoyable.",
-    name: "Rishi TM",
-    college: "Dayananda Sagar Medical College",
-    year: "2030",
-  },
-
-  {
-    quote:
-      "The sessions were very useful and engaging. Topics like emotions, personality disorders, and attachment styles made me curious to learn more. The teaching style was highly student-centered and effective.",
-    name: "A Mithinkumar",
-    college: "Madurai Medical College",
-    year: "2030",
-  },
+  
 
   {
     quote:
       "Just keep going 👍 The sessions were very lovely and enjoyable 😄",
     name: "N. Chandra Kaladhar",
     college: "Gandhi Medical College, Secunderabad",
+    year: "2030",
+  },
+  {
+    quote:
+      "All the sessions were really great and I learned so many things. Thank you 💕",
+    name: "Shailja",
+    college: "Government Doon Medical College",
+    year: "2030",
+  },
+  {
+    quote:
+      "I loved the sessions, they were so knowledge-filled, optimistic, and meaningful!",
+    name: "Manogya Vasudev",
+    college: "Siddaganga Medical College and Research Institute",
     year: "2030",
   },
 

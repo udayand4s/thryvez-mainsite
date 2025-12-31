@@ -31,7 +31,7 @@ export function HeroSection() {
           border border-white/10
           bg-white/[0.04]
           backdrop-blur-sm
-          text-white/60 font-medium text-sm
+          text-white/90 font-medium text-sm
           whitespace-nowrap
           hover:text-white hover:border-[#e2f310]/50
           transition-all
@@ -113,7 +113,7 @@ export function HeroSection() {
               className={`
                 max-w-3xl mx-auto
                 font-sans font-normal
-                text-white/60
+                text-white/90
                 text-base sm:text-lg
                 leading-relaxed
                 tracking-normal

@@ -57,7 +57,7 @@ export function CourseWhySection() {
           Why choose this program?
         </h2>
 
-        <p className="text-white/70 max-w-2xl mx-auto mb-16">
+        <p className="text-white/90 max-w-2xl mx-auto mb-16">
           Real skills. Real projects. Real understanding.
         </p>
 
@@ -86,7 +86,7 @@ export function CourseWhySection() {
                 {item.title}
               </h4>
 
-              <p className="text-white/70 text-sm leading-relaxed">
+              <p className="text-white/90 text-sm leading-relaxed">
                 {item.desc}
               </p>
             </div>

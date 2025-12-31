@@ -134,7 +134,7 @@ export default function Psychology360Page() {
                           border border-white/10
                           bg-white/[0.04]
                           backdrop-blur-sm
-                          text-white/70 text-sm
+                          text-white/90 text-sm
                           whitespace-nowrap
                           hover:border-[#e2f310]/50
                           transition-all
@@ -163,7 +163,7 @@ export default function Psychology360Page() {
           <div className="max-w-6xl mx-auto px-6 relative">
             <div className="mb-16">
               <h2 className="text-4xl md:text-5xl  mb-4">Your Learning <span className="text-[#e2f310]">Journey</span></h2>
-              <p className="text-white/70 text-lg max-w-2xl">Eight carefully crafted phases that take you from foundations to real-world application</p>
+              <p className="text-white/90 text-lg max-w-2xl">Eight carefully crafted phases that take you from foundations to real-world application</p>
             </div>
 
             <div className="grid md:grid-cols-[240px_1fr] gap-8">
@@ -340,7 +340,7 @@ export default function Psychology360Page() {
           <div className="max-w-5xl mx-auto px-6 text-center relative">
             <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
               <h2 className="text-4xl md:text-5xl  mb-4">Earn Your <span className="text-[#e2f310]">Certification</span></h2>
-              <p className="mt-4 text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">Complete all lessons, assignments, and submit a capstone. Upon evaluation you receive a verified Psychology 360 certificate — ideal for portfolios, LinkedIn and resumes.</p>
+              <p className="mt-4 text-white/90 text-lg max-w-2xl mx-auto leading-relaxed">Complete all lessons, assignments, and submit a capstone. Upon evaluation you receive a verified Psychology 360 certificate — ideal for portfolios, LinkedIn and resumes.</p>
               <div className="mt-12 inline-flex items-center gap-8 bg-gradient-to-br from-white/10 to-white/5 p-8 rounded-3xl border border-white/20 backdrop-blur-xl shadow-2xl">
                 <div className="relative">
                   <div className="h-28 w-28 rounded-2xl bg-gradient-to-br from-[#e2f310]/20 to-orange-400/20 border border-[#e2f310]/30 flex items-center justify-center backdrop-blur-sm">
@@ -351,7 +351,7 @@ export default function Psychology360Page() {
                 <div className="text-left">
                   <div className="text-xs text-white/60 uppercase tracking-wider mb-2">Official Credential</div>
                   <div className="text-2xl  mb-1">Applied Psychology Certificate</div>
-                  <div className="text-sm text-white/70">Digital badge + printable certificate</div>
+                  <div className="text-sm text-white/90">Digital badge + printable certificate</div>
                 </div>
               </div>
             </motion.div>
@@ -365,7 +365,7 @@ export default function Psychology360Page() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <motion.div initial={{opacity:0,x:-20}} whileInView={{opacity:1,x:0}} viewport={{once:true}}>
                 <h2 className="text-4xl md:text-5xl  mb-6">Ready to join <span className="text-[#e2f310]">Psychology 360?</span></h2>
-                <p className="text-white/70 text-lg max-w-lg leading-relaxed">Live weekly learning, exclusive community perks and project-based evaluations. Start building applied psychology skills today.</p>
+                <p className="text-white/90 text-lg max-w-lg leading-relaxed">Live weekly learning, exclusive community perks and project-based evaluations. Start building applied psychology skills today.</p>
               </motion.div>
               <motion.div initial={{opacity:0,x:20}} whileInView={{opacity:1,x:0}} viewport={{once:true}}>
                 <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl">
@@ -379,7 +379,7 @@ export default function Psychology360Page() {
                     <div className="flex items-end justify-between mb-6">
                       <div>
                         <div className="text-sm text-white/60 line-through">₹8,999</div>
-                        <div className="text-5xl "><span className=" text-[#e2f310]">₹5,999</span><span className="text-base text-white/70 font-normal"></span></div>
+                        <div className="text-5xl "><span className=" text-[#e2f310]">₹5,999</span><span className="text-base text-white/90 font-normal"></span></div>
                       </div>
                       <div className="px-4 py-2 rounded-xl bg-[#e2f310]/20 text-[#e2f310] text-sm ">Save 20%</div>
                     </div>
@@ -407,7 +407,7 @@ export default function Psychology360Page() {
                     <span className="text-[#e2f310] text-xl">{openF===i?"−":"+"}</span>
                   </button>
                   <div className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${openF===i?"max-h-40 pb-5":"max-h-0"}`}>
-                    <p className="text-white/70">{f.a}</p>
+                    <p className="text-white/90">{f.a}</p>
                   </div>
                 </div>
               ))}

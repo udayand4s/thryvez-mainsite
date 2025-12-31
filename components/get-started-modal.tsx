@@ -56,7 +56,7 @@ export function GetStartedModal({
           <DialogTitle className="text-2xl">
             Get Started
           </DialogTitle>
-          <p className="text-white/70 text-sm mt-1">
+          <p className="text-white/90 text-sm mt-1">
             Tell us a bit about yourself — we’ll personalize your learning journey.
           </p>
         </DialogHeader>
