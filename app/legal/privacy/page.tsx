@@ -3,130 +3,133 @@ import { Footer } from "@/components/footer";
 export const metadata = {
   title: "Privacy Policy | ThryveZ",
   description:
-    "Learn how ThryveZ collects, uses, and protects your personal information.",
+    "Privacy Policy explaining how ThryveZ collects, uses, and protects user data.",
 };
 
 export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen flex flex-col bg-black">
       <main className="flex-1 container mx-auto px-6 py-20 max-w-4xl">
-        <article className="space-y-10">
-          {/* Page Header */}
-          <header className="space-y-4">
+        <article className="space-y-12">
+
+          {/* Header */}
+          <header className="space-y-4 border-b border-white/10 pb-8">
             <h1 className="text-4xl text-white">Privacy Policy</h1>
-            <p className="text-white/90 leading-relaxed">
-              At ThryveZ, protecting the privacy of our learners and community
-              members is a top priority. This Privacy Policy explains what data
-              we collect, how we use it, and the choices you have.
-            </p>
           </header>
 
-          {/* Information We Collect */}
+          {/* Intro */}
           <section className="space-y-4">
+            <p className="text-white/80 leading-relaxed">
+              At Thryve Z (accessible from https://thryvez.in/),
+              protecting the privacy of our learners and community members is a
+              top priority. This Privacy Policy explains what data we collect,
+              how we use it, and the choices you have.
+            </p>
+          </section>
+
+          {/* Information We Collect */}
+          <section className="space-y-6">
             <h2 className="text-2xl text-white">Information We Collect</h2>
 
-            <p className="text-white/90 leading-relaxed">
+            <p className="text-white/80 leading-relaxed">
               We collect information you provide directly while engaging with
-              ThryveZ, including:
+              Thryve Z, such as:
             </p>
 
-            <ul className="list-disc list-inside space-y-2 text-white/90">
-              <li>
-                <strong>Account details:</strong> name, email address, phone
-                number, and organization details (if applicable).
-              </li>
-              <li>
-                <strong>Course activity:</strong> submissions, projects, case
-                study interactions, reviews, and community discussions.
-              </li>
-              <li>
-                <strong>Communication information:</strong> messages you send
-                us and any attachments.
-              </li>
-            </ul>
-
-            <p className="text-white/90 leading-relaxed">
-              We also automatically collect certain technical information such
-              as:
+            <p className="text-white/80">
+              <strong>Account details:</strong> name, email, phone number, and
+              organization details (if applicable).
             </p>
 
-            <ul className="list-disc list-inside space-y-2 text-white/90">
-              <li>
-                <strong>Log data:</strong> IP address, browser type, device
-                information, referring pages, and timestamps.
-              </li>
-              <li>
-                <strong>Cookies:</strong> preferences and usage patterns (you
-                can control cookies through your browser settings).
-              </li>
-            </ul>
+            <p className="text-white/80">
+              <strong>Course activity:</strong> submissions, projects, case study
+              interactions, reviews, and community discussions.
+            </p>
+
+            <p className="text-white/80">
+              <strong>Communication info:</strong> messages you send us, along
+              with any attachments.
+            </p>
+
+            <p className="text-white/80 leading-relaxed">
+              We also automatically collect certain technical data, including:
+            </p>
+
+            <p className="text-white/80">
+              <strong>Log data:</strong> IP address, browser type, device info,
+              referring pages, date/time of access.
+            </p>
+
+            <p className="text-white/80">
+              <strong>Cookies:</strong> preferences and activity patterns (you
+              can manage these in your browser settings).
+            </p>
           </section>
 
           {/* How We Use Information */}
-          <section className="space-y-4">
+          <section className="space-y-6">
             <h2 className="text-2xl text-white">How We Use Your Information</h2>
 
-            <ul className="list-disc list-inside space-y-2 text-white/90">
-              <li>Operate, maintain, and improve the ThryveZ platform.</li>
+            <p className="text-white/80">We use your information to:</p>
+
+            <ul className="list-disc list-inside space-y-2 text-white/80">
+              <li>Operate and improve the Thryve Z platform.</li>
               <li>Personalize content, recommendations, and services.</li>
               <li>
-                Develop new features and analyze platform usage and learning
-                progress.
+                Develop new features, track learning progress, and analyze
+                platform usage.
               </li>
               <li>
-                Communicate important updates related to enrollments,
-                certificates, or new opportunities (with consent for
-                promotional messages).
+                Communicate important updates about enrollments, certificates,
+                or new opportunities (with your consent for promotions).
               </li>
               <li>Send essential administrative notifications.</li>
-              <li>Detect, prevent, and address fraud or misuse.</li>
+              <li>Detect and prevent fraud or misuse.</li>
             </ul>
           </section>
 
-          {/* Sharing of Information */}
-          <section className="space-y-4">
+          {/* Sharing */}
+          <section className="space-y-6">
             <h2 className="text-2xl text-white">Sharing of Information</h2>
 
-            <p className="text-white/90 leading-relaxed">
-              We do not sell your personal information. We only share data in
-              the following cases:
+            <p className="text-white/80 leading-relaxed">
+              We do not sell or share your personal information except in these
+              cases:
             </p>
 
-            <ul className="list-disc list-inside space-y-2 text-white/90">
-              <li>
-                <strong>Service partners:</strong> trusted providers who assist
-                with payments, analytics, hosting, or platform operations.
-              </li>
-              <li>
-                <strong>Legal compliance:</strong> when required by law or to
-                protect the rights, safety, and security of our users and
-                platform.
-              </li>
-            </ul>
+            <p className="text-white/80">
+              <strong>Service Partners:</strong> with trusted providers who help
+              us operate the platform (e.g., payment, analytics, hosting).
+            </p>
+
+            <p className="text-white/80">
+              <strong>Legal Compliance:</strong> if required by law, to protect
+              our rights, or to safeguard the safety of our learners and
+              community.
+            </p>
           </section>
 
           {/* Data Retention */}
           <section className="space-y-4">
             <h2 className="text-2xl text-white">Data Retention</h2>
-            <p className="text-white/90 leading-relaxed">
-              We retain personal information only for as long as necessary to
-              fulfill the purposes described in this policy, unless a longer
-              retention period is required by law.
+            <p className="text-white/80 leading-relaxed">
+              We keep your personal data only as long as necessary for the
+              purposes outlined in this policy, unless a longer retention
+              period is required by law.
             </p>
           </section>
 
-          {/* User Rights */}
-          <section className="space-y-4">
+          {/* Rights */}
+          <section className="space-y-6">
             <h2 className="text-2xl text-white">Your Rights</h2>
 
-            <p className="text-white/90 leading-relaxed">
-              You may request at any time to:
-            </p>
+            <p className="text-white/80">You may request at any time to:</p>
 
-            <ul className="list-disc list-inside space-y-2 text-white/90">
+            <ul className="list-disc list-inside space-y-2 text-white/80">
               <li>Access or update your personal information.</li>
-              <li>Request deletion of your account or personal data.</li>
-              <li>Restrict or object to certain types of data processing.</li>
+              <li>Request deletion of your account/data.</li>
+              <li>Restrict how we process your information.</li>
+              <li>Object to specific types of processing.</li>
               <li>Request a copy of your data (data portability).</li>
             </ul>
           </section>
@@ -134,36 +137,37 @@ export default function PrivacyPolicyPage() {
           {/* Children */}
           <section className="space-y-4">
             <h2 className="text-2xl text-white">Children’s Privacy</h2>
-            <p className="text-white/90 leading-relaxed">
-              ThryveZ is not intended for children under the age of 13. We do
-              not knowingly collect personal information from children. If you
-              believe a child has provided personal data, please contact us so
-              we can promptly remove it.
+            <p className="text-white/80 leading-relaxed">
+              Thryve Z is not directed toward children under 13, and we do not
+              knowingly collect their data. If you believe a child has submitted
+              personal information, please contact us so we can remove it.
             </p>
           </section>
 
           {/* Contact */}
           <section className="space-y-4">
             <h2 className="text-2xl text-white">Contact Us</h2>
-            <p className="text-white/90 leading-relaxed">
-              If you have any questions or concerns regarding this Privacy
-              Policy, you can contact us at:
-            </p>
-            <p className="text-white font-medium">
-              contact@thryvez.in
+            <p className="text-white/80">
+              For questions or concerns about this Privacy Policy, please reach
+              us at:{" "}
+              <a
+                href="mailto:contact@thryvez.in"
+                className="underline underline-offset-4"
+              >
+                contact@thryvez.in
+              </a>
             </p>
           </section>
 
           {/* Updates */}
           <section className="space-y-4">
-            <h2 className="text-2xl text-white">
-              Updates to This Policy
-            </h2>
-            <p className="text-white/90 leading-relaxed">
-              We may update this Privacy Policy from time to time. Any changes
-              will be posted on this page along with the updated date.
+            <h2 className="text-2xl text-white">Updates to This Policy</h2>
+            <p className="text-white/80 leading-relaxed">
+              We may update this Privacy Policy from time to time. Any revisions
+              will be posted on this page with the updated date.
             </p>
           </section>
+
         </article>
       </main>
 

@@ -19,7 +19,7 @@ export default function TermsPage() {
 
           {/* Intro */}
           <section className="space-y-4">
-            <p className="text-white/90 leading-relaxed">
+            <p className="text-white/80 leading-relaxed">
               Welcome to our website. By using this site, you agree to follow the
               Terms and Conditions listed below. When we say “we,” “us,” or
               “our,” we mean Institution 1. When we say “you” or “user,” we
@@ -28,7 +28,7 @@ export default function TermsPage() {
               site.
             </p>
 
-            <p className="text-white/90 leading-relaxed">
+            <p className="text-white/80 leading-relaxed">
               We may update these Terms and Conditions from time to time to keep
               them relevant and clear. Any changes will be reflected on this
               page, so we encourage you to check back occasionally. By
@@ -39,7 +39,7 @@ export default function TermsPage() {
           {/* Use of Content */}
           <section className="space-y-4">
             <h2 className="text-2xl text-white">Use of Content</h2>
-            <p className="text-white/90 leading-relaxed">
+            <p className="text-white/80 leading-relaxed">
               All names, logos, marks, labels, shapes, and other content on this
               site belong to us or our associated partners unless otherwise
               stated. They may be owned by us or used with permission. You are
@@ -57,7 +57,7 @@ export default function TermsPage() {
             </h2>
 
             <div className="space-y-2">
-              <p className="text-white/90 leading-relaxed">
+              <p className="text-white/80 leading-relaxed">
                 <strong>Security:</strong> For everyone’s safety, users must not
                 try to break into restricted areas of the site, test
                 vulnerabilities, interfere with how the site works, or send
@@ -67,7 +67,7 @@ export default function TermsPage() {
             </div>
 
             <div className="space-y-2">
-              <p className="text-white/90 leading-relaxed">
+              <p className="text-white/80 leading-relaxed">
                 <strong>General Use:</strong> Users must not share or store
                 content on this website that is illegal, violates intellectual
                 property rights, or contains harmful or offensive material. We
@@ -79,7 +79,7 @@ export default function TermsPage() {
           {/* Indemnity */}
           <section className="space-y-4">
             <h2 className="text-2xl text-white">Indemnity</h2>
-            <p className="text-white/90 leading-relaxed">
+            <p className="text-white/80 leading-relaxed">
               By using the site, you agree to protect and hold harmless the
               company, its team, and partners from any claims, losses, or
               damages that may arise from misuse of the site or a breach of
@@ -90,7 +90,7 @@ export default function TermsPage() {
           {/* Liability */}
           <section className="space-y-4">
             <h2 className="text-2xl text-white">Liability</h2>
-            <p className="text-white/90 leading-relaxed">
+            <p className="text-white/80 leading-relaxed">
               While we aim to provide smooth and reliable service, the company
               and its team will not be responsible for any direct or indirect
               damages that may come from using the site. This includes issues
@@ -103,7 +103,7 @@ export default function TermsPage() {
             <h2 className="text-2xl text-white">
               Disclaimer of Consequential Damages
             </h2>
-            <p className="text-white/90 leading-relaxed">
+            <p className="text-white/80 leading-relaxed">
               In no case will the company or its associates be liable for
               damages caused by your use, or inability to use, the website.
               This applies even if such damages were possible or foreseeable.
