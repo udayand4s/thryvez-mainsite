@@ -91,7 +91,7 @@ export function LearningProblems() {
         </div>
 
         {/* CONNECTOR */}
-        <div className="relative flex justify-center my-24 h-44 overflow-hidden">
+        <div className="relative flex justify-center my-10 h-20 overflow-hidden">
           <div className="absolute inset-y-0 w-px bg-white/10" />
 
           <motion.div
@@ -153,7 +153,7 @@ export function LearningProblems() {
 
         </div>
         {/* CONNECTOR */}
-        <div className="relative flex justify-center my-24 h-44 overflow-hidden">
+        <div className="relative flex justify-center my-10 h-20 overflow-hidden">
           <div className="absolute inset-y-0 w-px bg-white/10" />
 
           <motion.div
