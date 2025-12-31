@@ -402,7 +402,7 @@ export function CoursesContent() {
               role: "AI Marketing",
               qual:"IIM Nagpur | AI Brand Strategist",
               image:
-                "mirra.jpeg",
+                "mirra.png",
             },
           ].map((m) => (
             <div

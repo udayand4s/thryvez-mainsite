@@ -74,12 +74,12 @@ perspectives into her teaching, making complex ideas accessible, relatable, and 
     ],
   },
   {
-    id: "mirra-lakshmanan",
-    slug: "mirra-lakshmanan",
+    id: "mirra",
+    slug: "mirra",
     name: "Mirra Lakshmanan",
     role: "Psychology Educator",
     company: "Thryve Z",
-    image: "/mirra.jpeg",
+    image: "/mirra.png",
     bio: "Mirra Lakshmanan is a psychology educator passionate about simplifying complex psychological concepts and enabling learners to apply theory into everyday decision-making and personal growth.",
     expertise: [
       "Applied Psychology",

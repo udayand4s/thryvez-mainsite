@@ -80,7 +80,7 @@ export function SimulationContent() {
             <div className="text-center flex flex-col items-center">
               <span
                 className={`
-                  text-white/40 text-xs uppercase tracking-[0.35em] mb-4
+                  text-white/90 text-xs uppercase tracking-[0.35em] mb-4
                   transition-all duration-700
                   ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}
                 `}
@@ -101,7 +101,7 @@ export function SimulationContent() {
 
               <p
                 className={`
-                  max-w-3xl text-white/60 text-base sm:text-lg mb-10
+                  max-w-3xl text-white/90 text-base sm:text-lg mb-10
                   transition-all duration-700 delay-200
                   ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
                 `}

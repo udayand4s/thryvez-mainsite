@@ -13,19 +13,72 @@ import { ApplyCourseModal } from '@/components/apply-course-modal';
 
 
 export default function AiMarketingPage() {
-  const keywords = ["Cognitive Biases","Behavioral Psychology","Emotional Intelligence","Social Influence","Decision Making","Mental Models","Motivation","Therapeutic Techniques","Group Dynamics","Research Methods"];
+  const keywords = [
+    "AI Marketing Automation",
+    "Systems Architecture",
+    "6-Stage Marketing Engine",
+    "No-Code Orchestration",
+    "n8n Workflows",
+    "Zapier Logic",
+    "HubSpot CRM",
+    "AI Content Factories",
+    "Automated Funnels",
+    "Marketing Operations",
+  ];
+  
   const [open, setOpen] = useState(false);
 
   const curriculum = [
-    {phase:"Phase 1",title:"Foundations of Human Behavior",bullets:["History & approaches (behavioral, cognitive, humanistic)","Research methods & ethical practice"],assignments:1,quizzes:1},
-    {phase:"Phase 2",title:"Cognitive Processes",bullets:["Perception & attention","Memory & learning models"],assignments:1,quizzes:1},
-    {phase:"Phase 3",title:"Emotion & Motivation",bullets:["Emotional regulation frameworks","Intrinsic vs extrinsic motivation"],assignments:1,quizzes:1},
-    {phase:"Phase 4",title:"Social Influence",bullets:["Conformity & persuasion","Group behavior & roles"],assignments:1,quizzes:1},
-    {phase:"Phase 5",title:"Applied Psychology",bullets:["Communication & empathy training","Behavior change interventions"],assignments:2,quizzes:1},
-    {phase:"Phase 6",title:"Clinical Basics",bullets:["Common disorders overview","When to refer & ethical boundaries"],assignments:1,quizzes:1},
-    {phase:"Phase 7",title:"Research & Metrics",bullets:["Designing small studies","Interpreting results & biases"],assignments:1,quizzes:1},
-    {phase:"Phase 8",title:"Capstone Project",bullets:["Real-world case study","Implementation & evaluation"],assignments:2,quizzes:0}
+    {
+      phase: "Phase 1",
+      title: "The Foundation: AI in Marketing Workflows",
+      bullets: [
+        "Core AI concepts and where AI fits into modern marketing",
+        "Understanding the 6-stage marketing engine",
+        "Introducing the FreshFizz D2C brand",
+        "Mapping workflows using AI-first thinking",
+      ],
+      assignments: 1,
+      quizzes: 0,
+    },
+    {
+      phase: "Phase 2",
+      title: "Attract & Capture: AI Content + Lead Engine",
+      bullets: [
+        "Creating AI-first content systems",
+        "Building a 15-day AI-driven content calendar",
+        "Lead capture flows using forms and automation",
+        "Connecting Zapier with HubSpot CRM",
+      ],
+      assignments: 1,
+      quizzes: 0,
+    },
+    {
+      phase: "Phase 3",
+      title: "Nurture & Convert: Automation Logic",
+      bullets: [
+        "Designing behavior-based nurture journeys",
+        "Email sequencing using conditional logic",
+        "Stripe purchase → n8n → HubSpot automation",
+        "Multi-step workflows with branching logic",
+      ],
+      assignments: 1,
+      quizzes: 0,
+    },
+    {
+      phase: "Phase 4",
+      title: "Deliver & Retain: Fulfillment Systems",
+      bullets: [
+        "Automating customer fulfillment",
+        "Retention logic using feedback and scoring",
+        "Advanced branching conditions in n8n",
+        "Building a self-sustaining marketing machine",
+      ],
+      assignments: 1,
+      quizzes: 0,
+    },
   ];
+  
 
   const mentors = [
     {name:"Dr. Nisha Rao",title:"Clinical Psychologist",creds:"PhD, 12 yrs practice"},
@@ -34,10 +87,20 @@ export default function AiMarketingPage() {
   ];
 
   const faqs = [
-    {q:"Who should take Psychology 360?",a:"Anyone curious about human behavior — working professionals, students, coaches, or founders who want applied psychology tools."},
-    {q:"Do I need previous knowledge?",a:"No. We begin with foundations and progressively build to applied skills and a capstone."},
-    {q:"How is certification awarded?",a:"Complete lessons, assignments and a capstone project. A verified certificate is issued on passing evaluation."}
+    {
+      q: "Who is this course for?",
+      a: "Marketers, founders, operators, and students who want to build scalable AI-driven marketing systems, not just run campaigns.",
+    },
+    {
+      q: "Do I need coding experience?",
+      a: "No. This course uses no-code tools like n8n, Zapier, and HubSpot while teaching deep system logic.",
+    },
+    {
+      q: "What do I build by the end?",
+      a: "A fully automated, 6-stage AI marketing engine for a D2C brand — your portfolio cornerstone.",
+    },
   ];
+  
 
   const [openC, setOpenC] = useState<number>(0);
   const [openF, setOpenF] = useState<number|null>(null);
@@ -62,41 +125,48 @@ export default function AiMarketingPage() {
                 className="text-center flex flex-col items-center"
               >
                 {/* EYEBROW */}
-                <span className="text-white/40 text-xs uppercase tracking-[0.35em] mb-4">
+                <span className="text-white/90 text-xs uppercase tracking-[0.35em] mb-4">
                   Cohort-based Applied Program
                 </span>
 
                 {/* HEADLINE */}
                 <h1 className="text-white text-[7vw] sm:text-[5vw] lg:text-[4vw] leading-[1.05] tracking-tight mb-2">
-                  Psychology 360
+                  The AI Marketing
                 </h1>
 
                 <h2 className="text-[#e2f310] text-[7vw] sm:text-[5vw] lg:text-[4vw] leading-[1] tracking-tight mb-6">
-                  Understand people. <span className="text-white/90">Deeply.</span>
+                  Engine <span className="text-white/90">Build Systems. Not Ads.</span>
                 </h2>
 
+
                 {/* DESCRIPTION */}
-                <p className="max-w-3xl mx-auto text-white/60 text-base sm:text-lg leading-relaxed mb-10">
-                  Learn why people think, feel and act the way they do. A cohort-based,
-                  applied psychology program built with real-world cases, assignments and
-                  expert mentorship.
+                <p className="max-w-3xl mx-auto text-white/90 text-base sm:text-lg leading-relaxed mb-6">
+                  Stop running ads. Build a machine that runs itself.
                 </p>
+
+                <p className="max-w-3xl mx-auto text-white/90 text-base sm:text-lg leading-relaxed mb-10">
+                  Learn to design a fully automated, 6-stage AI marketing system that
+                  handles everything from content creation to customer retention —
+                  using real tools, real logic, and a real brand.
+                </p>
+
 
                 {/* STATS */}
                 <div className="flex gap-10 mb-12">
                   <div>
-                    <div className="text-3xl text-[#e2f310]">8</div>
-                    <div className="text-sm text-white/50">Phases</div>
+                    <div className="text-3xl text-[#e2f310]">6</div>
+                    <div className="text-sm text-white/90">Stage Engine</div>
                   </div>
                   <div>
-                    <div className="text-3xl text-[#e2f310]">12</div>
-                    <div className="text-sm text-white/50">Weeks</div>
+                    <div className="text-3xl text-[#e2f310]">No-Code</div>
+                    <div className="text-sm text-white/90">Automation</div>
                   </div>
                   <div>
-                    <div className="text-3xl text-[#e2f310]">100+</div>
-                    <div className="text-sm text-white/50">Students</div>
+                    <div className="text-3xl text-[#e2f310]">Live</div>
+                    <div className="text-sm text-white/90">System Build</div>
                   </div>
                 </div>
+
 
                 {/* CTA */}
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -188,7 +258,7 @@ export default function AiMarketingPage() {
                       key={c.phase}
                       onClick={() => setOpenC(idx)}
                       className={`w-full text-left px-4 py-3 rounded-lg transition-all relative group ${
-                        openC === idx ? 'bg-white/10 text-white' : 'text-white/50 hover:text-white/80 hover:bg-white/5'
+                        openC === idx ? 'bg-white/10 text-white' : 'text-white/90 hover:text-white/90 hover:bg-white/5'
                       }`}
                     >
                       {/* Optional: Indicator Dot per Phase */}
@@ -196,7 +266,7 @@ export default function AiMarketingPage() {
                         openC >= idx ? 'bg-[#e2f310]' : 'bg-neutral-800'
                       }`} />
                       
-                      <div className="text-xs text-white/60 mb-1">{c.phase}</div>
+                      <div className="text-xs text-white/90 mb-1">{c.phase}</div>
                       <div className="text-sm font-medium">{c.title}</div>
                     </button>
                   ))}
@@ -218,12 +288,12 @@ export default function AiMarketingPage() {
                       </div>
                       <div>
                         <div className="text-2xl ">{curriculum[openC].title}</div>
-                        <div className="text-sm text-white/60">{curriculum[openC].phase}</div>
+                        <div className="text-sm text-white/90">{curriculum[openC].phase}</div>
                       </div>
                     </div>
 
                     <div className="mb-6">
-                      <h3 className="text-sm  text-white/60 mb-4 uppercase tracking-wider">What will you learn?</h3>
+                      <h3 className="text-sm  text-white/90 mb-4 uppercase tracking-wider">What will you learn?</h3>
                       <ul className="space-y-6">
                         {curriculum[openC].bullets.map((b, i) => (
                           <li key={i} className="space-y-2">
@@ -235,7 +305,7 @@ export default function AiMarketingPage() {
                             </div>
 
                             {/* SUB ITEM / NOTES / ASSIGNMENT */}
-                            <div className="flex items-start gap-3 pl-8 text-white/60">
+                            <div className="flex items-start gap-3 pl-8 text-white/90">
                               <ClipboardCheck className="h-4 w-4 text-[#e2f310]/80 mt-0.5 flex-shrink-0" />
                               <span className="text-sm leading-relaxed">
                                 {b}
@@ -254,7 +324,7 @@ export default function AiMarketingPage() {
                           <ClipboardCheck className="h-5 w-5 text-[#e2f310]"/>
                         </div>
                         <div>
-                          <div className="text-sm text-white/60">Assignments</div>
+                          <div className="text-sm text-white/90">Assignments</div>
                           <div className="">{curriculum[openC].assignments}</div>
                         </div>
                       </div>
@@ -263,7 +333,7 @@ export default function AiMarketingPage() {
                           <CheckCircle className="h-5 w-5 text-[#e2f310]"/>
                         </div>
                         <div>
-                          <div className="text-sm text-white/60">Quizzes</div>
+                          <div className="text-sm text-white/90">Quizzes</div>
                           <div className="">{curriculum[openC].quizzes}</div>
                         </div>
                       </div>
@@ -272,7 +342,7 @@ export default function AiMarketingPage() {
                 )}
                 
                 {openC===null && (
-                  <div className="h-full flex items-center justify-center text-white/40">
+                  <div className="h-full flex items-center justify-center text-white/90">
                     Select a phase to view details
                   </div>
                 )}
@@ -296,26 +366,36 @@ export default function AiMarketingPage() {
             <CardContent className="p-8 grid md:grid-cols-[500px_1fr] gap-20 items-start">
                 {/* Avatar */}
                 <img
-                  src='/Jivisha-Psychology.webp'
+                  src='/mirra.png'
                   className="w-full h-300 object-cover rounded-2xl mb-4"
                 />
 
                 {/* Bio */}
                 <div>
-                  <h3 className="text-2xl  mb-1">Jivisha Dangi</h3>
-                  <p className="text-white/60 mb-4">Clinical Psychologist</p>
+                  <h3 className="text-2xl mb-1">Miraa Lakshmanan</h3>
+                  <p className="text-white/90 mb-4">AI Marketing Specialist</p>
 
-                  <p className="text-white/80 leading-relaxed whitespace-pre-line">
-                    {`Jivisha is a Counselling Psychologist and Psychotherapist with almost two years of experience. She holds a Master’s in Psychology (Psychosocial Clinical Studies) from Ambedkar University, Delhi, and a Postgraduate Diploma in Guidance and Counselling from Jamia Millia Islamia. She is also an Adult Fellow at the Washington Baltimore Center for Psychoanalysis, where she is deepening her engagement with psychoanalytic thought and practice.
-                    As a therapist and mentor, Jivisha believes in combining academic rigor with a reflective, human-centered approach to understanding the mind. Her work emphasizes curiosity, dialogue, and critical thinking, encouraging learners to not just acquire knowledge but to engage with it meaningfully. She brings her experience of working with diverse individuals and her grounding in psychoanalytic perspectives into her teaching, making complex ideas accessible relatable, and thought-provoking.`}
+
+                  <p className="text-white/90 leading-relaxed whitespace-pre-line">
+                  {`Automation isn’t about being lazy; it’s about being smart.
+
+                  Miraa is an AI Marketing Specialist who teaches marketers how to think
+                  like systems architects. Her focus is on building logic-driven marketing
+                  machines using tools like n8n, Zapier, and HubSpot.
+
+                  She emphasizes where automation works best, where human oversight is
+                  essential, and how to govern AI systems responsibly — from first prompt
+                  to final conversion.`}
                   </p>
+
 
                   <div className="mt-6 flex flex-wrap gap-2">
                     {[
-                      "Clinical Psychology",
-                      "Behavioral Science",
-                      "Mental Health",
-                      "Cognitive Therapy",
+                      "AI Marketing Automation",
+                      "n8n Workflows",
+                      "CRM Architecture",
+                      "Growth Systems",
+                      "Marketing Operations",
                     ].map((e) => (
                       <span
                         key={e}
@@ -340,17 +420,22 @@ export default function AiMarketingPage() {
           <div className="max-w-5xl mx-auto px-6 text-center relative">
             <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
               <h2 className="text-4xl md:text-5xl  mb-4">Earn Your <span className="text-[#e2f310]">Certification</span></h2>
-              <p className="mt-4 text-white/90 text-lg max-w-2xl mx-auto leading-relaxed">Complete all lessons, assignments, and submit a capstone. Upon evaluation you receive a verified Psychology 360 certificate — ideal for portfolios, LinkedIn and resumes.</p>
+              <p className="mt-4 text-white/90 text-lg max-w-2xl mx-auto leading-relaxed">
+                Graduate with more than a certificate. Build a fully automated,
+                end-to-end AI marketing system that becomes your portfolio’s
+                centerpiece.
+              </p>
+
               <div className="mt-12 inline-flex items-center gap-8 bg-gradient-to-br from-white/10 to-white/5 p-8 rounded-3xl border border-white/20 backdrop-blur-xl shadow-2xl">
                 <div className="relative">
                   <div className="h-28 w-28 rounded-2xl bg-gradient-to-br from-[#e2f310]/20 to-orange-400/20 border border-[#e2f310]/30 flex items-center justify-center backdrop-blur-sm">
-                    <div className="text-center"><Sparkles className="h-6 w-6 text-[#e2f310] mx-auto mb-2"/><div className="text-xs text-white/60 uppercase tracking-wider">Verified</div><div className="text-sm  text-[#e2f310]">Psychology 360</div></div>
+                    <div className="text-center"><Sparkles className="h-6 w-6 text-[#e2f310] mx-auto mb-2"/><div className="text-xs text-white/90 uppercase tracking-wider">Verified</div><div className="text-sm text-[#e2f310]">AI Marketing Engine</div></div>
                   </div>
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#e2f310] to-orange-400 blur-2xl opacity-30"/>
                 </div>
                 <div className="text-left">
-                  <div className="text-xs text-white/60 uppercase tracking-wider mb-2">Official Credential</div>
-                  <div className="text-2xl  mb-1">Applied Psychology Certificate</div>
+                  <div className="text-xs text-white/90 uppercase tracking-wider mb-2">Official Credential</div>
+                  <div className="text-2xl mb-1">AI Marketing Automation Certificate</div>
                   <div className="text-sm text-white/90">Digital badge + printable certificate</div>
                 </div>
               </div>
@@ -364,21 +449,23 @@ export default function AiMarketingPage() {
           <div className="max-w-6xl mx-auto px-6 relative">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <motion.div initial={{opacity:0,x:-20}} whileInView={{opacity:1,x:0}} viewport={{once:true}}>
-                <h2 className="text-4xl md:text-5xl  mb-6">Ready to join <span className="text-[#e2f310]">Psychology 360?</span></h2>
+                <h2 className="text-4xl md:text-5xl mb-6">
+                  Ready to build your <span className="text-[#e2f310]">AI Marketing Engine?</span>
+                </h2>
                 <p className="text-white/90 text-lg max-w-lg leading-relaxed">Live weekly learning, exclusive community perks and project-based evaluations. Start building applied psychology skills today.</p>
               </motion.div>
               <motion.div initial={{opacity:0,x:20}} whileInView={{opacity:1,x:0}} viewport={{once:true}}>
                 <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl">
                   <div className="mb-6">
-                    <div className="text-sm text-white/60 mb-4 uppercase tracking-wider">Membership includes</div>
-                    <ul className="text-sm text-white/80 space-y-3">
+                    <div className="text-sm text-white/90 mb-4 uppercase tracking-wider">Membership includes</div>
+                    <ul className="text-sm text-white/90 space-y-3">
                       {["Weekly live learning (AI, product & marketing)","In-person curated monthly events in 11+ cities","AI credits & perks from top brands worth ₹24L","10 self-paced product & marketing programs","5,000+ member community","200+ interview prep lessons"].map((t,i)=><li key={i} className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-[#e2f310] mt-0.5 flex-shrink-0"/>{t}</li>)}
                     </ul>
                   </div>
                   <div className="border-t border-white/10 pt-6">
                     <div className="flex items-end justify-between mb-6">
                       <div>
-                        <div className="text-sm text-white/60 line-through">₹8,999</div>
+                        <div className="text-sm text-white/90 line-through">₹8,999</div>
                         <div className="text-5xl "><span className=" text-[#e2f310]">₹5,999</span><span className="text-base text-white/90 font-normal"></span></div>
                       </div>
                       <div className="px-4 py-2 rounded-xl bg-[#e2f310]/20 text-[#e2f310] text-sm ">Save 20%</div>
@@ -429,8 +516,9 @@ export default function AiMarketingPage() {
       <ApplyCourseModal
         open={open}
         onOpenChange={setOpen}
-        courseName="Psychology 360"
+        courseName="The AI Marketing Engine"
       />
+
     </>
   );
 }
