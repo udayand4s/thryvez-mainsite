@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Linkedin, Mail, Phone, Clock } from "lucide-react";
+import { Facebook, Linkedin, Mail, Phone, Clock, HouseIcon } from "lucide-react";
 import { ContactUsModal } from "@/components/contact-us-modal";
 
 
@@ -74,20 +74,21 @@ export function Footer() {
                   <Linkedin className="h-4 w-4" /> LinkedIn
                 </Link>
               </li>
+              <li>
+                <Link href="#" className="flex items-center gap-2 hover:text-white transition-colors">
+                  <Facebook className="h-4 w-4" /> Facebook
+                </Link>
+              </li>
 
               <li className="pt-4 border-t border-white/10 mt-1">
                 <div className="flex flex-col gap-2 pt-2">
                   <span className="flex items-center gap-2 text-xs md:text-sm hover:text-white transition-colors">
-                    <Mail className="h-3 w-3 md:h-4 md:w-4" />
-                    hello@thryvez.in
-                  </span>
-                  <span className="flex items-center gap-2 text-xs md:text-sm hover:text-white transition-colors">
-                    <Phone className="h-3 w-3 md:h-4 md:w-4" />
-                    +91 89045 40133
-                  </span>
-                  <span className="flex items-center gap-2 text-xs md:text-sm hover:text-white transition-colors">
                     <Clock className="h-3 w-3 md:h-4 md:w-4" />
                     Timings: Mon–Sat, 11AM – 9PM IST
+                  </span>
+                  <span className="flex items-center gap-2 text-xs md:text-sm hover:text-white transition-colors">
+                    <HouseIcon className="h-3 w-3 md:h-4 md:w-4" />
+                    Address: Lorem Ipsum
                   </span>
                 </div>
               </li>

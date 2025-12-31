@@ -49,7 +49,7 @@ const courses = [
     title: 'AI Marketing',
     instructor: 'Mirra Lakshmanan',
     qual:'IIM Nagpur | AI Brand Strategist',
-    rating: 4.6,
+    rating: 4.8,
     students: 57,
     oldprice: 9999,
     price: 4499,
