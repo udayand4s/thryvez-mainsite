@@ -12,7 +12,7 @@ import { ApplyCourseModal } from '@/components/apply-course-modal';
 
 
 
-export default function Psychology360Page() {
+export default function AiMarketingPage() {
   const keywords = ["Cognitive Biases","Behavioral Psychology","Emotional Intelligence","Social Influence","Decision Making","Mental Models","Motivation","Therapeutic Techniques","Group Dynamics","Research Methods"];
   const [open, setOpen] = useState(false);
 

@@ -17,15 +17,56 @@ export default function Psychology360Page() {
   const [open, setOpen] = useState(false);
 
   const curriculum = [
-    {phase:"Phase 1",title:"Foundations of Human Behavior",bullets:["History & approaches (behavioral, cognitive, humanistic)","Research methods & ethical practice"],assignments:1,quizzes:1},
-    {phase:"Phase 2",title:"Cognitive Processes",bullets:["Perception & attention","Memory & learning models"],assignments:1,quizzes:1},
-    {phase:"Phase 3",title:"Emotion & Motivation",bullets:["Emotional regulation frameworks","Intrinsic vs extrinsic motivation"],assignments:1,quizzes:1},
-    {phase:"Phase 4",title:"Social Influence",bullets:["Conformity & persuasion","Group behavior & roles"],assignments:1,quizzes:1},
-    {phase:"Phase 5",title:"Applied Psychology",bullets:["Communication & empathy training","Behavior change interventions"],assignments:2,quizzes:1},
-    {phase:"Phase 6",title:"Clinical Basics",bullets:["Common disorders overview","When to refer & ethical boundaries"],assignments:1,quizzes:1},
-    {phase:"Phase 7",title:"Research & Metrics",bullets:["Designing small studies","Interpreting results & biases"],assignments:1,quizzes:1},
-    {phase:"Phase 8",title:"Capstone Project",bullets:["Real-world case study","Implementation & evaluation"],assignments:2,quizzes:0}
+    {
+      phase: "Phase 1",
+      title: "Foundations of the Self",
+      bullets: [
+        "Psychology beyond myths and ‘mind-reading’",
+        "How psychology shapes daily decisions, emotions, and relationships",
+        "Psychoanalytic ideas of self (Freud, Winnicott: true vs false self)",
+        "Early relationships, attachment, and personality formation",
+      ],
+      assignments: 1,
+      quizzes: 0,
+    },
+    {
+      phase: "Phase 2",
+      title: "The Social & Emotional World",
+      bullets: [
+        "Impression formation, stereotypes, and cognitive biases",
+        "Emotional regulation strategies (CBT & mindfulness)",
+        "Social media, identity, and belief formation",
+        "Indian emotional norms: family honor, saving face",
+      ],
+      assignments: 1,
+      quizzes: 0,
+    },
+    {
+      phase: "Phase 3",
+      title: "Mental Health & Healing",
+      bullets: [
+        "Understanding ‘abnormality’ and cultural relativity",
+        "Overview of anxiety, depression, and trauma",
+        "Mental health stigma in India",
+        "What therapy is (and isn’t) + core therapeutic approaches",
+      ],
+      assignments: 1,
+      quizzes: 0,
+    },
+    {
+      phase: "Phase 4",
+      title: "Applied Psychology & Your Future",
+      bullets: [
+        "Attachment theory in love, friendship, and family",
+        "Career paths: clinical, counselling, research & applied psychology",
+        "Building skills early through internships and volunteering",
+        "Designing your personal psychology career roadmap",
+      ],
+      assignments: 1,
+      quizzes: 0,
+    },
   ];
+  
 
   const mentors = [
     {name:"Dr. Nisha Rao",title:"Clinical Psychologist",creds:"PhD, 12 yrs practice"},
@@ -88,16 +129,16 @@ export default function Psychology360Page() {
                 {/* STATS */}
                 <div className="flex gap-10 mb-12">
                   <div>
-                    <div className="text-3xl text-[#e2f310]">8</div>
+                    <div className="text-3xl text-[#e2f310]">4</div>
                     <div className="text-sm text-white/50">Phases</div>
                   </div>
                   <div>
-                    <div className="text-3xl text-[#e2f310]">12</div>
+                    <div className="text-3xl text-[#e2f310]">4</div>
                     <div className="text-sm text-white/50">Weeks</div>
                   </div>
                   <div>
                     <div className="text-3xl text-[#e2f310]">100+</div>
-                    <div className="text-sm text-white/50">Students</div>
+                    <div className="text-sm text-white/50">Learners</div>
                   </div>
                 </div>
 

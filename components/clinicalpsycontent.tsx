@@ -12,20 +12,73 @@ import { ApplyCourseModal } from '@/components/apply-course-modal';
 
 
 
-export default function Psychology360Page() {
-  const keywords = ["Cognitive Biases","Behavioral Psychology","Emotional Intelligence","Social Influence","Decision Making","Mental Models","Motivation","Therapeutic Techniques","Group Dynamics","Research Methods"];
+export default function ClinicalPsychologyPage() {
+  const keywords = [
+    "Clinical Thinking",
+    "Case Vignettes",
+    "Diagnostic Systems",
+    "Mental Status Examination",
+    "Distress vs Disorder",
+    "4P Case Formulation",
+    "Film-Based Analysis",
+    "Ethical Practice",
+    "Therapy Approaches",
+    "Clinical Career Pathways",
+  ];
+  
   const [open, setOpen] = useState(false);
 
   const curriculum = [
-    {phase:"Phase 1",title:"Foundations of Human Behavior",bullets:["History & approaches (behavioral, cognitive, humanistic)","Research methods & ethical practice"],assignments:1,quizzes:1},
-    {phase:"Phase 2",title:"Cognitive Processes",bullets:["Perception & attention","Memory & learning models"],assignments:1,quizzes:1},
-    {phase:"Phase 3",title:"Emotion & Motivation",bullets:["Emotional regulation frameworks","Intrinsic vs extrinsic motivation"],assignments:1,quizzes:1},
-    {phase:"Phase 4",title:"Social Influence",bullets:["Conformity & persuasion","Group behavior & roles"],assignments:1,quizzes:1},
-    {phase:"Phase 5",title:"Applied Psychology",bullets:["Communication & empathy training","Behavior change interventions"],assignments:2,quizzes:1},
-    {phase:"Phase 6",title:"Clinical Basics",bullets:["Common disorders overview","When to refer & ethical boundaries"],assignments:1,quizzes:1},
-    {phase:"Phase 7",title:"Research & Metrics",bullets:["Designing small studies","Interpreting results & biases"],assignments:1,quizzes:1},
-    {phase:"Phase 8",title:"Capstone Project",bullets:["Real-world case study","Implementation & evaluation"],assignments:2,quizzes:0}
+    {
+      phase: "Week 1",
+      title: "Foundations of Clinical Thinking",
+      bullets: [
+        "What clinical psychologists actually do (beyond stereotypes)",
+        "Thinking clinically without over-diagnosing",
+        "Introduction to case vignettes and ethical boundaries",
+        "Understanding distress in context, not labels",
+      ],
+      assignments: 1,
+      quizzes: 0,
+    },
+    {
+      phase: "Week 2",
+      title: "Diagnostic Systems & Disorders",
+      bullets: [
+        "Overview of DSM & ICD systems",
+        "Differentiating distress vs disorder",
+        "Film-based symptom and behaviour analysis",
+        "Understanding diagnosis as a tool, not a tag",
+      ],
+      assignments: 1,
+      quizzes: 0,
+    },
+    {
+      phase: "Week 3",
+      title: "Neurodevelopmental Disorders & Case Formulation",
+      bullets: [
+        "Introduction to neurodevelopmental conditions",
+        "Applying the 4P model (Predisposing, Precipitating, Perpetuating, Protective)",
+        "Building structured case formulations",
+        "Common formulation mistakes and clinical reasoning tricks",
+      ],
+      assignments: 1,
+      quizzes: 0,
+    },
+    {
+      phase: "Week 4",
+      title: "Practice, Therapy & Clinical Careers",
+      bullets: [
+        "Mental Status Examination (MSE) basics",
+        "Introduction to therapy approaches and roles",
+        "Mock therapy role-plays and applied discussions",
+        "Career pathways in clinical psychology & allied fields",
+      ],
+      assignments: 1,
+      quizzes: 0,
+    },
   ];
+  
 
   const mentors = [
     {name:"Dr. Nisha Rao",title:"Clinical Psychologist",creds:"PhD, 12 yrs practice"},
@@ -34,10 +87,20 @@ export default function Psychology360Page() {
   ];
 
   const faqs = [
-    {q:"Who should take Psychology 360?",a:"Anyone curious about human behavior — working professionals, students, coaches, or founders who want applied psychology tools."},
-    {q:"Do I need previous knowledge?",a:"No. We begin with foundations and progressively build to applied skills and a capstone."},
-    {q:"How is certification awarded?",a:"Complete lessons, assignments and a capstone project. A verified certificate is issued on passing evaluation."}
+    {
+      q: "Who is this course for?",
+      a: "Psychology students, CUET aspirants, and anyone seeking a structured, practical introduction to mental health and clinical thinking.",
+    },
+    {
+      q: "Do we diagnose real people in this course?",
+      a: "No. The course strongly emphasizes ethical practice and learning without casual or real-life diagnosis.",
+    },
+    {
+      q: "Is this suitable before a Master’s in Clinical Psychology?",
+      a: "Yes. It is designed to build clarity, confidence, and foundational clinical reasoning before higher studies.",
+    },
   ];
+  
 
   const [openC, setOpenC] = useState<number>(0);
   const [openF, setOpenF] = useState<number|null>(null);
@@ -62,41 +125,47 @@ export default function Psychology360Page() {
                 className="text-center flex flex-col items-center"
               >
                 {/* EYEBROW */}
-                <span className="text-white/40 text-xs uppercase tracking-[0.35em] mb-4">
+                <span className="text-white/90 text-xs uppercase tracking-[0.35em] mb-4">
                   Cohort-based Applied Program
                 </span>
 
                 {/* HEADLINE */}
                 <h1 className="text-white text-[7vw] sm:text-[5vw] lg:text-[4vw] leading-[1.05] tracking-tight mb-2">
-                  Psychology 360
+                  Clinical Psychology
                 </h1>
 
                 <h2 className="text-[#e2f310] text-[7vw] sm:text-[5vw] lg:text-[4vw] leading-[1] tracking-tight mb-6">
-                  Understand people. <span className="text-white/90">Deeply.</span>
+                  Concepts, Cases <span className="text-white/90">& Careers</span>
                 </h2>
 
                 {/* DESCRIPTION */}
-                <p className="max-w-3xl mx-auto text-white/60 text-base sm:text-lg leading-relaxed mb-10">
-                  Learn why people think, feel and act the way they do. A cohort-based,
-                  applied psychology program built with real-world cases, assignments and
-                  expert mentorship.
+                <p className="max-w-3xl mx-auto text-white/90 text-base sm:text-lg leading-relaxed mb-10">
+                  This course introduces clinical psychology through real-world cases,
+                  films, and practical frameworks — without over-diagnosing or
+                  oversimplifying mental distress.
+                </p>
+
+                <p className="max-w-3xl mx-auto text-white/90 text-base sm:text-lg leading-relaxed mb-10">
+                  Learn how clinical psychologists think, analyse, and work through
+                  guided discussions, role-plays, case formulation, and ethical practice.
                 </p>
 
                 {/* STATS */}
                 <div className="flex gap-10 mb-12">
                   <div>
-                    <div className="text-3xl text-[#e2f310]">8</div>
-                    <div className="text-sm text-white/50">Phases</div>
+                    <div className="text-3xl text-[#e2f310]">4</div>
+                    <div className="text-sm text-white/90">Weeks</div>
                   </div>
                   <div>
-                    <div className="text-3xl text-[#e2f310]">12</div>
-                    <div className="text-sm text-white/50">Weeks</div>
+                    <div className="text-3xl text-[#e2f310]">Live</div>
+                    <div className="text-sm text-white/90">Online Sessions</div>
                   </div>
                   <div>
-                    <div className="text-3xl text-[#e2f310]">100+</div>
-                    <div className="text-sm text-white/50">Students</div>
+                    <div className="text-3xl text-[#e2f310]">Case</div>
+                    <div className="text-sm text-white/90">Driven Learning</div>
                   </div>
                 </div>
+
 
                 {/* CTA */}
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -188,7 +257,7 @@ export default function Psychology360Page() {
                       key={c.phase}
                       onClick={() => setOpenC(idx)}
                       className={`w-full text-left px-4 py-3 rounded-lg transition-all relative group ${
-                        openC === idx ? 'bg-white/10 text-white' : 'text-white/50 hover:text-white/80 hover:bg-white/5'
+                        openC === idx ? 'bg-white/10 text-white' : 'text-white/90 hover:text-white/90 hover:bg-white/5'
                       }`}
                     >
                       {/* Optional: Indicator Dot per Phase */}
@@ -196,7 +265,7 @@ export default function Psychology360Page() {
                         openC >= idx ? 'bg-[#e2f310]' : 'bg-neutral-800'
                       }`} />
                       
-                      <div className="text-xs text-white/60 mb-1">{c.phase}</div>
+                      <div className="text-xs text-white/90 mb-1">{c.phase}</div>
                       <div className="text-sm font-medium">{c.title}</div>
                     </button>
                   ))}
@@ -218,12 +287,12 @@ export default function Psychology360Page() {
                       </div>
                       <div>
                         <div className="text-2xl ">{curriculum[openC].title}</div>
-                        <div className="text-sm text-white/60">{curriculum[openC].phase}</div>
+                        <div className="text-sm text-white/90">{curriculum[openC].phase}</div>
                       </div>
                     </div>
 
                     <div className="mb-6">
-                      <h3 className="text-sm  text-white/60 mb-4 uppercase tracking-wider">What will you learn?</h3>
+                      <h3 className="text-sm  text-white/90 mb-4 uppercase tracking-wider">What will you learn?</h3>
                       <ul className="space-y-6">
                         {curriculum[openC].bullets.map((b, i) => (
                           <li key={i} className="space-y-2">
@@ -235,7 +304,7 @@ export default function Psychology360Page() {
                             </div>
 
                             {/* SUB ITEM / NOTES / ASSIGNMENT */}
-                            <div className="flex items-start gap-3 pl-8 text-white/60">
+                            <div className="flex items-start gap-3 pl-8 text-white/90">
                               <ClipboardCheck className="h-4 w-4 text-[#e2f310]/80 mt-0.5 flex-shrink-0" />
                               <span className="text-sm leading-relaxed">
                                 {b}
@@ -254,7 +323,7 @@ export default function Psychology360Page() {
                           <ClipboardCheck className="h-5 w-5 text-[#e2f310]"/>
                         </div>
                         <div>
-                          <div className="text-sm text-white/60">Assignments</div>
+                          <div className="text-sm text-white/90">Assignments</div>
                           <div className="">{curriculum[openC].assignments}</div>
                         </div>
                       </div>
@@ -263,7 +332,7 @@ export default function Psychology360Page() {
                           <CheckCircle className="h-5 w-5 text-[#e2f310]"/>
                         </div>
                         <div>
-                          <div className="text-sm text-white/60">Quizzes</div>
+                          <div className="text-sm text-white/90">Quizzes</div>
                           <div className="">{curriculum[openC].quizzes}</div>
                         </div>
                       </div>
@@ -272,7 +341,7 @@ export default function Psychology360Page() {
                 )}
                 
                 {openC===null && (
-                  <div className="h-full flex items-center justify-center text-white/40">
+                  <div className="h-full flex items-center justify-center text-white/90">
                     Select a phase to view details
                   </div>
                 )}
@@ -296,26 +365,34 @@ export default function Psychology360Page() {
             <CardContent className="p-8 grid md:grid-cols-[500px_1fr] gap-20 items-start">
                 {/* Avatar */}
                 <img
-                  src='/Jivisha-Psychology.webp'
+                  src='/sanjivani.png'
                   className="w-full h-300 object-cover rounded-2xl mb-4"
                 />
 
                 {/* Bio */}
                 <div>
-                  <h3 className="text-2xl  mb-1">Jivisha Dangi</h3>
-                  <p className="text-white/60 mb-4">Clinical Psychologist</p>
+                  <h3 className="text-2xl mb-1">Sanjivani</h3>
+                  <p className="text-white/90 mb-4">MA Clinical Psychology</p>
 
-                  <p className="text-white/80 leading-relaxed whitespace-pre-line">
-                    {`Jivisha is a Counselling Psychologist and Psychotherapist with almost two years of experience. She holds a Master’s in Psychology (Psychosocial Clinical Studies) from Ambedkar University, Delhi, and a Postgraduate Diploma in Guidance and Counselling from Jamia Millia Islamia. She is also an Adult Fellow at the Washington Baltimore Center for Psychoanalysis, where she is deepening her engagement with psychoanalytic thought and practice.
-                    As a therapist and mentor, Jivisha believes in combining academic rigor with a reflective, human-centered approach to understanding the mind. Her work emphasizes curiosity, dialogue, and critical thinking, encouraging learners to not just acquire knowledge but to engage with it meaningfully. She brings her experience of working with diverse individuals and her grounding in psychoanalytic perspectives into her teaching, making complex ideas accessible relatable, and thought-provoking.`}
+                  <p className="text-white/90 leading-relaxed whitespace-pre-line">
+                  {`Sanjivani is a psychologist and art therapy practitioner with experience
+                  supporting individuals with relationship concerns, anxiety, everyday stress,
+                  anger management, time management, and work–life balance.
+
+                  As a clinical psychology mentor, she focuses on applied learning, ethical
+                  practice, and reflective clinical thinking. She conducts online and offline
+                  workshops, facilitates art-based therapeutic experiences, and actively mentors
+                  students on academic pathways, professional development, and early career
+                  decisions in psychology and allied mental health fields.`}
                   </p>
 
                   <div className="mt-6 flex flex-wrap gap-2">
                     {[
                       "Clinical Psychology",
-                      "Behavioral Science",
+                      "Case Formulation",
                       "Mental Health",
-                      "Cognitive Therapy",
+                      "Art Therapy",
+                      "Ethical Practice",
                     ].map((e) => (
                       <span
                         key={e}
@@ -340,16 +417,20 @@ export default function Psychology360Page() {
           <div className="max-w-5xl mx-auto px-6 text-center relative">
             <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
               <h2 className="text-4xl md:text-5xl  mb-4">Earn Your <span className="text-[#e2f310]">Certification</span></h2>
-              <p className="mt-4 text-white/90 text-lg max-w-2xl mx-auto leading-relaxed">Complete all lessons, assignments, and submit a capstone. Upon evaluation you receive a verified Psychology 360 certificate — ideal for portfolios, LinkedIn and resumes.</p>
+              <p className="mt-4 text-white/90 text-lg max-w-2xl mx-auto leading-relaxed">
+                Earn an industry-recognized Clinical Psychology certificate that
+                validates not just what you learned, but how you applied clinical
+                thinking through cases, discussions, and role-plays.
+              </p>
               <div className="mt-12 inline-flex items-center gap-8 bg-gradient-to-br from-white/10 to-white/5 p-8 rounded-3xl border border-white/20 backdrop-blur-xl shadow-2xl">
                 <div className="relative">
                   <div className="h-28 w-28 rounded-2xl bg-gradient-to-br from-[#e2f310]/20 to-orange-400/20 border border-[#e2f310]/30 flex items-center justify-center backdrop-blur-sm">
-                    <div className="text-center"><Sparkles className="h-6 w-6 text-[#e2f310] mx-auto mb-2"/><div className="text-xs text-white/60 uppercase tracking-wider">Verified</div><div className="text-sm  text-[#e2f310]">Psychology 360</div></div>
+                    <div className="text-center"><Sparkles className="h-6 w-6 text-[#e2f310] mx-auto mb-2"/><div className="text-xs text-white/90 uppercase tracking-wider">Verified</div><div className="text-sm text-[#e2f310]">Clinical Psychology</div></div>
                   </div>
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#e2f310] to-orange-400 blur-2xl opacity-30"/>
                 </div>
                 <div className="text-left">
-                  <div className="text-xs text-white/60 uppercase tracking-wider mb-2">Official Credential</div>
+                  <div className="text-xs text-white/90 uppercase tracking-wider mb-2">Official Credential</div>
                   <div className="text-2xl  mb-1">Applied Psychology Certificate</div>
                   <div className="text-sm text-white/90">Digital badge + printable certificate</div>
                 </div>
@@ -364,21 +445,23 @@ export default function Psychology360Page() {
           <div className="max-w-6xl mx-auto px-6 relative">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <motion.div initial={{opacity:0,x:-20}} whileInView={{opacity:1,x:0}} viewport={{once:true}}>
-                <h2 className="text-4xl md:text-5xl  mb-6">Ready to join <span className="text-[#e2f310]">Psychology 360?</span></h2>
+                <h2 className="text-4xl md:text-5xl mb-6">
+                  Ready to explore <span className="text-[#e2f310]">Clinical Psychology?</span>
+                </h2>
                 <p className="text-white/90 text-lg max-w-lg leading-relaxed">Live weekly learning, exclusive community perks and project-based evaluations. Start building applied psychology skills today.</p>
               </motion.div>
               <motion.div initial={{opacity:0,x:20}} whileInView={{opacity:1,x:0}} viewport={{once:true}}>
                 <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl">
                   <div className="mb-6">
-                    <div className="text-sm text-white/60 mb-4 uppercase tracking-wider">Membership includes</div>
-                    <ul className="text-sm text-white/80 space-y-3">
+                    <div className="text-sm text-white/90 mb-4 uppercase tracking-wider">Membership includes</div>
+                    <ul className="text-sm text-white/90 space-y-3">
                       {["Weekly live learning (AI, product & marketing)","In-person curated monthly events in 11+ cities","AI credits & perks from top brands worth ₹24L","10 self-paced product & marketing programs","5,000+ member community","200+ interview prep lessons"].map((t,i)=><li key={i} className="flex items-start gap-3"><CheckCircle className="h-5 w-5 text-[#e2f310] mt-0.5 flex-shrink-0"/>{t}</li>)}
                     </ul>
                   </div>
                   <div className="border-t border-white/10 pt-6">
                     <div className="flex items-end justify-between mb-6">
                       <div>
-                        <div className="text-sm text-white/60 line-through">₹8,999</div>
+                        <div className="text-sm text-white/90 line-through">₹8,999</div>
                         <div className="text-5xl "><span className=" text-[#e2f310]">₹5,999</span><span className="text-base text-white/90 font-normal"></span></div>
                       </div>
                       <div className="px-4 py-2 rounded-xl bg-[#e2f310]/20 text-[#e2f310] text-sm ">Save 20%</div>
@@ -429,7 +512,7 @@ export default function Psychology360Page() {
       <ApplyCourseModal
         open={open}
         onOpenChange={setOpen}
-        courseName="Psychology 360"
+        courseName="Clinical Psychology: Concepts, Cases & Careers"
       />
     </>
   );
