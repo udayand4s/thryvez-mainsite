@@ -181,13 +181,17 @@ export function Testimonials() {
   
         {/* TESTIMONIALS — TOP */}
         <div className="relative h-[34rem] overflow-hidden">
-          <InfiniteMovingCards
-            items={testimonials}
-            direction="left"
-            speed="slow"
-            pauseOnHover
-            className="pt-6"
-          />
+        <InfiniteMovingCards
+          items={testimonials.map(t => ({
+            quote: t.quote,
+            name: t.name,
+            title: `${t.college} · ${t.year}`,
+          }))}
+          direction="left"
+          speed="slow"
+          pauseOnHover
+          className="pt-6"
+        />
         </div>
 
   
