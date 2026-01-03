@@ -11,7 +11,7 @@ const stats = [
   },
   {
     value: '10+',
-    label: 'On Thryve Z',
+    label: 'On ThryveZ',
     prefix: 'Courses',
   },
   {

@@ -279,7 +279,7 @@ export function ModernLearner() {
             </h2>
             
             <p className="text-base sm:text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0">
-              This is our way of rewriting the script. Not just for us, but for an entire generation that refuses to settle. Welcome to Thryve Z. Where we don’t just prepare you for the future— we help you create it.
+              This is our way of rewriting the script. Not just for us, but for an entire generation that refuses to settle. Welcome to ThryveZ. Where we don’t just prepare you for the future— we help you create it.
             </p>
 
             <div className="space-y-2 sm:space-y-3 inline-block text-left">

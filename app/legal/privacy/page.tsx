@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
           {/* Intro */}
           <section className="space-y-4">
             <p className="text-white/80 leading-relaxed">
-              At Thryve Z (accessible from https://ThryveZ.in/),
+              At ThryveZ (accessible from https://ThryveZ.in/),
               protecting the privacy of our learners and community members is a
               top priority. This Privacy Policy explains what data we collect,
               how we use it, and the choices you have.
@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
 
             <p className="text-white/80 leading-relaxed">
               We collect information you provide directly while engaging with
-              Thryve Z, such as:
+              ThryveZ, such as:
             </p>
 
             <p className="text-white/80">
@@ -73,7 +73,7 @@ export default function PrivacyPolicyPage() {
             <p className="text-white/80">We use your information to:</p>
 
             <ul className="list-disc list-inside space-y-2 text-white/80">
-              <li>Operate and improve the Thryve Z platform.</li>
+              <li>Operate and improve the ThryveZ platform.</li>
               <li>Personalize content, recommendations, and services.</li>
               <li>
                 Develop new features, track learning progress, and analyze
@@ -138,7 +138,7 @@ export default function PrivacyPolicyPage() {
           <section className="space-y-4">
             <h2 className="text-2xl text-white">Children’s Privacy</h2>
             <p className="text-white/80 leading-relaxed">
-              Thryve Z is not directed toward children under 13, and we do not
+              ThryveZ is not directed toward children under 13, and we do not
               knowingly collect their data. If you believe a child has submitted
               personal information, please contact us so we can remove it.
             </p>

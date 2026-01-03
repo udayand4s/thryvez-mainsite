@@ -13,6 +13,7 @@ import { ApplyCourseModal } from '@/components/apply-course-modal';
 
 
 export default function ClinicalPsychologyPage() {
+  const [preview, setPreview] = useState<null | "certificate" | "lor">(null);
   const keywords = [
     "Clinical Thinking",
     "Case Vignettes",
@@ -437,6 +438,48 @@ export default function ClinicalPsychologyPage() {
               </div>
             </motion.div>
           </div>
+          {/* SAMPLE CERTIFICATE & LOR */}
+          <div className="mt-16 grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Certificate */}
+            <motion.button
+              whileHover={{ y: -4 }}
+              onClick={() => setPreview("certificate")}
+              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-white/[0.04] backdrop-blur-xl"
+            >
+              <img
+                src="/certificates/sample-certificate.webp"
+                alt="Sample Certificate"
+                className="w-full h-[260px] object-cover opacity-90 group-hover:opacity-100 transition"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-4 left-4">
+                <div className="text-sm uppercase tracking-wider text-white/70">
+                  Sample
+                </div>
+                <div className="text-xl text-white">Certificate</div>
+              </div>
+            </motion.button>
+
+            {/* LOR */}
+            <motion.button
+              whileHover={{ y: -4 }}
+              onClick={() => setPreview("lor")}
+              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-white/[0.04] backdrop-blur-xl"
+            >
+              <img
+                src="/certificates/sample-lor.webp"
+                alt="Sample Letter of Recommendation"
+                className="w-full h-[260px] object-cover opacity-90 group-hover:opacity-100 transition"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-4 left-4">
+                <div className="text-sm uppercase tracking-wider text-white/70">
+                  Sample
+                </div>
+                <div className="text-xl text-white">Letter of Recommendation</div>
+              </div>
+            </motion.button>
+          </div>
         </section>
 
         {/* CTA */}
@@ -509,6 +552,28 @@ export default function ClinicalPsychologyPage() {
           @media(max-width:640px){.animate-key-scroll{animation-duration:60s}}
         `}</style>
       </div>
+
+      {/* IMAGE PREVIEW MODAL */}
+      {preview && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-6"
+          onClick={() => setPreview(null)}
+        >
+          <motion.img
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.25 }}
+            src={
+              preview === "certificate"
+                ? "/certificates/sample-certificate.webp"
+                : "/certificates/sample-lor.webp"
+            }
+            alt="Preview"
+            className="max-h-[90vh] max-w-[95vw] rounded-xl shadow-2xl border border-white/10"
+          />
+        </div>
+      )}
+
       <ApplyCourseModal
         open={open}
         onOpenChange={setOpen}

@@ -1,15 +1,20 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {Quote, ChevronLeft, ChevronRight} from "lucide-react";
-import { CheckCircle, ArrowRight, Star, Sparkles, ClipboardCheck } from "lucide-react";
+import {
+  Quote,
+  ChevronLeft,
+  ChevronRight,
+  Play,
+} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { Button } from "react-day-picker";
 
 
-/* ---------------- CONFIG ---------------- */
-const ACCENT_COLOR = "#D4AC0D";
+const AUTOPLAY_INTERVAL = 6000; // ms
+
 
 /* ---------------- TESTIMONIALS ---------------- */
 const testimonials = [
@@ -157,192 +162,121 @@ const testimonials = [
 
 /* ---------------- COMPONENT ---------------- */
 export function Testimonials() {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const keywords = ["Cognitive Biases","Behavioral Psychology","Emotional Intelligence","Social Influence","Decision Making","Mental Models","Motivation","Therapeutic Techniques","Group Dynamics","Research Methods"];
+  const [active, setActive] = useState(0);
 
-
+  /* -------- Auto scroll -------- */
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const handleTimeUpdate = () => {
-      if (!video.duration) return;
-
-      const segmentLength = video.duration / testimonials.length;
-      const index = Math.min(
-        Math.floor(video.currentTime / segmentLength),
-        testimonials.length - 1
-      );
-
-      setActiveIndex(index);
-    };
-
-    video.addEventListener("timeupdate", handleTimeUpdate);
-    return () => video.removeEventListener("timeupdate", handleTimeUpdate);
+    const id = setInterval(
+      () => setActive((i) => (i + 1) % testimonials.length),
+      AUTOPLAY_INTERVAL
+    );
+    return () => clearInterval(id);
   }, []);
 
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const next = () =>
-    setActiveIndex((i) => (i + 1) % testimonials.length);
   const prev = () =>
-    setActiveIndex((i) =>
-      i === 0 ? testimonials.length - 1 : i - 1
-    );
+    setActive((i) => (i === 0 ? testimonials.length - 1 : i - 1));
+  const next = () =>
+    setActive((i) => (i + 1) % testimonials.length);
 
-  const { quote, name, college, year } = testimonials[activeIndex];
+  const t = testimonials[active];
 
   return (
-    <div className="relative min-h-[70vh] w-full p-6 md:p-12 bg-muted/30 text-white overflow-hidden">
-      <section className="relative w-full py-20 bg-muted/30 text-white overflow-hidden">
-        <div className="max-w-5xl mx-auto px-6 relative">
+    <section className="relative w-full py-24 bg-black overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6">
 
-          {/* SLIDER */}
-          <div className="relative overflow-hidden">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeIndex}
-                initial={{ opacity: 0, x: 80 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -80 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                onDragEnd={(_, info) => {
-                  if (info.offset.x < -100) next();
-                  if (info.offset.x > 100) prev();
-                }}
-              >
-                <Card className="bg-black/40 border border-white/10 backdrop-blur-xl">
-                  <CardContent className="p-10 space-y-8">
-                    <Quote className={`h-10 w-10 text-[${ACCENT_COLOR}]`} />
+        {/* Header */}
+        <div className="text-center mb-14">
+          <h2 className="text-4xl text-white mb-3">What Our Learners Say</h2>
+          <p className="text-white/60 max-w-xl mx-auto">
+            Real feedback from students across colleges and disciplines.
+          </p>
+        </div>
 
-                    <p className="text-lg md:text-xl font-light leading-relaxed">
-                      “{quote}”
+        {/* Card */}
+        <div className="relative max-w-4xl mx-auto">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -24 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+            >
+              <Card className="glass">
+                <CardContent
+                  className={cn(
+                    "p-8 md:p-10",
+                    "grid md:grid-cols-[220px_1fr] gap-8",
+                    "min-h-[320px]" // 🔒 fixed height (prevents jump)
+                  )}
+                >
+                  {/* Video Placeholder */}
+                  <div className="relative rounded-xl overflow-hidden bg-black/60 border border-white/10 flex items-center justify-center aspect-[9/16]">
+                    <Play className="h-12 w-12 text-[#E2F310]" />
+                    <span className="absolute bottom-3 text-xs text-white/60">
+                      Student video
+                    </span>
+                    {/* 
+                    <video
+                      src={t.video}
+                      controls
+                      preload="metadata"
+                      className="h-full w-full object-cover"
+                      poster="/video-poster.webp" // optional thumbnail
+                    />
+                    */}
+                  </div>
+
+                  {/* Text */}
+                  <div className="flex flex-col justify-between">
+                    <Quote className="h-8 w-8 text-[#E2F310] mb-4" />
+
+                    <p className="text-lg text-white/90 leading-relaxed">
+                      “{t.quote}”
                     </p>
 
-                    <div className="pt-6 border-t border-white/20 flex items-center gap-4">
-                      <div
-                        className={`h-14 w-14 rounded-full border-2 border-[${ACCENT_COLOR}]
-                        flex items-center justify-center font-semibold`}
-                      >
-                        {name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")}
-                      </div>
-
-                      <div>
-                        <p className="text-lg text-[#E2F310]/90">{name}</p>
-                        <p className="text-sm text-gray-400">
-                          {college}, {year}
-                        </p>
-                      </div>
+                    <div className="mt-8 pt-6 border-t border-white/10">
+                      <p className="text-white">{t.name}</p>
+                      <p className="text-sm text-white/50">
+                        {t.college} · {t.year}
+                      </p>
                     </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </AnimatePresence>
-            
-            {/* ARROWS */}
-            <button
-              onClick={prev}
-              className="absolute -left-12 top-1/2 -translate-y-1/2
-              p-2 rounded-full border border-white/20 hover:bg-white/10 transition"
-            >
-              <ChevronLeft />
-            </button>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </AnimatePresence>
 
-            <button
-              onClick={next}
-              className="absolute -right-12 top-1/2 -translate-y-1/2
-              p-2 rounded-full border border-white/20 hover:bg-white/10 transition"
-            >
-              <ChevronRight />
-            </button>
-          </div>
-          
-          {/* DOTS */}
-          <div className="flex justify-center gap-2 mt-8">
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveIndex(i)}
-                className={`h-2.5 w-2.5 rounded-full transition
-                ${i === activeIndex ? "bg-[#E2F310]" : "bg-white/30"}`}
-              />
-            ))}
-          </div>
-        </div>
-        {/* ARROW CONTROLS */}
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-between px-2 md:px-6">
+          {/* Arrows */}
           <button
-            aria-label="Previous testimonial"
             onClick={prev}
-            className="pointer-events-auto
-              p-2 md:p-3 rounded-full
-              border border-white/20
-              bg-black/40 backdrop-blur
-              hover:bg-white/10
-              focus:outline-none focus:ring-2 focus:ring-[#E2F310]
-              transition"
+            className="absolute -left-14 top-1/2 -translate-y-1/2 p-3 rounded-full border border-white/15 bg-black/50 hover:bg-white/10 transition"
           >
-            <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+            <ChevronLeft />
           </button>
 
           <button
-            aria-label="Next testimonial"
             onClick={next}
-            className="pointer-events-auto
-              p-2 md:p-3 rounded-full
-              border border-white/20
-              bg-black/40 backdrop-blur
-              hover:bg-white/10
-              focus:outline-none focus:ring-2 focus:ring-[#E2F310]
-              transition"
+            className="absolute -right-14 top-1/2 -translate-y-1/2 p-3 rounded-full border border-white/15 bg-black/50 hover:bg-white/10 transition"
           >
-            <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+            <ChevronRight />
           </button>
         </div>
 
-      </section>
-      <span>
-        
-      </span>
-      {/* KEYWORDS */}
-      <section className="py-4 border-y border-white/10 bg-gradient-to-r from-transparent via-white/5 to-transparent">
-        <div className="overflow-hidden relative">
-          <motion.div
-            className="flex gap-4 w-max items-center"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{
-              repeat: Infinity,
-              duration: 26,
-              ease: "linear",
-            }}
-          >
-            {[...keywords, ...keywords].map((k, i) => (
-              <div
-                key={i}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full
-                text-xs font-medium border border-white/10
-                bg-gradient-to-br from-white/10 to-white/5
-                backdrop-blur-sm whitespace-nowrap
-                hover:border-[#e2f310]/50 hover:bg-white/15
-                transition-all group min-w-[150px]"
-              >
-                <div className="h-1.5 w-1.5 rounded-full bg-[#e2f310]
-                group-hover:scale-150 transition-transform" />
-                {k}
-              </div>
-            ))}
-          </motion.div>
+        {/* Dots */}
+        <div className="flex justify-center gap-2 mt-10">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className={cn(
+                "h-2.5 w-2.5 rounded-full transition",
+                i === active ? "bg-[#E2F310]" : "bg-white/30"
+              )}
+            />
+          ))}
         </div>
-      </section>
-
-    
-
-    </div>
-    
+      </div>
+    </section>
   );
 }

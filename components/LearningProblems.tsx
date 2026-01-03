@@ -117,7 +117,7 @@ export function LearningProblems() {
           viewport={{ once: true }}
           className="text-2xl md:text-3xl  mb-12"
         >
-          The <span className="text-[#e2f310]">Thryve Z</span> way
+          The <span className="text-[#e2f310]">ThryveZ</span> way
         </motion.h3>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">

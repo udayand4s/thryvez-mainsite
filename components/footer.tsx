@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Facebook, Linkedin, Mail, Phone, Clock, HouseIcon } from "lucide-react";
+import { Facebook, Linkedin, Mail, Phone, Clock, HouseIcon, Instagram } from "lucide-react";
 import { ContactUsModal } from "@/components/contact-us-modal";
 
 
@@ -79,6 +79,12 @@ export function Footer() {
                   <Facebook className="h-4 w-4" /> Facebook
                 </Link>
               </li>
+              <li>
+                <Link href="#" className="flex items-center gap-2 hover:text-white transition-colors">
+                  <Instagram className="h-4 w-4" /> Instagram
+                </Link>
+              </li>
+
 
               <li className="pt-4 border-t border-white/10 mt-1">
                 <div className="flex flex-col gap-2 pt-2">
@@ -88,7 +94,7 @@ export function Footer() {
                   </span>
                   <span className="flex items-center gap-2 text-xs md:text-sm hover:text-white transition-colors">
                     <HouseIcon className="h-3 w-3 md:h-4 md:w-4" />
-                    Address: Lorem Ipsum
+                    Address: Koramangala, Bangalore, Karnataka
                   </span>
                 </div>
               </li>

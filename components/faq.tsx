@@ -2,7 +2,9 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
-
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const faqs = [
   {
@@ -31,6 +33,11 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    setVisible(true);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -54,6 +61,23 @@ export function FAQ() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`max-w-3xl mx-auto transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="text-center mb-12">
+            {/* CTA */}
+            <div
+              style={{ marginBottom: '100px' }}
+              className={`transition-all duration-700 delay-300 ease-out
+                ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                
+            >
+              <Link href="/courses">
+                <Button
+                  size="lg"
+                  className="bg-white text-black hover:bg-white/90  px-8 py-6 text-base group"
+                >
+                  Explore Courses
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
+            </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl  text-[#E2F310]/90 mb-4">
               Frequently Asked Questions
             </h2>
