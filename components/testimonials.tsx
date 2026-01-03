@@ -11,6 +11,8 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { Button } from "react-day-picker";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+
 
 
 const AUTOPLAY_INTERVAL = 6000; // ms
@@ -162,121 +164,64 @@ const testimonials = [
 
 /* ---------------- COMPONENT ---------------- */
 export function Testimonials() {
-  const [active, setActive] = useState(0);
-
-  /* -------- Auto scroll -------- */
-  useEffect(() => {
-    const id = setInterval(
-      () => setActive((i) => (i + 1) % testimonials.length),
-      AUTOPLAY_INTERVAL
-    );
-    return () => clearInterval(id);
-  }, []);
-
-  const prev = () =>
-    setActive((i) => (i === 0 ? testimonials.length - 1 : i - 1));
-  const next = () =>
-    setActive((i) => (i + 1) % testimonials.length);
-
-  const t = testimonials[active];
-
   return (
+    
     <section className="relative w-full py-24 bg-black overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6">
-
+      <div className="max-w-7xl mx-auto px-6">
+  
         {/* Header */}
-        <div className="text-center mb-14">
-          <h2 className="text-4xl text-white mb-3">What Our Learners Say</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl text-white mb-3">
+            What Our Learners Say
+          </h2>
           <p className="text-white/60 max-w-xl mx-auto">
-            Real feedback from students across colleges and disciplines.
+            Honest feedback from students across colleges and disciplines
           </p>
         </div>
-
-        {/* Card */}
-        <div className="relative max-w-4xl mx-auto">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={active}
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -24 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-            >
-              <Card className="glass">
-                <CardContent
-                  className={cn(
-                    "p-8 md:p-10",
-                    "grid md:grid-cols-[220px_1fr] gap-8",
-                    "min-h-[320px]" // 🔒 fixed height (prevents jump)
-                  )}
-                >
-                  {/* Video Placeholder */}
-                  <div className="relative rounded-xl overflow-hidden bg-black/60 border border-white/10 flex items-center justify-center aspect-[9/16]">
-                    <Play className="h-12 w-12 text-[#E2F310]" />
-                    <span className="absolute bottom-3 text-xs text-white/60">
-                      Student video
-                    </span>
-                    {/* 
-                    <video
-                      src={t.video}
-                      controls
-                      preload="metadata"
-                      className="h-full w-full object-cover"
-                      poster="/video-poster.webp" // optional thumbnail
-                    />
-                    */}
-                  </div>
-
-                  {/* Text */}
-                  <div className="flex flex-col justify-between">
-                    <Quote className="h-8 w-8 text-[#E2F310] mb-4" />
-
-                    <p className="text-lg text-white/90 leading-relaxed">
-                      “{t.quote}”
-                    </p>
-
-                    <div className="mt-8 pt-6 border-t border-white/10">
-                      <p className="text-white">{t.name}</p>
-                      <p className="text-sm text-white/50">
-                        {t.college} · {t.year}
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Arrows */}
-          <button
-            onClick={prev}
-            className="absolute -left-14 top-1/2 -translate-y-1/2 p-3 rounded-full border border-white/15 bg-black/50 hover:bg-white/10 transition"
-          >
-            <ChevronLeft />
-          </button>
-
-          <button
-            onClick={next}
-            className="absolute -right-14 top-1/2 -translate-y-1/2 p-3 rounded-full border border-white/15 bg-black/50 hover:bg-white/10 transition"
-          >
-            <ChevronRight />
-          </button>
+  
+        {/* TESTIMONIALS — TOP */}
+        <div className="relative h-[34rem] overflow-hidden">
+          <InfiniteMovingCards
+            items={testimonials}
+            direction="left"
+            speed="slow"
+            pauseOnHover
+            className="pt-6"
+          />
         </div>
 
-        {/* Dots */}
-        <div className="flex justify-center gap-2 mt-10">
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              className={cn(
-                "h-2.5 w-2.5 rounded-full transition",
-                i === active ? "bg-[#E2F310]" : "bg-white/30"
-              )}
-            />
-          ))}
+  
+        {/* Divider */}
+        <div className="my-20 flex items-center justify-center">
+          <div className="h-px w-32 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         </div>
+  
+        {/* VIDEO — BELOW */}
+        <div className="relative max-w-5xl mx-auto">
+          <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl aspect-video flex items-center justify-center group overflow-hidden">
+  
+            {/* Ambient glow */}
+            <div className="absolute inset-0 bg-[#e2f310]/10 blur-3xl opacity-40" />
+  
+            {/* Play UI */}
+            <div className="relative z-10 flex flex-col items-center gap-4">
+              <div className="h-20 w-20 rounded-full bg-[#e2f310] flex items-center justify-center shadow-xl shadow-[#e2f310]/30 group-hover:scale-105 transition">
+                <Play className="h-9 w-9 text-black ml-1" />
+              </div>
+  
+              <div className="text-white/90 text-sm tracking-wide">
+                Watch learner experiences
+              </div>
+            </div>
+  
+            {/* Label */}
+            <div className="absolute bottom-5 right-6 text-xs text-white/50 uppercase tracking-wider">
+              Testimonial Compilation
+            </div>
+          </div>
+        </div>
+  
       </div>
     </section>
   );
-}
+}  
