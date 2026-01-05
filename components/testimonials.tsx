@@ -1,231 +1,243 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Quote,
   ChevronLeft,
   ChevronRight,
-  Play,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
-import { Button } from "react-day-picker";
-import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
-
-
-const AUTOPLAY_INTERVAL = 6000; // ms
+/* ---------------- CONFIG ---------------- */
+const ACCENT_COLOR = "#E2F310";
 
 
 /* ---------------- TESTIMONIALS ---------------- */
 const testimonials = [
   {
     quote:
-      "I really liked the classes and the way everything was taught, and I genuinely enjoyed doing the assignments. Since I'm a hosteller, it was sometimes difficult to attend the 8–9 PM classes consistently because that's our dinner time, so managing both was a bit challenging. But the recorded class videos were a huge help, they allowed me to catch up whenever I missed a session. It was really a wonderful and optimistic journey, learning with such great and kind-hearted teachers ready to help at each and every point with a smiling face.",
-    name: "Anshika",
-    college: "Goswami Ganesh Dutta Sanatan Dharma College",
-    year: "2027",
+      "Psychology sessions were clear, practical, and connected to real life. Case studies and behavior analysis helped me understand better than textbooks. The mentor’s support even after class made a big difference.",
+    name: "Ilsa",
+    college: "Deloitte",
+    year: "Business Development Trainee",
   },
   {
     quote:
-      "The curriculum was structured in a simple and practical way, with each topic explained clearly and supported by examples that made it easy to connect theories to real-life situations. The assignments were very helpful and strengthened my understanding. I felt supported and engaged throughout the course. The sessions were interesting, friendly, and genuinely valuable for anyone interested in psychology.",
-    name: "Ziya Shaikh",
-    college: "Nagindas Khandwala College (Malad West)",
-    year: "2028",
+      "I was skeptical at first, but Thryvez completely changed my view on online learning. Krishna Kumar made tough topics simple and tied them to real-world work. The Blinkit case study and use of AI tools were true highlights.",
+    name: "Vikasni",
+    college: "Deloitte",
+    year: "Business Development Trainee",
   },
   {
     quote:
-      "It’s easy to follow even for those with zero prior knowledge. The assignments felt like weekly check-ins on our own feelings and helped apply learning in real life. Both the facilitator and mentor were very approachable. I was initially skeptical about an online course, but I’m glad I was proven wrong.",
-    name: "Jagnya Seni Pati",
-    college: "Gandhi Medical College, Hyderabad",
-    year: "2030",
+      "The course felt like a game—fun, structured, and kept me engaged till the end. Real case studies like Blinkit and AI-based data cleaning felt like solving business problems.",
+    name: "Raghav M.",
+    college: "Mercedes-Benz",
+    year: "",
   },
   {
     quote:
-      "Before attending these classes, I didn’t know there was so much behind our feelings. The course taught me the importance of psychology in life and how to manage emotions. The class atmosphere was very welcoming, and I felt truly connected to the brand and the team.",
-    name: "Rishi TM",
-    college: "Dayananda Sagar Medical College",
-    year: "2030",
-  },
-  {
-    quote:
-      "This was my first extracurricular class, and it changed my perspective on psychology. The sessions on emotional life were especially helpful. The mentor’s warm teaching style made learning easy and enjoyable.",
-    name: "Rishi TM",
-    college: "Dayananda Sagar Medical College",
-    year: "2030",
+      "I usually drop online courses, but this one kept me hooked till the end. Real projects like Flipkart’s demand forecasting felt like actual work, not theory.",
+    name: "Sreyan Kumar",
+    college: "Accenture",
+    year: "Data Analyst",
   },
 
-  {
-    quote:
-      "The sessions were very useful and engaging. Topics like emotions, personality disorders, and attachment styles made me curious to learn more. The teaching style was highly student-centered and effective.",
-    name: "A Mithinkumar",
-    college: "Madurai Medical College",
-    year: "2030",
-  },
-  {
-    quote:
-      "It was a very happy, interactive experience. I learned a lot about psychology and human behaviour, which inspired me to study psychology further. Learning with ma’am was a great experience due to her excellent and engaging teaching style.",
-    name: "Aryan Mann",
-    college: "Sukriti World",
-    year: "2025",
-  },
-  {
-    quote:
-      "It was a very happy, interactive experience. I learned a lot about psychology and human behaviour, which inspired me to study psychology further. Learning with ma’am was a great experience due to her excellent and engaging teaching style.",
-    name: "Aryan Mann",
-    college: "Sukriti World",
-    year: "2025",
-  },
-  
-
-  {
-    quote:
-      "Both the teacher and the facilitator were very patient and supportive. Every query was addressed with care. Thank you so much!",
-    name: "Deepika T M",
-    college: "Bangalore Medical College and Research Institute",
-    year: "2030",
-  },
-
-  {
-    quote:
-      "It was a very happy, interactive experience. I learned a lot about psychology and human behaviour, which inspired me to study psychology further. Learning with ma’am was a great experience due to her excellent and engaging teaching style.",
-    name: "Aryan Mann",
-    college: "Sukriti World",
-    year: "2025",
-  },
-
-  {
-    quote:
-      "At first I was skeptical, but the sessions were interactive and concepts were made very understandable and interesting. Thank you ma’am for such an engaging experience ❤️",
-    name: "Mirra Varshini Gowrishankar",
-    college: "ACS Medical College",
-    year: "2030",
-  },
-
-  {
-    quote:
-      "Even though I was new to some terms, the mentor explained everything well. I gained a better understanding of the mind, myself, and other people.",
-    name: "Nikita R",
-    college: "St. John’s Medical College",
-    year: "2030",
-  },
-
-  {
-    quote:
-      "I loved the classes. The teacher’s warm and friendly approach reminded me of my school days, where learning felt welcoming and joyful.",
-    name: "Anjana Srinivasan",
-    college: "ACS Medical College and Hospital",
-    year: "2030",
-  },
-
-  {
-    quote:
-      "It was very well planned and executed. The mentor was sweet and made concepts understandable and interesting.",
-    name: "Rhea Jakkani",
-    college: "Nagindas Khandwala College",
-    year: "2027",
-  },
-
-  
-
-  {
-    quote:
-      "Just keep going 👍 The sessions were very lovely and enjoyable 😄",
-    name: "N. Chandra Kaladhar",
-    college: "Gandhi Medical College, Secunderabad",
-    year: "2030",
-  },
-  {
-    quote:
-      "All the sessions were really great and I learned so many things. Thank you 💕",
-    name: "Shailja",
-    college: "Government Doon Medical College",
-    year: "2030",
-  },
-  {
-    quote:
-      "I loved the sessions, they were so knowledge-filled, optimistic, and meaningful!",
-    name: "Manogya Vasudev",
-    college: "Siddaganga Medical College and Research Institute",
-    year: "2030",
-  },
-
-  {
-    quote:
-      "It was a wonderful experience. I learnt a lot about myself and the people around me, all thanks to this course.",
-    name: "Suhaas N",
-    college: "Bangalore Medical College and Research Institute",
-    year: "2030",
-  },
 ];
 
 
 
 /* ---------------- COMPONENT ---------------- */
 export function Testimonials() {
-  return (
-    
-    <section className="relative w-full py-24 bg-black overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-  
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl text-white mb-3">
-            What Our Learners Say
-          </h2>
-          <p className="text-white/60 max-w-xl mx-auto">
-            Honest feedback from students across colleges and disciplines
-          </p>
-        </div>
-  
-        {/* TESTIMONIALS — TOP */}
-        <div className="relative h-[34rem] overflow-hidden">
-        <InfiniteMovingCards
-          items={testimonials.map(t => ({
-            quote: t.quote,
-            name: t.name,
-            title: `${t.college} · ${t.year}`,
-          }))}
-          direction="left"
-          speed="slow"
-          pauseOnHover
-          className="pt-6"
-        />
-        </div>
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  
-        {/* Divider */}
-        <div className="my-20 flex items-center justify-center">
-          <div className="h-px w-32 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-        </div>
-  
-        {/* VIDEO — BELOW */}
-        <div className="relative max-w-5xl mx-auto">
-          <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl aspect-video flex items-center justify-center group overflow-hidden">
-  
-            {/* Ambient glow */}
-            <div className="absolute inset-0 bg-[#e2f310]/10 blur-3xl opacity-40" />
-  
-            {/* Play UI */}
-            <div className="relative z-10 flex flex-col items-center gap-4">
-              <div className="h-20 w-20 rounded-full bg-[#e2f310] flex items-center justify-center shadow-xl shadow-[#e2f310]/30 group-hover:scale-105 transition">
-                <Play className="h-9 w-9 text-black ml-1" />
-              </div>
-  
-              <div className="text-white/90 text-sm tracking-wide">
-                Watch learner experiences
+  const keywords = [
+    "Cognitive Biases",
+    "Behavioral Psychology",
+    "Emotional Intelligence",
+    "Social Influence",
+    "Decision Making",
+    "Mental Models",
+    "Motivation",
+    "Therapeutic Techniques",
+    "Group Dynamics",
+    "Research Methods",
+  ];
+
+  const next = () =>
+    setActiveIndex((i) => (i + 1) % testimonials.length);
+
+  const prev = () =>
+    setActiveIndex((i) =>
+      i === 0 ? testimonials.length - 1 : i - 1
+    );
+
+  const { quote, name, college, year } = testimonials[activeIndex];
+
+  return (
+    <div className="relative w-full overflow-hidden text-white">
+
+      <section className="relative w-full py-20 bg-muted/30">
+        <div className="max-w-6xl mx-auto px-6 relative">
+          <div className="grid gap-8 lg:grid-cols-2 items-stretch">
+
+            {/* ================= TESTIMONIAL SLIDER ================= */}
+            <div className="relative">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeIndex}
+                  initial={{ opacity: 0, x: 80 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -80 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  onDragEnd={(_, info) => {
+                    if (info.offset.x < -100) next();
+                    if (info.offset.x > 100) prev();
+                  }}
+                >
+                  <Card className="h-[420px] bg-black/40 border border-white/10 backdrop-blur-xl">
+                    <CardContent className="p-8 h-full flex flex-col">
+                      <Quote className="h-10 w-10" style={{ color: ACCENT_COLOR }} />
+
+                      <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
+                        <p className="text-lg md:text-l font-light leading-relaxed">
+                          “{quote}”
+                        </p>
+                      </div>
+
+                      <div className="pt-6 border-t border-white/20 flex items-center gap-4">
+                        <div
+                          className="h-14 w-14 rounded-full border-2 flex items-center justify-center font-semibold"
+                          style={{ borderColor: ACCENT_COLOR }}
+                        >
+                          {name
+                            .split(" ")
+                            .map((n) => n[0])
+                            .join("")}
+                        </div>
+
+                        <div>
+                          <p className="text-lg text-[#E2F310]/90">{name}</p>
+                          <p className="text-sm text-gray-400">
+                            {college}, {year}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Arrows */}
+              <button
+                onClick={prev}
+                className="absolute -left-6 top-1/2 -translate-y-1/2
+                p-2 rounded-full border border-white/20 bg-black/40
+                hover:bg-white/10 transition"
+              >
+                <ChevronLeft />
+              </button>
+
+              <button
+                onClick={next}
+                className="absolute -right-6 top-1/2 -translate-y-1/2
+                p-2 rounded-full border border-white/20 bg-black/40
+                hover:bg-white/10 transition"
+              >
+                <ChevronRight />
+              </button>
+
+              {/* Dots */}
+              <div className="flex justify-center gap-2 mt-6">
+                {testimonials.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveIndex(i)}
+                    className={`h-2.5 w-2.5 rounded-full transition
+                    ${i === activeIndex ? "bg-[#E2F310]" : "bg-white/30"}`}
+                  />
+                ))}
               </div>
             </div>
-  
-            {/* Label */}
-            <div className="absolute bottom-5 right-6 text-xs text-white/50 uppercase tracking-wider">
-              Testimonial Compilation
+
+            {/* ================= VIDEO PLACEHOLDER CARD ================= */}
+            <div className="relative">
+              <Card className="h-full bg-black/40 border border-white/10 backdrop-blur-xl overflow-hidden">
+                <CardContent className="p-0 h-full">
+
+                  {/* Replace this div with <video> later */}
+                  <div
+                    className="relative h-full min-h-[360px] flex items-center justify-center
+                    bg-gradient-to-br from-black/60 to-black/30 cursor-pointer group"
+                  >
+                    {/* Play Button */}
+                    <div
+                      className="h-20 w-20 rounded-full flex items-center justify-center
+                      border-2 border-[#E2F310] text-[#E2F310]
+                      bg-black/60 backdrop-blur
+                      group-hover:scale-110 transition"
+                    >
+                      ▶
+                    </div>
+
+                    {/* Label */}
+                    <div className="absolute bottom-6 left-6 right-6 text-center">
+                      <p className="text-lg font-medium">
+                        Student Testimonials Compilation
+                      </p>
+                      <p className="text-sm text-gray-400 mt-1">
+                        Click to play video
+                      </p>
+                    </div>
+                  </div>
+
+                  {/*
+                    <video
+                      src="/videos/testimonials.mp4"
+                      controls
+                      className="w-full h-full object-cover"
+                    />
+                  */}
+                </CardContent>
+              </Card>
             </div>
+
           </div>
         </div>
-  
-      </div>
-    </section>
+      </section>
+
+
+      {/* KEYWORDS STRIP */}
+      <section className="py-4 border-y border-white/10 bg-gradient-to-r from-transparent via-white/5 to-transparent">
+        <div className="overflow-hidden relative">
+          <motion.div
+            className="flex gap-4 w-max items-center"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              repeat: Infinity,
+              duration: 26,
+              ease: "linear",
+            }}
+          >
+            {[...keywords, ...keywords].map((k, i) => (
+              <div
+                key={i}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full
+                text-xs font-medium border border-white/10
+                bg-gradient-to-br from-white/10 to-white/5
+                backdrop-blur-sm whitespace-nowrap
+                transition-all min-w-[150px]"
+              >
+                <div className="h-1.5 w-1.5 rounded-full bg-[#e2f310]" />
+                {k}
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+    </div>
   );
-}  
+}

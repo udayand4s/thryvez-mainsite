@@ -36,7 +36,7 @@ const courses = [
     duration: '4 weeks',
     category: 'Psychology',
     trending: false,
-    image: '/psychology.webp',
+    image: '/cli-psychology.png',
   },
   {
     id: 'ai-mark',

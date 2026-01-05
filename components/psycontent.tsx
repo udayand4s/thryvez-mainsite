@@ -1,6 +1,4 @@
 'use client'
-import { useState } from "react";
-import { motion } from "framer-motion";
 import { CheckCircle, ArrowRight, Star, Sparkles, ClipboardCheck } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -9,8 +7,53 @@ import { Boxes } from '@/components/ui/background-boxes';
 import Link from 'next/link';
 import { ApplyCourseModal } from '@/components/apply-course-modal';
 
+import { useEffect, useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Quote,
+  ChevronLeft,
+  ChevronRight,
+  Play,
+} from "lucide-react";
+import { cn } from "@/lib/utils";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
+const AUTOPLAY_INTERVAL = 6000; // ms
 
+/*---------TESTIMONIALS--------------*/
+
+const testimonials = [
+
+  {
+    quote:
+      "I really liked the classes and the way everything was taught, and I genuinely enjoyed doing the assignments. The recorded class videos were a huge help. It was a wonderful and optimistic journey.",
+    name: "Anshika",
+    college: "Goswami Ganesh Dutta Sanatan Dharma College",
+    year: "2027",
+  },
+  {
+    quote:
+      "The curriculum was structured in a simple and practical way. Assignments strengthened my understanding and made it easy to connect psychology to real life.",
+    name: "Ziya Shaikh",
+    college: "Nagindas Khandwala College",
+    year: "2028",
+  },
+  {
+    quote:
+      "It’s easy to follow even for those with zero prior knowledge. Weekly assignments helped apply learning in real life.",
+    name: "Jagnya Seni Pati",
+    college: "Gandhi Medical College, Hyderabad",
+    year: "2030",
+  },
+  {
+    quote:
+      "Before attending these classes, I didn’t know there was so much behind our feelings. The course taught me how to manage emotions and understand psychology in daily life.",
+    name: "Rishi TM",
+    college: "Dayananda Sagar Medical College",
+    year: "2030",
+  }
+
+];
 
 export default function Psychology360Page() {
   const [preview, setPreview] = useState<null | "certificate" | "lor">(null);
@@ -379,6 +422,37 @@ export default function Psychology360Page() {
 
         <CourseWhySection />
 
+        <section className="relative w-full py-24 bg-black overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6">
+      
+            {/* Header */}
+            <div className="text-center mb-16">
+              <h2 className="text-4xl text-white mb-3">
+                What Our Learners Say
+              </h2>
+              <p className="text-white/60 max-w-xl mx-auto">
+                Honest feedback from students across colleges and disciplines
+              </p>
+            </div>
+      
+            {/* TESTIMONIALS — TOP */}
+            <div className="relative h-[34rem] overflow-hidden">
+            <InfiniteMovingCards
+              items={testimonials.map(t => ({
+                quote: t.quote,
+                name: t.name,
+                title: `${t.college} · ${t.year}`,
+              }))}
+              direction="left"
+              speed="slow"
+              pauseOnHover
+              className="pt-6"
+            />
+            </div>
+      
+          </div>
+        </section>
+        
 
         {/* CERTIFICATION */}
         <section className="py-20 relative">
@@ -387,63 +461,90 @@ export default function Psychology360Page() {
             <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
               <h2 className="text-4xl md:text-5xl  mb-4">Earn Your <span className="text-[#e2f310]">Certification</span></h2>
               <p className="mt-4 text-white/90 text-lg max-w-2xl mx-auto leading-relaxed">Complete all lessons, assignments, and submit a capstone. Upon evaluation you receive a verified Psychology 360 certificate — ideal for portfolios, LinkedIn and resumes.</p>
-              <div className="mt-12 inline-flex items-center gap-8 bg-gradient-to-br from-white/10 to-white/5 p-8 rounded-3xl border border-white/20 backdrop-blur-xl shadow-2xl">
-                <div className="relative">
-                  <div className="h-28 w-28 rounded-2xl bg-gradient-to-br from-[#e2f310]/20 to-orange-400/20 border border-[#e2f310]/30 flex items-center justify-center backdrop-blur-sm">
-                    <div className="text-center"><Sparkles className="h-6 w-6 text-[#e2f310] mx-auto mb-2"/><div className="text-xs text-white/90 uppercase tracking-wider">Verified</div><div className="text-sm  text-[#e2f310]">Psychology 360</div></div>
-                  </div>
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#e2f310] to-orange-400 blur-2xl opacity-30"/>
-                </div>
-                <div className="text-left">
-                  <div className="text-xs text-white/90 uppercase tracking-wider mb-2">Official Credential</div>
-                  <div className="text-2xl  mb-1">Applied Psychology Certificate</div>
-                  <div className="text-sm text-white/90">Digital badge + printable certificate</div>
-                </div>
-              </div>
             </motion.div>
           </div>
           {/* SAMPLE CERTIFICATE & LOR */}
-          <div className="mt-16 grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Certificate */}
-            <motion.button
-              whileHover={{ y: -4 }}
-              onClick={() => setPreview("certificate")}
-              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-white/[0.04] backdrop-blur-xl"
-            >
-              <img
-                src="/certificates/sample-certificate.webp"
-                alt="Sample Certificate"
-                className="w-full h-[260px] object-cover opacity-90 group-hover:opacity-100 transition"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute bottom-4 left-4">
-                <div className="text-sm uppercase tracking-wider text-white/70">
-                  Sample
-                </div>
-                <div className="text-xl text-white">Certificate</div>
-              </div>
-            </motion.button>
+          <section className="mt-24 relative">
+            {/* Cards */}
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* Certificate */}
+              <motion.button
+                whileHover={{ y: -6, scale: 1.01 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => setPreview("certificate")}
+                className="group relative rounded-3xl overflow-hidden border border-white/15 bg-white/[0.04] backdrop-blur-xl focus:outline-none"
+              >
+                {/* Image */}
+                <img
+                  src="/certificates/sample-certificate.webp"
+                  alt="Sample Certificate"
+                  className="w-full h-[280px] object-cover transition duration-500 group-hover:scale-105"
+                />
 
-            {/* LOR */}
-            <motion.button
-              whileHover={{ y: -4 }}
-              onClick={() => setPreview("lor")}
-              className="group relative rounded-2xl overflow-hidden border border-white/15 bg-white/[0.04] backdrop-blur-xl"
-            >
-              <img
-                src="/certificates/sample-lor.webp"
-                alt="Sample Letter of Recommendation"
-                className="w-full h-[260px] object-cover opacity-90 group-hover:opacity-100 transition"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute bottom-4 left-4">
-                <div className="text-sm uppercase tracking-wider text-white/70">
-                  Sample
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+
+                {/* Content */}
+                <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                  <span className="text-xs uppercase tracking-widest text-white/60">
+                    Sample Credential
+                  </span>
+                  <h3 className="text-2xl text-white mt-1">
+                    Course Completion Certificate
+                  </h3>
+
+                  <div className="mt-4 flex items-center gap-2 text-sm text-white/70">
+                    <Sparkles className="w-4 h-4 text-[#e2f310]" />
+                    Click to preview
+                  </div>
                 </div>
-                <div className="text-xl text-white">Letter of Recommendation</div>
-              </div>
-            </motion.button>
-          </div>
+
+                {/* Glow */}
+                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#e2f310]/10 via-transparent to-[#e2f310]/10" />
+                </div>
+              </motion.button>
+
+              {/* LOR */}
+              <motion.button
+                whileHover={{ y: -6, scale: 1.01 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => setPreview("lor")}
+                className="group relative rounded-3xl overflow-hidden border border-white/15 bg-white/[0.04] backdrop-blur-xl focus:outline-none"
+              >
+                {/* Image */}
+                <img
+                  src="/certificates/sample-lor.webp"
+                  alt="Sample Letter of Recommendation"
+                  className="w-full h-[280px] object-cover transition duration-500 group-hover:scale-105"
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+
+                {/* Content */}
+                <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                  <span className="text-xs uppercase tracking-widest text-white/60">
+                    Sample Endorsement
+                  </span>
+                  <h3 className="text-2xl text-white mt-1">
+                    Letter of Recommendation
+                  </h3>
+
+                  <div className="mt-4 flex items-center gap-2 text-sm text-white/70">
+                    <Star className="w-4 h-4 text-[#e2f310]" />
+                    Issued by your mentor
+                  </div>
+                </div>
+
+                {/* Glow */}
+                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#e2f310]/10 via-transparent to-[#e2f310]/10" />
+                </div>
+              </motion.button>
+            </div>
+          </section>
+
 
         </section>
 
