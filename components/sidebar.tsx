@@ -66,12 +66,13 @@ export function Sidebar() {
       {/* ================= MOBILE HAMBURGER ================= */}
       <div className="lg:hidden fixed top-4 left-4 z-[60]">
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-          <SheetTrigger asChild>
-            <Button size="icon" variant="outline">
-              <Menu className="h-5 w-5" />
-            </Button>
-          </SheetTrigger>
-
+          {!mobileOpen && (
+            <SheetTrigger asChild>
+              <Button size="icon" variant="outline">
+                <Menu className="h-5 w-5" />
+              </Button>
+            </SheetTrigger>
+          )}
           <SheetContent
             side="left"
             className="w-[280px] bg-[#050505] border-r border-[#1F1F1F] p-0"
@@ -81,13 +82,6 @@ export function Sidebar() {
               <span className="font-acherus text-lg text-white">
                 Thryve <span className="font-futura">Z</span>
               </span>
-              <Button
-                size="icon"
-                variant="ghost"
-                onClick={() => setMobileOpen(false)}
-              >
-                <X className="h-4 w-4" />
-              </Button>
             </div>
 
             {/* Nav */}
