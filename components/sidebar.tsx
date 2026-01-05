@@ -7,6 +7,8 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { GetStartedModal } from '@/components/get-started-modal';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+
 import { 
   Home, 
   BookOpen, 
@@ -15,7 +17,9 @@ import {
   LogIn,
   Sparkles,
   ChevronRight,
-  ChevronLeft
+  ChevronLeft,
+  Menu,
+  X
 } from 'lucide-react';
 
 const sidebarItems = [
@@ -28,10 +32,90 @@ const sidebarItems = [
 export function Sidebar() {
   const pathname = usePathname();
   const [openModal, setOpenModal] = useState(false);
-  const [isCollapsed, setIsCollapsed] = useState(false); // State for sidebar expansion
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const NavLinks = ({ onClick }: { onClick?: () => void }) => (
+    <nav className="space-y-2">
+      {sidebarItems.map((item) => {
+        const isActive = pathname === item.href;
+        return (
+          <Link
+            key={item.href}
+            href={item.href}
+            onClick={onClick}
+            className={cn(
+              'flex items-center gap-3 rounded-lg px-3 py-3 text-sm transition',
+              isActive
+                ? 'text-white bg-white/5'
+                : 'text-[#888] hover:text-white hover:bg-white/5'
+            )}
+          >
+            <item.icon className="h-4 w-4" />
+            {item.label}
+            {isActive && <ChevronRight className="ml-auto h-3 w-3 opacity-60" />}
+          </Link>
+        );
+      })}
+    </nav>
+  );
 
   return (
     <>
+
+      {/* ================= MOBILE HAMBURGER ================= */}
+      <div className="lg:hidden fixed top-4 left-4 z-[60]">
+        <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+          <SheetTrigger asChild>
+            <Button size="icon" variant="outline">
+              <Menu className="h-5 w-5" />
+            </Button>
+          </SheetTrigger>
+
+          <SheetContent
+            side="left"
+            className="w-[280px] bg-[#050505] border-r border-[#1F1F1F] p-0"
+          >
+            {/* Header */}
+            <div className="h-16 flex items-center justify-between px-5 border-b border-[#1F1F1F]">
+              <span className="font-acherus text-lg text-white">
+                Thryve <span className="font-futura">Z</span>
+              </span>
+              <Button
+                size="icon"
+                variant="ghost"
+                onClick={() => setMobileOpen(false)}
+              >
+                <X className="h-4 w-4" />
+              </Button>
+            </div>
+
+            {/* Nav */}
+            <div className="p-4">
+              <NavLinks onClick={() => setMobileOpen(false)} />
+            </div>
+
+            {/* Actions */}
+            <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-[#1F1F1F] space-y-3">
+              <Button
+                onClick={() => {
+                  setOpenModal(true);
+                  setMobileOpen(false);
+                }}
+                className="w-full gap-2"
+              >
+                <Sparkles className="h-4 w-4" />
+                Register Now
+              </Button>
+
+              <Button variant="outline" className="w-full gap-2">
+                <LogIn className="h-4 w-4" />
+                Sign In
+              </Button>
+            </div>
+          </SheetContent>
+        </Sheet>
+      </div>
       <aside 
         className={cn(
           "hidden lg:flex h-screen flex-col sticky top-0 left-0 border-r border-[#1F1F1F] bg-[#050505] z-50 transition-all duration-300 ease-in-out",
