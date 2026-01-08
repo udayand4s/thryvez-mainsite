@@ -106,7 +106,7 @@ export function SimulationContent() {
                   ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
                 `}
               >
-                Experience how learning on ThryveZ feels — no login required.
+                Experience how learning on ThryveZ feels , no login required.
               </p>
             </div>
           </div>

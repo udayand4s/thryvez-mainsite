@@ -34,7 +34,7 @@ const features = [
   {
     icon: BookOpen,
     title: 'Practical and Project First',
-    desc: 'Every concept is applied through hands-on projects, real cases, and a guided capstone — no passive learning.',
+    desc: 'Every concept is applied through hands-on projects, real cases, and a guided capstone , no passive learning.',
   },
   {
     icon: Target,

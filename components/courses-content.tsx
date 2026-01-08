@@ -16,7 +16,7 @@ const courses = [
     id: 'psychology360',
     title: 'Psychology 360',
     instructor: 'Jivisha Dangi',
-    qual: 'Counsellinhg Psychologist',
+    qual: 'Counselling Psychologist',
     rating: 4.9,
     students: '2000+',
     oldprice: 10999,
@@ -33,7 +33,7 @@ const courses = [
     title: 'Clinical Psychology',
     instructor: 'Sanjivani',
     qual:'MA Clinical Psychology',
-    rating: 4.6,
+    rating: 4.9,
     students: '1500+',
     oldprice: 9999,
     price: 4499,
@@ -213,7 +213,7 @@ export function CoursesContent() {
                   ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
                 `}
               >
-                Handpicked by thousands of learners worldwide — now more visual, more immersive, and taught by domain experts.
+                Handpicked by thousands of learners worldwide , now more visual, more immersive, and taught by domain experts.
               </p>
 
             </div>

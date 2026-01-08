@@ -31,7 +31,7 @@ const testimonials = [
   },
   {
     quote:
-      "The course felt like a game—fun, structured, and kept me engaged till the end. Real case studies like Blinkit and AI-based data cleaning felt like solving business problems.",
+      "The course felt like a game,fun, structured, and kept me engaged till the end. Real case studies like Blinkit and AI-based data cleaning felt like solving business problems.",
     name: "Raghav M.",
     college: "Mercedes-Benz",
     year: "",
@@ -197,7 +197,7 @@ export function Testimonials() {
                     <video
                       src="/Student Testimonials for Website.mp4"
                       controls
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain bg-black"
                     />
                 
                 </CardContent>

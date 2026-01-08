@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-const MIN_DURATION = 2800; // ms — tweak this
+const MIN_DURATION = 2800; // ms , tweak this
 
 export default function VerticalLoader() {
   const [progress, setProgress] = useState(0);

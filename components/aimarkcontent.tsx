@@ -6,6 +6,7 @@ import { CourseWhySection } from '@/components/course-why-section';
 import { Boxes } from '@/components/ui/background-boxes';
 import Link from 'next/link';
 import { ApplyCourseModal } from '@/components/apply-course-modal';
+import { TalkToExpertModal } from "./TalkToExpertModal";
 
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -51,6 +52,8 @@ const testimonials = [
 
 
 export default function AiMarketingPage() {
+  const [expertOpen, setExpertOpen] = useState(false);
+
   const [preview, setPreview] = useState<null | "certificate" | "lor">(null);
   const keywords = [
     "AI Marketing Automation",
@@ -136,7 +139,7 @@ export default function AiMarketingPage() {
     },
     {
       q: "What do I build by the end?",
-      a: "A fully automated, 6-stage AI marketing engine for a D2C brand — your portfolio cornerstone.",
+      a: "A fully automated, 6-stage AI marketing engine for a D2C brand , your portfolio cornerstone.",
     },
   ];
   
@@ -185,7 +188,7 @@ export default function AiMarketingPage() {
 
                 <p className="max-w-3xl mx-auto text-white/90 text-base sm:text-lg leading-relaxed mb-10">
                   Learn to design a fully automated, 6-stage AI marketing system that
-                  handles everything from content creation to customer retention —
+                  handles everything from content creation to customer retention ,
                   using real tools, real logic, and a real brand.
                 </p>
 
@@ -193,16 +196,16 @@ export default function AiMarketingPage() {
                 {/* STATS */}
                 <div className="flex gap-10 mb-12">
                   <div>
-                    <div className="text-3xl text-[#e2f310]">6</div>
-                    <div className="text-sm text-white/90">Stage Engine</div>
+                    <div className="text-3xl text-[#e2f310]">4</div>
+                    <div className="text-sm text-white/90">Weeks</div>
                   </div>
                   <div>
-                    <div className="text-3xl text-[#e2f310]">No-Code</div>
-                    <div className="text-sm text-white/90">Automation</div>
+                    <div className="text-3xl text-[#e2f310]">8</div>
+                    <div className="text-sm text-white/90">Phases</div>
                   </div>
                   <div>
-                    <div className="text-3xl text-[#e2f310]">Live</div>
-                    <div className="text-sm text-white/90">System Build</div>
+                    <div className="text-3xl text-[#e2f310]">1000+</div>
+                    <div className="text-sm text-white/90">Learners</div>
                   </div>
                 </div>
 
@@ -220,6 +223,7 @@ export default function AiMarketingPage() {
                   <Button
                     variant="outline"
                     className="border-white/20 text-white hover:bg-white/10 px-8 py-6"
+                    onClick={() => setExpertOpen(true)}
                   >
                     Talk to an expert
                   </Button>
@@ -423,7 +427,7 @@ export default function AiMarketingPage() {
                   machines using tools like n8n, Zapier, and HubSpot.
 
                   She emphasizes where automation works best, where human oversight is
-                  essential, and how to govern AI systems responsibly — from first prompt
+                  essential, and how to govern AI systems responsibly , from first prompt
                   to final conversion.`}
                   </p>
 
@@ -465,7 +469,7 @@ export default function AiMarketingPage() {
               </p>
             </div>
       
-            {/* TESTIMONIALS — TOP */}
+            {/* TESTIMONIALS , TOP */}
             <div className="relative h-[34rem] overflow-hidden">
             <InfiniteMovingCards
               items={testimonials.map(t => ({
@@ -490,7 +494,7 @@ export default function AiMarketingPage() {
           <div className="max-w-5xl mx-auto px-6 text-center relative">
             <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
               <h2 className="text-4xl md:text-5xl  mb-4">Earn Your <span className="text-[#e2f310]">Certification</span></h2>
-              <p className="mt-4 text-white/90 text-lg max-w-2xl mx-auto leading-relaxed">Complete all lessons, assignments, and submit a capstone. Upon evaluation you receive a verified Psychology 360 certificate — ideal for portfolios, LinkedIn and resumes.</p>
+              <p className="mt-4 text-white/90 text-lg max-w-2xl mx-auto leading-relaxed">Complete all lessons, assignments, and submit a capstone. Upon evaluation you receive a verified Psychology 360 certificate , ideal for portfolios, LinkedIn and resumes.</p>
             </motion.div>
           </div>
           {/* SAMPLE CERTIFICATE & LOR */}
@@ -600,8 +604,8 @@ export default function AiMarketingPage() {
                   <div className="border-t border-white/10 pt-6">
                     <div className="flex items-end justify-between mb-6">
                       <div>
-                        <div className="text-sm text-white/90 line-through">₹8,999</div>
-                        <div className="text-5xl "><span className=" text-[#e2f310]">₹5,999</span><span className="text-base text-white/90 font-normal"></span></div>
+                        <div className="text-sm text-white/90 line-through">₹9,999</div>
+                        <div className="text-5xl "><span className=" text-[#e2f310]">₹7,999</span><span className="text-base text-white/90 font-normal"></span></div>
                       </div>
                       <div className="px-4 py-2 rounded-xl bg-[#e2f310]/20 text-[#e2f310] text-sm ">Save 20%</div>
                     </div>
@@ -674,6 +678,10 @@ export default function AiMarketingPage() {
         open={open}
         onOpenChange={setOpen}
         courseName="The AI Marketing Engine"
+      />
+      <TalkToExpertModal
+        open={expertOpen}
+        onOpenChange={setExpertOpen}
       />
 
     </>

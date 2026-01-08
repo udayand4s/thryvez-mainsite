@@ -6,6 +6,7 @@ import { CourseWhySection } from '@/components/course-why-section';
 import { Boxes } from '@/components/ui/background-boxes';
 import Link from 'next/link';
 import { ApplyCourseModal } from '@/components/apply-course-modal';
+import { TalkToExpertModal } from "./TalkToExpertModal";
 
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -56,6 +57,8 @@ const testimonials = [
 
 
 export default function ClinicalPsychologyPage() {
+  const [expertOpen, setExpertOpen] = useState(false);
+
   const [preview, setPreview] = useState<null | "certificate" | "lor">(null);
   const keywords = [
     "Clinical Thinking",
@@ -185,7 +188,7 @@ export default function ClinicalPsychologyPage() {
                 {/* DESCRIPTION */}
                 <p className="max-w-3xl mx-auto text-white/90 text-base sm:text-lg leading-relaxed mb-10">
                   This course introduces clinical psychology through real-world cases,
-                  films, and practical frameworks — without over-diagnosing or
+                  films, and practical frameworks , without over-diagnosing or
                   oversimplifying mental distress.
                 </p>
 
@@ -201,12 +204,12 @@ export default function ClinicalPsychologyPage() {
                     <div className="text-sm text-white/90">Weeks</div>
                   </div>
                   <div>
-                    <div className="text-3xl text-[#e2f310]">Live</div>
-                    <div className="text-sm text-white/90">Online Sessions</div>
+                    <div className="text-3xl text-[#e2f310]">8</div>
+                    <div className="text-sm text-white/90">Phases</div>
                   </div>
                   <div>
-                    <div className="text-3xl text-[#e2f310]">Case</div>
-                    <div className="text-sm text-white/90">Driven Learning</div>
+                    <div className="text-3xl text-[#e2f310]">1900+</div>
+                    <div className="text-sm text-white/90">Learners</div>
                   </div>
                 </div>
 
@@ -224,6 +227,7 @@ export default function ClinicalPsychologyPage() {
                   <Button
                     variant="outline"
                     className="border-white/20 text-white hover:bg-white/10 px-8 py-6"
+                    onClick={() => setExpertOpen(true)}
                   >
                     Talk to an expert
                   </Button>
@@ -467,7 +471,7 @@ export default function ClinicalPsychologyPage() {
               </p>
             </div>
       
-            {/* TESTIMONIALS — TOP */}
+            {/* TESTIMONIALS , TOP */}
             <div className="relative h-[34rem] overflow-hidden">
             <InfiniteMovingCards
               items={testimonials.map(t => ({
@@ -492,7 +496,7 @@ export default function ClinicalPsychologyPage() {
           <div className="max-w-5xl mx-auto px-6 text-center relative">
             <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
               <h2 className="text-4xl md:text-5xl  mb-4">Earn Your <span className="text-[#e2f310]">Certification</span></h2>
-              <p className="mt-4 text-white/90 text-lg max-w-2xl mx-auto leading-relaxed">Complete all lessons, assignments, and submit a capstone. Upon evaluation you receive a verified Psychology 360 certificate — ideal for portfolios, LinkedIn and resumes.</p>
+              <p className="mt-4 text-white/90 text-lg max-w-2xl mx-auto leading-relaxed">Complete all lessons, assignments, and submit a capstone. Upon evaluation you receive a verified Psychology 360 certificate , ideal for portfolios, LinkedIn and resumes.</p>
             </motion.div>
           </div>
           {/* SAMPLE CERTIFICATE & LOR */}
@@ -602,8 +606,8 @@ export default function ClinicalPsychologyPage() {
                   <div className="border-t border-white/10 pt-6">
                     <div className="flex items-end justify-between mb-6">
                       <div>
-                        <div className="text-sm text-white/90 line-through">₹8,999</div>
-                        <div className="text-5xl "><span className=" text-[#e2f310]">₹5,999</span><span className="text-base text-white/90 font-normal"></span></div>
+                        <div className="text-sm text-white/90 line-through">₹9,999</div>
+                        <div className="text-5xl "><span className=" text-[#e2f310]">₹7,999</span><span className="text-base text-white/90 font-normal"></span></div>
                       </div>
                       <div className="px-4 py-2 rounded-xl bg-[#e2f310]/20 text-[#e2f310] text-sm ">Save 20%</div>
                     </div>
@@ -676,6 +680,10 @@ export default function ClinicalPsychologyPage() {
         open={open}
         onOpenChange={setOpen}
         courseName="Clinical Psychology: Concepts, Cases & Careers"
+      />
+      <TalkToExpertModal
+        open={expertOpen}
+        onOpenChange={setExpertOpen}
       />
     </>
   );

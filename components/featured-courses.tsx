@@ -29,7 +29,7 @@ const courses = [
     title: 'Clinical Psychology',
     instructor: 'Sanjivani',
     qual:'MA Clinical Psychology',
-    rating: 4.6,
+    rating: 4.9,
     students: '1500+',
     oldprice: 9999,
     price: 4499,

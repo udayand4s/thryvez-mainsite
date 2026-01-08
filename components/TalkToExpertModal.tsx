@@ -9,62 +9,49 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
 
-interface GetStartedModalProps {
+interface TalkToExpertModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
 
-export function GetStartedModal({
+export function TalkToExpertModal({
   open,
   onOpenChange,
-}: GetStartedModalProps) {
+}: TalkToExpertModalProps) {
   const [form, setForm] = useState({
     name: '',
-    email: '',
     phone: '',
-    occupation: '',
-    study: '',
-    qualification: '',
-    experience: '',
-    address: '',
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = () => {
-    console.log('Lead captured:', form);
-    // 🔗 connect API / CRM / Supabase / Firebase here
+    console.log('Expert Callback Request:', form);
+
+    // 🔗 Hook CRM / WhatsApp / backend later
     onOpenChange(false);
   };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent
-        className="
-          max-w-2xl bg-black/80 backdrop-blur-xl
-          border border-white/10 text-white
-          rounded-2xl
-        "
-      >
+      <DialogContent className="max-w-md bg-black/90 backdrop-blur-xl border border-white/10 text-white rounded-2xl">
         <DialogHeader>
           <DialogTitle className="text-2xl">
-            Get Started
+            Talk to an Expert
           </DialogTitle>
-          <p className="text-white/90 text-sm mt-1">
-            Tell us a bit about yourself , we’ll personalize your learning journey.
+          <p className="text-sm text-white/70 mt-1">
+            Leave your details and we’ll call you shortly.
           </p>
         </DialogHeader>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+        <div className="grid gap-4 mt-6">
           <Input
             name="name"
             placeholder="Full Name"
+            value={form.name}
             onChange={handleChange}
             className="bg-white/5 border-white/10"
           />
@@ -72,39 +59,21 @@ export function GetStartedModal({
           <Input
             name="phone"
             placeholder="Phone Number"
+            value={form.phone}
             onChange={handleChange}
             className="bg-white/5 border-white/10"
           />
-
-          <Input
-            name="occupation"
-            placeholder="Occupation"
-            onChange={handleChange}
-            className="bg-white/5 border-white/10"
-          />
-
-          <Input
-            name="study"
-            placeholder="School/College Name"
-            onChange={handleChange}
-            className="bg-white/5 border-white/10"
-          />
-
-
         </div>
 
         <div className="flex justify-end gap-3 mt-8">
-          <Button
-            variant="ghost"
-            onClick={() => onOpenChange(false)}
-          >
+          <Button variant="ghost" onClick={() => onOpenChange(false)}>
             Cancel
           </Button>
           <Button
             className="bg-[#E2F310] text-black hover:bg-[#cddc39]"
             onClick={handleSubmit}
           >
-            Continue
+            Request Call
           </Button>
         </div>
       </DialogContent>

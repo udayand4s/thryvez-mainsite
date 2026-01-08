@@ -28,7 +28,7 @@ const solutions = [
   {
     icon: Brain,
     title: "Live & Interactive Learning",
-    desc: "Weekly live sessions that force thinking, questioning, and participation — not passive watching.",
+    desc: "Weekly live sessions that force thinking, questioning, and participation , not passive watching.",
   },
   {
     icon: Layers,
@@ -38,7 +38,7 @@ const solutions = [
   {
     icon: Users,
     title: "Mentor-Led Guidance",
-    desc: "Learn directly from practitioners who’ve done the work — not just taught theory.",
+    desc: "Learn directly from practitioners who’ve done the work , not just taught theory.",
   },
   {
     icon: Rocket,

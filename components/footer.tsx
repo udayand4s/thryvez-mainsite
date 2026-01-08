@@ -70,17 +70,12 @@ export function Footer() {
             </h3>
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
-                <Link href="#" className="flex items-center gap-2 hover:text-white transition-colors">
+                <Link href="https://www.linkedin.com/company/thryvez/" className="flex items-center gap-2 hover:text-white transition-colors">
                   <Linkedin className="h-4 w-4" /> LinkedIn
                 </Link>
               </li>
               <li>
-                <Link href="#" className="flex items-center gap-2 hover:text-white transition-colors">
-                  <Facebook className="h-4 w-4" /> Facebook
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="flex items-center gap-2 hover:text-white transition-colors">
+                <Link href="https://www.instagram.com/thryvez.in" className="flex items-center gap-2 hover:text-white transition-colors">
                   <Instagram className="h-4 w-4" /> Instagram
                 </Link>
               </li>

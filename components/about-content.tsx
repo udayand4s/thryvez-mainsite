@@ -36,7 +36,7 @@ const pillars = [
   {
     icon: Layers,
     title: 'What We Focus On',
-    desc: 'Niche creative roles with real demand — where skill matters more than credentials.',
+    desc: 'Niche creative roles with real demand , where skill matters more than credentials.',
   },
   {
     icon: Compass,
@@ -142,6 +142,117 @@ export function AboutContent() {
         <div className="pointer-events-none absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-black" />
       </section>
 
+
+      <div className="min-h-screen flex flex-col bg-black">
+        <main className="flex-1 container mx-auto px-6 py-20 max-w-4xl">
+          <article className="space-y-16">
+
+
+            {/* Our Beginning */}
+            <section className="space-y-6">
+              <h2 className="text-2xl text-white">Our Beginning</h2>
+
+              <p className="text-white/80 leading-relaxed">
+                We didn’t start Thryve Z to build just another learning platform.
+                We started it because we lived the same struggles most young Indians
+                face today.
+              </p>
+
+              <p className="text-white/80 leading-relaxed">
+                We sat in classrooms that taught memorisation, but never application.
+                We enrolled in courses that promised the world but left us with nothing
+                more than a certificate buried in a folder. We watched smart,
+                ambitious people lose confidence , not because they lacked potential,
+                but because they never received the right direction.
+              </p>
+            </section>
+
+            {/* The Frustration */}
+            <section className="space-y-6">
+              <h2 className="text-2xl text-white">The Frustration</h2>
+
+              <p className="text-white/80 leading-relaxed">
+                Both of us took different paths, but the frustration was the same.
+                One of us saw technology moving faster than education could keep up.
+                The other saw talented people boxed into outdated systems that cared
+                more about degrees than skills.
+              </p>
+
+              <p className="text-white/80 leading-relaxed italic">
+                What if learning in India could actually prepare people for the real world?
+              </p>
+            </section>
+
+            {/* Birth of Thryve Z */}
+            <section className="space-y-6">
+              <h2 className="text-2xl text-white">The Birth of Thryve Z</h2>
+
+              <p className="text-white/80 leading-relaxed">
+                That’s where Thryve Z was born , not out of a pitch deck or a business plan,
+                but out of a personal need.
+              </p>
+
+              <p className="text-white/80 leading-relaxed">
+                A need to create a place where learning isn’t passive, it’s alive.
+                Where you don’t just watch someone teach , you build, solve, and create.
+                Where certificates are replaced with real projects, portfolios,
+                and opportunities employers can’t ignore.
+              </p>
+            </section>
+
+            {/* Community */}
+            <section className="space-y-6">
+              <h2 className="text-2xl text-white">The Power of Community</h2>
+
+              <p className="text-white/80 leading-relaxed">
+                More than anything, we wanted to build a community.
+                Growth doesn’t happen in isolation. The right peers, mentors,
+                and opportunities can completely change someone’s career trajectory.
+              </p>
+
+              <p className="text-white/80 leading-relaxed">
+                That’s what we’re building every single day at Thryve Z.
+              </p>
+            </section>
+
+            {/* Why We Exist */}
+            <section className="space-y-6">
+              <h2 className="text-2xl text-white">Why We Exist</h2>
+
+              <p className="text-white/80 leading-relaxed">
+                India doesn’t have a talent problem , it has a bridge problem.
+                The gap between ambition and opportunity is massive.
+              </p>
+
+              <p className="text-white/80 leading-relaxed">
+                Thryve Z exists to close that gap. For students tired of outdated syllabi.
+                For professionals who feel stuck. For people who want to do more
+                than just survive the competition.
+              </p>
+            </section>
+
+            {/* Our Promise */}
+            <section className="space-y-6">
+              <h2 className="text-2xl text-white">Our Promise</h2>
+
+              <p className="text-white/80 leading-relaxed">
+                This is our way of rewriting the script , not just for ourselves,
+                but for an entire generation that refuses to settle.
+              </p>
+
+              <p className="text-white/80 leading-relaxed font-medium">
+                Welcome to Thryve Z.
+                <br />
+                We don’t just prepare you for the future , we help you create it.
+              </p>
+            </section>
+
+          </article>
+        </main>
+      </div>
+
+
+
       {/* == ABOUT CONTENT == */}
       <section className="relative py-24 bg-black overflow-hidden">
         {/* Glow */}
@@ -151,15 +262,7 @@ export function AboutContent() {
         />
 
         <div className="relative max-w-6xl mx-auto px-6 text-center">
-          {/* TOP */}
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl mb-10"
-          >
-            Why <span className="text-[#e2f310]">Thryve Z</span> exists
-          </motion.h2>
+
 
           {/* BELIEFS */}
           <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
@@ -180,72 +283,9 @@ export function AboutContent() {
             ))}
           </div>
 
-          {/* CONNECTOR */}
-          <div className="relative flex justify-center my-12 h-20 overflow-hidden">
-            <div className="absolute inset-y-0 w-px bg-white/10" />
-            <motion.div
-              className="absolute top-0 w-[2px] bg-[#e2f310]
-                shadow-[0_0_18px_rgba(226,243,16,0.9)]"
-              animate={{
-                height: ['0%', '100%', '100%'],
-                opacity: [1, 1, 0],
-              }}
-              transition={{
-                duration: 2.2,
-                ease: 'easeInOut',
-                repeat: Infinity,
-                repeatDelay: 0.5,
-              }}
-            />
-          </div>
 
-          {/* PILLARS */}
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl md:text-3xl mb-12"
-          >
-            The <span className="text-[#e2f310]">Thryve Z</span> approach
-          </motion.h3>
-          <p
-            className={`
-            max-w-3xl mx-auto font-sans
-            text-white/90 text-base sm:text-lg leading-relaxed mb-10
-            transition-all duration-700 delay-200 ease-out
-            ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
-            `}
-            >
-            A virtual creative lab built to turn creative ambition into real, structured careers.
-          </p>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-            {pillars.map((p, i) => {
-              const Icon = p.icon;
-              return (
-                <motion.div
-                  key={p.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="group relative p-6 rounded-2xl
-                    bg-gradient-to-br from-white/10 to-white/5
-                    border border-white/10 backdrop-blur-xl
-                    hover:border-[#e2f310]/40 transition"
-                >
-                  <div className="mb-4">
-                    <div className="h-10 w-10 rounded-xl bg-[#e2f310]/20 flex items-center justify-center group-hover:bg-[#e2f310]/30 transition">
-                      <Icon className="h-5 w-5 text-[#e2f310]" />
-                    </div>
-                  </div>
 
-                  <h4 className="mb-2">{p.title}</h4>
-                  <p className="text-sm text-white/90 leading-relaxed">{p.desc}</p>
-                </motion.div>
-              );
-            })}
-          </div>
 
           {/* CTA */}
           <div

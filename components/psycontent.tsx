@@ -6,6 +6,7 @@ import { CourseWhySection } from '@/components/course-why-section';
 import { Boxes } from '@/components/ui/background-boxes';
 import Link from 'next/link';
 import { ApplyCourseModal } from '@/components/apply-course-modal';
+import { TalkToExpertModal } from "./TalkToExpertModal";
 
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -57,6 +58,7 @@ const testimonials = [
 
 export default function Psychology360Page() {
   const [preview, setPreview] = useState<null | "certificate" | "lor">(null);
+  const [expertOpen, setExpertOpen] = useState(false);
 
   const keywords = ["Cognitive Biases","Behavioral Psychology","Emotional Intelligence","Social Influence","Decision Making","Mental Models","Motivation","Therapeutic Techniques","Group Dynamics","Research Methods"];
   const [open, setOpen] = useState(false);
@@ -120,7 +122,7 @@ export default function Psychology360Page() {
   ];
 
   const faqs = [
-    {q:"Who should take Psychology 360?",a:"Anyone curious about human behavior — working professionals, students, coaches, or founders who want applied psychology tools."},
+    {q:"Who should take Psychology 360?",a:"Anyone curious about human behavior , working professionals, students, coaches, or founders who want applied psychology tools."},
     {q:"Do I need previous knowledge?",a:"No. We begin with foundations and progressively build to applied skills and a capstone."},
     {q:"How is certification awarded?",a:"Complete lessons, assignments and a capstone project. A verified certificate is issued on passing evaluation."}
   ];
@@ -174,7 +176,7 @@ export default function Psychology360Page() {
                 {/* STATS */}
                 <div className="flex gap-10 mb-12">
                   <div>
-                    <div className="text-3xl text-[#e2f310]">4</div>
+                    <div className="text-3xl text-[#e2f310]">8</div>
                     <div className="text-sm text-white/50">Phases</div>
                   </div>
                   <div>
@@ -182,7 +184,7 @@ export default function Psychology360Page() {
                     <div className="text-sm text-white/50">Weeks</div>
                   </div>
                   <div>
-                    <div className="text-3xl text-[#e2f310]">100+</div>
+                    <div className="text-3xl text-[#e2f310]">2000+</div>
                     <div className="text-sm text-white/50">Learners</div>
                   </div>
                 </div>
@@ -200,6 +202,7 @@ export default function Psychology360Page() {
                   <Button
                     variant="outline"
                     className="border-white/20 text-white hover:bg-white/10 px-8 py-6"
+                    onClick={() => setExpertOpen(true)}
                   >
                     Talk to an expert
                   </Button>
@@ -435,7 +438,7 @@ export default function Psychology360Page() {
               </p>
             </div>
       
-            {/* TESTIMONIALS — TOP */}
+            {/* TESTIMONIALS , TOP */}
             <div className="relative h-[34rem] overflow-hidden">
             <InfiniteMovingCards
               items={testimonials.map(t => ({
@@ -460,7 +463,7 @@ export default function Psychology360Page() {
           <div className="max-w-5xl mx-auto px-6 text-center relative">
             <motion.div initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>
               <h2 className="text-4xl md:text-5xl  mb-4">Earn Your <span className="text-[#e2f310]">Certification</span></h2>
-              <p className="mt-4 text-white/90 text-lg max-w-2xl mx-auto leading-relaxed">Complete all lessons, assignments, and submit a capstone. Upon evaluation you receive a verified Psychology 360 certificate — ideal for portfolios, LinkedIn and resumes.</p>
+              <p className="mt-4 text-white/90 text-lg max-w-2xl mx-auto leading-relaxed">Complete all lessons, assignments, and submit a capstone. Upon evaluation you receive a verified Psychology 360 certificate , ideal for portfolios, LinkedIn and resumes.</p>
             </motion.div>
           </div>
           {/* SAMPLE CERTIFICATE & LOR */}
@@ -568,8 +571,8 @@ export default function Psychology360Page() {
                   <div className="border-t border-white/10 pt-6">
                     <div className="flex items-end justify-between mb-6">
                       <div>
-                        <div className="text-sm text-white/90 line-through">₹8,999</div>
-                        <div className="text-5xl "><span className=" text-[#e2f310]">₹5,999</span><span className="text-base text-white/90 font-normal"></span></div>
+                        <div className="text-sm text-white/90 line-through">₹9,999</div>
+                        <div className="text-5xl "><span className=" text-[#e2f310]">₹7,999</span><span className="text-base text-white/90 font-normal"></span></div>
                       </div>
                       <div className="px-4 py-2 rounded-xl bg-[#e2f310]/20 text-[#e2f310] text-sm ">Save 20%</div>
                     </div>
@@ -642,6 +645,11 @@ export default function Psychology360Page() {
         onOpenChange={setOpen}
         courseName="Psychology 360"
       />
+      <TalkToExpertModal
+        open={expertOpen}
+        onOpenChange={setExpertOpen}
+      />
+
     </>
   );
 }
