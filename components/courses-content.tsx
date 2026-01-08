@@ -16,7 +16,7 @@ const courses = [
     id: 'psychology360',
     title: 'Psychology 360',
     instructor: 'Jivisha Dangi',
-    qual: 'Counselling Psychologist',
+    qual: 'Psychotherapist',
     rating: 4.9,
     students: '2000+',
     oldprice: 10999,
@@ -24,7 +24,7 @@ const courses = [
     duration: '4 Weeks',
     category: 'Psychology',
     trending: true,
-    image: '/psychology.webp',
+    image: '/psy.png',
     comingSoon: false,
 
   },
@@ -40,7 +40,7 @@ const courses = [
     duration: '4 weeks',
     category: 'Psychology',
     trending: false,
-    image: '/cli-psychology.png',
+    image: '/clpsy.png',
     comingSoon: false,
 
   },
@@ -56,7 +56,7 @@ const courses = [
     duration: '4 Weeks',
     category: 'AI',
     trending: true,
-    image: '/ds.webp',
+    image: '/aimkt.png',
     comingSoon: false,
 
   },
@@ -400,7 +400,7 @@ export function CoursesContent() {
               name: "Jivisha Dangi",
               slug: "jivisha-dangi",
               role: "Senior Psychologist",
-              qual: "Counselling Psychologist",
+              qual: "Psychotherapist",
               image:
                 "/jivisha-dangi.png",
             },

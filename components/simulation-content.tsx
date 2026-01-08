@@ -6,13 +6,50 @@ import { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import React from 'react';
+import { Badge } from '@/components/ui/badge';
+import { Star, Clock, Users, TrendingUp } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { BackgroundGradient } from '@/components/ui/background-gradient';
 import { Boxes } from '@/components/ui/background-boxes';
-import dynamic from 'next/dynamic';
 
-const Progress = dynamic(
-  () => import('@/components/ui/progress').then(m => m.Progress),
-  { ssr: false }
-);
+const courses: {
+  id: CourseKey;
+  title: string;
+  students: string;
+  byline: string;
+  image: string;
+}[] = [
+  {
+    id: 'ai',
+    title: 'AI Marketing',
+    students: '5000+ students have already tried this',
+    byline: 'Test your knowledge',
+    image: '/aimkt.png',
+  },
+  {
+    id: 'clinical',
+    title: 'Clinical Psychology',
+    students: '5000+ students have already tried this',
+    byline: 'Test your knowledge',
+    image: '/clpsy.png',
+  },
+  {
+    id: 'psych360',
+    title: 'Psychology 360',
+    students: '5000+ students have already tried this',
+    byline: 'Test your knowledge',
+    image: '/psy.png',
+  },
+  {
+    id: 'forensic',
+    title: 'Forensic Psychology',
+    students: '5000+ students have already tried this',
+    byline: 'Test your knowledge',
+    image: '/ds.webp',
+  },
+];
 
 type CourseKey =
   | 'psych360'
@@ -240,7 +277,6 @@ export function SimulationContent() {
     (a, i) => a === questions[i]?.correct
   ).length;
 
-  const progress = ((current + 1) / 4) * 100;
   const resetTest = (resetCourse = false) => {
     setStarted(false);
     setCurrent(0);
@@ -305,41 +341,104 @@ export function SimulationContent() {
 
       {/* ================= COURSE SELECTION ================= */}
       {!course && (
-        <section className="container mx-auto px-6 py-24 max-w-6xl grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {(Object.keys(COURSE_LABELS) as CourseKey[]).map((key) => (
-            <Card
-              key={key}
-              onClick={() => setCourse(key)}
-              className="
-                glass cursor-pointer text-white
-                transition-all duration-300
-                hover:-translate-y-2 hover:border-[#E2F310]
-                hover:shadow-[0_0_40px_-10px_#E2F310]
-              "
-            >
-              <CardContent className="py-12 text-center space-y-3">
-                <h3 className="text-lg">{COURSE_LABELS[key]}</h3>
-              </CardContent>
-            </Card>
-          ))}
+        <section className="py-24 ">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    
+            {/* Cards */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {courses.map((c, index) => (
+                <div
+                  key={c.id}
+                  style={{ transitionDelay: `${index * 120}ms` }}
+                  className="group relative transition-all duration-700"
+                >
+                  {/* Glow */}
+                  <div className="absolute inset-0 rounded-2xl opacity-0 scale-[0.96]
+                    transition-all duration-700 ease-out                group-hover:opacity-100 group-hover:scale-100 pointer-events-none">
+                    <BackgroundGradient
+                      animate={false}
+                      containerClassName="rounded-2xl"
+                      className="rounded-2xl"
+                    />
+                  </div>
+                  {/* Card */}
+                  <Card
+                    className="
+                      relative z-10
+                      bg-black/80 backdrop-blur-xl
+                      border border-white/5
+                      rounded-2xl overflow-hidden
+                      transition-all duration-500
+                      ease-out                  group-hover:scale-[1.015]
+                      group-hover:shadow-[0_0_60px_rgba(226,243,16,0.25)]
+                    "
+                  >
+                    <CardHeader className="pb-4 space-y-0">
+                      {/* Image */}
+                      <div className="relative aspect-video rounded-xl overflow-hidden mb-4">
+                        <Image
+                          src={c.image}
+                          alt={c.title}
+                          fill
+                          className="
+                            object-cover
+                            transition-all duration-700
+                            ease-out                        group-hover:scale-110
+                            group-hover:brightness-110
+                          "
+                        />
+                        {/* Hover CTA */}
+                        <div className="
+                          absolute inset-0 flex items-center justify-center
+                          bg-black/40
+                          opacity-0
+                          transition-all duration-500 ease-out
+                          group-hover:opacity-100
+                        ">
+                          <Button
+                            size="lg"
+                            className="rounded-full translate-y-2 group-hover:translate-y-0 transition-transform duration-500"
+                            onClick={() => {
+                              setCourse(c.id);
+                              setStarted(true);
+                            }}
+                          >
+                            Test Your Knowledge
+                          </Button>
+                        </div>
+
+                      </div>
+                      <h3 className=" text-lg leading-tight transition-colors group-hover:text-primary">
+                        {c.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        {c.byline}
+                      </p>
+                    </CardHeader>
+    
+                    <CardContent className="pb-4">
+                      <div className="flex items-center gap-5 text-sm text-muted-foreground">
+                        <div className="flex items-center gap-1">
+                          <Users className="h-4 w-4" />
+                          {c.students.toLocaleString()}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
       )}
 
-      {/* ================= START ================= */}
-      {course && !started && (
-        <section className="py-24 text-center">
-          <Button size="lg" onClick={() => setStarted(true)}>
-            Start Simulation
-          </Button>
-        </section>
-      )}
+
 
       {/* ================= QUIZ ================= */}
       {started && !showResult && (
         <section className="container mx-auto px-6 py-24 max-w-3xl">
           <Card className="glass border-white/10">
             <CardHeader className="space-y-4">
-              <Progress value={progress} />
               <p className="text-white/60 text-sm">
                 Question {current + 1} of 4
               </p>
@@ -424,3 +523,4 @@ export function SimulationContent() {
     </>
   );
 }
+  

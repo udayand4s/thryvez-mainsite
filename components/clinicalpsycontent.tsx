@@ -512,7 +512,7 @@ export default function ClinicalPsychologyPage() {
               >
                 {/* Image */}
                 <img
-                  src="/certificates/sample-certificate.webp"
+                  src="/certificates/Certificate (2).png"
                   alt="Sample Certificate"
                   className="w-full h-[280px] object-cover transition duration-500 group-hover:scale-105"
                 />
@@ -550,7 +550,7 @@ export default function ClinicalPsychologyPage() {
               >
                 {/* Image */}
                 <img
-                  src="/certificates/sample-lor.webp"
+                  src="/certificates/Sample- Lor.png"
                   alt="Sample Letter of Recommendation"
                   className="w-full h-[280px] object-cover transition duration-500 group-hover:scale-105"
                 />
@@ -667,8 +667,8 @@ export default function ClinicalPsychologyPage() {
             transition={{ duration: 0.25 }}
             src={
               preview === "certificate"
-                ? "/certificates/sample-certificate.webp"
-                : "/certificates/sample-lor.webp"
+                ? "/certificates/Certificate (2).png"
+                : "/certificates/Sample- Lor.png"
             }
             alt="Preview"
             className="max-h-[90vh] max-w-[95vw] rounded-xl shadow-2xl border border-white/10"

@@ -388,7 +388,7 @@ export default function Psychology360Page() {
             <CardContent className="p-8 grid md:grid-cols-[500px_1fr] gap-20 items-start">
                 {/* Avatar */}
                 <img
-                  src='/Jivisha-Psychology.webp'
+                  src='/Jivisha-psy.png'
                   className="w-full h-300 object-cover rounded-2xl mb-4"
                 />
 
@@ -398,7 +398,7 @@ export default function Psychology360Page() {
                   <p className="text-white/90 mb-4">Clinical Psychologist</p>
 
                   <p className="text-white/90 leading-relaxed whitespace-pre-line">
-                    {`Jivisha is a Counselling Psychologist and Psychotherapist with almost two years of experience. She holds a Master’s in Psychology (Psychosocial Clinical Studies) from Ambedkar University, Delhi, and a Postgraduate Diploma in Guidance and Counselling from Jamia Millia Islamia. She is also an Adult Fellow at the Washington Baltimore Center for Psychoanalysis, where she is deepening her engagement with psychoanalytic thought and practice.
+                    {`Jivisha is a Psychotherapist and Psychotherapist with almost two years of experience. She holds a Master’s in Psychology (Psychosocial Clinical Studies) from Ambedkar University, Delhi, and a Postgraduate Diploma in Guidance and Counselling from Jamia Millia Islamia. She is also an Adult Fellow at the Washington Baltimore Center for Psychoanalysis, where she is deepening her engagement with psychoanalytic thought and practice.
                     As a therapist and mentor, Jivisha believes in combining academic rigor with a reflective, human-centered approach to understanding the mind. Her work emphasizes curiosity, dialogue, and critical thinking, encouraging learners to not just acquire knowledge but to engage with it meaningfully. She brings her experience of working with diverse individuals and her grounding in psychoanalytic perspectives into her teaching, making complex ideas accessible relatable, and thought-provoking.`}
                   </p>
 
@@ -479,7 +479,7 @@ export default function Psychology360Page() {
               >
                 {/* Image */}
                 <img
-                  src="/certificates/sample-certificate.webp"
+                  src="/certificates/Certificate (2).png"
                   alt="Sample Certificate"
                   className="w-full h-[280px] object-cover transition duration-500 group-hover:scale-105"
                 />
@@ -517,7 +517,7 @@ export default function Psychology360Page() {
               >
                 {/* Image */}
                 <img
-                  src="/certificates/sample-lor.webp"
+                  src="/certificates/Sample- Lor.png"
                   alt="Sample Letter of Recommendation"
                   className="w-full h-[280px] object-cover transition duration-500 group-hover:scale-105"
                 />
@@ -631,8 +631,8 @@ export default function Psychology360Page() {
             transition={{ duration: 0.25 }}
             src={
               preview === "certificate"
-                ? "/certificates/sample-certificate.webp"
-                : "/certificates/sample-lor.webp"
+                ? "/certificates/Certificate (2).png"
+                : "/certificates/Sample- Lor.png"
             }
             alt="Preview"
             className="max-h-[90vh] max-w-[95vw] rounded-xl shadow-2xl border border-white/10"

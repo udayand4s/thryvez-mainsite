@@ -25,8 +25,8 @@ export const mentors: Mentor[] = [
     role: "Clinical Psychologist",
     company: "Psych Insights",
     image:
-      "/Jivisha-Psychology.webp",
-    bio: `Jivisha is a Counselling Psychologist and Psychotherapist with almost two years of experience. 
+      "/Jivisha-psy.png",
+    bio: `Jivisha is a Psychotherapist and Psychotherapist with almost two years of experience. 
 She holds a Master’s in Psychology (Psychosocial Clinical Studies) from Ambedkar University, Delhi, 
 and a Postgraduate Diploma in Guidance and Counselling from Jamia Millia Islamia.
 
