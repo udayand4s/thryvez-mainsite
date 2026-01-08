@@ -168,12 +168,11 @@ export function Testimonials() {
               <Card className="h-full bg-black/40 border border-white/10 backdrop-blur-xl overflow-hidden">
                 <CardContent className="p-0 h-full">
 
-                  {/* Replace this div with <video> later */}
+                  {/* Replace this div with <video> later 
                   <div
                     className="relative h-full min-h-[360px] flex items-center justify-center
                     bg-gradient-to-br from-black/60 to-black/30 cursor-pointer group"
                   >
-                    {/* Play Button */}
                     <div
                       className="h-20 w-20 rounded-full flex items-center justify-center
                       border-2 border-[#E2F310] text-[#E2F310]
@@ -183,7 +182,6 @@ export function Testimonials() {
                       ▶
                     </div>
 
-                    {/* Label */}
                     <div className="absolute bottom-6 left-6 right-6 text-center">
                       <p className="text-lg font-medium">
                         Student Testimonials Compilation
@@ -193,14 +191,15 @@ export function Testimonials() {
                       </p>
                     </div>
                   </div>
+                  */}
 
-                  {/*
+                
                     <video
-                      src="/videos/testimonials.mp4"
+                      src="/Student Testimonials for Website.mp4"
                       controls
                       className="w-full h-full object-cover"
                     />
-                  */}
+                
                 </CardContent>
               </Card>
             </div>
