@@ -1,11 +1,55 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import { Boxes } from '@/components/ui/background-boxes';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Boxes } from '@/components/ui/background-boxes';
+import {
+  Sparkles,
+  Users,
+  Target,
+  Layers,
+  Compass,
+  ArrowRight,
+  UserCheck
+} from 'lucide-react';
+
+const beliefs = [
+  'Creative careers are misunderstood',
+  'Degrees don’t equal skill',
+  'Most learning is too passive',
+  'Talent needs structure',
+  'Access is unequal',
+  'Career clarity comes late',
+  'Creativity lacks guidance',
+  'Potential goes unused',
+];
+
+const pillars = [
+
+  {
+    icon: Target,
+    title: 'The Gap We Address',
+    desc: 'We challenge rigid career paths and create space for unconventional, high-value skills.',
+  },
+  {
+    icon: Layers,
+    title: 'What We Focus On',
+    desc: 'Niche creative roles with real demand — where skill matters more than credentials.',
+  },
+  {
+    icon: Compass,
+    title: 'How We’re Different',
+    desc: 'No hobby learning. No fluff. Every program is built around outcomes and clarity.',
+  },
+  {
+    icon: UserCheck,
+    title: "Who This Is For",
+    desc: "Students and early professionals who know there is more. If you want structured creative growth, this lab is for you.",
+  },
+  
+];
 
 export function AboutContent() {
   const [visible, setVisible] = useState(false);
@@ -98,86 +142,155 @@ export function AboutContent() {
         <div className="pointer-events-none absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-black" />
       </section>
 
-      {/* == CONTENT SECTIONS == */}
+      {/* == ABOUT CONTENT == */}
       <section className="relative py-24 bg-black overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-          h-[700px] w-[700px] bg-[#e2f310]/10 blur-[180px] rounded-full" />
+        {/* Glow */}
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+          h-[600px] w-[600px] bg-[#e2f310]/10 blur-[160px] rounded-full"
+        />
 
-        <div className="relative max-w-5xl mx-auto px-6 space-y-20">
-          {[
-            {
-              title: 'What Thryve Z Is',
-              content: [
-                'Thryve Z is a virtual creative lab focused on building real careers in the creative space.',
-                'We work in areas that are still considered unconventional in India.',
-                'This is where creative ambition meets structured learning.',
-              ],
-            },
-            {
-              title: 'The Gap We’re Addressing',
-              content: [
-                'In India, most career paths follow the same narrow routes.',
-                'Creative roles are often misunderstood or treated as risky.',
-                'Thryve Z exists to open that door.',
-              ],
-            },
-            {
-              title: 'What We Focus On',
-              content: [
-                'We upskill learners in niche creative fields with real market demand.',
-                'Skill matters more than degrees.',
-                'Our goal is simple: visibility, access, practicality.',
-              ],
-            },
-            {
-              title: 'How Thryve Z Is Different',
-              content: [
-                'This is not hobby learning.',
-                'Programs are designed with career outcomes in mind.',
-                'No noise. Just clarity.',
-              ],
-            },
-            {
-              title: 'Who This Is For',
-              content: [
-                'Students and early professionals who know there is more.',
-                'If you want structured creative growth, this lab is for you.',
-              ],
-            },
-          ].map((section, i) => (
-            <motion.div
-              key={section.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: 'easeOut', delay: i * 0.05 }}
-              className="relative p-8 sm:p-10 rounded-3xl
-                bg-gradient-to-br from-white/10 to-white/5
-                border border-white/10 backdrop-blur-xl"
-            >
-              <h2 className="text-2xl sm:text-3xl mb-6">
-                <span className="text-[#e2f310]">—</span> {section.title}
-              </h2>
-
-              <div className="space-y-4 text-white/85 leading-relaxed">
-                {section.content.map((p, idx) => (
-                  <p key={idx}>{p}</p>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-
-          <motion.div
+        <div className="relative max-w-6xl mx-auto px-6 text-center">
+          {/* TOP */}
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="pt-10 border-t border-white/10 text-center sm:hidden"
+            className="text-3xl md:text-4xl mb-10"
           >
-            <p className="text-white/90">
-              Creative careers are real.<br />
-              We help you take them seriously.
-            </p>
-          </motion.div>
+            Why <span className="text-[#e2f310]">Thryve Z</span> exists
+          </motion.h2>
+
+          {/* BELIEFS */}
+          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+            {beliefs.map((b, i) => (
+              <motion.div
+                key={b}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="flex items-center gap-2 px-4 py-2 rounded-full
+                  bg-white/5 border border-white/10 text-sm text-white/90
+                  hover:border-[#e2f310]/40 transition"
+              >
+                <Users className="h-4 w-4 text-[#e2f310]" />
+                {b}
+              </motion.div>
+            ))}
+          </div>
+
+          {/* CONNECTOR */}
+          <div className="relative flex justify-center my-12 h-20 overflow-hidden">
+            <div className="absolute inset-y-0 w-px bg-white/10" />
+            <motion.div
+              className="absolute top-0 w-[2px] bg-[#e2f310]
+                shadow-[0_0_18px_rgba(226,243,16,0.9)]"
+              animate={{
+                height: ['0%', '100%', '100%'],
+                opacity: [1, 1, 0],
+              }}
+              transition={{
+                duration: 2.2,
+                ease: 'easeInOut',
+                repeat: Infinity,
+                repeatDelay: 0.5,
+              }}
+            />
+          </div>
+
+          {/* PILLARS */}
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-2xl md:text-3xl mb-12"
+          >
+            The <span className="text-[#e2f310]">Thryve Z</span> approach
+          </motion.h3>
+          <p
+            className={`
+            max-w-3xl mx-auto font-sans
+            text-white/90 text-base sm:text-lg leading-relaxed mb-10
+            transition-all duration-700 delay-200 ease-out
+            ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
+            `}
+            >
+            A virtual creative lab built to turn creative ambition into real, structured careers.
+          </p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+            {pillars.map((p, i) => {
+              const Icon = p.icon;
+              return (
+                <motion.div
+                  key={p.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="group relative p-6 rounded-2xl
+                    bg-gradient-to-br from-white/10 to-white/5
+                    border border-white/10 backdrop-blur-xl
+                    hover:border-[#e2f310]/40 transition"
+                >
+                  <div className="mb-4">
+                    <div className="h-10 w-10 rounded-xl bg-[#e2f310]/20 flex items-center justify-center group-hover:bg-[#e2f310]/30 transition">
+                      <Icon className="h-5 w-5 text-[#e2f310]" />
+                    </div>
+                  </div>
+
+                  <h4 className="mb-2">{p.title}</h4>
+                  <p className="text-sm text-white/90 leading-relaxed">{p.desc}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* CTA */}
+          <div
+            className={`mt-16 transition-all duration-700 delay-300 ease-out
+              ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+          >
+            <Link href="/courses">
+              <Button
+                size="lg"
+                className="bg-white text-black hover:bg-white/90 px-8 py-6 text-base group"
+              >
+                Explore the Lab
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
+          </div>
+          {/* CONNECTOR */}
+          <div className="relative flex justify-center my-12 h-20 overflow-hidden">
+            <div className="absolute inset-y-0 w-px bg-white/10" />
+            <motion.div
+              className="absolute top-0 w-[2px] bg-[#e2f310]
+                shadow-[0_0_18px_rgba(226,243,16,0.9)]"
+              animate={{
+                height: ['0%', '100%', '100%'],
+                opacity: [1, 1, 0],
+              }}
+              transition={{
+                duration: 2.2,
+                ease: 'easeInOut',
+                repeat: Infinity,
+                repeatDelay: 0.5,
+              }}
+            />
+          </div>
+          <p
+            className={`
+            max-w-3xl mx-auto font-sans
+            text-white/90 text-base sm:text-lg leading-relaxed mb-10
+            transition-all duration-700 delay-200 ease-out
+            ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
+            `}
+            >
+            Creative careers are real.
+            We help you take them seriously.
+          </p>
         </div>
       </section>
     </div>
