@@ -6,8 +6,13 @@ import { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Progress } from '@/components/ui/progress';
 import { Boxes } from '@/components/ui/background-boxes';
+import dynamic from 'next/dynamic';
+
+const Progress = dynamic(
+  () => import('@/components/ui/progress').then(m => m.Progress),
+  { ssr: false }
+);
 
 type CourseKey =
   | 'psych360'
@@ -314,9 +319,6 @@ export function SimulationContent() {
             >
               <CardContent className="py-12 text-center space-y-3">
                 <h3 className="text-lg">{COURSE_LABELS[key]}</h3>
-                <p className="text-white/60 text-sm">
-                  4-question simulation
-                </p>
               </CardContent>
             </Card>
           ))}

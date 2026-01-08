@@ -82,8 +82,7 @@ export function FeaturedCourses() {
             >
               {/* Glow */}
               <div className="absolute inset-0 rounded-2xl opacity-0 scale-[0.96]
-                transition-all duration-700 ease-[cubic-bezier(.22,1,.36,1)]
-                group-hover:opacity-100 group-hover:scale-100 pointer-events-none">
+                transition-all duration-700 ease-out                group-hover:opacity-100 group-hover:scale-100 pointer-events-none">
                 <BackgroundGradient
                   animate={false}
                   containerClassName="rounded-2xl"
@@ -99,8 +98,7 @@ export function FeaturedCourses() {
                   border border-white/5
                   rounded-2xl overflow-hidden
                   transition-all duration-500
-                  ease-[cubic-bezier(.22,1,.36,1)]
-                  group-hover:scale-[1.015]
+                  ease-out                  group-hover:scale-[1.015]
                   group-hover:shadow-[0_0_60px_rgba(226,243,16,0.25)]
                 "
               >
@@ -114,8 +112,7 @@ export function FeaturedCourses() {
                       className="
                         object-cover
                         transition-all duration-700
-                        ease-[cubic-bezier(.22,1,.36,1)]
-                        group-hover:scale-110
+                        ease-out                        group-hover:scale-110
                         group-hover:brightness-110
                       "
                     />
@@ -137,8 +134,7 @@ export function FeaturedCourses() {
                       bg-black/40
                       opacity-0
                       transition-all duration-500
-                      ease-[cubic-bezier(.22,1,.36,1)]
-                      group-hover:opacity-100
+                      ease-out                      group-hover:opacity-100
                     ">
                       <Link href={`/courses/${course.id}`}>
                         <Button
