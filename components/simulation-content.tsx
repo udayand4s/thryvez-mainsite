@@ -21,10 +21,16 @@ const COURSE_LABELS: Record<CourseKey, string> = {
   ai: 'AI Marketing',
   forensic: 'Forensic Psychology',
 };
+type Question = {
+  q: string;
+  options: string[];
+  correct: number;
+};
+
 
 /* ================= QUESTIONS ================= */
 
-const QUESTIONS: Record<CourseKey, any[]> = {
+const QUESTIONS: Record<CourseKey, Question[]> = {
   forensic: [
     {
       q: 'Which statement best captures the difference between first-degree murder and second-degree murder',
