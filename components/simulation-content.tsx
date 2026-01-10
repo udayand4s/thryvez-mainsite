@@ -461,8 +461,17 @@ export function SimulationContent() {
                   key={i}
                   variant="outline"
                   className="
-                    w-full justify-start text-left
-                    hover:bg-white/10 hover:border-[#E2F310]
+                    w-full
+                    h-auto
+                    items-start
+                    justify-start
+                    text-left
+                    whitespace-normal
+                    break-words
+                    leading-relaxed
+                    py-4 px-5
+                    hover:bg-white/10
+                    hover:border-[#E2F310]
                   "
                   onClick={() => {
                     const next = [...answers];

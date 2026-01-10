@@ -150,7 +150,7 @@ export function AboutContent() {
 
             {/* Our Beginning */}
             <section className="space-y-6">
-              <h2 className="text-2xl text-white">Our Beginning</h2>
+              <h2 className="text-2xl text-white">Our <span className="text-[#E2F310]">Beginning</span></h2>
 
               <p className="text-white/80 leading-relaxed">
                 We didn’t start Thryve Z to build just another learning platform.
@@ -169,7 +169,7 @@ export function AboutContent() {
 
             {/* The Frustration */}
             <section className="space-y-6">
-              <h2 className="text-2xl text-white">The Frustration</h2>
+              <h2 className="text-2xl text-white">The <span className="text-[#E2F310]">Frustration</span></h2>
 
               <p className="text-white/80 leading-relaxed">
                 Both of us took different paths, but the frustration was the same.
@@ -185,7 +185,7 @@ export function AboutContent() {
 
             {/* Birth of Thryve Z */}
             <section className="space-y-6">
-              <h2 className="text-2xl text-white">The Birth of Thryve Z</h2>
+              <h2 className="text-2xl text-white">The Birth of <span className="text-[#E2F310]">Thryve Z</span></h2>
 
               <p className="text-white/80 leading-relaxed">
                 That’s where Thryve Z was born , not out of a pitch deck or a business plan,
@@ -202,7 +202,7 @@ export function AboutContent() {
 
             {/* Community */}
             <section className="space-y-6">
-              <h2 className="text-2xl text-white">The Power of Community</h2>
+              <h2 className="text-2xl text-white">The Power of <span className="text-[#E2F310]">Community</span></h2>
 
               <p className="text-white/80 leading-relaxed">
                 More than anything, we wanted to build a community.
@@ -217,7 +217,7 @@ export function AboutContent() {
 
             {/* Why We Exist */}
             <section className="space-y-6">
-              <h2 className="text-2xl text-white">Why We Exist</h2>
+              <h2 className="text-2xl text-white">Why We <span className="text-[#E2F310]">Exist</span></h2>
 
               <p className="text-white/80 leading-relaxed">
                 India doesn’t have a talent problem , it has a bridge problem.
@@ -233,7 +233,7 @@ export function AboutContent() {
 
             {/* Our Promise */}
             <section className="space-y-6">
-              <h2 className="text-2xl text-white">Our Promise</h2>
+              <h2 className="text-2xl text-white">Our <span className="text-[#E2F310]">Promise</span></h2>
 
               <p className="text-white/80 leading-relaxed">
                 This is our way of rewriting the script , not just for ourselves,
@@ -297,40 +297,11 @@ export function AboutContent() {
                 size="lg"
                 className="bg-white text-black hover:bg-white/90 px-8 py-6 text-base group"
               >
-                Explore the Lab
+                Creative careers are real. We help you take them seriously.
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
           </div>
-          {/* CONNECTOR */}
-          <div className="relative flex justify-center my-12 h-20 overflow-hidden">
-            <div className="absolute inset-y-0 w-px bg-white/10" />
-            <motion.div
-              className="absolute top-0 w-[2px] bg-[#e2f310]
-                shadow-[0_0_18px_rgba(226,243,16,0.9)]"
-              animate={{
-                height: ['0%', '100%', '100%'],
-                opacity: [1, 1, 0],
-              }}
-              transition={{
-                duration: 2.2,
-                ease: 'easeInOut',
-                repeat: Infinity,
-                repeatDelay: 0.5,
-              }}
-            />
-          </div>
-          <p
-            className={`
-            max-w-3xl mx-auto font-sans
-            text-white/90 text-base sm:text-lg leading-relaxed mb-10
-            transition-all duration-700 delay-200 ease-out
-            ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
-            `}
-            >
-            Creative careers are real.
-            We help you take them seriously.
-          </p>
         </div>
       </section>
     </div>
