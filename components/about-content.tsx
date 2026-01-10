@@ -255,11 +255,7 @@ export function AboutContent() {
 
       {/* == ABOUT CONTENT == */}
       <section className="relative py-24 bg-black overflow-hidden">
-        {/* Glow */}
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-          h-[600px] w-[600px] bg-[#e2f310]/10 blur-[160px] rounded-full"
-        />
+        
 
         <div className="relative max-w-6xl mx-auto px-6 text-center">
 

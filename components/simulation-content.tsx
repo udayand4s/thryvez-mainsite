@@ -113,9 +113,9 @@ const QUESTIONS: Record<CourseKey, Question[]> = {
 
   clinical: [
     {
-      q: `Mini Case: How Would a Clinical Psychologist Think About This?
+      q: `Mini Case: How Would a Clinical Psychologist Think About This?\n
 
-A 19-year-old college student has been feeling unusually anxious and distracted over the past few weeks. Since moving away from home for college, they’ve been struggling to adjust, worrying constantly about academics and friendships. They report poor sleep, frequent overthinking, and feeling “on edge,” especially before classes and exams. Despite this, they attend lectures regularly and stay in touch with a close friend from home.
+A 19-year-old college student has been feeling unusually anxious and distracted over the past few weeks. Since moving away from home for college, they’ve been struggling to adjust, worrying constantly about academics and friendships. They report poor sleep, frequent overthinking, and feeling “on edge,” especially before classes and exams. Despite this, they attend lectures regularly and stay in touch with a close friend from home.\n
 
 When reading this situation, what would a clinical psychologist focus on first?`,
       options: [
@@ -448,9 +448,9 @@ export function SimulationContent() {
           <Card className="glass border-white/10">
             <CardHeader className="space-y-4">
               <p className="text-white/60 text-sm">
-                Question {current + 1} of 4
+                Question {current + 1} of {questions.length}
               </p>
-              <h3 className="text-xl text-white">
+              <h3 className="text-xl text-white whitespace-pre-line">
                 {questions[current].q}
               </h3>
             </CardHeader>
@@ -477,9 +477,11 @@ export function SimulationContent() {
                     const next = [...answers];
                     next[current] = i;
                     setAnswers(next);
-                    current < 3
-                      ? setCurrent((c) => c + 1)
-                      : setShowResult(true);
+                    if (current < questions.length - 1) {
+                      setCurrent((c) => c + 1);
+                    } else {
+                      setShowResult(true);
+                    }                    
                   }}
                 >
                   {o}
@@ -497,10 +499,10 @@ export function SimulationContent() {
             <CardContent className="py-14 space-y-8">
               <div>
                 <h2 className="text-4xl text-white font-semibold">
-                  {score}/4
+                  {score}/{questions.length}
                 </h2>
-                <p className="text-white/70 mt-2">
-                  {feedbackCopy(4 - score)}
+                <p className="text-white/70 mt-2 whitespace-pre-line">
+                  {feedbackCopy(questions.length - score)}
                 </p>
               </div>
 

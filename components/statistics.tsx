@@ -5,19 +5,16 @@ import { BackgroundGradient } from './ui/background-gradient';
 
 const stats = [
   {
-    value: '1000+',
-    label: 'Active learners',
-    prefix: 'Students',
-  },
-  {
-    value: '10+',
-    label: 'On ThryveZ',
-    prefix: 'Courses',
+    value: '4000+',
+    label: 'Learners Trained',
   },
   {
     value: '98%',
-    label: 'Using our platforms',
-    prefix: 'Rating',
+    label: 'Learner Satisfaction',
+  },
+  {
+    value: '500+',
+    label: 'Live Sessions Conducted',
   },
 ];
 
@@ -77,14 +74,10 @@ export function Statistics() {
               "
                 animate={false}
               >
-                {/* Value + Prefix */}
                 <div className="mb-4">
                   <div className="flex items-baseline justify-center gap-2 mb-2">
                     <span className="text-1xl sm:text-3xl lg:text-4xl  text-white tracking-tight">
                       {stat.value}
-                    </span>
-                    <span className="text-xl sm:text-2xl lg:text-3xl font-medium text-white/80">
-                      {stat.prefix}
                     </span>
                   </div>
 

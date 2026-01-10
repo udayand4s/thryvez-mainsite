@@ -8,25 +8,45 @@ import Link from 'next/link';
 
 const faqs = [
   {
-    question: 'What makes ThryveZ different from other learning platforms?',
-    answer: 'ThryveZ combines expert-led courses with an exclusive community of growth leaders. Unlike traditional platforms, you get direct access to practitioners who have scaled products at top companies, plus a peer network that accelerates your learning and a lifetime access to the courses you choose.',
+    question: 'What is Thryve Z?',
+    answer: 'Thryve Z is a virtual creative lab designed to bridge the gap between education and real-world careers. We focus on practical learning, real projects, and community-driven growth, so you don’t just learn, you build.',
   },
   {
-    question: 'Who are the courses designed for?',
-    answer: 'Our courses are designed for ambitious professionals - product managers, marketers, founders, and growth leaders who want to level up their skills as well as students, both Under Graduates and school students. Whether you\'re early in your career or a seasoned executive, our content is crafted to deliver actionable insights.',
+    question: 'Who is Thryve Z for?',
+    answer: 'Thryve Z is for students, fresh graduates, and working professionals who feel stuck with outdated learning systems and want skills that actually translate into opportunities.',
   },
   {
-    question: 'How long do I have access to the courses?',
-    answer: 'Once enrolled, you have lifetime access to the course content. This includes all future updates and new modules that get added. Learn at your own pace, revisit lessons anytime.',
+    question: 'How is Thryve Z different from other learning platforms?',
+    answer: 'We don’t believe in passive learning or certificate-only outcomes. At Thryve Z, you work on real projects, build portfolios, collaborate with peers, and learn skills employers actually care about.',
   },
   {
-    question: 'Is there a community or networking component?',
-    answer: 'Absolutely. Community is at the core of ThryveZ. You get access to exclusive Slack channels, monthly AMAs with industry leaders, and networking events. Many of our members have found co-founders, mentors, and career opportunities through the community.',
+    question: 'How long do I have access to the material for?',
+    answer: 'Yes. Once you enroll, you get lifetime access to the course content, including future updates. You can revisit the material anytime, at your own pace.',
   },
   {
-    question: 'Do you offer team or enterprise plans?',
-    answer: 'Yes, we offer custom packages for teams and organizations. Get in touch with us to discuss volume discounts, custom learning paths, and dedicated support for your team.',
+    question: 'Is Thryve Z beginner-friendly?',
+    answer: 'Absolutely. Our programs are designed to meet you where you are—whether you’re just starting out or looking to transition into a new role or industry.',
   },
+  {
+    question: 'What kind of support will I receive?',
+    answer: 'You’ll have access to 24×7 support for doubts, guidance, and technical help. You’re never left figuring things out alone.',
+  },
+  {
+    question: 'Are the courses self-paced or live?',
+    answer: 'We deliver live, structured learning experiences backed by hands-on practice and ongoing guidance, so you benefit from real-time interaction without losing the freedom to revisit and reinforce concepts.',
+  },
+  {
+    question: 'Will I receive a certificate?',
+    answer: 'Yes, but more importantly, you’ll leave with real projects, Letters of recommendations, a strong portfolio, and practical experience things that matter far more than a certificate alone.',
+  },
+  {
+    question: 'Does Thryve Z help with career growth?',
+    answer: 'Yes. We focus on skills, confidence, and exposure. Through projects, mentorship, and community, we help you become job-ready and opportunity-ready.',
+  },
+  {
+    question: 'Is Thryve Z just about courses?',
+    answer: 'No. Thryve Z is a community. You grow alongside like-minded peers, mentors, and professionals who support and challenge you to do better.',
+  },  
 ];
 
 export function FAQ() {
