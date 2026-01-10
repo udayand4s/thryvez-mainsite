@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { CourseWhySection } from '@/components/course-why-section';
 import { Boxes } from '@/components/ui/background-boxes';
 import Link from 'next/link';
-import { ApplyCourseModal } from '@/components/apply-course-modal';
 import { TalkToExpertModal } from "./TalkToExpertModal";
+import { useRouter } from 'next/navigation';
 
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -57,6 +57,7 @@ const testimonials = [
 
 
 export default function ClinicalPsychologyPage() {
+  const router = useRouter();
   const [expertOpen, setExpertOpen] = useState(false);
 
   const [preview, setPreview] = useState<null | "certificate" | "lor">(null);
@@ -73,7 +74,6 @@ export default function ClinicalPsychologyPage() {
     "Clinical Career Pathways",
   ];
   
-  const [open, setOpen] = useState(false);
 
   const curriculum = [
     {
@@ -218,7 +218,7 @@ export default function ClinicalPsychologyPage() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
                     className="bg-white text-black hover:bg-white/90 px-8 py-6 text-base group"
-                    onClick={() => setOpen(true)}
+                    onClick={() => router.push('/lms')}
                   >
                     Apply now
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -612,7 +612,7 @@ export default function ClinicalPsychologyPage() {
                       <div className="px-4 py-2 rounded-xl bg-[#e2f310]/20 text-[#e2f310] text-sm ">Save 20%</div>
                     </div>
                     <Button className="w-full bg-gradient-to-r from-[#e2f310] to-orange-400 hover:from-orange-400 hover:to-[#e2f310] text-black text-base  py-6 shadow-lg shadow-[#e2f310]/20 hover:shadow-xl hover:shadow-[#e2f310]/30"
-                    onClick={() => setOpen(true)}
+                    onClick={() => router.push('/lms')}
                     >
                       Explore all inclusions <ArrowRight className="ml-2 h-5 w-5"/>
                       </Button>
@@ -676,11 +676,7 @@ export default function ClinicalPsychologyPage() {
         </div>
       )}
 
-      <ApplyCourseModal
-        open={open}
-        onOpenChange={setOpen}
-        courseName="Clinical Psychology: Concepts, Cases & Careers"
-      />
+
       <TalkToExpertModal
         open={expertOpen}
         onOpenChange={setExpertOpen}

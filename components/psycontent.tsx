@@ -5,11 +5,12 @@ import { Button } from "@/components/ui/button";
 import { CourseWhySection } from '@/components/course-why-section';
 import { Boxes } from '@/components/ui/background-boxes';
 import Link from 'next/link';
-import { ApplyCourseModal } from '@/components/apply-course-modal';
 import { TalkToExpertModal } from "./TalkToExpertModal";
 
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from 'next/navigation';
+
 import {
   Quote,
   ChevronLeft,
@@ -57,11 +58,11 @@ const testimonials = [
 ];
 
 export default function Psychology360Page() {
+  const router = useRouter();
   const [preview, setPreview] = useState<null | "certificate" | "lor">(null);
   const [expertOpen, setExpertOpen] = useState(false);
 
   const keywords = ["Cognitive Biases","Behavioral Psychology","Emotional Intelligence","Social Influence","Decision Making","Mental Models","Motivation","Therapeutic Techniques","Group Dynamics","Research Methods"];
-  const [open, setOpen] = useState(false);
 
   const curriculum = [
     {
@@ -193,7 +194,7 @@ export default function Psychology360Page() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
                     className="bg-white text-black hover:bg-white/90 px-8 py-6 text-base group"
-                    onClick={() => setOpen(true)}
+                    onClick={() => router.push('/lms')}
                   >
                     Apply now
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -576,11 +577,12 @@ export default function Psychology360Page() {
                       </div>
                       <div className="px-4 py-2 rounded-xl bg-[#e2f310]/20 text-[#e2f310] text-sm ">Save 20%</div>
                     </div>
-                    <Button className="w-full bg-gradient-to-r from-[#e2f310] to-orange-400 hover:from-orange-400 hover:to-[#e2f310] text-black text-base  py-6 shadow-lg shadow-[#e2f310]/20 hover:shadow-xl hover:shadow-[#e2f310]/30"
-                    onClick={() => setOpen(true)}
+                    <Button
+                      className="w-full bg-gradient-to-r from-[#e2f310] to-orange-400 ..."
+                      onClick={() => router.push('/lms')}
                     >
                       Explore all inclusions <ArrowRight className="ml-2 h-5 w-5"/>
-                      </Button>
+                    </Button>
                   </div>
                 </div>
               </motion.div>
@@ -640,11 +642,7 @@ export default function Psychology360Page() {
         </div>
       )}
 
-      <ApplyCourseModal
-        open={open}
-        onOpenChange={setOpen}
-        courseName="Psychology 360"
-      />
+
       <TalkToExpertModal
         open={expertOpen}
         onOpenChange={setExpertOpen}
