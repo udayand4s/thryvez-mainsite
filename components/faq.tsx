@@ -49,6 +49,7 @@ const faqs = [
   },  
 ];
 
+
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -117,9 +118,72 @@ export function FAQ() {
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   className="w-full flex items-center justify-between p-5 sm:p-6 text-left hover:bg-white/5 transition-colors"
                 >
-                  <span className=" text-white text-base sm:text-lg pr-4">
-                    {faq.question}
+                  <span className="text-white text-base sm:text-lg pr-4">
+                    {index === 0 && (
+                      <>
+                        What is Thryve<span className="text-[#E2F310]"> Z</span>?
+                      </>
+                    )}
+
+                    {index === 1 && (
+                      <>
+                        Who is Thryve<span className="text-[#E2F310]"> Z</span> for?
+                      </>
+                    )}
+
+                    {index === 2 && (
+                      <>
+                        How is Thryve<span className="text-[#E2F310]"> Z</span>{' '}
+                        <span className="text-[#E2F310]">different</span> from other learning platforms?
+                      </>
+                    )}
+
+                    {index === 3 && (
+                      <>
+                        How long do I have <span className="text-[#E2F310]">access</span> to the material for?
+                      </>
+                    )}
+
+                    {index === 4 && (
+                      <>
+                        Is Thryve<span className="text-[#E2F310]"> Z</span>{' '}
+                        <span className="text-[#E2F310]">beginner-friendly</span>?
+                      </>
+                    )}
+
+                    {index === 5 && (
+                      <>
+                        What kind of <span className="text-[#E2F310]">support</span> will I receive?
+                      </>
+                    )}
+
+                    {index === 6 && (
+                      <>
+                        Are the courses self-paced or <span className="text-[#E2F310]">live</span>?
+                      </>
+                    )}
+
+                    {index === 7 && (
+                      <>
+                        Will I receive a <span className="text-[#E2F310]">certificate</span>?
+                      </>
+                    )}
+
+                    {index === 8 && (
+                      <>
+                        Does Thryve<span className="text-[#E2F310]"> Z</span> help with{' '}
+                        <span className="text-[#E2F310]">career</span>{' '}
+                        <span className="text-[#E2F310]">growth</span>?
+                      </>
+                    )}
+
+                    {index === 9 && (
+                      <>
+                        Is Thryve<span className="text-[#E2F310]"> Z</span> just about courses?
+                      </>
+                    )}
                   </span>
+
                   <ChevronDown 
                     className={`h-5 w-5 text-white/90 flex-shrink-0 transition-transform duration-300 ${
                       openIndex === index ? 'rotate-180' : ''
