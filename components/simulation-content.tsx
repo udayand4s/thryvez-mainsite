@@ -19,35 +19,30 @@ const courses: {
   title: string;
   students: string;
   byline: string;
-  image: string;
 }[] = [
   {
     id: 'ai',
     title: 'AI Marketing',
     students: '4000+ students have already tried this',
     byline: 'Test your knowledge',
-    image: '/aimkt.png',
   },
   {
     id: 'clinical',
     title: 'Clinical Psychology',
     students: '5000+ students have already tried this',
     byline: 'Test your knowledge',
-    image: '/clpsy.png',
   },
   {
     id: 'psych360',
     title: 'Psychology 360',
     students: '3000+ students have already tried this',
     byline: 'Test your knowledge',
-    image: '/psy.png',
   },
   {
     id: 'forensic',
     title: 'Forensic Psychology',
     students: '6000+ students have already tried this',
     byline: 'Test your knowledge',
-    image: '/ds.webp',
   },
 ];
 
@@ -75,17 +70,17 @@ type Question = {
 const QUESTIONS: Record<CourseKey, Question[]> = {
   forensic: [
     {
-      q: 'Which statement best captures the difference between first-degree murder and second-degree murder',
+      q: 'Which statement best captures the difference between first-degree murder and second-degree murder?',
       options: [
-        'First-degree murder always involves multiple victims',
-        'First-degree murder involves premeditation and intent',
-        'Second-degree murder is always accidental',
-        'First-degree murder only occurs in public',
+        'First-degree murder always involves multiple victims, while second-degree murder involves only one.',
+        'First-degree murder involves premeditation and intent, while second-degree murder involves intent but no prior planning.',
+        'Second-degree murder is always accidental, while first-degree murder is intentional.',
+        'First-degree murder occurs only in public places, while second-degree murder occurs in private settings.',
       ],
       correct: 1,
     },
     {
-      q: 'This evaluation primarily concerns:',
+      q: 'A forensic psychologist is asked to evaluate an accused who understands the charges against them but is unable to communicate meaningfully with their lawyer due to severe psychotic symptoms. This evaluation primarily concerns:',
       options: [
         'Criminal intent under IPC',
         'Fitness to stand trial under Section 329 CrPC',
@@ -95,22 +90,22 @@ const QUESTIONS: Record<CourseKey, Question[]> = {
       correct: 1,
     },
     {
-      q: 'Which task is most appropriate for a forensic psychologist?',
+      q: 'Which of the following tasks is most appropriate for a forensic psychologist working within the Indian criminal justice system?',
       options: [
-        'Long-term psychotherapy',
-        'Career guidance testing',
-        'Assessing risk of reoffending',
-        'Prescribing medication',
+        'Providing long-term psychotherapy to inmates',
+        'Conducting personality tests for career guidance',
+        'Assessing risk of reoffending to assist courts or parole boards',
+        'Prescribing psychiatric medication',
       ],
       correct: 2,
     },
     {
-      q: 'What best defines a serial killer?',
+      q: 'Which of the following best defines a serial killer in forensic psychology?',
       options: [
-        'Multiple victims in one incident',
-        'Multiple murders with cooling-off periods',
-        'Repeated killings of strangers',
-        'Kills due to mental illness',
+        'A person who kills multiple people in a single incident',
+        'A person who commits multiple murders with a cooling-off period between each act',
+        'A person who commits repeated killings of individuals with no prior relational history',
+        'A person who kills due to mental illness',
       ],
       correct: 1,
     },
@@ -118,42 +113,46 @@ const QUESTIONS: Record<CourseKey, Question[]> = {
 
   clinical: [
     {
-      q: 'What would a clinical psychologist focus on first?',
+      q: `Mini Case: How Would a Clinical Psychologist Think About This?
+
+A 19-year-old college student has been feeling unusually anxious and distracted over the past few weeks. Since moving away from home for college, they’ve been struggling to adjust, worrying constantly about academics and friendships. They report poor sleep, frequent overthinking, and feeling “on edge,” especially before classes and exams. Despite this, they attend lectures regularly and stay in touch with a close friend from home.
+
+When reading this situation, what would a clinical psychologist focus on first?`,
       options: [
-        'Choosing a diagnosis',
+        'Deciding which disorder fits best',
         'Understanding context and recent changes',
-        'Deciding medication',
-        'Matching a checklist',
+        'Determining whether medication is required',
+        'Comparing symptoms to a diagnostic checklist',
       ],
       correct: 1,
     },
     {
-      q: 'The most accurate way to view this experience?',
+      q: 'Based on the information given, what is the most accurate way to view this experience?',
       options: [
-        'Clear anxiety disorder',
-        'Stress to be ignored',
-        'Distress understood in context',
-        'Long-term illness',
+        'Clear evidence of an anxiety disorder',
+        'Normal stress that should be ignored',
+        'Psychological distress that needs to be understood in context',
+        'A long-term mental illness',
       ],
       correct: 2,
     },
     {
-      q: 'What likely triggered the distress?',
+      q: 'Which factor would most likely fall under “what triggered the distress” in this case?',
       options: [
-        'Being 19',
-        'Moving away from home',
-        'Attending classes',
-        'Having a friend',
+        'Being 19 years old',
+        'Moving away from home for college',
+        'Attending classes regularly',
+        'Having a close friend',
       ],
       correct: 1,
     },
     {
-      q: 'Which conclusion is appropriate?',
+      q: 'Based only on this information, which conclusion is appropriate?',
       options: [
-        'Has anxiety disorder',
-        'Needs immediate treatment',
-        'Adjustment-related stress',
-        'Will last long-term',
+        'The student has an anxiety disorder',
+        'The student needs immediate clinical treatment',
+        'The student is going through an adjustment-related stressful phase',
+        'The student will continue feeling this way long-term',
       ],
       correct: 2,
     },
@@ -161,27 +160,36 @@ const QUESTIONS: Record<CourseKey, Question[]> = {
 
   psych360: [
     {
-      q: 'This scenario reflects:',
+      q: `Scenario:
+At home, a student is quiet and obedient. With friends, they’re expressive and outspoken. Online, they curate a confident, “put-together” version of themselves.
+
+From a psychological perspective, this most closely reflects:`,
       options: [
-        'Being fake',
-        'Multiple false selves',
-        'Different social roles',
-        'Personality disorder',
+        'Being fake or dishonest',
+        'The existence of multiple “false selves”',
+        'Different roles across social contexts',
+        'A personality disorder',
       ],
       correct: 2,
     },
     {
-      q: 'This difference best highlights:',
+      q: `Scenario:
+Two people experience panic symptoms. One seeks therapy. The other visits a spiritual healer because their family views the symptoms as a spiritual imbalance.
+
+This difference best highlights:`,
       options: [
-        'Intelligence',
+        'Intelligence levels',
         'Cultural interpretations of distress',
-        'Severity',
-        'Personality',
+        'Severity of symptoms',
+        'Personality differences',
       ],
       correct: 1,
     },
     {
-      q: 'This pattern is most consistent with:',
+      q: `Scenario:
+Someone values independence, feels uncomfortable relying on others, and withdraws when relationships become emotionally intense.
+
+This pattern is most consistent with:`,
       options: [
         'Secure attachment',
         'Anxious attachment',
@@ -191,7 +199,10 @@ const QUESTIONS: Record<CourseKey, Question[]> = {
       correct: 2,
     },
     {
-      q: 'This strategy is best described as:',
+      q: `Scenario:
+After a conflict, a person tells themselves, “There’s no point feeling upset, others have it worse,” and pushes the emotion away.
+
+This strategy is best described as:`,
       options: [
         'Emotional expression',
         'Emotional suppression',
@@ -200,31 +211,44 @@ const QUESTIONS: Record<CourseKey, Question[]> = {
       ],
       correct: 1,
     },
+    {
+      q: `Scenario:
+A 19-year-old student feels deeply anxious when their close friend doesn’t reply for hours. They replay conversations, worry they’ve done something wrong, and feel relieved only when the friend responds.
+
+Which attachment pattern best explains this reaction?`,
+      options: [
+        'Secure — comfortable with closeness and distance',
+        'Anxious — heightened fear of abandonment',
+        'Avoidant — discomfort with emotional closeness',
+        'Disorganized — fear mixed with withdrawal',
+      ],
+      correct: 1,
+    },
   ],
 
   ai: [
     {
-      q: 'Why are AI + automation useful in marketing?',
+      q: 'A company wants to grow online without manually doing everything. Which best explains why AI + automation are useful in marketing?',
       options: [
-        'Replace marketers',
-        'Handle repetitive work efficiently',
-        'Only for big companies',
-        'Design logos',
+        'They completely replace human marketers',
+        'They help do repetitive work faster and more consistently',
+        'They only work for large companies',
+        'They are mainly used for designing logos',
       ],
       correct: 1,
     },
     {
-      q: 'What just happened?',
+      q: 'A user fills a “Get a Free Trial” form and the marketing team immediately receives an email notification, without anyone checking the form manually. What just happened?',
       options: [
-        'Chatbot reply',
-        'Workflow automation',
-        'Newsletter sent',
-        'AI wrote a post',
+        'A chatbot replied to the user',
+        'A workflow automation was triggered',
+        'The CRM sent a newsletter',
+        'AI wrote a social media post',
       ],
       correct: 1,
     },
     {
-      q: 'This is an example of:',
+      q: 'Your company sends two different follow-up emails depending on whether a user opened the previous email. This is an example of:',
       options: [
         'Content repurposing',
         'Behaviour-based automation',
@@ -234,17 +258,18 @@ const QUESTIONS: Record<CourseKey, Question[]> = {
       correct: 1,
     },
     {
-      q: 'Why use n8n for later-stage workflows?',
+      q: 'Why would a company use n8n instead of only Zapier for later-stage workflows like payment → CRM → internal alerts → data logging?',
       options: [
         'Only cheaper',
         'Supports complex branching logic',
         'Zapier cannot email',
-        'Required for Stripe',
+        'Required for Stripe payments',
       ],
       correct: 1,
     },
   ],
 };
+
 
 /* ================= FEEDBACK ================= */
 
@@ -317,8 +342,9 @@ export function SimulationContent() {
                   ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
                 `}
               >
-                Test Your Knowledge
+                Test Your <span className="text-[#E2F310]">Knowledge</span>
               </h1>
+
 
               <p
                 className={`
@@ -345,93 +371,70 @@ export function SimulationContent() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
     
             {/* Cards */}
-            <div className="flex flex-col gap-10 max-w-5xl mx-auto">
+            <div className="flex flex-col gap-8 max-w-5xl mx-auto">
               {courses.map((c, index) => (
-                <div
+                <Card
                   key={c.id}
-                  style={{ transitionDelay: `${index * 120}ms` }}
-                  className="group relative transition-all duration-700"
+                  style={{ transitionDelay: `${index * 80}ms` }}
+                  className="
+                    bg-black/80
+                    border border-white/15
+                    rounded-2xl
+                    transition-colors duration-300
+                    hover:border-[#E2F310]
+                  "
                 >
-                  {/* Glow */}
-                  <div
-                    className="
-                      absolute inset-0 rounded-3xl opacity-0 scale-[0.97]
-                      transition-all duration-700 ease-out
-                      group-hover:opacity-100 group-hover:scale-100
-                      pointer-events-none
-                    "
-                  >
-                    <BackgroundGradient
-                      animate={false}
-                      containerClassName="rounded-3xl"
-                      className="rounded-3xl"
-                    />
-                  </div>
+                  <div className="p-8 flex flex-col gap-6">
 
-                  {/* Card */}
-                  <Card
-                    className="
-                      relative z-10
-                      bg-black/80 backdrop-blur-xl
-                      border border-white/5
-                      rounded-3xl overflow-hidden
-                      transition-all duration-500 ease-out
-                      group-hover:shadow-[0_0_80px_rgba(226,243,16,0.25)]
-                    "
-                  >
-                    <div className="grid md:grid-cols-[320px_1fr]">
-                      
-                      {/* Image */}
-                      <div className="relative h-[240px] md:h-full overflow-hidden">
-                        <Image
-                          src={c.image}
-                          alt={c.title}
-                          fill
-                          className="
-                            object-cover
-                            transition-transform duration-700 ease-out
-                            group-hover:scale-105
-                          "
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+                    {/* Title */}
+                    <h3 className="text-2xl leading-tight">
+                      {c.id === 'ai' && (
+                        <>AI <span className="text-[#E2F310]">Marketing</span></>
+                      )}
+                      {c.id === 'clinical' && (
+                        <>Clinical <span className="text-[#E2F310]">Psychology</span></>
+                      )}
+                      {c.id === 'psych360' && (
+                        <>Psychology <span className="text-[#E2F310]">360</span></>
+                      )}
+                      {c.id === 'forensic' &&(
+                        <>Forensic <span className="text-[#E2F310]">Psychology</span></>
+                      )}
+                    </h3>
+
+                    {/* Byline */}
+                    <p className="text-sm text-white/70">
+                      {c.byline}
+                    </p>
+
+                    {/* Footer */}
+                    <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                      <div className="flex items-center gap-2 text-sm text-white/60">
+                        <Users className="h-4 w-4" />
+                        {c.students}
                       </div>
 
-                      {/* Content */}
-                      <div className="p-8 flex flex-col justify-between">
-                        <div className="space-y-3">
-                          <h3 className="text-2xl leading-tight group-hover:text-primary transition-colors">
-                            {c.title}
-                          </h3>
-
-                          <p className="text-sm text-muted-foreground max-w-xl">
-                            {c.byline}
-                          </p>
-                        </div>
-
-                        <div className="mt-8 flex items-center justify-between">
-                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <Users className="h-4 w-4" />
-                            {c.students.toLocaleString()} learners
-                          </div>
-
-                          <Button
-                            size="lg"
-                            className="rounded-full px-6"
-                            onClick={() => {
-                              setCourse(c.id);
-                              setStarted(true);
-                            }}
-                          >
-                            Test Your Knowledge
-                          </Button>
-                        </div>
-                      </div>
-
+                      <Button
+                        size="lg"
+                        className="
+                          rounded-full px-6
+                          bg-white text-black
+                          hover:bg-[#E2F310]
+                        "
+                        onClick={() => {
+                          setCourse(c.id);
+                          setStarted(true);
+                        }}
+                      >
+                        Test Your Knowledge
+                      </Button>
                     </div>
-                  </Card>
-                </div>
+
+                  </div>
+                </Card>
               ))}
             </div>
+
 
           </div>
         </section>
@@ -504,13 +507,6 @@ export function SimulationContent() {
 
                 {/* NEW ACTIONS */}
                 <div className="flex flex-col gap-2 pt-4">
-                  <Button
-                    variant="outline"
-                    onClick={() => resetTest(false)}
-                  >
-                    Retake this test
-                  </Button>
-
                   <Button
                     variant="ghost"
                     onClick={() => resetTest(true)}
