@@ -389,7 +389,7 @@ export default function Psychology360Page() {
             <CardContent className="p-8 grid md:grid-cols-[500px_1fr] gap-20 items-start">
                 {/* Avatar */}
                 <img
-                  src='/Jivisha-psy.png'
+                  src='/Jivisha-Psychology.webp'
                   className="w-full h-300 object-cover rounded-2xl mb-4"
                 />
 
@@ -518,7 +518,7 @@ export default function Psychology360Page() {
               >
                 {/* Image */}
                 <img
-                  src="/certificates/Sample- Lor.png"
+                  src="/certificates/Sample- LOR.png"
                   alt="Sample Letter of Recommendation"
                   className="w-full h-[280px] object-cover transition duration-500 group-hover:scale-105"
                 />
@@ -634,7 +634,7 @@ export default function Psychology360Page() {
             src={
               preview === "certificate"
                 ? "/certificates/Certificate (2).png"
-                : "/certificates/Sample- Lor.png"
+                : "/certificates/Sample- LOR.png"
             }
             alt="Preview"
             className="max-h-[90vh] max-w-[95vw] rounded-xl shadow-2xl border border-white/10"
