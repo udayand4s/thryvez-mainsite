@@ -94,7 +94,7 @@ export function Sidebar() {
             <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-[#1F1F1F] space-y-3">
             <Button
               onClick={() => {
-                router.push('/register');
+                router.push('/login');
                 setMobileOpen(false);
               }}
               className="w-full gap-2"
