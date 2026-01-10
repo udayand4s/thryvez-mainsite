@@ -17,6 +17,83 @@ const ACCENT_COLOR = "#E2F310";
 const testimonials = [
   {
     quote:
+      "As a beginner, I thought psychology would be tough, but the sessions were clear and interactive. Within two classes I started enjoying learning.",
+    name: "Madhubala",
+    college: "Yenepoya Medical College",
+    year: "",
+  },
+  {
+    quote:
+      "The sessions were very useful and engaging. Topics like emotions, personality disorders, and attachment styles made me curious to learn more.",
+    name: "A Mithinkumar",
+    college: "Madurai Medical College",
+    year: "2030",
+  },
+  {
+    quote:
+      "Even though I was new to some terms, the mentor explained everything well. I gained a better understanding of the mind and people.",
+    name: "Nikita R",
+    college: "St. John’s Medical College",
+    year: "2030",
+  },
+  {
+    quote:
+      "It was a wonderful experience. I learnt a lot about myself and the people around me.",
+    name: "Suhaas N",
+    college: "Bangalore Medical College",
+    year: "2030",
+  },
+  {
+    quote:
+      "I really liked the classes and the way everything was taught, and I genuinely enjoyed doing the assignments. The recorded class videos were a huge help. It was a wonderful and optimistic journey.",
+    name: "Anshika",
+    college: "Goswami Ganesh Dutta Sanatan Dharma College",
+    year: "2027",
+  },
+  {
+    quote:
+      "The curriculum was structured in a simple and practical way. Assignments strengthened my understanding and made it easy to connect psychology to real life.",
+    name: "Ziya Shaikh",
+    college: "Nagindas Khandwala College",
+    year: "2028",
+  },
+  {
+    quote:
+      "It’s easy to follow even for those with zero prior knowledge. Weekly assignments helped apply learning in real life.",
+    name: "Jagnya Seni Pati",
+    college: "Gandhi Medical College, Hyderabad",
+    year: "2030",
+  },
+  {
+    quote:
+      "Before attending these classes, I didn’t know there was so much behind our feelings. The course taught me how to manage emotions and understand psychology in daily life.",
+    name: "Rishi TM",
+    college: "Dayananda Sagar Medical College",
+    year: "2030",
+  },
+  {
+    quote:
+      "What stood out was how hands-on everything was, from Blinkit datasets to Flipkart projects. The SQL and visualization modules gave me skills I now use in my role.",
+    name: "Vinoth Kumar",
+    college: "Data Science Manager",
+    year: "",
+  },
+  {
+    quote:
+      "This course matched the pace of real work and made every concept easy to grasp. Projects were practical and instantly applicable at my job.",
+    name: "Aakkash K",
+    college: "Cognizant",
+    year: "Program Analyst",
+  },
+  {
+    quote:
+      "The course felt aligned with real-world challenges and explained even tough topics in a simple way.",
+    name: "Manoj Basavaraju",
+    college: "BEL",
+    year: "",
+  },
+  {
+    quote:
       "Psychology sessions were clear, practical, and connected to real life. Case studies and behavior analysis helped me understand better than textbooks. The mentor’s support even after class made a big difference.",
     name: "Ilsa",
     college: "Deloitte",

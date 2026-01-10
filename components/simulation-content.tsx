@@ -24,7 +24,7 @@ const courses: {
   {
     id: 'ai',
     title: 'AI Marketing',
-    students: '5000+ students have already tried this',
+    students: '4000+ students have already tried this',
     byline: 'Test your knowledge',
     image: '/aimkt.png',
   },
@@ -38,14 +38,14 @@ const courses: {
   {
     id: 'psych360',
     title: 'Psychology 360',
-    students: '5000+ students have already tried this',
+    students: '3000+ students have already tried this',
     byline: 'Test your knowledge',
     image: '/psy.png',
   },
   {
     id: 'forensic',
     title: 'Forensic Psychology',
-    students: '5000+ students have already tried this',
+    students: '6000+ students have already tried this',
     byline: 'Test your knowledge',
     image: '/ds.webp',
   },
@@ -345,7 +345,7 @@ export function SimulationContent() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
     
             {/* Cards */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex flex-col gap-10 max-w-5xl mx-auto">
               {courses.map((c, index) => (
                 <div
                   key={c.id}
@@ -353,51 +353,70 @@ export function SimulationContent() {
                   className="group relative transition-all duration-700"
                 >
                   {/* Glow */}
-                  <div className="absolute inset-0 rounded-2xl opacity-0 scale-[0.96]
-                    transition-all duration-700 ease-out                group-hover:opacity-100 group-hover:scale-100 pointer-events-none">
+                  <div
+                    className="
+                      absolute inset-0 rounded-3xl opacity-0 scale-[0.97]
+                      transition-all duration-700 ease-out
+                      group-hover:opacity-100 group-hover:scale-100
+                      pointer-events-none
+                    "
+                  >
                     <BackgroundGradient
                       animate={false}
-                      containerClassName="rounded-2xl"
-                      className="rounded-2xl"
+                      containerClassName="rounded-3xl"
+                      className="rounded-3xl"
                     />
                   </div>
+
                   {/* Card */}
                   <Card
                     className="
                       relative z-10
                       bg-black/80 backdrop-blur-xl
                       border border-white/5
-                      rounded-2xl overflow-hidden
-                      transition-all duration-500
-                      ease-out                  group-hover:scale-[1.015]
-                      group-hover:shadow-[0_0_60px_rgba(226,243,16,0.25)]
+                      rounded-3xl overflow-hidden
+                      transition-all duration-500 ease-out
+                      group-hover:shadow-[0_0_80px_rgba(226,243,16,0.25)]
                     "
                   >
-                    <CardHeader className="pb-4 space-y-0">
+                    <div className="grid md:grid-cols-[320px_1fr]">
+                      
                       {/* Image */}
-                      <div className="relative aspect-video rounded-xl overflow-hidden mb-4">
+                      <div className="relative h-[240px] md:h-full overflow-hidden">
                         <Image
                           src={c.image}
                           alt={c.title}
                           fill
                           className="
                             object-cover
-                            transition-all duration-700
-                            ease-out                        group-hover:scale-110
-                            group-hover:brightness-110
+                            transition-transform duration-700 ease-out
+                            group-hover:scale-105
                           "
                         />
-                        {/* Hover CTA */}
-                        <div className="
-                          absolute inset-0 flex items-center justify-center
-                          bg-black/40
-                          opacity-0
-                          transition-all duration-500 ease-out
-                          group-hover:opacity-100
-                        ">
+                        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+                      </div>
+
+                      {/* Content */}
+                      <div className="p-8 flex flex-col justify-between">
+                        <div className="space-y-3">
+                          <h3 className="text-2xl leading-tight group-hover:text-primary transition-colors">
+                            {c.title}
+                          </h3>
+
+                          <p className="text-sm text-muted-foreground max-w-xl">
+                            {c.byline}
+                          </p>
+                        </div>
+
+                        <div className="mt-8 flex items-center justify-between">
+                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <Users className="h-4 w-4" />
+                            {c.students.toLocaleString()} learners
+                          </div>
+
                           <Button
                             size="lg"
-                            className="rounded-full translate-y-2 group-hover:translate-y-0 transition-transform duration-500"
+                            className="rounded-full px-6"
                             onClick={() => {
                               setCourse(c.id);
                               setStarted(true);
@@ -406,28 +425,14 @@ export function SimulationContent() {
                             Test Your Knowledge
                           </Button>
                         </div>
+                      </div>
 
-                      </div>
-                      <h3 className=" text-lg leading-tight transition-colors group-hover:text-primary">
-                        {c.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        {c.byline}
-                      </p>
-                    </CardHeader>
-    
-                    <CardContent className="pb-4">
-                      <div className="flex items-center gap-5 text-sm text-muted-foreground">
-                        <div className="flex items-center gap-1">
-                          <Users className="h-4 w-4" />
-                          {c.students.toLocaleString()}
-                        </div>
-                      </div>
-                    </CardContent>
+                    </div>
                   </Card>
                 </div>
               ))}
             </div>
+
           </div>
         </section>
       )}

@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { GetStartedModal } from '@/components/get-started-modal';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { useRouter } from 'next/navigation';
 
 import { 
   Home, 
@@ -30,6 +30,7 @@ const sidebarItems = [
 ];
 
 export function Sidebar() {
+  const router = useRouter();
   const pathname = usePathname();
   const [openModal, setOpenModal] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -91,18 +92,26 @@ export function Sidebar() {
 
             {/* Actions */}
             <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-[#1F1F1F] space-y-3">
-              <Button
-                onClick={() => {
-                  setOpenModal(true);
-                  setMobileOpen(false);
-                }}
-                className="w-full gap-2"
-              >
+            <Button
+              onClick={() => {
+                router.push('/register');
+                setMobileOpen(false);
+              }}
+              className="w-full gap-2"
+            >
                 <Sparkles className="h-4 w-4" />
                 Register Now
               </Button>
 
-              <Button variant="outline" className="w-full gap-2">
+              <Button
+                variant="outline"
+                className="w-full gap-2"
+                onClick={() => {
+                  router.push('/login');
+                  setMobileOpen(false);
+                }}
+              >
+
                 <LogIn className="h-4 w-4" />
                 Sign In
               </Button>
@@ -212,7 +221,7 @@ export function Sidebar() {
 
                 <Button
                   size="sm"
-                  onClick={() => setOpenModal(true)}
+                  onClick={() => router.push('/register')}
                   className="w-full h-9 bg-transparent hover:bg-transparent text-white  text-xs border border-[#333] hover:border-white/50 shadow-[0_0_10px_rgba(255,255,255,0.2)] hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all"
                 >
                   Register Now
@@ -224,7 +233,7 @@ export function Sidebar() {
             <div className="mb-3 flex justify-center">
                <Button
                 size="icon"
-                onClick={() => setOpenModal(true)}
+                onClick={() => router.push('/register')}
                 className="h-10 w-10 rounded-xl bg-[#111] border border-[#1F1F1F] hover:border-white/50 hover:text-white text-white transition-all group shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:shadow-[0_0_15px_rgba(255,255,255,0.4)]"
               >
                 <Sparkles className="h-4 w-4" />
@@ -236,6 +245,7 @@ export function Sidebar() {
           {!isCollapsed ? (
             <Button
               className="w-full flex items-center justify-center gap-2 bg-transparent hover:bg-transparent text-white border border-[#333] hover:border-white/50 shadow-sm hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-200 h-10 mt-1"
+              onClick={() => router.push('/login')}
             >
               <LogIn className="h-4 w-4 text-white" />
               <span className="text-xs  tracking-wide drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">Sign In</span>
@@ -245,6 +255,7 @@ export function Sidebar() {
               <Button
                 size="icon"
                 className="h-10 w-10 bg-transparent hover:bg-transparent text-white border border-[#333] hover:border-white/50 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+                onClick={() => router.push('/login')}
               >
                 <LogIn className="h-4 w-4 text-white" />
               </Button>
@@ -253,8 +264,6 @@ export function Sidebar() {
         </div>
       </aside>
 
-      {/* 4. MODAL */}
-      <GetStartedModal open={openModal} onOpenChange={setOpenModal} />
     </>
   );
 }
