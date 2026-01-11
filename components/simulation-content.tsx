@@ -13,6 +13,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 import { Boxes } from '@/components/ui/background-boxes';
+import axios from 'axios';
 
 const courses: {
   id: CourseKey;
@@ -63,6 +64,8 @@ type Question = {
   options: string[];
   correct: number;
 };
+
+
 
 
 /* ================= QUESTIONS ================= */
@@ -295,6 +298,32 @@ export function SimulationContent() {
   const [answers, setAnswers] = useState<number[]>([]);
   const [showResult, setShowResult] = useState(false);
 
+  const [phone, setPhone] = useState('');
+  const [loading, setLoading] = useState(false);
+  const submitSim = async () => {
+    try {
+      if (!phone) return alert('Enter phone number');
+
+
+      setLoading(true);
+
+
+      await axios.post('/api/simdb', {
+      userId: 'anonymous',
+      phone: Number(phone),
+      });
+
+
+      alert('Thanks! We will contact you shortly.');
+      setPhone('');
+    } catch (error) {
+    console.error(error);
+    alert('Something went wrong');
+    } finally {
+    setLoading(false);
+    }
+    };
+
   useEffect(() => setVisible(true), []);
 
   const questions = course ? QUESTIONS[course] : [];
@@ -510,11 +539,17 @@ export function SimulationContent() {
                 <Input
                   placeholder="Your phone number"
                   className="text-center"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                 />
 
-                <Button className="w-full">
-                  Talk to an expert
-                </Button>
+                <Button
+                  className="w-full"
+                  onClick={submitSim}
+                  disabled={loading}
+                  >
+                  {loading ? 'Submitting...' : 'Talk to an expert'}
+                  </Button>
 
                 {/* NEW ACTIONS */}
                 <div className="flex flex-col gap-2 pt-4">
