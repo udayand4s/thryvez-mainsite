@@ -579,7 +579,8 @@ export default function Psychology360Page() {
                     </div>
                     <Button
                       className="w-full bg-gradient-to-r from-[#e2f310] to-orange-400 ..."
-                      onClick={() => router.push('/lms')}
+                      onClick={() => {window.location.href = 'https://learn.thryvez.in/lms'
+}}
                     >
                       Explore all inclusions <ArrowRight className="ml-2 h-5 w-5"/>
                     </Button>
