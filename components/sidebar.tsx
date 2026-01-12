@@ -245,7 +245,8 @@ export function Sidebar() {
           {!isCollapsed ? (
             <Button
               className="w-full flex items-center justify-center gap-2 bg-transparent hover:bg-transparent text-white border border-[#333] hover:border-white/50 shadow-sm hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-200 h-10 mt-1"
-              onClick={() => router.push('/login')}
+              onClick={() => {window.location.href = 'https://learn.thryvez.in/login'
+}}
             >
               <LogIn className="h-4 w-4 text-white" />
               <span className="text-xs  tracking-wide drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">Sign In</span>
@@ -255,7 +256,8 @@ export function Sidebar() {
               <Button
                 size="icon"
                 className="h-10 w-10 bg-transparent hover:bg-transparent text-white border border-[#333] hover:border-white/50 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]"
-                onClick={() => router.push('/login')}
+                onClick={() => {window.location.href = 'https://learn.thryvez.in/login'
+}}
               >
                 <LogIn className="h-4 w-4 text-white" />
               </Button>
