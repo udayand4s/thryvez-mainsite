@@ -610,7 +610,7 @@ export default function AiMarketingPage() {
                       <div className="px-4 py-2 rounded-xl bg-[#e2f310]/20 text-[#e2f310] text-sm ">Save 20%</div>
                     </div>
                     <Button className="w-full bg-gradient-to-r from-[#e2f310] to-orange-400 hover:from-orange-400 hover:to-[#e2f310] text-black text-base  py-6 shadow-lg shadow-[#e2f310]/20 hover:shadow-xl hover:shadow-[#e2f310]/30"
-                    onClick={() => router.push('/lms')}
+                    onClick={() => {window.location.href = 'https://learn.thryvez.in/lms'}}
                     >
                       Explore all inclusions <ArrowRight className="ml-2 h-5 w-5"/>
                       </Button>
