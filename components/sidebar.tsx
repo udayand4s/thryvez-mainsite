@@ -233,7 +233,7 @@ export function Sidebar() {
             <div className="mb-3 flex justify-center">
                <Button
                 size="icon"
-                onClick={() => router.push('/register')}
+                onClick={() => {window.location.href = 'https://learn.thryvez.in/login'}}
                 className="h-10 w-10 rounded-xl bg-[#111] border border-[#1F1F1F] hover:border-white/50 hover:text-white text-white transition-all group shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:shadow-[0_0_15px_rgba(255,255,255,0.4)]"
               >
                 <Sparkles className="h-4 w-4" />
