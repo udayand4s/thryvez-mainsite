@@ -34,3 +34,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+thryvez-mainsite-output.txt
+thryvez-mainsite-output.md
