@@ -73,21 +73,17 @@ export function LearningProblems() {
 
         {/* PROBLEMS */}
         <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-          {problems.map((p, i) => (
-            <motion.div
-              key={p}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="flex items-center gap-2 px-4 py-2 rounded-full
-                bg-white/5 border border-white/10 text-sm text-white/90
-                hover:border-[#e2f310]/40 hover:text-white transition"
-            >
-              <XCircle className="h-4 w-4 text-[#e2f310]" />
-              {p}
-            </motion.div>
-          ))}
+          {problems.map((p) => (
+  <div
+    key={p}
+    className="flex items-center gap-2 px-4 py-2 rounded-full
+      bg-white/5 border border-white/10 text-sm text-white/90
+      hover:border-[#e2f310]/40 hover:text-white transition"
+  >
+    <XCircle className="h-4 w-4 text-[#e2f310]" />
+    {p}
+  </div>
+))}
         </div>
 
         {/* CONNECTOR */}
