@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import axios from 'axios';
 import {
   Dialog,
   DialogContent,
@@ -24,15 +25,39 @@ export function TalkToExpertModal({
     phone: '',
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    console.log('Expert Callback Request:', form);
+  const handleSubmit = async () => {
+    if (!form.name || !form.phone) {
+      alert('Please enter name and phone number');
+      return;
+    }
 
-    // 🔗 Hook CRM / WhatsApp / backend later
-    onOpenChange(false);
+    try {
+      setLoading(true);
+
+      await axios.post('/api/simdb', {
+        name: form.name,
+        phone: form.phone,
+      });
+
+      alert('Request submitted successfully');
+
+      // reset form
+      setForm({ name: '', phone: '' });
+
+      // close modal
+      onOpenChange(false);
+    } catch (error) {
+      console.error('Lead submit error:', error);
+      alert('Failed to submit. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -66,14 +91,20 @@ export function TalkToExpertModal({
         </div>
 
         <div className="flex justify-end gap-3 mt-8">
-          <Button variant="ghost" onClick={() => onOpenChange(false)}>
+          <Button
+            variant="ghost"
+            disabled={loading}
+            onClick={() => onOpenChange(false)}
+          >
             Cancel
           </Button>
+
           <Button
             className="bg-[#E2F310] text-black hover:bg-[#cddc39]"
+            disabled={loading}
             onClick={handleSubmit}
           >
-            Request Call
+            {loading ? 'Submitting...' : 'Request Call'}
           </Button>
         </div>
       </DialogContent>

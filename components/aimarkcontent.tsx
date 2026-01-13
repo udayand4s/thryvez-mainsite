@@ -214,7 +214,7 @@ export default function AiMarketingPage() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
                     className="bg-white text-black hover:bg-white/90 px-8 py-6 text-base group"
-                    onClick={() => router.push('/lms')}
+                    onClick={() => {window.location.href = 'https://learn.thryvez.in/lms'}}
                   >
                     Apply now
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

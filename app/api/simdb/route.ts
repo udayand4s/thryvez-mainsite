@@ -15,8 +15,8 @@ try {
         
 
 
-    if (!phone) {
-    return NextResponse.json({ error: 'Phone is required' }, { status: 400 });
+    if (!phone || !userId) {
+    return NextResponse.json({ error: 'Enter the required fields' }, { status: 400 });
     }
 
 
