@@ -94,7 +94,7 @@ export function Sidebar() {
             <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-[#1F1F1F] space-y-3">
             <Button
               onClick={() => {
-                router.push('/login');
+                window.open("https://learn.thryvez.in/login", "_blank");
                 setMobileOpen(false);
               }}
               className="w-full gap-2"
@@ -104,13 +104,14 @@ export function Sidebar() {
               </Button>
 
               <Button
-                variant="outline"
-                className="w-full gap-2"
-                onClick={() => {
-                  router.push('/login');
-                  setMobileOpen(false);
-                }}
-              >
+  variant="outline"
+  className="w-full gap-2"
+  onClick={() => {
+    window.open("https://learn.thryvez.in/login", "_blank");
+    setMobileOpen(false);
+  }}
+>
+
 
                 <LogIn className="h-4 w-4" />
                 Sign In
@@ -245,7 +246,7 @@ export function Sidebar() {
           {!isCollapsed ? (
             <Button
               className="w-full flex items-center justify-center gap-2 bg-transparent hover:bg-transparent text-white border border-[#333] hover:border-white/50 shadow-sm hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-200 h-10 mt-1"
-              onClick={() => {window.location.href = 'https://learn.thryvez.in/login'
+              onClick={() => {window.open("https://learn.thryvez.in/login", "_blank")
 }}
             >
               <LogIn className="h-4 w-4 text-white" />
@@ -256,7 +257,7 @@ export function Sidebar() {
               <Button
                 size="icon"
                 className="h-10 w-10 bg-transparent hover:bg-transparent text-white border border-[#333] hover:border-white/50 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]"
-                onClick={() => {window.location.href = 'https://learn.thryvez.in/login'
+                onClick={() => {window.open("https://learn.thryvez.in/login", "_blank")
 }}
               >
                 <LogIn className="h-4 w-4 text-white" />
