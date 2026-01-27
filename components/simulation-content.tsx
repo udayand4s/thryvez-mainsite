@@ -33,12 +33,12 @@ const courses: {
     students: '5000+ students have already tried this',
     byline: 'Test your knowledge',
   },
-  {
+  /*{
     id: 'psych360',
     title: 'Psychology 360',
     students: '3000+ students have already tried this',
     byline: 'Test your knowledge',
-  },
+  },*/
   {
     id: 'forensic',
     title: 'Forensic Psychology',

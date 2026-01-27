@@ -1,4 +1,4 @@
-import { Footer } from '@/components/footer';
+/*import { Footer } from '@/components/footer';
 
 import Psychology360Page from '@/components/psycontent';
 
@@ -13,4 +13,4 @@ export default function CoursesPage() {
       <Footer />
     </div>
   );
-}
+}*/

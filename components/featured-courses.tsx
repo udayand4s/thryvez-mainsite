@@ -10,7 +10,7 @@ import Link from 'next/link';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 
 const courses = [
-  {
+  /*{
     id: 'psychology360',
     title: 'Psychology 360',
     instructor: 'Jivisha Dangi',
@@ -23,7 +23,7 @@ const courses = [
     category: 'Psychology',
     trending: true,
     image: '/psy.png',
-  },
+  },*/
   {
     id: 'clinical-psy',
     title: 'Clinical Psychology',

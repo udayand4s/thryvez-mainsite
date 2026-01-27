@@ -12,7 +12,7 @@ import { Boxes } from '@/components/ui/background-boxes';
 
 
 const courses = [
-  {
+  /*{
     id: 'psychology360',
     title: 'Psychology 360',
     instructor: 'Jivisha Dangi',
@@ -27,7 +27,7 @@ const courses = [
     image: '/psy.png',
     comingSoon: false,
 
-  },
+  },*/
   {
     id: 'clinical-psy',
     title: 'Clinical Psychology',
@@ -396,14 +396,14 @@ export function CoursesContent() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
-            {
+            /*{
               name: "Jivisha Dangi",
               slug: "jivisha-dangi",
               role: "Senior Psychologist",
               qual: "Psychotherapist",
               image:
                 "/jivisha-dangi.png",
-            },
+            },*/
             {
               name: "Sanjivani",
               slug: "sanjivani",
